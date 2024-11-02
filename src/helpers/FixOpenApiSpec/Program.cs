@@ -14,6 +14,25 @@ if (OpenApi31Support.IsOpenApi31(yamlOrJson))
 
 var openApiDocument = new OpenApiStringReader().Read(yamlOrJson, out var diagnostics);
 
+openApiDocument.Servers.Add(new OpenApiServer
+{
+    Url = "https://external.api.recraft.ai/"
+});
+
+openApiDocument.SecurityRequirements.Add(new OpenApiSecurityRequirement
+{
+    {
+        new OpenApiSecurityScheme
+        {
+            Reference = new OpenApiReference
+            {
+                Id = "auth0",
+                Type = ReferenceType.SecurityScheme
+            }
+        },
+        new List<string>()
+    }
+});
 //openApiDocument.Components.Schemas["GenerateCompletionRequest"]!.Properties["stream"]!.Default = new OpenApiBoolean(true);
 
 yamlOrJson = openApiDocument.SerializeAsYaml(OpenApiSpecVersion.OpenApi3_0);

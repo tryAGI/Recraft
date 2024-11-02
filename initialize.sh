@@ -1,8 +1,8 @@
 dotnet tool install --global autosdk.cli --prerelease
 
 autosdk init \
-  SolutionName \
-  SomeClient \
-  https://raw.githubusercontent.com/api/openapi.json \
-  CompanyName \
+  Recraft \
+  RecraftClient \
+  https://external.api.recraft.ai/doc/spec/api.yaml \
+  tryAGI \
   --output .

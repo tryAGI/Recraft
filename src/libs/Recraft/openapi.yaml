@@ -393,8 +393,11 @@ components:
     User:
       required:
         - id
+        - credits
       type: object
       properties:
+        credits:
+          type: integer
         email:
           type: string
           format: email
@@ -407,9 +410,6 @@ components:
             path: github.com/gofrs/uuid/v5
         name:
           type: string
-        registration_time:
-          type: string
-          format: date-time
     UserControls:
       type: object
       properties:

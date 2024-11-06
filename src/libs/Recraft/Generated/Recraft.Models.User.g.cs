@@ -11,6 +11,13 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("credits")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int Credits { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("email")]
         public string? Email { get; set; }
 
@@ -26,12 +33,6 @@ namespace Recraft
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("registration_time")]
-        public global::System.DateTime? RegistrationTime { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

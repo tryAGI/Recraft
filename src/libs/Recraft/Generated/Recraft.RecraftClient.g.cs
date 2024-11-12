@@ -25,6 +25,11 @@ namespace Recraft
         /// <inheritdoc/>
         public global::System.Collections.Generic.List<global::Recraft.EndPointAuthorization> Authorizations { get; }
 
+        /// <inheritdoc/>
+        public bool ReadResponseAsString { get; set; }
+#if DEBUG
+            = true;
+#endif
         /// <summary>
         /// 
         /// </summary>
@@ -36,6 +41,7 @@ namespace Recraft
         /// </summary>
         public ImageClient Image => new ImageClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
         };
 
@@ -44,6 +50,7 @@ namespace Recraft
         /// </summary>
         public StyleClient Style => new StyleClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
         };
 
@@ -52,6 +59,7 @@ namespace Recraft
         /// </summary>
         public UserClient User => new UserClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
         };
 

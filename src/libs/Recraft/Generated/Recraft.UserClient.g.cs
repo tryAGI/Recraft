@@ -25,6 +25,11 @@ namespace Recraft
         /// <inheritdoc/>
         public global::System.Collections.Generic.List<global::Recraft.EndPointAuthorization> Authorizations { get; }
 
+        /// <inheritdoc/>
+        public bool ReadResponseAsString { get; set; }
+#if DEBUG
+            = true;
+#endif
         /// <summary>
         /// 
         /// </summary>

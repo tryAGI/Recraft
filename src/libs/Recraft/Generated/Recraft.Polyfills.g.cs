@@ -7,7 +7,7 @@ namespace Recraft
     /// <summary>
     /// 
     /// </summary>
-    public static partial class AutoSDKPolyfills
+    public static partial class AutoSdkPolyfills
     {
         /// <summary>
         /// 

@@ -18,6 +18,12 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("private")]
+        public bool? Private { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("style")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.ImageStyleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -33,14 +39,17 @@ namespace Recraft
         /// Initializes a new instance of the <see cref="CreateStyleRequest" /> class.
         /// </summary>
         /// <param name="images"></param>
+        /// <param name="private"></param>
         /// <param name="style"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public CreateStyleRequest(
             global::System.Collections.Generic.IList<byte[]> images,
-            global::Recraft.ImageStyle style)
+            global::Recraft.ImageStyle style,
+            bool? @private)
         {
             this.Images = images ?? throw new global::System.ArgumentNullException(nameof(images));
             this.Style = style;
+            this.Private = @private;
         }
 
         /// <summary>

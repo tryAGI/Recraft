@@ -30,63 +30,63 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.ImageStyle? Type3 { get; set; }
+        public bool? Type3 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.CreateStyleResponse? Type4 { get; set; }
+        public global::Recraft.ImageStyle? Type4 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Guid? Type5 { get; set; }
+        public global::Recraft.GenerateImageRequest? Type5 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.GenerateImageRequest? Type6 { get; set; }
+        public global::Recraft.UserControls? Type6 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.UserControls? Type7 { get; set; }
+        public global::Recraft.ImageColor? Type7 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.ImageColor? Type8 { get; set; }
+        public global::System.Collections.Generic.IList<int>? Type8 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<int>? Type9 { get; set; }
+        public int? Type9 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public int? Type10 { get; set; }
+        public global::System.Collections.Generic.IList<double>? Type10 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<double>? Type11 { get; set; }
+        public double? Type11 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public double? Type12 { get; set; }
+        public global::System.Collections.Generic.IList<global::Recraft.ImageColor>? Type12 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Recraft.ImageColor>? Type13 { get; set; }
+        public global::Recraft.TransformModel? Type13 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.TransformModel? Type14 { get; set; }
+        public string? Type14 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public string? Type15 { get; set; }
+        public global::Recraft.ResponseFormat? Type15 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.ResponseFormat? Type16 { get; set; }
+        public global::Recraft.ImageSize? Type16 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.ImageSize? Type17 { get; set; }
+        public global::System.Guid? Type17 { get; set; }
         /// <summary>
         /// 
         /// </summary>

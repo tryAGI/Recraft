@@ -5,46 +5,44 @@ namespace Recraft
 {
     public partial class StyleClient
     {
-        partial void PrepareCreateStyleArguments(
+        partial void PrepareGetStyleArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::Recraft.CreateStyleRequest request);
-        partial void PrepareCreateStyleRequest(
+            ref global::System.Guid styleId);
+        partial void PrepareGetStyleRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::Recraft.CreateStyleRequest request);
-        partial void ProcessCreateStyleResponse(
+            global::System.Guid styleId);
+        partial void ProcessGetStyleResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessCreateStyleResponseContent(
+        partial void ProcessGetStyleResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Create Style
+        /// Get Style
         /// </summary>
-        /// <param name="request"></param>
+        /// <param name="styleId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Recraft.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Recraft.Style> CreateStyleAsync(
-            global::Recraft.CreateStyleRequest request,
+        public async global::System.Threading.Tasks.Task<global::Recraft.Style> GetStyleAsync(
+            global::System.Guid styleId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: HttpClient);
-            PrepareCreateStyleArguments(
+            PrepareGetStyleArguments(
                 httpClient: HttpClient,
-                request: request);
+                styleId: ref styleId);
 
             var __pathBuilder = new PathBuilder(
-                path: "/v1/styles",
+                path: $"/v1/styles/{styleId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Post,
+                method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             foreach (var __authorization in Authorizations)
@@ -62,28 +60,14 @@ namespace Recraft
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
-            using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-            __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Images, x => x))}]"),
-                name: "images");
-            if (request.Private != default)
-            {
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.Private}"),
-                    name: "private");
-            } 
-            __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent($"{request.Style.ToValueString()}"),
-                name: "style");
-            __httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareCreateStyleRequest(
+            PrepareGetStyleRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
-                request: request);
+                styleId: styleId);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,
@@ -93,7 +77,7 @@ namespace Recraft
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessCreateStyleResponse(
+            ProcessGetStyleResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
 
@@ -105,7 +89,7 @@ namespace Recraft
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessCreateStyleResponseContent(
+                ProcessGetStyleResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -161,32 +145,6 @@ namespace Recraft
                     __responseValue ??
                     throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
-        }
-
-        /// <summary>
-        /// Create Style
-        /// </summary>
-        /// <param name="images"></param>
-        /// <param name="private"></param>
-        /// <param name="style"></param>
-        /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Recraft.Style> CreateStyleAsync(
-            global::System.Collections.Generic.IList<byte[]> images,
-            global::Recraft.ImageStyle style,
-            bool? @private = default,
-            global::System.Threading.CancellationToken cancellationToken = default)
-        {
-            var __request = new global::Recraft.CreateStyleRequest
-            {
-                Images = images,
-                Private = @private,
-                Style = style,
-            };
-
-            return await CreateStyleAsync(
-                request: __request,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

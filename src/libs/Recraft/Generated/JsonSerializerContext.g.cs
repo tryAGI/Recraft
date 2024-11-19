@@ -23,6 +23,7 @@ namespace Recraft
             typeof(global::Recraft.JsonConverters.ImageSizeNullableJsonConverter),
             typeof(global::Recraft.JsonConverters.ImageSubStyleJsonConverter),
             typeof(global::Recraft.JsonConverters.ImageSubStyleNullableJsonConverter),
+            typeof(global::Recraft.JsonConverters.UnixTimestampJsonConverter),
         })]
 
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.JsonSerializerContextTypes))]

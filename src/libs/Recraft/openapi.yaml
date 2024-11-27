@@ -65,6 +65,24 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProcessImageResponse'
+  /v1/images/inpaint:
+    post:
+      tags:
+        - image
+      summary: Inpaint Image
+      operationId: InpaintImage
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/InpaintImageRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenerateImageResponse'
   /v1/images/removeBackground:
     post:
       tags:
@@ -347,6 +365,43 @@ components:
         - handmade_3d
         - stickers_drawings
       type: string
+    InpaintImageRequest:
+      required:
+        - image
+        - mask
+        - prompt
+      type: object
+      properties:
+        controls:
+          $ref: '#/components/schemas/UserControls'
+        image:
+          type: string
+          format: binary
+        mask:
+          type: string
+          format: binary
+        model:
+          $ref: '#/components/schemas/TransformModel'
+        n:
+          type: integer
+        prompt:
+          type: string
+        random_seed:
+          type: integer
+          format: uint32
+        response_format:
+          $ref: '#/components/schemas/ResponseFormat'
+        style:
+          $ref: '#/components/schemas/ImageStyle'
+        style_id:
+          type: string
+          format: uuid
+          x-go-name: StyleID
+          x-go-type: uuid.UUID
+          x-go-type-import:
+            path: github.com/gofrs/uuid/v5
+        substyle:
+          $ref: '#/components/schemas/ImageSubStyle'
     ListStylesResponse:
       required:
         - styles

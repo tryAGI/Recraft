@@ -106,34 +106,38 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.ListStylesResponse? Type22 { get; set; }
+        public global::Recraft.InpaintImageRequest? Type22 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Recraft.Style>? Type23 { get; set; }
+        public global::Recraft.ListStylesResponse? Type23 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.Style? Type24 { get; set; }
+        public global::System.Collections.Generic.IList<global::Recraft.Style>? Type24 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.DateTime? Type25 { get; set; }
+        public global::Recraft.Style? Type25 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.ProcessImageRequest? Type26 { get; set; }
+        public global::System.DateTime? Type26 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.ProcessImageResponse? Type27 { get; set; }
+        public global::Recraft.ProcessImageRequest? Type27 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.User? Type28 { get; set; }
+        public global::Recraft.ProcessImageResponse? Type28 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public object? Type29 { get; set; }
+        public global::Recraft.User? Type29 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public object? Type30 { get; set; }
     }
 }

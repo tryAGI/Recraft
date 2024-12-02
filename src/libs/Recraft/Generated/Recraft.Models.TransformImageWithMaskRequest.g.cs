@@ -6,14 +6,8 @@ namespace Recraft
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class InpaintImageRequest
+    public sealed partial class TransformImageWithMaskRequest
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("controls")]
-        public global::Recraft.UserControls? Controls { get; set; }
-
         /// <summary>
         /// 
         /// </summary>
@@ -96,15 +90,20 @@ namespace Recraft
         public global::Recraft.ImageSubStyle? Substyle { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("text_layout")]
+        public global::System.Collections.Generic.IList<global::Recraft.TextLayoutItem>? TextLayout { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="InpaintImageRequest" /> class.
+        /// Initializes a new instance of the <see cref="TransformImageWithMaskRequest" /> class.
         /// </summary>
-        /// <param name="controls"></param>
         /// <param name="image"></param>
         /// <param name="imagename"></param>
         /// <param name="mask"></param>
@@ -117,28 +116,28 @@ namespace Recraft
         /// <param name="style"></param>
         /// <param name="styleId"></param>
         /// <param name="substyle"></param>
+        /// <param name="textLayout"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
-        public InpaintImageRequest(
+        public TransformImageWithMaskRequest(
             byte[] image,
             string imagename,
             byte[] mask,
             string maskname,
             string prompt,
-            global::Recraft.UserControls? controls,
             global::Recraft.TransformModel? model,
             int? n,
             int? randomSeed,
             global::Recraft.ResponseFormat? responseFormat,
             global::Recraft.ImageStyle? style,
             global::System.Guid? styleId,
-            global::Recraft.ImageSubStyle? substyle)
+            global::Recraft.ImageSubStyle? substyle,
+            global::System.Collections.Generic.IList<global::Recraft.TextLayoutItem>? textLayout)
         {
             this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
             this.Imagename = imagename ?? throw new global::System.ArgumentNullException(nameof(imagename));
             this.Mask = mask ?? throw new global::System.ArgumentNullException(nameof(mask));
             this.Maskname = maskname ?? throw new global::System.ArgumentNullException(nameof(maskname));
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
-            this.Controls = controls;
             this.Model = model;
             this.N = n;
             this.RandomSeed = randomSeed;
@@ -146,12 +145,13 @@ namespace Recraft
             this.Style = style;
             this.StyleId = styleId;
             this.Substyle = substyle;
+            this.TextLayout = textLayout;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="InpaintImageRequest" /> class.
+        /// Initializes a new instance of the <see cref="TransformImageWithMaskRequest" /> class.
         /// </summary>
-        public InpaintImageRequest()
+        public TransformImageWithMaskRequest()
         {
         }
     }

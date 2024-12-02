@@ -7,11 +7,11 @@ namespace Recraft
     {
         partial void PrepareInpaintImageArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::Recraft.InpaintImageRequest request);
+            global::Recraft.TransformImageWithMaskRequest request);
         partial void PrepareInpaintImageRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::Recraft.InpaintImageRequest request);
+            global::Recraft.TransformImageWithMaskRequest request);
         partial void ProcessInpaintImageResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -28,7 +28,7 @@ namespace Recraft
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Recraft.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> InpaintImageAsync(
-            global::Recraft.InpaintImageRequest request,
+            global::Recraft.TransformImageWithMaskRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -67,12 +67,6 @@ namespace Recraft
                 }
             }
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-            if (request.Controls != default)
-            {
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.Controls}"),
-                    name: "controls");
-            } 
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.ByteArrayContent(request.Image ?? global::System.Array.Empty<byte>()),
                 name: "image",
@@ -125,6 +119,12 @@ namespace Recraft
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Substyle?.ToValueString()}"),
                     name: "substyle");
+            } 
+            if (request.TextLayout != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.TextLayout, x => x))}]"),
+                    name: "text_layout");
             }
             __httpRequest.Content = __httpRequestContent;
 
@@ -215,7 +215,6 @@ namespace Recraft
         /// <summary>
         /// Inpaint Image
         /// </summary>
-        /// <param name="controls"></param>
         /// <param name="image"></param>
         /// <param name="imagename"></param>
         /// <param name="mask"></param>
@@ -228,6 +227,7 @@ namespace Recraft
         /// <param name="style"></param>
         /// <param name="styleId"></param>
         /// <param name="substyle"></param>
+        /// <param name="textLayout"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> InpaintImageAsync(
@@ -236,7 +236,6 @@ namespace Recraft
             byte[] mask,
             string maskname,
             string prompt,
-            global::Recraft.UserControls? controls = default,
             global::Recraft.TransformModel? model = default,
             int? n = default,
             int? randomSeed = default,
@@ -244,11 +243,11 @@ namespace Recraft
             global::Recraft.ImageStyle? style = default,
             global::System.Guid? styleId = default,
             global::Recraft.ImageSubStyle? substyle = default,
+            global::System.Collections.Generic.IList<global::Recraft.TextLayoutItem>? textLayout = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::Recraft.InpaintImageRequest
+            var __request = new global::Recraft.TransformImageWithMaskRequest
             {
-                Controls = controls,
                 Image = image,
                 Imagename = imagename,
                 Mask = mask,
@@ -261,6 +260,7 @@ namespace Recraft
                 Style = style,
                 StyleId = styleId,
                 Substyle = substyle,
+                TextLayout = textLayout,
             };
 
             return await InpaintImageAsync(

@@ -75,7 +75,7 @@ paths:
         content:
           multipart/form-data:
             schema:
-              $ref: '#/components/schemas/InpaintImageRequest'
+              $ref: '#/components/schemas/TransformImageWithMaskRequest'
       responses:
         '200':
           description: OK
@@ -101,6 +101,24 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProcessImageResponse'
+  /v1/images/replaceBackground:
+    post:
+      tags:
+        - image
+      summary: Replace Background
+      operationId: ReplaceBackground
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TransformImageWithMaskRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenerateImageResponse'
   /v1/images/vectorize:
     post:
       tags:
@@ -149,6 +167,19 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Style'
+  /v1/styles/basic:
+    get:
+      tags:
+        - style
+      summary: List Basic Styles
+      operationId: ListBasicStyles
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListBasicStylesResponse'
   '/v1/styles/{style_id}':
     delete:
       tags:
@@ -211,6 +242,18 @@ paths:
                 $ref: '#/components/schemas/User'
 components:
   schemas:
+    BasicStyle:
+      required:
+        - style
+        - model
+      type: object
+      properties:
+        model:
+          $ref: '#/components/schemas/TransformModel'
+        style:
+          $ref: '#/components/schemas/ImageStyle'
+        substyle:
+          $ref: '#/components/schemas/ImageSubStyle'
     CreateStyleRequest:
       required:
         - images
@@ -257,6 +300,8 @@ components:
             path: github.com/gofrs/uuid/v5
         substyle:
           $ref: '#/components/schemas/ImageSubStyle'
+        text_layout:
+          $ref: '#/components/schemas/TextLayout'
     GenerateImageResponse:
       required:
         - created
@@ -365,43 +410,15 @@ components:
         - handmade_3d
         - stickers_drawings
       type: string
-    InpaintImageRequest:
+    ListBasicStylesResponse:
       required:
-        - image
-        - mask
-        - prompt
+        - styles
       type: object
       properties:
-        controls:
-          $ref: '#/components/schemas/UserControls'
-        image:
-          type: string
-          format: binary
-        mask:
-          type: string
-          format: binary
-        model:
-          $ref: '#/components/schemas/TransformModel'
-        n:
-          type: integer
-        prompt:
-          type: string
-        random_seed:
-          type: integer
-          format: uint32
-        response_format:
-          $ref: '#/components/schemas/ResponseFormat'
-        style:
-          $ref: '#/components/schemas/ImageStyle'
-        style_id:
-          type: string
-          format: uuid
-          x-go-name: StyleID
-          x-go-type: uuid.UUID
-          x-go-type-import:
-            path: github.com/gofrs/uuid/v5
-        substyle:
-          $ref: '#/components/schemas/ImageSubStyle'
+        styles:
+          type: array
+          items:
+            $ref: '#/components/schemas/BasicStyle'
     ListStylesResponse:
       required:
         - styles
@@ -460,6 +477,60 @@ components:
           $ref: '#/components/schemas/ImageStyle'
         substyle:
           $ref: '#/components/schemas/ImageSubStyle'
+    TextLayout:
+      type: array
+      items:
+        required:
+          - text
+          - bbox
+        type: object
+        properties:
+          bbox:
+            type: array
+            items:
+              type: array
+              items:
+                type: number
+                x-go-type: float32
+          text:
+            type: string
+    TransformImageWithMaskRequest:
+      required:
+        - image
+        - mask
+        - prompt
+      type: object
+      properties:
+        image:
+          type: string
+          format: binary
+        mask:
+          type: string
+          format: binary
+        model:
+          $ref: '#/components/schemas/TransformModel'
+        n:
+          type: integer
+        prompt:
+          type: string
+        random_seed:
+          type: integer
+          format: uint32
+        response_format:
+          $ref: '#/components/schemas/ResponseFormat'
+        style:
+          $ref: '#/components/schemas/ImageStyle'
+        style_id:
+          type: string
+          format: uuid
+          x-go-name: StyleID
+          x-go-type: uuid.UUID
+          x-go-type-import:
+            path: github.com/gofrs/uuid/v5
+        substyle:
+          $ref: '#/components/schemas/ImageSubStyle'
+        text_layout:
+          $ref: '#/components/schemas/TextLayout'
     TransformModel:
       enum:
         - refm1
@@ -489,6 +560,8 @@ components:
     UserControls:
       type: object
       properties:
+        artistic_level:
+          type: integer
         background_color:
           $ref: '#/components/schemas/ImageColor'
         colors:

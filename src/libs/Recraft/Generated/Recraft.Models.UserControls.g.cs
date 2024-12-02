@@ -11,6 +11,12 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("artistic_level")]
+        public int? ArtisticLevel { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("background_color")]
         public global::Recraft.ImageColor? BackgroundColor { get; set; }
 
@@ -29,13 +35,16 @@ namespace Recraft
         /// <summary>
         /// Initializes a new instance of the <see cref="UserControls" /> class.
         /// </summary>
+        /// <param name="artisticLevel"></param>
         /// <param name="backgroundColor"></param>
         /// <param name="colors"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public UserControls(
+            int? artisticLevel,
             global::Recraft.ImageColor? backgroundColor,
             global::System.Collections.Generic.IList<global::Recraft.ImageColor>? colors)
         {
+            this.ArtisticLevel = artisticLevel;
             this.BackgroundColor = backgroundColor;
             this.Colors = colors;
         }

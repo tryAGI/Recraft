@@ -75,6 +75,12 @@ namespace Recraft
         public global::Recraft.ImageSubStyle? Substyle { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("text_layout")]
+        public global::System.Collections.Generic.IList<global::Recraft.TextLayoutItem>? TextLayout { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -93,6 +99,7 @@ namespace Recraft
         /// <param name="style"></param>
         /// <param name="styleId"></param>
         /// <param name="substyle"></param>
+        /// <param name="textLayout"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public GenerateImageRequest(
             string prompt,
@@ -104,7 +111,8 @@ namespace Recraft
             global::Recraft.ImageSize? size,
             global::Recraft.ImageStyle? style,
             global::System.Guid? styleId,
-            global::Recraft.ImageSubStyle? substyle)
+            global::Recraft.ImageSubStyle? substyle,
+            global::System.Collections.Generic.IList<global::Recraft.TextLayoutItem>? textLayout)
         {
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.Controls = controls;
@@ -116,6 +124,7 @@ namespace Recraft
             this.Style = style;
             this.StyleId = styleId;
             this.Substyle = substyle;
+            this.TextLayout = textLayout;
         }
 
         /// <summary>

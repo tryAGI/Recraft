@@ -27,6 +27,7 @@ namespace Recraft
         /// <param name="style"></param>
         /// <param name="styleId"></param>
         /// <param name="substyle"></param>
+        /// <param name="textLayout"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> GenerateImageAsync(
@@ -40,6 +41,7 @@ namespace Recraft
             global::Recraft.ImageStyle? style = default,
             global::System.Guid? styleId = default,
             global::Recraft.ImageSubStyle? substyle = default,
+            global::System.Collections.Generic.IList<global::Recraft.TextLayoutItem>? textLayout = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

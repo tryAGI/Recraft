@@ -572,6 +572,6 @@ components:
     auth0:
       type: http
       scheme: bearer
-      bearerFormat: JWT
 security:
+  - auth0: [ ]
   - auth0: [ ]

@@ -17,6 +17,13 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("image_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Guid ImageId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("revised_prompt")]
         public string? RevisedPrompt { get; set; }
 
@@ -36,14 +43,17 @@ namespace Recraft
         /// Initializes a new instance of the <see cref="Image" /> class.
         /// </summary>
         /// <param name="b64Json"></param>
+        /// <param name="imageId"></param>
         /// <param name="revisedPrompt"></param>
         /// <param name="url"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public Image(
+            global::System.Guid imageId,
             string? b64Json,
             string? revisedPrompt,
             string? url)
         {
+            this.ImageId = imageId;
             this.B64Json = b64Json;
             this.RevisedPrompt = revisedPrompt;
             this.Url = url;

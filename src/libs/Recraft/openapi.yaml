@@ -489,20 +489,22 @@ components:
     TextLayout:
       type: array
       items:
-        required:
-          - text
-          - bbox
-        type: object
-        properties:
-          bbox:
+        $ref: '#/components/schemas/TextLayoutItem'
+    TextLayoutItem:
+      required:
+        - text
+        - bbox
+      type: object
+      properties:
+        bbox:
+          type: array
+          items:
             type: array
             items:
-              type: array
-              items:
-                type: number
-                x-go-type: float32
-          text:
-            type: string
+              type: number
+              x-go-type: float32
+        text:
+          type: string
     TransformImageWithMaskRequest:
       required:
         - image

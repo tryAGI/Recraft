@@ -546,6 +546,7 @@ components:
       enum:
         - refm1
         - recraft20b
+        - recraftv2
         - recraftv3
         - flux1_1pro
       type: string
@@ -580,6 +581,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ImageColor'
+        no_text:
+          type: boolean
   securitySchemes:
     auth0:
       type: http

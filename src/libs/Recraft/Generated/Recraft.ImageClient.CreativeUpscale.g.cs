@@ -5,29 +5,29 @@ namespace Recraft
 {
     public partial class ImageClient
     {
-        partial void PrepareGenerativeUpscaleArguments(
+        partial void PrepareCreativeUpscaleArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::Recraft.ProcessImageRequest request);
-        partial void PrepareGenerativeUpscaleRequest(
+        partial void PrepareCreativeUpscaleRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::Recraft.ProcessImageRequest request);
-        partial void ProcessGenerativeUpscaleResponse(
+        partial void ProcessCreativeUpscaleResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessGenerativeUpscaleResponseContent(
+        partial void ProcessCreativeUpscaleResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Generative Upscale
+        /// Creative Upscale
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Recraft.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Recraft.ProcessImageResponse> GenerativeUpscaleAsync(
+        public async global::System.Threading.Tasks.Task<global::Recraft.ProcessImageResponse> CreativeUpscaleAsync(
             global::Recraft.ProcessImageRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -35,12 +35,12 @@ namespace Recraft
 
             PrepareArguments(
                 client: HttpClient);
-            PrepareGenerativeUpscaleArguments(
+            PrepareCreativeUpscaleArguments(
                 httpClient: HttpClient,
                 request: request);
 
             var __pathBuilder = new PathBuilder(
-                path: "/v1/images/generativeUpscale",
+                path: "/v1/images/creativeUpscale",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -82,7 +82,7 @@ namespace Recraft
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareGenerativeUpscaleRequest(
+            PrepareCreativeUpscaleRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 request: request);
@@ -95,7 +95,7 @@ namespace Recraft
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessGenerativeUpscaleResponse(
+            ProcessCreativeUpscaleResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
 
@@ -107,7 +107,7 @@ namespace Recraft
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessGenerativeUpscaleResponseContent(
+                ProcessCreativeUpscaleResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -164,14 +164,14 @@ namespace Recraft
         }
 
         /// <summary>
-        /// Generative Upscale
+        /// Creative Upscale
         /// </summary>
         /// <param name="image"></param>
         /// <param name="imagename"></param>
         /// <param name="responseFormat"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Recraft.ProcessImageResponse> GenerativeUpscaleAsync(
+        public async global::System.Threading.Tasks.Task<global::Recraft.ProcessImageResponse> CreativeUpscaleAsync(
             byte[] image,
             string imagename,
             global::Recraft.ResponseFormat? responseFormat = default,
@@ -184,7 +184,7 @@ namespace Recraft
                 ResponseFormat = responseFormat,
             };
 
-            return await GenerativeUpscaleAsync(
+            return await CreativeUpscaleAsync(
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

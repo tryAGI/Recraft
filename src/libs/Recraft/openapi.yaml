@@ -29,6 +29,24 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProcessImageResponse'
+  /v1/images/creativeUpscale:
+    post:
+      tags:
+        - image
+      summary: Creative Upscale
+      operationId: CreativeUpscale
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ProcessImageRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProcessImageResponse'
   /v1/images/generations:
     post:
       tags:
@@ -65,6 +83,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProcessImageResponse'
+      deprecated: true
   /v1/images/inpaint:
     post:
       tags:
@@ -549,6 +568,7 @@ components:
         - recraftv2
         - recraftv3
         - flux1_1pro
+        - flux1dev
       type: string
     User:
       required:

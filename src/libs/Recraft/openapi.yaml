@@ -293,6 +293,10 @@ components:
         - prompt
       type: object
       properties:
+        block_nsfw:
+          type: boolean
+        calculate_features:
+          type: boolean
         controls:
           $ref: '#/components/schemas/UserControls'
         model:
@@ -340,6 +344,8 @@ components:
       properties:
         b64_json:
           type: string
+        features:
+          $ref: '#/components/schemas/ImageFeatures'
         image_id:
           type: string
           format: uuid
@@ -363,6 +369,11 @@ components:
           items:
             type: number
         weight:
+          type: number
+    ImageFeatures:
+      type: object
+      properties:
+        nsfw_score:
           type: number
     ImageSize:
       enum:
@@ -531,6 +542,10 @@ components:
         - prompt
       type: object
       properties:
+        block_nsfw:
+          type: boolean
+        calculate_features:
+          type: boolean
         image:
           type: string
           format: binary

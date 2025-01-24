@@ -160,6 +160,8 @@ namespace Recraft
         /// <summary>
         /// Generate image from prompt
         /// </summary>
+        /// <param name="blockNsfw"></param>
+        /// <param name="calculateFeatures"></param>
         /// <param name="controls"></param>
         /// <param name="model"></param>
         /// <param name="n"></param>
@@ -175,6 +177,8 @@ namespace Recraft
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> GenerateImageAsync(
             string prompt,
+            bool? blockNsfw = default,
+            bool? calculateFeatures = default,
             global::Recraft.UserControls? controls = default,
             global::Recraft.TransformModel? model = default,
             int? n = default,
@@ -189,6 +193,8 @@ namespace Recraft
         {
             var __request = new global::Recraft.GenerateImageRequest
             {
+                BlockNsfw = blockNsfw,
+                CalculateFeatures = calculateFeatures,
                 Controls = controls,
                 Model = model,
                 N = n,

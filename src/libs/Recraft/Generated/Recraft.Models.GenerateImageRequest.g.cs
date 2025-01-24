@@ -11,6 +11,18 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("block_nsfw")]
+        public bool? BlockNsfw { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("calculate_features")]
+        public bool? CalculateFeatures { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("controls")]
         public global::Recraft.UserControls? Controls { get; set; }
 
@@ -89,6 +101,8 @@ namespace Recraft
         /// <summary>
         /// Initializes a new instance of the <see cref="GenerateImageRequest" /> class.
         /// </summary>
+        /// <param name="blockNsfw"></param>
+        /// <param name="calculateFeatures"></param>
         /// <param name="controls"></param>
         /// <param name="model"></param>
         /// <param name="n"></param>
@@ -103,6 +117,8 @@ namespace Recraft
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public GenerateImageRequest(
             string prompt,
+            bool? blockNsfw,
+            bool? calculateFeatures,
             global::Recraft.UserControls? controls,
             global::Recraft.TransformModel? model,
             int? n,
@@ -115,6 +131,8 @@ namespace Recraft
             global::System.Collections.Generic.IList<global::Recraft.TextLayoutItem>? textLayout)
         {
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
+            this.BlockNsfw = blockNsfw;
+            this.CalculateFeatures = calculateFeatures;
             this.Controls = controls;
             this.Model = model;
             this.N = n;

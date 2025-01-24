@@ -67,6 +67,18 @@ namespace Recraft
                 }
             }
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+            if (request.BlockNsfw != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.BlockNsfw}"),
+                    name: "block_nsfw");
+            } 
+            if (request.CalculateFeatures != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.CalculateFeatures}"),
+                    name: "calculate_features");
+            } 
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.ByteArrayContent(request.Image ?? global::System.Array.Empty<byte>()),
                 name: "image",
@@ -215,6 +227,8 @@ namespace Recraft
         /// <summary>
         /// Replace Background
         /// </summary>
+        /// <param name="blockNsfw"></param>
+        /// <param name="calculateFeatures"></param>
         /// <param name="image"></param>
         /// <param name="imagename"></param>
         /// <param name="mask"></param>
@@ -236,6 +250,8 @@ namespace Recraft
             byte[] mask,
             string maskname,
             string prompt,
+            bool? blockNsfw = default,
+            bool? calculateFeatures = default,
             global::Recraft.TransformModel? model = default,
             int? n = default,
             int? randomSeed = default,
@@ -248,6 +264,8 @@ namespace Recraft
         {
             var __request = new global::Recraft.TransformImageWithMaskRequest
             {
+                BlockNsfw = blockNsfw,
+                CalculateFeatures = calculateFeatures,
                 Image = image,
                 Imagename = imagename,
                 Mask = mask,

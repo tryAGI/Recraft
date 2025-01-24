@@ -11,6 +11,18 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("block_nsfw")]
+        public bool? BlockNsfw { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("calculate_features")]
+        public bool? CalculateFeatures { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required byte[] Image { get; set; }
@@ -104,6 +116,8 @@ namespace Recraft
         /// <summary>
         /// Initializes a new instance of the <see cref="TransformImageWithMaskRequest" /> class.
         /// </summary>
+        /// <param name="blockNsfw"></param>
+        /// <param name="calculateFeatures"></param>
         /// <param name="image"></param>
         /// <param name="imagename"></param>
         /// <param name="mask"></param>
@@ -124,6 +138,8 @@ namespace Recraft
             byte[] mask,
             string maskname,
             string prompt,
+            bool? blockNsfw,
+            bool? calculateFeatures,
             global::Recraft.TransformModel? model,
             int? n,
             int? randomSeed,
@@ -138,6 +154,8 @@ namespace Recraft
             this.Mask = mask ?? throw new global::System.ArgumentNullException(nameof(mask));
             this.Maskname = maskname ?? throw new global::System.ArgumentNullException(nameof(maskname));
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
+            this.BlockNsfw = blockNsfw;
+            this.CalculateFeatures = calculateFeatures;
             this.Model = model;
             this.N = n;
             this.RandomSeed = randomSeed;

@@ -6,7 +6,7 @@ namespace Recraft
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class TransformImageWithMaskRequest
+    public sealed partial class ImageToImageRequest
     {
         /// <summary>
         /// 
@@ -23,6 +23,12 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("controls")]
+        public global::Recraft.UserControls? Controls { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required byte[] Image { get; set; }
@@ -33,20 +39,6 @@ namespace Recraft
         [global::System.Text.Json.Serialization.JsonPropertyName("imagename")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Imagename { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("mask")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required byte[] Mask { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("maskname")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Maskname { get; set; }
 
         /// <summary>
         /// 
@@ -90,6 +82,13 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("strength")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required double Strength { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("style")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.ImageStyleJsonConverter))]
         public global::Recraft.ImageStyle? Style { get; set; }
@@ -120,33 +119,33 @@ namespace Recraft
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TransformImageWithMaskRequest" /> class.
+        /// Initializes a new instance of the <see cref="ImageToImageRequest" /> class.
         /// </summary>
         /// <param name="blockNsfw"></param>
         /// <param name="calculateFeatures"></param>
+        /// <param name="controls"></param>
         /// <param name="image"></param>
         /// <param name="imagename"></param>
-        /// <param name="mask"></param>
-        /// <param name="maskname"></param>
         /// <param name="model"></param>
         /// <param name="n"></param>
         /// <param name="negativePrompt"></param>
         /// <param name="prompt"></param>
         /// <param name="randomSeed"></param>
         /// <param name="responseFormat"></param>
+        /// <param name="strength"></param>
         /// <param name="style"></param>
         /// <param name="styleId"></param>
         /// <param name="substyle"></param>
         /// <param name="textLayout"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
-        public TransformImageWithMaskRequest(
+        public ImageToImageRequest(
             byte[] image,
             string imagename,
-            byte[] mask,
-            string maskname,
             string prompt,
+            double strength,
             bool? blockNsfw,
             bool? calculateFeatures,
+            global::Recraft.UserControls? controls,
             global::Recraft.TransformModel? model,
             int? n,
             string? negativePrompt,
@@ -159,11 +158,11 @@ namespace Recraft
         {
             this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
             this.Imagename = imagename ?? throw new global::System.ArgumentNullException(nameof(imagename));
-            this.Mask = mask ?? throw new global::System.ArgumentNullException(nameof(mask));
-            this.Maskname = maskname ?? throw new global::System.ArgumentNullException(nameof(maskname));
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
+            this.Strength = strength;
             this.BlockNsfw = blockNsfw;
             this.CalculateFeatures = calculateFeatures;
+            this.Controls = controls;
             this.Model = model;
             this.N = n;
             this.NegativePrompt = negativePrompt;
@@ -176,9 +175,9 @@ namespace Recraft
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TransformImageWithMaskRequest" /> class.
+        /// Initializes a new instance of the <see cref="ImageToImageRequest" /> class.
         /// </summary>
-        public TransformImageWithMaskRequest()
+        public ImageToImageRequest()
         {
         }
     }

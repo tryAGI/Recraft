@@ -42,6 +42,12 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("negative_prompt")]
+        public string? NegativePrompt { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Prompt { get; set; }
@@ -106,6 +112,7 @@ namespace Recraft
         /// <param name="controls"></param>
         /// <param name="model"></param>
         /// <param name="n"></param>
+        /// <param name="negativePrompt"></param>
         /// <param name="prompt"></param>
         /// <param name="randomSeed"></param>
         /// <param name="responseFormat"></param>
@@ -122,6 +129,7 @@ namespace Recraft
             global::Recraft.UserControls? controls,
             global::Recraft.TransformModel? model,
             int? n,
+            string? negativePrompt,
             int? randomSeed,
             global::Recraft.ResponseFormat? responseFormat,
             global::Recraft.ImageSize? size,
@@ -136,6 +144,7 @@ namespace Recraft
             this.Controls = controls;
             this.Model = model;
             this.N = n;
+            this.NegativePrompt = negativePrompt;
             this.RandomSeed = randomSeed;
             this.ResponseFormat = responseFormat;
             this.Size = size;

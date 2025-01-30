@@ -5,42 +5,42 @@ namespace Recraft
 {
     public partial class ImageClient
     {
-        partial void PrepareReplaceBackgroundArguments(
+        partial void PrepareImageToImageArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::Recraft.TransformImageWithMaskRequest request);
-        partial void PrepareReplaceBackgroundRequest(
+            global::Recraft.ImageToImageRequest request);
+        partial void PrepareImageToImageRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::Recraft.TransformImageWithMaskRequest request);
-        partial void ProcessReplaceBackgroundResponse(
+            global::Recraft.ImageToImageRequest request);
+        partial void ProcessImageToImageResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessReplaceBackgroundResponseContent(
+        partial void ProcessImageToImageResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Replace Background
+        /// Generate image from image and prompt
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Recraft.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> ReplaceBackgroundAsync(
-            global::Recraft.TransformImageWithMaskRequest request,
+        public async global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> ImageToImageAsync(
+            global::Recraft.ImageToImageRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
                 client: HttpClient);
-            PrepareReplaceBackgroundArguments(
+            PrepareImageToImageArguments(
                 httpClient: HttpClient,
                 request: request);
 
             var __pathBuilder = new PathBuilder(
-                path: "/v1/images/replaceBackground",
+                path: "/v1/images/imageToImage",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -79,14 +79,16 @@ namespace Recraft
                     content: new global::System.Net.Http.StringContent($"{request.CalculateFeatures}"),
                     name: "calculate_features");
             } 
+            if (request.Controls != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.Controls}"),
+                    name: "controls");
+            } 
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.ByteArrayContent(request.Image ?? global::System.Array.Empty<byte>()),
                 name: "image",
                 fileName: request.Imagename ?? string.Empty);
-            __httpRequestContent.Add(
-                content: new global::System.Net.Http.ByteArrayContent(request.Mask ?? global::System.Array.Empty<byte>()),
-                name: "mask",
-                fileName: request.Maskname ?? string.Empty);
             if (request.Model != default)
             {
                 __httpRequestContent.Add(
@@ -120,6 +122,9 @@ namespace Recraft
                     content: new global::System.Net.Http.StringContent($"{request.ResponseFormat?.ToValueString()}"),
                     name: "response_format");
             } 
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.StringContent($"{request.Strength}"),
+                name: "strength");
             if (request.Style != default)
             {
                 __httpRequestContent.Add(
@@ -149,7 +154,7 @@ namespace Recraft
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareReplaceBackgroundRequest(
+            PrepareImageToImageRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 request: request);
@@ -162,7 +167,7 @@ namespace Recraft
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessReplaceBackgroundResponse(
+            ProcessImageToImageResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
 
@@ -174,7 +179,7 @@ namespace Recraft
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessReplaceBackgroundResponseContent(
+                ProcessImageToImageResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -231,34 +236,34 @@ namespace Recraft
         }
 
         /// <summary>
-        /// Replace Background
+        /// Generate image from image and prompt
         /// </summary>
         /// <param name="blockNsfw"></param>
         /// <param name="calculateFeatures"></param>
+        /// <param name="controls"></param>
         /// <param name="image"></param>
         /// <param name="imagename"></param>
-        /// <param name="mask"></param>
-        /// <param name="maskname"></param>
         /// <param name="model"></param>
         /// <param name="n"></param>
         /// <param name="negativePrompt"></param>
         /// <param name="prompt"></param>
         /// <param name="randomSeed"></param>
         /// <param name="responseFormat"></param>
+        /// <param name="strength"></param>
         /// <param name="style"></param>
         /// <param name="styleId"></param>
         /// <param name="substyle"></param>
         /// <param name="textLayout"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> ReplaceBackgroundAsync(
+        public async global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> ImageToImageAsync(
             byte[] image,
             string imagename,
-            byte[] mask,
-            string maskname,
             string prompt,
+            double strength,
             bool? blockNsfw = default,
             bool? calculateFeatures = default,
+            global::Recraft.UserControls? controls = default,
             global::Recraft.TransformModel? model = default,
             int? n = default,
             string? negativePrompt = default,
@@ -270,27 +275,27 @@ namespace Recraft
             global::System.Collections.Generic.IList<global::Recraft.TextLayoutItem>? textLayout = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::Recraft.TransformImageWithMaskRequest
+            var __request = new global::Recraft.ImageToImageRequest
             {
                 BlockNsfw = blockNsfw,
                 CalculateFeatures = calculateFeatures,
+                Controls = controls,
                 Image = image,
                 Imagename = imagename,
-                Mask = mask,
-                Maskname = maskname,
                 Model = model,
                 N = n,
                 NegativePrompt = negativePrompt,
                 Prompt = prompt,
                 RandomSeed = randomSeed,
                 ResponseFormat = responseFormat,
+                Strength = strength,
                 Style = style,
                 StyleId = styleId,
                 Substyle = substyle,
                 TextLayout = textLayout,
             };
 
-            return await ReplaceBackgroundAsync(
+            return await ImageToImageAsync(
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

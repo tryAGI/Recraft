@@ -99,6 +99,12 @@ namespace Recraft
                     content: new global::System.Net.Http.StringContent($"{request.N}"),
                     name: "n");
             } 
+            if (request.NegativePrompt != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.NegativePrompt}"),
+                    name: "negative_prompt");
+            } 
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{request.Prompt}"),
                 name: "prompt");
@@ -235,6 +241,7 @@ namespace Recraft
         /// <param name="maskname"></param>
         /// <param name="model"></param>
         /// <param name="n"></param>
+        /// <param name="negativePrompt"></param>
         /// <param name="prompt"></param>
         /// <param name="randomSeed"></param>
         /// <param name="responseFormat"></param>
@@ -254,6 +261,7 @@ namespace Recraft
             bool? calculateFeatures = default,
             global::Recraft.TransformModel? model = default,
             int? n = default,
+            string? negativePrompt = default,
             int? randomSeed = default,
             global::Recraft.ResponseFormat? responseFormat = default,
             global::Recraft.ImageStyle? style = default,
@@ -272,6 +280,7 @@ namespace Recraft
                 Maskname = maskname,
                 Model = model,
                 N = n,
+                NegativePrompt = negativePrompt,
                 Prompt = prompt,
                 RandomSeed = randomSeed,
                 ResponseFormat = responseFormat,

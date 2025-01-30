@@ -134,46 +134,50 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.ListBasicStylesResponse? Type27 { get; set; }
+        public global::Recraft.ImageToImageRequest? Type27 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Recraft.BasicStyle>? Type28 { get; set; }
+        public global::Recraft.ListBasicStylesResponse? Type28 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.ListStylesResponse? Type29 { get; set; }
+        public global::System.Collections.Generic.IList<global::Recraft.BasicStyle>? Type29 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Recraft.Style>? Type30 { get; set; }
+        public global::Recraft.ListStylesResponse? Type30 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.Style? Type31 { get; set; }
+        public global::System.Collections.Generic.IList<global::Recraft.Style>? Type31 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.DateTime? Type32 { get; set; }
+        public global::Recraft.Style? Type32 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.ProcessImageRequest? Type33 { get; set; }
+        public global::System.DateTime? Type33 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.ProcessImageResponse? Type34 { get; set; }
+        public global::Recraft.ProcessImageRequest? Type34 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.TransformImageWithMaskRequest? Type35 { get; set; }
+        public global::Recraft.ProcessImageResponse? Type35 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.User? Type36 { get; set; }
+        public global::Recraft.TransformImageWithMaskRequest? Type36 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public object? Type37 { get; set; }
+        public global::Recraft.User? Type37 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public object? Type38 { get; set; }
     }
 }

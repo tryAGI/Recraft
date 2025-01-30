@@ -22,6 +22,7 @@ namespace Recraft
         /// <param name="controls"></param>
         /// <param name="model"></param>
         /// <param name="n"></param>
+        /// <param name="negativePrompt"></param>
         /// <param name="prompt"></param>
         /// <param name="randomSeed"></param>
         /// <param name="responseFormat"></param>
@@ -39,6 +40,7 @@ namespace Recraft
             global::Recraft.UserControls? controls = default,
             global::Recraft.TransformModel? model = default,
             int? n = default,
+            string? negativePrompt = default,
             int? randomSeed = default,
             global::Recraft.ResponseFormat? responseFormat = default,
             global::Recraft.ImageSize? size = default,

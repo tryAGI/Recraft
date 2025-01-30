@@ -84,6 +84,24 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProcessImageResponse'
       deprecated: true
+  /v1/images/imageToImage:
+    post:
+      tags:
+        - image
+      summary: Generate image from image and prompt
+      operationId: ImageToImage
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ImageToImageRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenerateImageResponse'
   /v1/images/inpaint:
     post:
       tags:
@@ -303,6 +321,8 @@ components:
           $ref: '#/components/schemas/TransformModel'
         n:
           type: integer
+        negative_prompt:
+          type: string
         prompt:
           type: string
         random_seed:
@@ -449,6 +469,50 @@ components:
         - handmade_3d
         - stickers_drawings
       type: string
+    ImageToImageRequest:
+      required:
+        - prompt
+        - image
+        - strength
+      type: object
+      properties:
+        block_nsfw:
+          type: boolean
+        calculate_features:
+          type: boolean
+        controls:
+          $ref: '#/components/schemas/UserControls'
+        image:
+          type: string
+          format: binary
+        model:
+          $ref: '#/components/schemas/TransformModel'
+        n:
+          type: integer
+        negative_prompt:
+          type: string
+        prompt:
+          type: string
+        random_seed:
+          type: integer
+          format: uint32
+        response_format:
+          $ref: '#/components/schemas/ResponseFormat'
+        strength:
+          type: number
+        style:
+          $ref: '#/components/schemas/ImageStyle'
+        style_id:
+          type: string
+          format: uuid
+          x-go-name: StyleID
+          x-go-type: uuid.UUID
+          x-go-type-import:
+            path: github.com/gofrs/uuid/v5
+        substyle:
+          $ref: '#/components/schemas/ImageSubStyle'
+        text_layout:
+          $ref: '#/components/schemas/TextLayout'
     ListBasicStylesResponse:
       required:
         - styles
@@ -556,6 +620,8 @@ components:
           $ref: '#/components/schemas/TransformModel'
         n:
           type: integer
+        negative_prompt:
+          type: string
         prompt:
           type: string
         random_seed:

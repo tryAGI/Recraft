@@ -11,6 +11,17 @@ paths:
       responses:
         '200':
           description: OK
+  /status:
+    get:
+      summary: Get System Status
+      operationId: GetSystemStatus
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SystemStatus'
   /v1/images/clarityUpscale:
     post:
       tags:
@@ -29,12 +40,31 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProcessImageResponse'
+      deprecated: true
   /v1/images/creativeUpscale:
     post:
       tags:
         - image
       summary: Creative Upscale
       operationId: CreativeUpscale
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ProcessImageRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProcessImageResponse'
+  /v1/images/crispUpscale:
+    post:
+      tags:
+        - image
+      summary: Crisp Upscale
+      operationId: CrispUpscale
       requestBody:
         content:
           multipart/form-data:
@@ -580,6 +610,16 @@ components:
           $ref: '#/components/schemas/ImageStyle'
         substyle:
           $ref: '#/components/schemas/ImageSubStyle'
+    SystemStatus:
+      required:
+        - service
+        - generation
+      type: object
+      properties:
+        generation:
+          type: boolean
+        service:
+          type: boolean
     TextLayout:
       type: array
       items:

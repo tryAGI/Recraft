@@ -33,7 +33,9 @@ namespace Recraft
         /// </summary>
         /// <param name="generation"></param>
         /// <param name="service"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SystemStatus(
             bool generation,
             bool service)

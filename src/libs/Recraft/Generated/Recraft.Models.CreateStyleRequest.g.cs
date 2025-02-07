@@ -41,7 +41,9 @@ namespace Recraft
         /// <param name="images"></param>
         /// <param name="private"></param>
         /// <param name="style"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateStyleRequest(
             global::System.Collections.Generic.IList<byte[]> images,
             global::Recraft.ImageStyle style,

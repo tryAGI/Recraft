@@ -45,7 +45,9 @@ namespace Recraft
         /// <param name="backgroundColor"></param>
         /// <param name="colors"></param>
         /// <param name="noText"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UserControls(
             int? artisticLevel,
             global::Recraft.ImageColor? backgroundColor,

@@ -25,7 +25,9 @@ namespace Recraft
         /// Initializes a new instance of the <see cref="ListStylesResponse" /> class.
         /// </summary>
         /// <param name="styles"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ListStylesResponse(
             global::System.Collections.Generic.IList<global::Recraft.Style> styles)
         {

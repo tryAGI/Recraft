@@ -38,7 +38,9 @@ namespace Recraft
         /// <param name="rgb"></param>
         /// <param name="std"></param>
         /// <param name="weight"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ImageColor(
             global::System.Collections.Generic.IList<int>? rgb,
             global::System.Collections.Generic.IList<double>? std,

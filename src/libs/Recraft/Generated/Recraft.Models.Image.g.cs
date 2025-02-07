@@ -53,7 +53,9 @@ namespace Recraft
         /// <param name="imageId"></param>
         /// <param name="revisedPrompt"></param>
         /// <param name="url"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Image(
             global::System.Guid imageId,
             string? b64Json,

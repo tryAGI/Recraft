@@ -58,7 +58,9 @@ namespace Recraft
         /// <param name="isPrivate"></param>
         /// <param name="style1"></param>
         /// <param name="substyle"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Style(
             global::System.DateTime creationTime,
             global::System.Guid id,

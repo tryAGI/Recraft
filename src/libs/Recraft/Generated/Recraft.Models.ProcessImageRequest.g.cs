@@ -41,7 +41,9 @@ namespace Recraft
         /// <param name="image"></param>
         /// <param name="imagename"></param>
         /// <param name="responseFormat"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ProcessImageRequest(
             byte[] image,
             string imagename,

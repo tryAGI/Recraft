@@ -43,7 +43,9 @@ namespace Recraft
         /// <param name="model"></param>
         /// <param name="style"></param>
         /// <param name="substyle"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BasicStyle(
             global::Recraft.TransformModel model,
             global::Recraft.ImageStyle style,

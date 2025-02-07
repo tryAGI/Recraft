@@ -137,7 +137,9 @@ namespace Recraft
         /// <param name="styleId"></param>
         /// <param name="substyle"></param>
         /// <param name="textLayout"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ImageToImageRequest(
             byte[] image,
             string imagename,

@@ -33,7 +33,9 @@ namespace Recraft
         /// </summary>
         /// <param name="bbox"></param>
         /// <param name="text"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TextLayoutItem(
             global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>> bbox,
             string text)

@@ -498,6 +498,8 @@ components:
         - hand_drawn_outline
         - handmade_3d
         - stickers_drawings
+        - plastic
+        - pictogram
       type: string
     ImageToImageRequest:
       required:

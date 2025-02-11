@@ -184,6 +184,14 @@ namespace Recraft
         /// 
         /// </summary>
         StickersDrawings,
+        /// <summary>
+        /// 
+        /// </summary>
+        Plastic,
+        /// <summary>
+        /// 
+        /// </summary>
+        Pictogram,
     }
 
     /// <summary>
@@ -242,6 +250,8 @@ namespace Recraft
                 ImageSubStyle.HandDrawnOutline => "hand_drawn_outline",
                 ImageSubStyle.Handmade3d => "handmade_3d",
                 ImageSubStyle.StickersDrawings => "stickers_drawings",
+                ImageSubStyle.Plastic => "plastic",
+                ImageSubStyle.Pictogram => "pictogram",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -296,6 +306,8 @@ namespace Recraft
                 "hand_drawn_outline" => ImageSubStyle.HandDrawnOutline,
                 "handmade_3d" => ImageSubStyle.Handmade3d,
                 "stickers_drawings" => ImageSubStyle.StickersDrawings,
+                "plastic" => ImageSubStyle.Plastic,
+                "pictogram" => ImageSubStyle.Pictogram,
                 _ => null,
             };
         }

@@ -3,44 +3,44 @@
 
 namespace Recraft
 {
-    public partial class StyleClient
+    public partial class ImageClient
     {
-        partial void PrepareCreateStyleArguments(
+        partial void PrepareEraseRegionArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::Recraft.CreateStyleRequest request);
-        partial void PrepareCreateStyleRequest(
+            global::Recraft.EraseRegionRequest request);
+        partial void PrepareEraseRegionRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::Recraft.CreateStyleRequest request);
-        partial void ProcessCreateStyleResponse(
+            global::Recraft.EraseRegionRequest request);
+        partial void ProcessEraseRegionResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessCreateStyleResponseContent(
+        partial void ProcessEraseRegionResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Create Style
+        /// Erase Region
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Recraft.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Recraft.CreateStyleResponse> CreateStyleAsync(
-            global::Recraft.CreateStyleRequest request,
+        public async global::System.Threading.Tasks.Task<global::Recraft.ProcessImageResponse> EraseRegionAsync(
+            global::Recraft.EraseRegionRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
                 client: HttpClient);
-            PrepareCreateStyleArguments(
+            PrepareEraseRegionArguments(
                 httpClient: HttpClient,
                 request: request);
 
             var __pathBuilder = new PathBuilder(
-                path: "/v1/styles",
+                path: "/v1/images/eraseRegion",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -68,23 +68,25 @@ namespace Recraft
             }
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
             __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Images, x => x))}]"),
-                name: "images");
-            if (request.Private != default)
+                content: new global::System.Net.Http.ByteArrayContent(request.Image ?? global::System.Array.Empty<byte>()),
+                name: "image",
+                fileName: request.Imagename ?? string.Empty);
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.ByteArrayContent(request.Mask ?? global::System.Array.Empty<byte>()),
+                name: "mask",
+                fileName: request.Maskname ?? string.Empty);
+            if (request.ResponseFormat != default)
             {
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.Private}"),
-                    name: "private");
-            } 
-            __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent($"{request.Style.ToValueString()}"),
-                name: "style");
+                    content: new global::System.Net.Http.StringContent($"{request.ResponseFormat?.ToValueString()}"),
+                    name: "response_format");
+            }
             __httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareCreateStyleRequest(
+            PrepareEraseRegionRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 request: request);
@@ -97,7 +99,7 @@ namespace Recraft
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessCreateStyleResponse(
+            ProcessEraseRegionResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
 
@@ -113,7 +115,7 @@ namespace Recraft
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessCreateStyleResponseContent(
+                ProcessEraseRegionResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -138,7 +140,7 @@ namespace Recraft
                 }
 
                 return
-                    global::Recraft.CreateStyleResponse.FromJson(__content, JsonSerializerContext) ??
+                    global::Recraft.ProcessImageResponse.FromJson(__content, JsonSerializerContext) ??
                     throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
             }
             else
@@ -168,33 +170,39 @@ namespace Recraft
                 ).ConfigureAwait(false);
 
                 return
-                    await global::Recraft.CreateStyleResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                    await global::Recraft.ProcessImageResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                     throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
         }
 
         /// <summary>
-        /// Create Style
+        /// Erase Region
         /// </summary>
-        /// <param name="images"></param>
-        /// <param name="private"></param>
-        /// <param name="style"></param>
+        /// <param name="image"></param>
+        /// <param name="imagename"></param>
+        /// <param name="mask"></param>
+        /// <param name="maskname"></param>
+        /// <param name="responseFormat"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Recraft.CreateStyleResponse> CreateStyleAsync(
-            global::System.Collections.Generic.IList<byte[]> images,
-            global::Recraft.ImageStyle style,
-            bool? @private = default,
+        public async global::System.Threading.Tasks.Task<global::Recraft.ProcessImageResponse> EraseRegionAsync(
+            byte[] image,
+            string imagename,
+            byte[] mask,
+            string maskname,
+            global::Recraft.ResponseFormat? responseFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::Recraft.CreateStyleRequest
+            var __request = new global::Recraft.EraseRegionRequest
             {
-                Images = images,
-                Private = @private,
-                Style = style,
+                Image = image,
+                Imagename = imagename,
+                Mask = mask,
+                Maskname = maskname,
+                ResponseFormat = responseFormat,
             };
 
-            return await CreateStyleAsync(
+            return await EraseRegionAsync(
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

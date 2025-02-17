@@ -58,130 +58,142 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.GenerateImageRequest? Type8 { get; set; }
+        public global::Recraft.CreateStyleResponse? Type8 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.UserControls? Type9 { get; set; }
+        public global::Recraft.Style? Type9 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public int? Type10 { get; set; }
+        public global::System.DateTime? Type10 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.ImageColor? Type11 { get; set; }
+        public global::System.Guid? Type11 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<int>? Type12 { get; set; }
+        public global::Recraft.CreateStyleResponseVariant2? Type12 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<double>? Type13 { get; set; }
+        public int? Type13 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public double? Type14 { get; set; }
+        public global::Recraft.EraseRegionRequest? Type14 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Recraft.ImageColor>? Type15 { get; set; }
+        public global::Recraft.ResponseFormat? Type15 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public string? Type16 { get; set; }
+        public global::Recraft.GenerateImageRequest? Type16 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.ResponseFormat? Type17 { get; set; }
+        public global::Recraft.UserControls? Type17 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.ImageSize? Type18 { get; set; }
+        public global::Recraft.ImageColor? Type18 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Guid? Type19 { get; set; }
+        public global::System.Collections.Generic.IList<int>? Type19 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Recraft.TextLayoutItem>? Type20 { get; set; }
+        public global::System.Collections.Generic.IList<double>? Type20 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.TextLayoutItem? Type21 { get; set; }
+        public double? Type21 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>? Type22 { get; set; }
+        public global::System.Collections.Generic.IList<global::Recraft.ImageColor>? Type22 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.GenerateImageResponse? Type23 { get; set; }
+        public string? Type23 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Recraft.Image>? Type24 { get; set; }
+        public global::Recraft.ImageSize? Type24 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.Image? Type25 { get; set; }
+        public global::System.Collections.Generic.IList<global::Recraft.TextLayoutItem>? Type25 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.ImageFeatures? Type26 { get; set; }
+        public global::Recraft.TextLayoutItem? Type26 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.ImageToImageRequest? Type27 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>? Type27 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.ListBasicStylesResponse? Type28 { get; set; }
+        public global::Recraft.GenerateImageResponse? Type28 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Recraft.BasicStyle>? Type29 { get; set; }
+        public global::System.Collections.Generic.IList<global::Recraft.Image>? Type29 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.ListStylesResponse? Type30 { get; set; }
+        public global::Recraft.Image? Type30 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Recraft.Style>? Type31 { get; set; }
+        public global::Recraft.ImageFeatures? Type31 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.Style? Type32 { get; set; }
+        public global::Recraft.ImageToImageRequest? Type32 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.DateTime? Type33 { get; set; }
+        public global::Recraft.ListBasicStylesResponse? Type33 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.ProcessImageRequest? Type34 { get; set; }
+        public global::System.Collections.Generic.IList<global::Recraft.BasicStyle>? Type34 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.ProcessImageResponse? Type35 { get; set; }
+        public global::Recraft.ListStylesResponse? Type35 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.SystemStatus? Type36 { get; set; }
+        public global::System.Collections.Generic.IList<global::Recraft.Style>? Type36 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.TransformImageWithMaskRequest? Type37 { get; set; }
+        public global::Recraft.ProcessImageRequest? Type37 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.User? Type38 { get; set; }
+        public global::Recraft.ProcessImageResponse? Type38 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public object? Type39 { get; set; }
+        public global::Recraft.SystemStatus? Type39 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Recraft.TransformImageWithMaskRequest? Type40 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Recraft.User? Type41 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public object? Type42 { get; set; }
     }
 }

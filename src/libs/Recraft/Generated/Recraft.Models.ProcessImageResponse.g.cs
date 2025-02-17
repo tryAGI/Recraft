@@ -18,6 +18,13 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("credits")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int Credits { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Recraft.Image Image { get; set; }
@@ -32,15 +39,18 @@ namespace Recraft
         /// Initializes a new instance of the <see cref="ProcessImageResponse" /> class.
         /// </summary>
         /// <param name="created"></param>
+        /// <param name="credits"></param>
         /// <param name="image"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ProcessImageResponse(
             int created,
+            int credits,
             global::Recraft.Image image)
         {
             this.Created = created;
+            this.Credits = credits;
             this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
         }
 

@@ -77,6 +77,42 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProcessImageResponse'
+  /v1/images/eraseRegion:
+    post:
+      tags:
+        - image
+      summary: Erase Region
+      operationId: EraseRegion
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/EraseRegionRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProcessImageResponse'
+  /v1/images/generateBackground:
+    post:
+      tags:
+        - image
+      summary: Generate Background
+      operationId: GenerateBackground
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TransformImageWithMaskRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenerateImageResponse'
   /v1/images/generations:
     post:
       tags:
@@ -233,7 +269,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Style'
+                $ref: '#/components/schemas/CreateStyleResponse'
   /v1/styles/basic:
     get:
       tags:
@@ -336,6 +372,29 @@ components:
           type: boolean
         style:
           $ref: '#/components/schemas/ImageStyle'
+    CreateStyleResponse:
+      allOf:
+        - $ref: '#/components/schemas/Style'
+        - required:
+            - credits
+          type: object
+          properties:
+            credits:
+              type: integer
+    EraseRegionRequest:
+      required:
+        - image
+        - mask
+      type: object
+      properties:
+        image:
+          type: string
+          format: binary
+        mask:
+          type: string
+          format: binary
+        response_format:
+          $ref: '#/components/schemas/ResponseFormat'
     GenerateImageRequest:
       required:
         - prompt
@@ -379,9 +438,12 @@ components:
       required:
         - created
         - data
+        - credits
       type: object
       properties:
         created:
+          type: integer
+        credits:
           type: integer
         data:
           type: array
@@ -577,9 +639,12 @@ components:
       required:
         - created
         - image
+        - credits
       type: object
       properties:
         created:
+          type: integer
+        credits:
           type: integer
         image:
           $ref: '#/components/schemas/Image'

@@ -71,6 +71,12 @@ namespace Recraft
                 content: new global::System.Net.Http.ByteArrayContent(request.Image ?? global::System.Array.Empty<byte>()),
                 name: "image",
                 fileName: request.Imagename ?? string.Empty);
+            if (request.ImageFormat != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.ImageFormat?.ToValueString()}"),
+                    name: "image_format");
+            } 
             if (request.ResponseFormat != default)
             {
                 __httpRequestContent.Add(
@@ -176,12 +182,14 @@ namespace Recraft
         /// </summary>
         /// <param name="image"></param>
         /// <param name="imagename"></param>
+        /// <param name="imageFormat"></param>
         /// <param name="responseFormat"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Recraft.ProcessImageResponse> CreativeUpscaleAsync(
             byte[] image,
             string imagename,
+            global::Recraft.ImageFormat? imageFormat = default,
             global::Recraft.ResponseFormat? responseFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -189,6 +197,7 @@ namespace Recraft
             {
                 Image = image,
                 Imagename = imagename,
+                ImageFormat = imageFormat,
                 ResponseFormat = responseFormat,
             };
 

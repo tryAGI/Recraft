@@ -37,6 +37,13 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("image_format")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.ImageFormatJsonConverter))]
+        public global::Recraft.ImageFormat? ImageFormat { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mask")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required byte[] Mask { get; set; }
@@ -126,6 +133,7 @@ namespace Recraft
         /// <param name="calculateFeatures"></param>
         /// <param name="image"></param>
         /// <param name="imagename"></param>
+        /// <param name="imageFormat"></param>
         /// <param name="mask"></param>
         /// <param name="maskname"></param>
         /// <param name="model"></param>
@@ -149,6 +157,7 @@ namespace Recraft
             string prompt,
             bool? blockNsfw,
             bool? calculateFeatures,
+            global::Recraft.ImageFormat? imageFormat,
             global::Recraft.TransformModel? model,
             int? n,
             string? negativePrompt,
@@ -166,6 +175,7 @@ namespace Recraft
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.BlockNsfw = blockNsfw;
             this.CalculateFeatures = calculateFeatures;
+            this.ImageFormat = imageFormat;
             this.Model = model;
             this.N = n;
             this.NegativePrompt = negativePrompt;

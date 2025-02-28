@@ -19,6 +19,8 @@ namespace Recraft
             typeof(global::Recraft.JsonConverters.ImageStyleNullableJsonConverter),
             typeof(global::Recraft.JsonConverters.ImageSubStyleJsonConverter),
             typeof(global::Recraft.JsonConverters.ImageSubStyleNullableJsonConverter),
+            typeof(global::Recraft.JsonConverters.ImageFormatJsonConverter),
+            typeof(global::Recraft.JsonConverters.ImageFormatNullableJsonConverter),
             typeof(global::Recraft.JsonConverters.ResponseFormatJsonConverter),
             typeof(global::Recraft.JsonConverters.ResponseFormatNullableJsonConverter),
             typeof(global::Recraft.JsonConverters.ImageSizeJsonConverter),

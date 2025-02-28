@@ -29,6 +29,13 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("image_format")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.ImageFormatJsonConverter))]
+        public global::Recraft.ImageFormat? ImageFormat { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.TransformModelJsonConverter))]
         public global::Recraft.TransformModel? Model { get; set; }
@@ -110,6 +117,7 @@ namespace Recraft
         /// <param name="blockNsfw"></param>
         /// <param name="calculateFeatures"></param>
         /// <param name="controls"></param>
+        /// <param name="imageFormat"></param>
         /// <param name="model"></param>
         /// <param name="n"></param>
         /// <param name="negativePrompt"></param>
@@ -129,6 +137,7 @@ namespace Recraft
             bool? blockNsfw,
             bool? calculateFeatures,
             global::Recraft.UserControls? controls,
+            global::Recraft.ImageFormat? imageFormat,
             global::Recraft.TransformModel? model,
             int? n,
             string? negativePrompt,
@@ -144,6 +153,7 @@ namespace Recraft
             this.BlockNsfw = blockNsfw;
             this.CalculateFeatures = calculateFeatures;
             this.Controls = controls;
+            this.ImageFormat = imageFormat;
             this.Model = model;
             this.N = n;
             this.NegativePrompt = negativePrompt;

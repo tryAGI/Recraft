@@ -21,6 +21,7 @@ namespace Recraft
         /// <param name="calculateFeatures"></param>
         /// <param name="image"></param>
         /// <param name="imagename"></param>
+        /// <param name="imageFormat"></param>
         /// <param name="mask"></param>
         /// <param name="maskname"></param>
         /// <param name="model"></param>
@@ -43,6 +44,7 @@ namespace Recraft
             string prompt,
             bool? blockNsfw = default,
             bool? calculateFeatures = default,
+            global::Recraft.ImageFormat? imageFormat = default,
             global::Recraft.TransformModel? model = default,
             int? n = default,
             string? negativePrompt = default,

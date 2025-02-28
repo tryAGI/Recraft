@@ -25,6 +25,13 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("image_format")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.ImageFormatJsonConverter))]
+        public global::Recraft.ImageFormat? ImageFormat { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mask")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required byte[] Mask { get; set; }
@@ -54,6 +61,7 @@ namespace Recraft
         /// </summary>
         /// <param name="image"></param>
         /// <param name="imagename"></param>
+        /// <param name="imageFormat"></param>
         /// <param name="mask"></param>
         /// <param name="maskname"></param>
         /// <param name="responseFormat"></param>
@@ -65,12 +73,14 @@ namespace Recraft
             string imagename,
             byte[] mask,
             string maskname,
+            global::Recraft.ImageFormat? imageFormat,
             global::Recraft.ResponseFormat? responseFormat)
         {
             this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
             this.Imagename = imagename ?? throw new global::System.ArgumentNullException(nameof(imagename));
             this.Mask = mask ?? throw new global::System.ArgumentNullException(nameof(mask));
             this.Maskname = maskname ?? throw new global::System.ArgumentNullException(nameof(maskname));
+            this.ImageFormat = imageFormat;
             this.ResponseFormat = responseFormat;
         }
 

@@ -83,6 +83,12 @@ namespace Recraft
                 content: new global::System.Net.Http.ByteArrayContent(request.Image ?? global::System.Array.Empty<byte>()),
                 name: "image",
                 fileName: request.Imagename ?? string.Empty);
+            if (request.ImageFormat != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.ImageFormat?.ToValueString()}"),
+                    name: "image_format");
+            } 
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.ByteArrayContent(request.Mask ?? global::System.Array.Empty<byte>()),
                 name: "mask",
@@ -245,6 +251,7 @@ namespace Recraft
         /// <param name="calculateFeatures"></param>
         /// <param name="image"></param>
         /// <param name="imagename"></param>
+        /// <param name="imageFormat"></param>
         /// <param name="mask"></param>
         /// <param name="maskname"></param>
         /// <param name="model"></param>
@@ -267,6 +274,7 @@ namespace Recraft
             string prompt,
             bool? blockNsfw = default,
             bool? calculateFeatures = default,
+            global::Recraft.ImageFormat? imageFormat = default,
             global::Recraft.TransformModel? model = default,
             int? n = default,
             string? negativePrompt = default,
@@ -284,6 +292,7 @@ namespace Recraft
                 CalculateFeatures = calculateFeatures,
                 Image = image,
                 Imagename = imagename,
+                ImageFormat = imageFormat,
                 Mask = mask,
                 Maskname = maskname,
                 Model = model,

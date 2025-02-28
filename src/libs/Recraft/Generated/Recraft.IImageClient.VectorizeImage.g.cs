@@ -19,12 +19,14 @@ namespace Recraft
         /// </summary>
         /// <param name="image"></param>
         /// <param name="imagename"></param>
+        /// <param name="imageFormat"></param>
         /// <param name="responseFormat"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Recraft.ProcessImageResponse> VectorizeImageAsync(
             byte[] image,
             string imagename,
+            global::Recraft.ImageFormat? imageFormat = default,
             global::Recraft.ResponseFormat? responseFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

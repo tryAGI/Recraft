@@ -19,6 +19,7 @@ namespace Recraft
         /// </summary>
         /// <param name="image"></param>
         /// <param name="imagename"></param>
+        /// <param name="imageFormat"></param>
         /// <param name="mask"></param>
         /// <param name="maskname"></param>
         /// <param name="responseFormat"></param>
@@ -29,6 +30,7 @@ namespace Recraft
             string imagename,
             byte[] mask,
             string maskname,
+            global::Recraft.ImageFormat? imageFormat = default,
             global::Recraft.ResponseFormat? responseFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

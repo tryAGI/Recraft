@@ -171,6 +171,7 @@ namespace Recraft
         /// <param name="blockNsfw"></param>
         /// <param name="calculateFeatures"></param>
         /// <param name="controls"></param>
+        /// <param name="imageFormat"></param>
         /// <param name="model"></param>
         /// <param name="n"></param>
         /// <param name="negativePrompt"></param>
@@ -189,6 +190,7 @@ namespace Recraft
             bool? blockNsfw = default,
             bool? calculateFeatures = default,
             global::Recraft.UserControls? controls = default,
+            global::Recraft.ImageFormat? imageFormat = default,
             global::Recraft.TransformModel? model = default,
             int? n = default,
             string? negativePrompt = default,
@@ -206,6 +208,7 @@ namespace Recraft
                 BlockNsfw = blockNsfw,
                 CalculateFeatures = calculateFeatures,
                 Controls = controls,
+                ImageFormat = imageFormat,
                 Model = model,
                 N = n,
                 NegativePrompt = negativePrompt,

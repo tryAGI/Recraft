@@ -32,6 +32,10 @@ namespace Recraft
         /// 
         /// </summary>
         Flux1dev,
+        /// <summary>
+        /// 
+        /// </summary>
+        Imagen3,
     }
 
     /// <summary>
@@ -52,6 +56,7 @@ namespace Recraft
                 TransformModel.Recraftv3 => "recraftv3",
                 TransformModel.Flux11pro => "flux1_1pro",
                 TransformModel.Flux1dev => "flux1dev",
+                TransformModel.Imagen3 => "imagen3",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -68,6 +73,7 @@ namespace Recraft
                 "recraftv3" => TransformModel.Recraftv3,
                 "flux1_1pro" => TransformModel.Flux11pro,
                 "flux1dev" => TransformModel.Flux1dev,
+                "imagen3" => TransformModel.Imagen3,
                 _ => null,
             };
         }

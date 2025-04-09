@@ -772,6 +772,7 @@ components:
         - recraftv3
         - flux1_1pro
         - flux1dev
+        - imagen3
       type: string
     User:
       required:

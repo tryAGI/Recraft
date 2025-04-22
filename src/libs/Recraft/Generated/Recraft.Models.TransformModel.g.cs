@@ -36,6 +36,10 @@ namespace Recraft
         /// 
         /// </summary>
         Imagen3,
+        /// <summary>
+        /// 
+        /// </summary>
+        HidreamI1Dev,
     }
 
     /// <summary>
@@ -57,6 +61,7 @@ namespace Recraft
                 TransformModel.Flux11pro => "flux1_1pro",
                 TransformModel.Flux1dev => "flux1dev",
                 TransformModel.Imagen3 => "imagen3",
+                TransformModel.HidreamI1Dev => "hidream_i1_dev",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -74,6 +79,7 @@ namespace Recraft
                 "flux1_1pro" => TransformModel.Flux11pro,
                 "flux1dev" => TransformModel.Flux1dev,
                 "imagen3" => TransformModel.Imagen3,
+                "hidream_i1_dev" => TransformModel.HidreamI1Dev,
                 _ => null,
             };
         }

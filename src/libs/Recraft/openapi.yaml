@@ -773,6 +773,7 @@ components:
         - flux1_1pro
         - flux1dev
         - imagen3
+        - hidream_i1_dev
       type: string
     User:
       required:

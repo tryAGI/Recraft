@@ -29,7 +29,7 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CreateStyleResponse(global::Recraft.Style value) => new CreateStyleResponse(value);
+        public static implicit operator CreateStyleResponse(global::Recraft.Style value) => new CreateStyleResponse((global::Recraft.Style?)value);
 
         /// <summary>
         /// 
@@ -64,7 +64,7 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CreateStyleResponse(global::Recraft.CreateStyleResponseVariant2 value) => new CreateStyleResponse(value);
+        public static implicit operator CreateStyleResponse(global::Recraft.CreateStyleResponseVariant2 value) => new CreateStyleResponse((global::Recraft.CreateStyleResponseVariant2?)value);
 
         /// <summary>
         /// 

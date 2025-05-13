@@ -28,6 +28,10 @@ namespace Recraft.JsonConverters
                     var numValue = reader.GetInt32();
                     return (global::Recraft.ImageSubStyle)numValue;
                 }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::Recraft.ImageSubStyle?);
+                }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
             }

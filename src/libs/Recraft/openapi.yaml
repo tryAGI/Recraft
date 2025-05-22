@@ -3,6 +3,8 @@ info:
   title: recraft.ai external api
   version: 0.0.1
 servers:
+  - url: https://external.api.recraft.ai
+    description: Production
   - url: https://external.api.recraft.ai/
 paths:
   /ping:
@@ -214,7 +216,7 @@ paths:
         content:
           multipart/form-data:
             schema:
-              $ref: '#/components/schemas/TransformImageWithMaskRequest'
+              $ref: '#/components/schemas/TransformImageRequest'
       responses:
         '200':
           description: OK
@@ -719,10 +721,9 @@ components:
               x-go-type: float32
         text:
           type: string
-    TransformImageWithMaskRequest:
+    TransformImageRequest:
       required:
         - image
-        - mask
         - prompt
       type: object
       properties:
@@ -735,9 +736,6 @@ components:
           format: binary
         image_format:
           $ref: '#/components/schemas/ImageFormat'
-        mask:
-          type: string
-          format: binary
         model:
           $ref: '#/components/schemas/TransformModel'
         n:
@@ -764,6 +762,16 @@ components:
           $ref: '#/components/schemas/ImageSubStyle'
         text_layout:
           $ref: '#/components/schemas/TextLayout'
+    TransformImageWithMaskRequest:
+      allOf:
+        - $ref: '#/components/schemas/TransformImageRequest'
+        - required:
+            - mask
+          type: object
+          properties:
+            mask:
+              type: string
+              format: binary
     TransformModel:
       enum:
         - refm1
@@ -773,7 +781,12 @@ components:
         - flux1_1pro
         - flux1dev
         - imagen3
+        - imagen4
+        - imagen4_ultra
         - hidream_i1_dev
+        - gpt_image_1_low
+        - gpt_image_1_medium
+        - gpt_image_1_high
       type: string
     User:
       required:

@@ -26,6 +26,7 @@ namespace Recraft
             typeof(global::Recraft.JsonConverters.ImageSizeJsonConverter),
             typeof(global::Recraft.JsonConverters.ImageSizeNullableJsonConverter),
             typeof(global::Recraft.JsonConverters.CreateStyleResponseJsonConverter),
+            typeof(global::Recraft.JsonConverters.TransformImageWithMaskRequestJsonConverter),
             typeof(global::Recraft.JsonConverters.UnixTimestampJsonConverter),
         })]
 

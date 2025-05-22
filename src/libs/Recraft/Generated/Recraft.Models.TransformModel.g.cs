@@ -39,7 +39,27 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        Imagen4,
+        /// <summary>
+        /// 
+        /// </summary>
+        Imagen4Ultra,
+        /// <summary>
+        /// 
+        /// </summary>
         HidreamI1Dev,
+        /// <summary>
+        /// 
+        /// </summary>
+        GptImage1Low,
+        /// <summary>
+        /// 
+        /// </summary>
+        GptImage1Medium,
+        /// <summary>
+        /// 
+        /// </summary>
+        GptImage1High,
     }
 
     /// <summary>
@@ -61,7 +81,12 @@ namespace Recraft
                 TransformModel.Flux11pro => "flux1_1pro",
                 TransformModel.Flux1dev => "flux1dev",
                 TransformModel.Imagen3 => "imagen3",
+                TransformModel.Imagen4 => "imagen4",
+                TransformModel.Imagen4Ultra => "imagen4_ultra",
                 TransformModel.HidreamI1Dev => "hidream_i1_dev",
+                TransformModel.GptImage1Low => "gpt_image_1_low",
+                TransformModel.GptImage1Medium => "gpt_image_1_medium",
+                TransformModel.GptImage1High => "gpt_image_1_high",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -79,7 +104,12 @@ namespace Recraft
                 "flux1_1pro" => TransformModel.Flux11pro,
                 "flux1dev" => TransformModel.Flux1dev,
                 "imagen3" => TransformModel.Imagen3,
+                "imagen4" => TransformModel.Imagen4,
+                "imagen4_ultra" => TransformModel.Imagen4Ultra,
                 "hidream_i1_dev" => TransformModel.HidreamI1Dev,
+                "gpt_image_1_low" => TransformModel.GptImage1Low,
+                "gpt_image_1_medium" => TransformModel.GptImage1Medium,
+                "gpt_image_1_high" => TransformModel.GptImage1High,
                 _ => null,
             };
         }

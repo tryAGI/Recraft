@@ -7,11 +7,11 @@ namespace Recraft
     {
         partial void PrepareReplaceBackgroundArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::Recraft.TransformImageWithMaskRequest request);
+            global::Recraft.TransformImageRequest request);
         partial void PrepareReplaceBackgroundRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::Recraft.TransformImageWithMaskRequest request);
+            global::Recraft.TransformImageRequest request);
         partial void ProcessReplaceBackgroundResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -28,7 +28,7 @@ namespace Recraft
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Recraft.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> ReplaceBackgroundAsync(
-            global::Recraft.TransformImageWithMaskRequest request,
+            global::Recraft.TransformImageRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -89,10 +89,6 @@ namespace Recraft
                     content: new global::System.Net.Http.StringContent($"{request.ImageFormat?.ToValueString()}"),
                     name: "image_format");
             } 
-            __httpRequestContent.Add(
-                content: new global::System.Net.Http.ByteArrayContent(request.Mask ?? global::System.Array.Empty<byte>()),
-                name: "mask",
-                fileName: request.Maskname ?? string.Empty);
             if (request.Model != default)
             {
                 __httpRequestContent.Add(
@@ -252,8 +248,6 @@ namespace Recraft
         /// <param name="image"></param>
         /// <param name="imagename"></param>
         /// <param name="imageFormat"></param>
-        /// <param name="mask"></param>
-        /// <param name="maskname"></param>
         /// <param name="model"></param>
         /// <param name="n"></param>
         /// <param name="negativePrompt"></param>
@@ -269,8 +263,6 @@ namespace Recraft
         public async global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> ReplaceBackgroundAsync(
             byte[] image,
             string imagename,
-            byte[] mask,
-            string maskname,
             string prompt,
             bool? blockNsfw = default,
             bool? calculateFeatures = default,
@@ -286,15 +278,13 @@ namespace Recraft
             global::System.Collections.Generic.IList<global::Recraft.TextLayoutItem>? textLayout = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::Recraft.TransformImageWithMaskRequest
+            var __request = new global::Recraft.TransformImageRequest
             {
                 BlockNsfw = blockNsfw,
                 CalculateFeatures = calculateFeatures,
                 Image = image,
                 Imagename = imagename,
                 ImageFormat = imageFormat,
-                Mask = mask,
-                Maskname = maskname,
                 Model = model,
                 N = n,
                 NegativePrompt = negativePrompt,

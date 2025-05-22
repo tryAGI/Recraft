@@ -11,7 +11,7 @@ namespace Recraft
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Recraft.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> ReplaceBackgroundAsync(
-            global::Recraft.TransformImageWithMaskRequest request,
+            global::Recraft.TransformImageRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -22,8 +22,6 @@ namespace Recraft
         /// <param name="image"></param>
         /// <param name="imagename"></param>
         /// <param name="imageFormat"></param>
-        /// <param name="mask"></param>
-        /// <param name="maskname"></param>
         /// <param name="model"></param>
         /// <param name="n"></param>
         /// <param name="negativePrompt"></param>
@@ -39,8 +37,6 @@ namespace Recraft
         global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> ReplaceBackgroundAsync(
             byte[] image,
             string imagename,
-            byte[] mask,
-            string maskname,
             string prompt,
             bool? blockNsfw = default,
             bool? calculateFeatures = default,

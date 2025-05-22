@@ -1,3 +1,4 @@
+#pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
 
@@ -6,192 +7,216 @@ namespace Recraft
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class TransformImageWithMaskRequest
+    public readonly partial struct TransformImageWithMaskRequest : global::System.IEquatable<TransformImageWithMaskRequest>
     {
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("block_nsfw")]
-        public bool? BlockNsfw { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("calculate_features")]
-        public bool? CalculateFeatures { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("image")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required byte[] Image { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("imagename")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Imagename { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("image_format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.ImageFormatJsonConverter))]
-        public global::Recraft.ImageFormat? ImageFormat { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("mask")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required byte[] Mask { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("maskname")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Maskname { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.TransformModelJsonConverter))]
-        public global::Recraft.TransformModel? Model { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("n")]
-        public int? N { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("negative_prompt")]
-        public string? NegativePrompt { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Prompt { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("random_seed")]
-        public int? RandomSeed { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.ResponseFormatJsonConverter))]
-        public global::Recraft.ResponseFormat? ResponseFormat { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("style")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.ImageStyleJsonConverter))]
-        public global::Recraft.ImageStyle? Style { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("style_id")]
-        public global::System.Guid? StyleId { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("substyle")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.ImageSubStyleJsonConverter))]
-        public global::Recraft.ImageSubStyle? Substyle { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("text_layout")]
-        public global::System.Collections.Generic.IList<global::Recraft.TextLayoutItem>? TextLayout { get; set; }
-
-        /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TransformImageWithMaskRequest" /> class.
-        /// </summary>
-        /// <param name="blockNsfw"></param>
-        /// <param name="calculateFeatures"></param>
-        /// <param name="image"></param>
-        /// <param name="imagename"></param>
-        /// <param name="imageFormat"></param>
-        /// <param name="mask"></param>
-        /// <param name="maskname"></param>
-        /// <param name="model"></param>
-        /// <param name="n"></param>
-        /// <param name="negativePrompt"></param>
-        /// <param name="prompt"></param>
-        /// <param name="randomSeed"></param>
-        /// <param name="responseFormat"></param>
-        /// <param name="style"></param>
-        /// <param name="styleId"></param>
-        /// <param name="substyle"></param>
-        /// <param name="textLayout"></param>
-#if NET7_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#if NET6_0_OR_GREATER
+        public global::Recraft.TransformImageRequest? Value1 { get; init; }
+#else
+        public global::Recraft.TransformImageRequest? Value1 { get; }
 #endif
-        public TransformImageWithMaskRequest(
-            byte[] image,
-            string imagename,
-            byte[] mask,
-            string maskname,
-            string prompt,
-            bool? blockNsfw,
-            bool? calculateFeatures,
-            global::Recraft.ImageFormat? imageFormat,
-            global::Recraft.TransformModel? model,
-            int? n,
-            string? negativePrompt,
-            int? randomSeed,
-            global::Recraft.ResponseFormat? responseFormat,
-            global::Recraft.ImageStyle? style,
-            global::System.Guid? styleId,
-            global::Recraft.ImageSubStyle? substyle,
-            global::System.Collections.Generic.IList<global::Recraft.TextLayoutItem>? textLayout)
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+#endif
+        public bool IsValue1 => Value1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator TransformImageWithMaskRequest(global::Recraft.TransformImageRequest value) => new TransformImageWithMaskRequest((global::Recraft.TransformImageRequest?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Recraft.TransformImageRequest?(TransformImageWithMaskRequest @this) => @this.Value1;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TransformImageWithMaskRequest(global::Recraft.TransformImageRequest? value)
         {
-            this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
-            this.Imagename = imagename ?? throw new global::System.ArgumentNullException(nameof(imagename));
-            this.Mask = mask ?? throw new global::System.ArgumentNullException(nameof(mask));
-            this.Maskname = maskname ?? throw new global::System.ArgumentNullException(nameof(maskname));
-            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
-            this.BlockNsfw = blockNsfw;
-            this.CalculateFeatures = calculateFeatures;
-            this.ImageFormat = imageFormat;
-            this.Model = model;
-            this.N = n;
-            this.NegativePrompt = negativePrompt;
-            this.RandomSeed = randomSeed;
-            this.ResponseFormat = responseFormat;
-            this.Style = style;
-            this.StyleId = styleId;
-            this.Substyle = substyle;
-            this.TextLayout = textLayout;
+            Value1 = value;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TransformImageWithMaskRequest" /> class.
+        /// 
         /// </summary>
-        public TransformImageWithMaskRequest()
+#if NET6_0_OR_GREATER
+        public global::Recraft.TransformImageWithMaskRequestVariant2? Value2 { get; init; }
+#else
+        public global::Recraft.TransformImageWithMaskRequestVariant2? Value2 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+#endif
+        public bool IsValue2 => Value2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator TransformImageWithMaskRequest(global::Recraft.TransformImageWithMaskRequestVariant2 value) => new TransformImageWithMaskRequest((global::Recraft.TransformImageWithMaskRequestVariant2?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Recraft.TransformImageWithMaskRequestVariant2?(TransformImageWithMaskRequest @this) => @this.Value2;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TransformImageWithMaskRequest(global::Recraft.TransformImageWithMaskRequestVariant2? value)
         {
+            Value2 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TransformImageWithMaskRequest(
+            global::Recraft.TransformImageRequest? value1,
+            global::Recraft.TransformImageWithMaskRequestVariant2? value2
+            )
+        {
+            Value1 = value1;
+            Value2 = value2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object? Object =>
+            Value2 as object ??
+            Value1 as object 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override string? ToString() =>
+            Value1?.ToString() ??
+            Value2?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool Validate()
+        {
+            return IsValue1 && IsValue2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TResult? Match<TResult>(
+            global::System.Func<global::Recraft.TransformImageRequest?, TResult>? value1 = null,
+            global::System.Func<global::Recraft.TransformImageWithMaskRequestVariant2?, TResult>? value2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsValue1 && value1 != null)
+            {
+                return value1(Value1!);
+            }
+            else if (IsValue2 && value2 != null)
+            {
+                return value2(Value2!);
+            }
+
+            return default(TResult);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Match(
+            global::System.Action<global::Recraft.TransformImageRequest?>? value1 = null,
+            global::System.Action<global::Recraft.TransformImageWithMaskRequestVariant2?>? value2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsValue1)
+            {
+                value1?.Invoke(Value1!);
+            }
+            else if (IsValue2)
+            {
+                value2?.Invoke(Value2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override int GetHashCode()
+        {
+            var fields = new object?[]
+            {
+                Value1,
+                typeof(global::Recraft.TransformImageRequest),
+                Value2,
+                typeof(global::Recraft.TransformImageWithMaskRequestVariant2),
+            };
+            const int offset = unchecked((int)2166136261);
+            const int prime = 16777619;
+            static int HashCodeAggregator(int hashCode, object? value) => value == null
+                ? (hashCode ^ 0) * prime
+                : (hashCode ^ value.GetHashCode()) * prime;
+
+            return global::System.Linq.Enumerable.Aggregate(fields, offset, HashCodeAggregator);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool Equals(TransformImageWithMaskRequest other)
+        {
+            return
+                global::System.Collections.Generic.EqualityComparer<global::Recraft.TransformImageRequest?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<global::Recraft.TransformImageWithMaskRequestVariant2?>.Default.Equals(Value2, other.Value2) 
+                ;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static bool operator ==(TransformImageWithMaskRequest obj1, TransformImageWithMaskRequest obj2)
+        {
+            return global::System.Collections.Generic.EqualityComparer<TransformImageWithMaskRequest>.Default.Equals(obj1, obj2);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static bool operator !=(TransformImageWithMaskRequest obj1, TransformImageWithMaskRequest obj2)
+        {
+            return !(obj1 == obj2);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override bool Equals(object? obj)
+        {
+            return obj is TransformImageWithMaskRequest o && Equals(o);
         }
     }
 }

@@ -190,14 +190,22 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.TransformImageWithMaskRequest? Type41 { get; set; }
+        public global::Recraft.TransformImageRequest? Type41 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.User? Type42 { get; set; }
+        public global::Recraft.TransformImageWithMaskRequest? Type42 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public object? Type43 { get; set; }
+        public global::Recraft.TransformImageWithMaskRequestVariant2? Type43 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Recraft.User? Type44 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public object? Type45 { get; set; }
     }
 }

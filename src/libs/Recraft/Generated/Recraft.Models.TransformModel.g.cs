@@ -27,6 +27,14 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        Flux1KontextPro,
+        /// <summary>
+        /// 
+        /// </summary>
+        Flux1KontextMax,
+        /// <summary>
+        /// 
+        /// </summary>
         Flux11pro,
         /// <summary>
         /// 
@@ -78,6 +86,8 @@ namespace Recraft
                 TransformModel.Recraft20b => "recraft20b",
                 TransformModel.Recraftv2 => "recraftv2",
                 TransformModel.Recraftv3 => "recraftv3",
+                TransformModel.Flux1KontextPro => "flux1_kontext_pro",
+                TransformModel.Flux1KontextMax => "flux1_kontext_max",
                 TransformModel.Flux11pro => "flux1_1pro",
                 TransformModel.Flux1dev => "flux1dev",
                 TransformModel.Imagen3 => "imagen3",
@@ -101,6 +111,8 @@ namespace Recraft
                 "recraft20b" => TransformModel.Recraft20b,
                 "recraftv2" => TransformModel.Recraftv2,
                 "recraftv3" => TransformModel.Recraftv3,
+                "flux1_kontext_pro" => TransformModel.Flux1KontextPro,
+                "flux1_kontext_max" => TransformModel.Flux1KontextMax,
                 "flux1_1pro" => TransformModel.Flux11pro,
                 "flux1dev" => TransformModel.Flux1dev,
                 "imagen3" => TransformModel.Imagen3,

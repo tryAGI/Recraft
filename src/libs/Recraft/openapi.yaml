@@ -522,6 +522,7 @@ components:
         - icon
         - realistic_image
         - vector_illustration
+        - logo_raster
       type: string
     ImageSubStyle:
       enum:
@@ -547,16 +548,12 @@ components:
         - offset_fill
         - outline
         - outline_gradient
-        - uneven_fill
-        - 70s
         - cartoon
         - doodle_line_art
         - engraving
         - flat_2
-        - kawaii
         - line_art
         - linocut
-        - seamless
         - b_and_w
         - enterprise
         - hard_flash
@@ -567,12 +564,72 @@ components:
         - line_circuit
         - 2d_art_poster_2
         - engraving_color
-        - flat_air_art
         - hand_drawn_outline
         - handmade_3d
-        - stickers_drawings
         - plastic
         - pictogram
+        - antiquarian
+        - bold_fantasy
+        - child_book
+        - cover
+        - crosshatch
+        - digital_engraving
+        - expressionism
+        - freehand_details
+        - grain_20
+        - graphic_intensity
+        - hard_comics
+        - long_shadow
+        - modern_folk
+        - multicolor
+        - neon_calm
+        - noir
+        - nostalgic_pastel
+        - outline_details
+        - pastel_gradient
+        - pastel_sketch
+        - pop_art
+        - pop_renaissance
+        - street_art
+        - tablet_sketch
+        - urban_glow
+        - urban_sketching
+        - young_adult_book
+        - young_adult_book_2
+        - evening_light
+        - faded_nostalgia
+        - forest_life
+        - mystic_naturalism
+        - natural_tones
+        - organic_calm
+        - real_life_glow
+        - retro_realism
+        - retro_snapshot
+        - urban_drama
+        - village_realism
+        - warm_folk
+        - bold_stroke
+        - chemistry
+        - colored_stencil
+        - cosmics
+        - cutout
+        - depressive
+        - editorial
+        - emotional_flat
+        - marker_outline
+        - mosaic
+        - naivector
+        - roundish_flat
+        - segmented_colors
+        - sharp_contrast
+        - thin
+        - vector_photo
+        - vivid_shapes
+        - emblem_graffiti
+        - emblem_pop_art
+        - emblem_punk
+        - emblem_stamp
+        - emblem_vintage
       type: string
     ImageToImageRequest:
       required:
@@ -778,6 +835,8 @@ components:
         - recraft20b
         - recraftv2
         - recraftv3
+        - flux1_kontext_pro
+        - flux1_kontext_max
         - flux1_1pro
         - flux1dev
         - imagen3

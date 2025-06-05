@@ -27,7 +27,7 @@ namespace Recraft
             PrepareGetPingArguments(
                 httpClient: HttpClient);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Recraft.PathBuilder(
                 path: "/ping",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

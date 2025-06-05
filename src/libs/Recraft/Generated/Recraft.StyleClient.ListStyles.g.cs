@@ -32,7 +32,7 @@ namespace Recraft
             PrepareListStylesArguments(
                 httpClient: HttpClient);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Recraft.PathBuilder(
                 path: "/v1/styles",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

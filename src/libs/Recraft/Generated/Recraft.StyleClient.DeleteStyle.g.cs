@@ -37,7 +37,7 @@ namespace Recraft
                 httpClient: HttpClient,
                 styleId: ref styleId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Recraft.PathBuilder(
                 path: $"/v1/styles/{styleId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

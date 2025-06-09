@@ -29,6 +29,12 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("expire")]
+        public bool? Expire { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required byte[] Image { get; set; }
@@ -131,6 +137,7 @@ namespace Recraft
         /// <param name="blockNsfw"></param>
         /// <param name="calculateFeatures"></param>
         /// <param name="controls"></param>
+        /// <param name="expire"></param>
         /// <param name="image"></param>
         /// <param name="imagename"></param>
         /// <param name="imageFormat"></param>
@@ -156,6 +163,7 @@ namespace Recraft
             bool? blockNsfw,
             bool? calculateFeatures,
             global::Recraft.UserControls? controls,
+            bool? expire,
             global::Recraft.ImageFormat? imageFormat,
             global::Recraft.TransformModel? model,
             int? n,
@@ -174,6 +182,7 @@ namespace Recraft
             this.BlockNsfw = blockNsfw;
             this.CalculateFeatures = calculateFeatures;
             this.Controls = controls;
+            this.Expire = expire;
             this.ImageFormat = imageFormat;
             this.Model = model;
             this.N = n;

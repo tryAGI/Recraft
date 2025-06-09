@@ -11,6 +11,12 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("expire")]
+        public bool? Expire { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required byte[] Image { get; set; }
@@ -59,6 +65,7 @@ namespace Recraft
         /// <summary>
         /// Initializes a new instance of the <see cref="EraseRegionRequest" /> class.
         /// </summary>
+        /// <param name="expire"></param>
         /// <param name="image"></param>
         /// <param name="imagename"></param>
         /// <param name="imageFormat"></param>
@@ -73,6 +80,7 @@ namespace Recraft
             string imagename,
             byte[] mask,
             string maskname,
+            bool? expire,
             global::Recraft.ImageFormat? imageFormat,
             global::Recraft.ResponseFormat? responseFormat)
         {
@@ -80,6 +88,7 @@ namespace Recraft
             this.Imagename = imagename ?? throw new global::System.ArgumentNullException(nameof(imagename));
             this.Mask = mask ?? throw new global::System.ArgumentNullException(nameof(mask));
             this.Maskname = maskname ?? throw new global::System.ArgumentNullException(nameof(maskname));
+            this.Expire = expire;
             this.ImageFormat = imageFormat;
             this.ResponseFormat = responseFormat;
         }

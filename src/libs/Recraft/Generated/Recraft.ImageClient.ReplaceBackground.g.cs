@@ -79,6 +79,12 @@ namespace Recraft
                     content: new global::System.Net.Http.StringContent($"{request.CalculateFeatures}"),
                     name: "calculate_features");
             } 
+            if (request.Expire != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.Expire}"),
+                    name: "expire");
+            } 
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.ByteArrayContent(request.Image ?? global::System.Array.Empty<byte>()),
                 name: "image",
@@ -245,6 +251,7 @@ namespace Recraft
         /// </summary>
         /// <param name="blockNsfw"></param>
         /// <param name="calculateFeatures"></param>
+        /// <param name="expire"></param>
         /// <param name="image"></param>
         /// <param name="imagename"></param>
         /// <param name="imageFormat"></param>
@@ -266,6 +273,7 @@ namespace Recraft
             string prompt,
             bool? blockNsfw = default,
             bool? calculateFeatures = default,
+            bool? expire = default,
             global::Recraft.ImageFormat? imageFormat = default,
             global::Recraft.TransformModel? model = default,
             int? n = default,
@@ -282,6 +290,7 @@ namespace Recraft
             {
                 BlockNsfw = blockNsfw,
                 CalculateFeatures = calculateFeatures,
+                Expire = expire,
                 Image = image,
                 Imagename = imagename,
                 ImageFormat = imageFormat,

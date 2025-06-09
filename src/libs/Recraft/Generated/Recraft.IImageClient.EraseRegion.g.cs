@@ -17,6 +17,7 @@ namespace Recraft
         /// <summary>
         /// Erase Region
         /// </summary>
+        /// <param name="expire"></param>
         /// <param name="image"></param>
         /// <param name="imagename"></param>
         /// <param name="imageFormat"></param>
@@ -30,6 +31,7 @@ namespace Recraft
             string imagename,
             byte[] mask,
             string maskname,
+            bool? expire = default,
             global::Recraft.ImageFormat? imageFormat = default,
             global::Recraft.ResponseFormat? responseFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default);

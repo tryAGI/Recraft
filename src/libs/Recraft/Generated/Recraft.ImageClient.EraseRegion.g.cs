@@ -67,6 +67,12 @@ namespace Recraft
                 }
             }
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+            if (request.Expire != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.Expire}"),
+                    name: "expire");
+            } 
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.ByteArrayContent(request.Image ?? global::System.Array.Empty<byte>()),
                 name: "image",
@@ -184,6 +190,7 @@ namespace Recraft
         /// <summary>
         /// Erase Region
         /// </summary>
+        /// <param name="expire"></param>
         /// <param name="image"></param>
         /// <param name="imagename"></param>
         /// <param name="imageFormat"></param>
@@ -197,12 +204,14 @@ namespace Recraft
             string imagename,
             byte[] mask,
             string maskname,
+            bool? expire = default,
             global::Recraft.ImageFormat? imageFormat = default,
             global::Recraft.ResponseFormat? responseFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::Recraft.EraseRegionRequest
             {
+                Expire = expire,
                 Image = image,
                 Imagename = imagename,
                 ImageFormat = imageFormat,

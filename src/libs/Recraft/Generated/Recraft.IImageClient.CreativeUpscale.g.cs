@@ -17,6 +17,7 @@ namespace Recraft
         /// <summary>
         /// Creative Upscale
         /// </summary>
+        /// <param name="expire"></param>
         /// <param name="image"></param>
         /// <param name="imagename"></param>
         /// <param name="imageFormat"></param>
@@ -26,6 +27,7 @@ namespace Recraft
         global::System.Threading.Tasks.Task<global::Recraft.ProcessImageResponse> CreativeUpscaleAsync(
             byte[] image,
             string imagename,
+            bool? expire = default,
             global::Recraft.ImageFormat? imageFormat = default,
             global::Recraft.ResponseFormat? responseFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default);

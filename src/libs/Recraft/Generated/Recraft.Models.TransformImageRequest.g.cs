@@ -23,6 +23,12 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("expire")]
+        public bool? Expire { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required byte[] Image { get; set; }
@@ -117,6 +123,7 @@ namespace Recraft
         /// </summary>
         /// <param name="blockNsfw"></param>
         /// <param name="calculateFeatures"></param>
+        /// <param name="expire"></param>
         /// <param name="image"></param>
         /// <param name="imagename"></param>
         /// <param name="imageFormat"></param>
@@ -139,6 +146,7 @@ namespace Recraft
             string prompt,
             bool? blockNsfw,
             bool? calculateFeatures,
+            bool? expire,
             global::Recraft.ImageFormat? imageFormat,
             global::Recraft.TransformModel? model,
             int? n,
@@ -155,6 +163,7 @@ namespace Recraft
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.BlockNsfw = blockNsfw;
             this.CalculateFeatures = calculateFeatures;
+            this.Expire = expire;
             this.ImageFormat = imageFormat;
             this.Model = model;
             this.N = n;

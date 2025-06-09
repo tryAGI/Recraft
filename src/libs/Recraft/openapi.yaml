@@ -389,6 +389,8 @@ components:
         - mask
       type: object
       properties:
+        expire:
+          type: boolean
         image:
           type: string
           format: binary
@@ -410,6 +412,8 @@ components:
           type: boolean
         controls:
           $ref: '#/components/schemas/UserControls'
+        expire:
+          type: boolean
         image_format:
           $ref: '#/components/schemas/ImageFormat'
         model:
@@ -644,6 +648,8 @@ components:
           type: boolean
         controls:
           $ref: '#/components/schemas/UserControls'
+        expire:
+          type: boolean
         image:
           type: string
           format: binary
@@ -700,6 +706,8 @@ components:
         - image
       type: object
       properties:
+        expire:
+          type: boolean
         image:
           type: string
           format: binary
@@ -787,6 +795,8 @@ components:
         block_nsfw:
           type: boolean
         calculate_features:
+          type: boolean
+        expire:
           type: boolean
         image:
           type: string

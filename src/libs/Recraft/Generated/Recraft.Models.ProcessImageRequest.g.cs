@@ -11,6 +11,12 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("expire")]
+        public bool? Expire { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required byte[] Image { get; set; }
@@ -45,6 +51,7 @@ namespace Recraft
         /// <summary>
         /// Initializes a new instance of the <see cref="ProcessImageRequest" /> class.
         /// </summary>
+        /// <param name="expire"></param>
         /// <param name="image"></param>
         /// <param name="imagename"></param>
         /// <param name="imageFormat"></param>
@@ -55,11 +62,13 @@ namespace Recraft
         public ProcessImageRequest(
             byte[] image,
             string imagename,
+            bool? expire,
             global::Recraft.ImageFormat? imageFormat,
             global::Recraft.ResponseFormat? responseFormat)
         {
             this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
             this.Imagename = imagename ?? throw new global::System.ArgumentNullException(nameof(imagename));
+            this.Expire = expire;
             this.ImageFormat = imageFormat;
             this.ResponseFormat = responseFormat;
         }

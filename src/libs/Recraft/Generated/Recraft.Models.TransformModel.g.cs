@@ -68,6 +68,18 @@ namespace Recraft
         /// 
         /// </summary>
         GptImage1High,
+        /// <summary>
+        /// 
+        /// </summary>
+        IdeogramV3Turbo,
+        /// <summary>
+        /// 
+        /// </summary>
+        IdeogramV3Default,
+        /// <summary>
+        /// 
+        /// </summary>
+        IdeogramV3Quality,
     }
 
     /// <summary>
@@ -97,6 +109,9 @@ namespace Recraft
                 TransformModel.GptImage1Low => "gpt_image_1_low",
                 TransformModel.GptImage1Medium => "gpt_image_1_medium",
                 TransformModel.GptImage1High => "gpt_image_1_high",
+                TransformModel.IdeogramV3Turbo => "ideogram_v3_turbo",
+                TransformModel.IdeogramV3Default => "ideogram_v3_default",
+                TransformModel.IdeogramV3Quality => "ideogram_v3_quality",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -122,6 +137,9 @@ namespace Recraft
                 "gpt_image_1_low" => TransformModel.GptImage1Low,
                 "gpt_image_1_medium" => TransformModel.GptImage1Medium,
                 "gpt_image_1_high" => TransformModel.GptImage1High,
+                "ideogram_v3_turbo" => TransformModel.IdeogramV3Turbo,
+                "ideogram_v3_default" => TransformModel.IdeogramV3Default,
+                "ideogram_v3_quality" => TransformModel.IdeogramV3Quality,
                 _ => null,
             };
         }

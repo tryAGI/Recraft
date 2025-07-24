@@ -856,6 +856,9 @@ components:
         - gpt_image_1_low
         - gpt_image_1_medium
         - gpt_image_1_high
+        - ideogram_v3_turbo
+        - ideogram_v3_default
+        - ideogram_v3_quality
       type: string
     User:
       required:

@@ -89,8 +89,7 @@ namespace Recraft
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("style")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.ImageStyleJsonConverter))]
-        public global::Recraft.ImageStyle? Style { get; set; }
+        public string? Style { get; set; }
 
         /// <summary>
         /// 
@@ -152,7 +151,7 @@ namespace Recraft
             int? randomSeed,
             global::Recraft.ResponseFormat? responseFormat,
             global::Recraft.ImageSize? size,
-            global::Recraft.ImageStyle? style,
+            string? style,
             global::System.Guid? styleId,
             global::Recraft.ImageSubStyle? substyle,
             global::System.Collections.Generic.IList<global::Recraft.TextLayoutItem>? textLayout)

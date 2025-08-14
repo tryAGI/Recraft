@@ -432,7 +432,7 @@ components:
         size:
           $ref: '#/components/schemas/ImageSize'
         style:
-          $ref: '#/components/schemas/ImageStyle'
+          type: string
         style_id:
           type: string
           format: uuid
@@ -671,7 +671,7 @@ components:
         strength:
           type: number
         style:
-          $ref: '#/components/schemas/ImageStyle'
+          type: string
         style_id:
           type: string
           format: uuid
@@ -817,7 +817,7 @@ components:
         response_format:
           $ref: '#/components/schemas/ResponseFormat'
         style:
-          $ref: '#/components/schemas/ImageStyle'
+          type: string
         style_id:
           type: string
           format: uuid

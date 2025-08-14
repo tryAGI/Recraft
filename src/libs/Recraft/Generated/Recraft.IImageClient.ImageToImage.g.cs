@@ -52,7 +52,7 @@ namespace Recraft
             string? negativePrompt = default,
             int? randomSeed = default,
             global::Recraft.ResponseFormat? responseFormat = default,
-            global::Recraft.ImageStyle? style = default,
+            string? style = default,
             global::System.Guid? styleId = default,
             global::Recraft.ImageSubStyle? substyle = default,
             global::System.Collections.Generic.IList<global::Recraft.TextLayoutItem>? textLayout = default,

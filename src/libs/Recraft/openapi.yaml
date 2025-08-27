@@ -859,6 +859,8 @@ components:
         - ideogram_v3_turbo
         - ideogram_v3_default
         - ideogram_v3_quality
+        - qwen_image
+        - gemini_25_flash_image
       type: string
     User:
       required:

@@ -224,6 +224,24 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/GenerateImageResponse'
+  /v1/images/variateImage:
+    post:
+      tags:
+        - image
+      summary: Variate Image
+      operationId: VariateImage
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/VariateImageRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenerateImageResponse'
   /v1/images/vectorize:
     post:
       tags:
@@ -895,6 +913,28 @@ components:
             $ref: '#/components/schemas/ImageColor'
         no_text:
           type: boolean
+    VariateImageRequest:
+      required:
+        - image
+        - size
+      type: object
+      properties:
+        expire:
+          type: boolean
+        image:
+          type: string
+          format: binary
+        image_format:
+          $ref: '#/components/schemas/ImageFormat'
+        n:
+          type: integer
+        random_seed:
+          type: integer
+          format: uint32
+        response_format:
+          $ref: '#/components/schemas/ResponseFormat'
+        size:
+          $ref: '#/components/schemas/ImageSize'
   securitySchemes:
     auth0:
       type: http

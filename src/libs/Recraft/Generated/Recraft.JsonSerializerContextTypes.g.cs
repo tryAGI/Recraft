@@ -206,6 +206,10 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
-        public object? Type45 { get; set; }
+        public global::Recraft.VariateImageRequest? Type45 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public object? Type46 { get; set; }
     }
 }

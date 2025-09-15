@@ -111,6 +111,13 @@ namespace Recraft
         public global::System.Collections.Generic.IList<global::Recraft.TextLayoutItem>? TextLayout { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("upscale")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.UpscaleModeJsonConverter))]
+        public global::Recraft.UpscaleMode? Upscale { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -135,6 +142,7 @@ namespace Recraft
         /// <param name="styleId"></param>
         /// <param name="substyle"></param>
         /// <param name="textLayout"></param>
+        /// <param name="upscale"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -154,7 +162,8 @@ namespace Recraft
             string? style,
             global::System.Guid? styleId,
             global::Recraft.ImageSubStyle? substyle,
-            global::System.Collections.Generic.IList<global::Recraft.TextLayoutItem>? textLayout)
+            global::System.Collections.Generic.IList<global::Recraft.TextLayoutItem>? textLayout,
+            global::Recraft.UpscaleMode? upscale)
         {
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.BlockNsfw = blockNsfw;
@@ -172,6 +181,7 @@ namespace Recraft
             this.StyleId = styleId;
             this.Substyle = substyle;
             this.TextLayout = textLayout;
+            this.Upscale = upscale;
         }
 
         /// <summary>

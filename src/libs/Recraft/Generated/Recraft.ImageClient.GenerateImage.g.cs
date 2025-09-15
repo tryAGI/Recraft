@@ -184,6 +184,7 @@ namespace Recraft
         /// <param name="styleId"></param>
         /// <param name="substyle"></param>
         /// <param name="textLayout"></param>
+        /// <param name="upscale"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> GenerateImageAsync(
@@ -203,6 +204,7 @@ namespace Recraft
             global::System.Guid? styleId = default,
             global::Recraft.ImageSubStyle? substyle = default,
             global::System.Collections.Generic.IList<global::Recraft.TextLayoutItem>? textLayout = default,
+            global::Recraft.UpscaleMode? upscale = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::Recraft.GenerateImageRequest
@@ -223,6 +225,7 @@ namespace Recraft
                 StyleId = styleId,
                 Substyle = substyle,
                 TextLayout = textLayout,
+                Upscale = upscale,
             };
 
             return await GenerateImageAsync(

@@ -88,6 +88,10 @@ namespace Recraft
         /// 
         /// </summary>
         Gemini25FlashImage,
+        /// <summary>
+        /// 
+        /// </summary>
+        BytedanceSeedreamv4,
     }
 
     /// <summary>
@@ -122,6 +126,7 @@ namespace Recraft
                 TransformModel.IdeogramV3Quality => "ideogram_v3_quality",
                 TransformModel.QwenImage => "qwen_image",
                 TransformModel.Gemini25FlashImage => "gemini_25_flash_image",
+                TransformModel.BytedanceSeedreamv4 => "bytedance-seedreamv4",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -152,6 +157,7 @@ namespace Recraft
                 "ideogram_v3_quality" => TransformModel.IdeogramV3Quality,
                 "qwen_image" => TransformModel.QwenImage,
                 "gemini_25_flash_image" => TransformModel.Gemini25FlashImage,
+                "bytedance-seedreamv4" => TransformModel.BytedanceSeedreamv4,
                 _ => null,
             };
         }

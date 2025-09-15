@@ -43,6 +43,13 @@ namespace Recraft
         public global::Recraft.ResponseFormat? ResponseFormat { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("upscale")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.UpscaleModeJsonConverter))]
+        public global::Recraft.UpscaleMode? Upscale { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -56,6 +63,7 @@ namespace Recraft
         /// <param name="imagename"></param>
         /// <param name="imageFormat"></param>
         /// <param name="responseFormat"></param>
+        /// <param name="upscale"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -64,13 +72,15 @@ namespace Recraft
             string imagename,
             bool? expire,
             global::Recraft.ImageFormat? imageFormat,
-            global::Recraft.ResponseFormat? responseFormat)
+            global::Recraft.ResponseFormat? responseFormat,
+            global::Recraft.UpscaleMode? upscale)
         {
             this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
             this.Imagename = imagename ?? throw new global::System.ArgumentNullException(nameof(imagename));
             this.Expire = expire;
             this.ImageFormat = imageFormat;
             this.ResponseFormat = responseFormat;
+            this.Upscale = upscale;
         }
 
         /// <summary>

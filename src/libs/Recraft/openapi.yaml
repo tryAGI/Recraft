@@ -462,6 +462,8 @@ components:
           $ref: '#/components/schemas/ImageSubStyle'
         text_layout:
           $ref: '#/components/schemas/TextLayout'
+        upscale:
+          $ref: '#/components/schemas/UpscaleMode'
     GenerateImageResponse:
       required:
         - created
@@ -733,6 +735,8 @@ components:
           $ref: '#/components/schemas/ImageFormat'
         response_format:
           $ref: '#/components/schemas/ResponseFormat'
+        upscale:
+          $ref: '#/components/schemas/UpscaleMode'
     ProcessImageResponse:
       required:
         - created
@@ -879,6 +883,12 @@ components:
         - ideogram_v3_quality
         - qwen_image
         - gemini_25_flash_image
+        - bytedance-seedreamv4
+      type: string
+    UpscaleMode:
+      enum:
+        - upscale4mp
+        - upscale16mp
       type: string
     User:
       required:

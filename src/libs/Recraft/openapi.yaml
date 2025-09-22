@@ -867,6 +867,7 @@ components:
         - recraft20b
         - recraftv2
         - recraftv3
+        - recraftv4
         - flux1_kontext_pro
         - flux1_kontext_max
         - flux1_1pro

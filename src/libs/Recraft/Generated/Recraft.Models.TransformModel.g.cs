@@ -23,11 +23,47 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        Recraftv2Raster,
+        /// <summary>
+        /// 
+        /// </summary>
+        Recraftv2Vector,
+        /// <summary>
+        /// 
+        /// </summary>
         Recraftv3,
         /// <summary>
         /// 
         /// </summary>
+        Recraftv3Raster,
+        /// <summary>
+        /// 
+        /// </summary>
+        Recraftv3Vector,
+        /// <summary>
+        /// 
+        /// </summary>
         Recraftv4,
+        /// <summary>
+        /// 
+        /// </summary>
+        Recraftv4Raster,
+        /// <summary>
+        /// 
+        /// </summary>
+        Recraftv4Vector,
+        /// <summary>
+        /// 
+        /// </summary>
+        Recraftv4Pro,
+        /// <summary>
+        /// 
+        /// </summary>
+        Recraftv4ProRaster,
+        /// <summary>
+        /// 
+        /// </summary>
+        Recraftv4ProVector,
         /// <summary>
         /// 
         /// </summary>
@@ -113,8 +149,17 @@ namespace Recraft
                 TransformModel.Refm1 => "refm1",
                 TransformModel.Recraft20b => "recraft20b",
                 TransformModel.Recraftv2 => "recraftv2",
+                TransformModel.Recraftv2Raster => "recraftv2_raster",
+                TransformModel.Recraftv2Vector => "recraftv2_vector",
                 TransformModel.Recraftv3 => "recraftv3",
+                TransformModel.Recraftv3Raster => "recraftv3_raster",
+                TransformModel.Recraftv3Vector => "recraftv3_vector",
                 TransformModel.Recraftv4 => "recraftv4",
+                TransformModel.Recraftv4Raster => "recraftv4_raster",
+                TransformModel.Recraftv4Vector => "recraftv4_vector",
+                TransformModel.Recraftv4Pro => "recraftv4_pro",
+                TransformModel.Recraftv4ProRaster => "recraftv4_pro_raster",
+                TransformModel.Recraftv4ProVector => "recraftv4_pro_vector",
                 TransformModel.Flux1KontextPro => "flux1_kontext_pro",
                 TransformModel.Flux1KontextMax => "flux1_kontext_max",
                 TransformModel.Flux11pro => "flux1_1pro",
@@ -145,8 +190,17 @@ namespace Recraft
                 "refm1" => TransformModel.Refm1,
                 "recraft20b" => TransformModel.Recraft20b,
                 "recraftv2" => TransformModel.Recraftv2,
+                "recraftv2_raster" => TransformModel.Recraftv2Raster,
+                "recraftv2_vector" => TransformModel.Recraftv2Vector,
                 "recraftv3" => TransformModel.Recraftv3,
+                "recraftv3_raster" => TransformModel.Recraftv3Raster,
+                "recraftv3_vector" => TransformModel.Recraftv3Vector,
                 "recraftv4" => TransformModel.Recraftv4,
+                "recraftv4_raster" => TransformModel.Recraftv4Raster,
+                "recraftv4_vector" => TransformModel.Recraftv4Vector,
+                "recraftv4_pro" => TransformModel.Recraftv4Pro,
+                "recraftv4_pro_raster" => TransformModel.Recraftv4ProRaster,
+                "recraftv4_pro_vector" => TransformModel.Recraftv4ProVector,
                 "flux1_kontext_pro" => TransformModel.Flux1KontextPro,
                 "flux1_kontext_max" => TransformModel.Flux1KontextMax,
                 "flux1_1pro" => TransformModel.Flux11pro,

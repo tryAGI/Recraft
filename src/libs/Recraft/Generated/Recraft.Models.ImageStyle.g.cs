@@ -11,6 +11,10 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        Any,
+        /// <summary>
+        /// 
+        /// </summary>
         DigitalIllustration,
         /// <summary>
         /// 
@@ -42,6 +46,7 @@ namespace Recraft
         {
             return value switch
             {
+                ImageStyle.Any => "any",
                 ImageStyle.DigitalIllustration => "digital_illustration",
                 ImageStyle.Icon => "icon",
                 ImageStyle.RealisticImage => "realistic_image",
@@ -57,6 +62,7 @@ namespace Recraft
         {
             return value switch
             {
+                "any" => ImageStyle.Any,
                 "digital_illustration" => ImageStyle.DigitalIllustration,
                 "icon" => ImageStyle.Icon,
                 "realistic_image" => ImageStyle.RealisticImage,

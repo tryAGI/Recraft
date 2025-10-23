@@ -539,9 +539,65 @@ components:
         - 1280x1024
         - 1024x1707
         - 1707x1024
+        - 1216x896
+        - 896x1216
+        - 1280x832
+        - 832x1280
+        - 1152x896
+        - 896x1152
+        - 1280x896
+        - 896x1280
+        - 832x1344
+        - 768x1344
+        - 1344x768
+        - 768x1536
+        - 1536x768
+        - 1024x1024
+        - 1216x896
+        - 896x1216
+        - 1280x832
+        - 832x1280
+        - 1152x896
+        - 896x1152
+        - 1280x896
+        - 896x1280
+        - 832x1344
+        - 768x1344
+        - 1344x768
+        - 768x1536
+        - 1536x768
+        - 2048x2048
+        - 2432x1792
+        - 1792x2432
+        - 2560x1664
+        - 1664x2560
+        - 2304x1792
+        - 1792x2304
+        - 2560x1792
+        - 1792x2560
+        - 1664x2688
+        - 1536x2688
+        - 2688x1536
+        - 1536x3072
+        - 3072x1536
+        - '1:1'
+        - '2:1'
+        - '1:2'
+        - '3:2'
+        - '2:3'
+        - '4:3'
+        - '3:4'
+        - '5:4'
+        - '4:5'
+        - '6:10'
+        - '14:10'
+        - '10:14'
+        - '16:9'
+        - '9:16'
       type: string
     ImageStyle:
       enum:
+        - any
         - digital_illustration
         - icon
         - realistic_image
@@ -866,8 +922,17 @@ components:
         - refm1
         - recraft20b
         - recraftv2
+        - recraftv2_raster
+        - recraftv2_vector
         - recraftv3
+        - recraftv3_raster
+        - recraftv3_vector
         - recraftv4
+        - recraftv4_raster
+        - recraftv4_vector
+        - recraftv4_pro
+        - recraftv4_pro_raster
+        - recraftv4_pro_vector
         - flux1_kontext_pro
         - flux1_kontext_max
         - flux1_1pro

@@ -132,6 +132,14 @@ namespace Recraft
         /// 
         /// </summary>
         BytedanceSeedreamv4,
+        /// <summary>
+        /// 
+        /// </summary>
+        NanoBananaPro,
+        /// <summary>
+        /// 
+        /// </summary>
+        NanoBananaPro4k,
     }
 
     /// <summary>
@@ -177,6 +185,8 @@ namespace Recraft
                 TransformModel.QwenImage => "qwen_image",
                 TransformModel.Gemini25FlashImage => "gemini_25_flash_image",
                 TransformModel.BytedanceSeedreamv4 => "bytedance-seedreamv4",
+                TransformModel.NanoBananaPro => "nano_banana_pro",
+                TransformModel.NanoBananaPro4k => "nano_banana_pro_4k",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -218,6 +228,8 @@ namespace Recraft
                 "qwen_image" => TransformModel.QwenImage,
                 "gemini_25_flash_image" => TransformModel.Gemini25FlashImage,
                 "bytedance-seedreamv4" => TransformModel.BytedanceSeedreamv4,
+                "nano_banana_pro" => TransformModel.NanoBananaPro,
+                "nano_banana_pro_4k" => TransformModel.NanoBananaPro4k,
                 _ => null,
             };
         }

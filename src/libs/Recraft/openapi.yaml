@@ -950,6 +950,8 @@ components:
         - qwen_image
         - gemini_25_flash_image
         - bytedance-seedreamv4
+        - nano_banana_pro
+        - nano_banana_pro_4k
       type: string
     UpscaleMode:
       enum:

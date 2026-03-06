@@ -7,17 +7,20 @@ namespace Recraft
         /// <summary>
         /// Variate Image
         /// </summary>
+        /// <param name="billing"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Recraft.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> VariateImageAsync(
 
             global::Recraft.VariateImageRequest request,
+            global::Recraft.BillingType? billing = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Variate Image
         /// </summary>
+        /// <param name="billing"></param>
         /// <param name="expire"></param>
         /// <param name="image"></param>
         /// <param name="imagename"></param>
@@ -32,6 +35,7 @@ namespace Recraft
             byte[] image,
             string imagename,
             global::Recraft.ImageSize size,
+            global::Recraft.BillingType? billing = default,
             bool? expire = default,
             global::Recraft.ImageFormat? imageFormat = default,
             int? n = default,

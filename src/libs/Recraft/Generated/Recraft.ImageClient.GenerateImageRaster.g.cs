@@ -7,10 +7,12 @@ namespace Recraft
     {
         partial void PrepareGenerateImageRasterArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref global::Recraft.BillingType? billing,
             global::Recraft.GenerateImageRequest request);
         partial void PrepareGenerateImageRasterRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::Recraft.BillingType? billing,
             global::Recraft.GenerateImageRequest request);
         partial void ProcessGenerateImageRasterResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -24,12 +26,14 @@ namespace Recraft
         /// <summary>
         /// Generate raster image from prompt
         /// </summary>
+        /// <param name="billing"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Recraft.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> GenerateImageRasterAsync(
 
             global::Recraft.GenerateImageRequest request,
+            global::Recraft.BillingType? billing = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -38,11 +42,15 @@ namespace Recraft
                 client: HttpClient);
             PrepareGenerateImageRasterArguments(
                 httpClient: HttpClient,
+                billing: ref billing,
                 request: request);
 
             var __pathBuilder = new global::Recraft.PathBuilder(
                 path: "/v1/images/generations/raster",
                 baseUri: HttpClient.BaseAddress); 
+            __pathBuilder
+                .AddOptionalParameter("billing", billing?.ToValueString()) 
+                ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -80,6 +88,7 @@ namespace Recraft
             PrepareGenerateImageRasterRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
+                billing: billing,
                 request: request);
 
             using var __response = await HttpClient.SendAsync(
@@ -169,6 +178,7 @@ namespace Recraft
         /// <summary>
         /// Generate raster image from prompt
         /// </summary>
+        /// <param name="billing"></param>
         /// <param name="blockNsfw"></param>
         /// <param name="calculateFeatures"></param>
         /// <param name="controls"></param>
@@ -190,6 +200,7 @@ namespace Recraft
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> GenerateImageRasterAsync(
             string prompt,
+            global::Recraft.BillingType? billing = default,
             bool? blockNsfw = default,
             bool? calculateFeatures = default,
             global::Recraft.UserControls? controls = default,
@@ -230,6 +241,7 @@ namespace Recraft
             };
 
             return await GenerateImageRasterAsync(
+                billing: billing,
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

@@ -7,10 +7,12 @@ namespace Recraft
     {
         partial void PrepareVariateImageArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref global::Recraft.BillingType? billing,
             global::Recraft.VariateImageRequest request);
         partial void PrepareVariateImageRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::Recraft.BillingType? billing,
             global::Recraft.VariateImageRequest request);
         partial void ProcessVariateImageResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -24,12 +26,14 @@ namespace Recraft
         /// <summary>
         /// Variate Image
         /// </summary>
+        /// <param name="billing"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Recraft.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> VariateImageAsync(
 
             global::Recraft.VariateImageRequest request,
+            global::Recraft.BillingType? billing = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -38,11 +42,15 @@ namespace Recraft
                 client: HttpClient);
             PrepareVariateImageArguments(
                 httpClient: HttpClient,
+                billing: ref billing,
                 request: request);
 
             var __pathBuilder = new global::Recraft.PathBuilder(
                 path: "/v1/images/variateImage",
                 baseUri: HttpClient.BaseAddress); 
+            __pathBuilder
+                .AddOptionalParameter("billing", billing?.ToValueString()) 
+                ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -68,6 +76,13 @@ namespace Recraft
                 }
             }
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+            if (billing != default)
+            {
+
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{billing?.ToValueString()}"),
+                    name: "\"billing\"");
+            } 
             if (request.Expire != default)
             {
 
@@ -123,6 +138,7 @@ namespace Recraft
             PrepareVariateImageRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
+                billing: billing,
                 request: request);
 
             using var __response = await HttpClient.SendAsync(
@@ -212,6 +228,7 @@ namespace Recraft
         /// <summary>
         /// Variate Image
         /// </summary>
+        /// <param name="billing"></param>
         /// <param name="expire"></param>
         /// <param name="image"></param>
         /// <param name="imagename"></param>
@@ -226,6 +243,7 @@ namespace Recraft
             byte[] image,
             string imagename,
             global::Recraft.ImageSize size,
+            global::Recraft.BillingType? billing = default,
             bool? expire = default,
             global::Recraft.ImageFormat? imageFormat = default,
             int? n = default,
@@ -246,6 +264,7 @@ namespace Recraft
             };
 
             return await VariateImageAsync(
+                billing: billing,
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

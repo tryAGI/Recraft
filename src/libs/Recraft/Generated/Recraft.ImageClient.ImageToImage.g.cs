@@ -7,10 +7,12 @@ namespace Recraft
     {
         partial void PrepareImageToImageArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref global::Recraft.BillingType? billing,
             global::Recraft.ImageToImageRequest request);
         partial void PrepareImageToImageRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::Recraft.BillingType? billing,
             global::Recraft.ImageToImageRequest request);
         partial void ProcessImageToImageResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -24,12 +26,14 @@ namespace Recraft
         /// <summary>
         /// Generate image from image and prompt
         /// </summary>
+        /// <param name="billing"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Recraft.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> ImageToImageAsync(
 
             global::Recraft.ImageToImageRequest request,
+            global::Recraft.BillingType? billing = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -38,11 +42,15 @@ namespace Recraft
                 client: HttpClient);
             PrepareImageToImageArguments(
                 httpClient: HttpClient,
+                billing: ref billing,
                 request: request);
 
             var __pathBuilder = new global::Recraft.PathBuilder(
                 path: "/v1/images/imageToImage",
                 baseUri: HttpClient.BaseAddress); 
+            __pathBuilder
+                .AddOptionalParameter("billing", billing?.ToValueString()) 
+                ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -68,6 +76,13 @@ namespace Recraft
                 }
             }
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+            if (billing != default)
+            {
+
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{billing?.ToValueString()}"),
+                    name: "\"billing\"");
+            } 
             if (request.BlockNsfw != default)
             {
 
@@ -189,6 +204,7 @@ namespace Recraft
             PrepareImageToImageRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
+                billing: billing,
                 request: request);
 
             using var __response = await HttpClient.SendAsync(
@@ -278,6 +294,7 @@ namespace Recraft
         /// <summary>
         /// Generate image from image and prompt
         /// </summary>
+        /// <param name="billing"></param>
         /// <param name="blockNsfw"></param>
         /// <param name="calculateFeatures"></param>
         /// <param name="controls"></param>
@@ -303,6 +320,7 @@ namespace Recraft
             string imagename,
             string prompt,
             double strength,
+            global::Recraft.BillingType? billing = default,
             bool? blockNsfw = default,
             bool? calculateFeatures = default,
             global::Recraft.UserControls? controls = default,
@@ -342,6 +360,7 @@ namespace Recraft
             };
 
             return await ImageToImageAsync(
+                billing: billing,
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

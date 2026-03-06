@@ -7,17 +7,20 @@ namespace Recraft
         /// <summary>
         /// Crisp Upscale
         /// </summary>
+        /// <param name="billing"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Recraft.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Recraft.ProcessImageResponse> CrispUpscaleAsync(
 
             global::Recraft.ProcessImageRequest request,
+            global::Recraft.BillingType? billing = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Crisp Upscale
         /// </summary>
+        /// <param name="billing"></param>
         /// <param name="expire"></param>
         /// <param name="image"></param>
         /// <param name="imagename"></param>
@@ -29,6 +32,7 @@ namespace Recraft
         global::System.Threading.Tasks.Task<global::Recraft.ProcessImageResponse> CrispUpscaleAsync(
             byte[] image,
             string imagename,
+            global::Recraft.BillingType? billing = default,
             bool? expire = default,
             global::Recraft.ImageFormat? imageFormat = default,
             global::Recraft.ResponseFormat? responseFormat = default,

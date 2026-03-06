@@ -6,10 +6,12 @@ namespace Recraft
     public partial class UserClient
     {
         partial void PrepareGetCurrentUserArguments(
-            global::System.Net.Http.HttpClient httpClient);
+            global::System.Net.Http.HttpClient httpClient,
+            ref global::Recraft.BillingType? billing);
         partial void PrepareGetCurrentUserRequest(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::Recraft.BillingType? billing);
         partial void ProcessGetCurrentUserResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -22,19 +24,25 @@ namespace Recraft
         /// <summary>
         /// Get current user info
         /// </summary>
+        /// <param name="billing"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Recraft.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Recraft.User> GetCurrentUserAsync(
+            global::Recraft.BillingType? billing = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
             PrepareGetCurrentUserArguments(
-                httpClient: HttpClient);
+                httpClient: HttpClient,
+                billing: ref billing);
 
             var __pathBuilder = new global::Recraft.PathBuilder(
                 path: "/v1/users/me",
                 baseUri: HttpClient.BaseAddress); 
+            __pathBuilder
+                .AddOptionalParameter("billing", billing?.ToValueString()) 
+                ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -65,7 +73,8 @@ namespace Recraft
                 request: __httpRequest);
             PrepareGetCurrentUserRequest(
                 httpClient: HttpClient,
-                httpRequestMessage: __httpRequest);
+                httpRequestMessage: __httpRequest,
+                billing: billing);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

@@ -7,17 +7,20 @@ namespace Recraft
         /// <summary>
         /// Create Style
         /// </summary>
+        /// <param name="billing"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Recraft.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Recraft.CreateStyleResponse> CreateStyleAsync(
 
             global::Recraft.CreateStyleRequest request,
+            global::Recraft.BillingType? billing = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Style
         /// </summary>
+        /// <param name="billing"></param>
         /// <param name="imageWeights"></param>
         /// <param name="images"></param>
         /// <param name="mixPolicy"></param>
@@ -33,6 +36,7 @@ namespace Recraft
         global::System.Threading.Tasks.Task<global::Recraft.CreateStyleResponse> CreateStyleAsync(
             global::System.Collections.Generic.IList<byte[]> images,
             global::Recraft.ImageStyle style,
+            global::Recraft.BillingType? billing = default,
             global::System.Collections.Generic.IList<double>? imageWeights = default,
             global::Recraft.MixPolicy? mixPolicy = default,
             global::Recraft.TransformModel? model = default,

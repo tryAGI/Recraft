@@ -7,10 +7,12 @@ namespace Recraft
     {
         partial void PrepareCreateStyleArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref global::Recraft.BillingType? billing,
             global::Recraft.CreateStyleRequest request);
         partial void PrepareCreateStyleRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::Recraft.BillingType? billing,
             global::Recraft.CreateStyleRequest request);
         partial void ProcessCreateStyleResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -24,12 +26,14 @@ namespace Recraft
         /// <summary>
         /// Create Style
         /// </summary>
+        /// <param name="billing"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Recraft.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Recraft.CreateStyleResponse> CreateStyleAsync(
 
             global::Recraft.CreateStyleRequest request,
+            global::Recraft.BillingType? billing = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -38,11 +42,15 @@ namespace Recraft
                 client: HttpClient);
             PrepareCreateStyleArguments(
                 httpClient: HttpClient,
+                billing: ref billing,
                 request: request);
 
             var __pathBuilder = new global::Recraft.PathBuilder(
                 path: "/v1/styles",
                 baseUri: HttpClient.BaseAddress); 
+            __pathBuilder
+                .AddOptionalParameter("billing", billing?.ToValueString()) 
+                ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -68,6 +76,13 @@ namespace Recraft
                 }
             }
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+            if (billing != default)
+            {
+
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{billing?.ToValueString()}"),
+                    name: "\"billing\"");
+            } 
             if (request.ImageWeights != default)
             {
 
@@ -138,6 +153,7 @@ namespace Recraft
             PrepareCreateStyleRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
+                billing: billing,
                 request: request);
 
             using var __response = await HttpClient.SendAsync(
@@ -227,6 +243,7 @@ namespace Recraft
         /// <summary>
         /// Create Style
         /// </summary>
+        /// <param name="billing"></param>
         /// <param name="imageWeights"></param>
         /// <param name="images"></param>
         /// <param name="mixPolicy"></param>
@@ -242,6 +259,7 @@ namespace Recraft
         public async global::System.Threading.Tasks.Task<global::Recraft.CreateStyleResponse> CreateStyleAsync(
             global::System.Collections.Generic.IList<byte[]> images,
             global::Recraft.ImageStyle style,
+            global::Recraft.BillingType? billing = default,
             global::System.Collections.Generic.IList<double>? imageWeights = default,
             global::Recraft.MixPolicy? mixPolicy = default,
             global::Recraft.TransformModel? model = default,
@@ -267,6 +285,7 @@ namespace Recraft
             };
 
             return await CreateStyleAsync(
+                billing: billing,
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

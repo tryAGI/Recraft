@@ -7,17 +7,20 @@ namespace Recraft
         /// <summary>
         /// Generate raster image from prompt
         /// </summary>
+        /// <param name="billing"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Recraft.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> GenerateImageRasterAsync(
 
             global::Recraft.GenerateImageRequest request,
+            global::Recraft.BillingType? billing = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Generate raster image from prompt
         /// </summary>
+        /// <param name="billing"></param>
         /// <param name="blockNsfw"></param>
         /// <param name="calculateFeatures"></param>
         /// <param name="controls"></param>
@@ -39,6 +42,7 @@ namespace Recraft
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> GenerateImageRasterAsync(
             string prompt,
+            global::Recraft.BillingType? billing = default,
             bool? blockNsfw = default,
             bool? calculateFeatures = default,
             global::Recraft.UserControls? controls = default,

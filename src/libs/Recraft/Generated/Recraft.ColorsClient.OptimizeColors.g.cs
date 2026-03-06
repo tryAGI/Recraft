@@ -7,10 +7,12 @@ namespace Recraft
     {
         partial void PrepareOptimizeColorsArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref global::Recraft.BillingType? billing,
             global::Recraft.OptimizeColorsRequest request);
         partial void PrepareOptimizeColorsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::Recraft.BillingType? billing,
             global::Recraft.OptimizeColorsRequest request);
         partial void ProcessOptimizeColorsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -24,12 +26,14 @@ namespace Recraft
         /// <summary>
         /// Optimize colors
         /// </summary>
+        /// <param name="billing"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Recraft.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Recraft.OptimizeColorsResponse> OptimizeColorsAsync(
 
             global::Recraft.OptimizeColorsRequest request,
+            global::Recraft.BillingType? billing = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -38,11 +42,15 @@ namespace Recraft
                 client: HttpClient);
             PrepareOptimizeColorsArguments(
                 httpClient: HttpClient,
+                billing: ref billing,
                 request: request);
 
             var __pathBuilder = new global::Recraft.PathBuilder(
                 path: "/v1/colors/optimize",
                 baseUri: HttpClient.BaseAddress); 
+            __pathBuilder
+                .AddOptionalParameter("billing", billing?.ToValueString()) 
+                ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -80,6 +88,7 @@ namespace Recraft
             PrepareOptimizeColorsRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
+                billing: billing,
                 request: request);
 
             using var __response = await HttpClient.SendAsync(
@@ -169,6 +178,7 @@ namespace Recraft
         /// <summary>
         /// Optimize colors
         /// </summary>
+        /// <param name="billing"></param>
         /// <param name="colors"></param>
         /// <param name="numColorsLimit"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -176,6 +186,7 @@ namespace Recraft
         public async global::System.Threading.Tasks.Task<global::Recraft.OptimizeColorsResponse> OptimizeColorsAsync(
             global::System.Collections.Generic.IList<global::Recraft.ColorHexAndWeight> colors,
             int numColorsLimit,
+            global::Recraft.BillingType? billing = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::Recraft.OptimizeColorsRequest
@@ -185,6 +196,7 @@ namespace Recraft
             };
 
             return await OptimizeColorsAsync(
+                billing: billing,
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

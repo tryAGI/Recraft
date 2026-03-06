@@ -7,17 +7,20 @@ namespace Recraft
         /// <summary>
         /// Generate image from image and prompt
         /// </summary>
+        /// <param name="billing"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Recraft.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> ImageToImageAsync(
 
             global::Recraft.ImageToImageRequest request,
+            global::Recraft.BillingType? billing = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Generate image from image and prompt
         /// </summary>
+        /// <param name="billing"></param>
         /// <param name="blockNsfw"></param>
         /// <param name="calculateFeatures"></param>
         /// <param name="controls"></param>
@@ -43,6 +46,7 @@ namespace Recraft
             string imagename,
             string prompt,
             double strength,
+            global::Recraft.BillingType? billing = default,
             bool? blockNsfw = default,
             bool? calculateFeatures = default,
             global::Recraft.UserControls? controls = default,

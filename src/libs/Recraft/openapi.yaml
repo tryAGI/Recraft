@@ -24,6 +24,24 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SystemStatus'
+  /v1/colors/optimize:
+    post:
+      tags:
+        - colors
+      summary: Optimize colors
+      operationId: OptimizeColors
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OptimizeColorsRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OptimizeColorsResponse'
   /v1/images/clarityUpscale:
     post:
       tags:
@@ -121,6 +139,42 @@ paths:
         - image
       summary: Generate image from prompt
       operationId: GenerateImage
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenerateImageRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenerateImageResponse'
+  /v1/images/generations/raster:
+    post:
+      tags:
+        - image
+      summary: Generate raster image from prompt
+      operationId: GenerateImageRaster
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenerateImageRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenerateImageResponse'
+  /v1/images/generations/vector:
+    post:
+      tags:
+        - image
+      summary: Generate vector image from prompt
+      operationId: GenerateImageVector
       requestBody:
         content:
           application/json:
@@ -252,7 +306,7 @@ paths:
         content:
           multipart/form-data:
             schema:
-              $ref: '#/components/schemas/ProcessImageRequest'
+              $ref: '#/components/schemas/VectorizeImageRequest'
       responses:
         '200':
           description: OK
@@ -377,19 +431,67 @@ components:
           $ref: '#/components/schemas/ImageStyle'
         substyle:
           $ref: '#/components/schemas/ImageSubStyle'
+    ColorHexAndWeight:
+      required:
+        - hex
+      type: object
+      properties:
+        hex:
+          type: string
+        weight:
+          type: number
+    ColorMapping:
+      required:
+        - from
+        - to
+      type: object
+      properties:
+        from:
+          type: string
+        to:
+          type: string
+    ColorReduction:
+      enum:
+        - on
+        - off
+      type: string
     CreateStyleRequest:
       required:
         - images
         - style
       type: object
       properties:
+        image_weights:
+          type: array
+          items:
+            type: number
         images:
           type: array
           items:
             type: string
             format: binary
+        mix_policy:
+          $ref: '#/components/schemas/MixPolicy'
+        model:
+          $ref: '#/components/schemas/TransformModel'
+        palette:
+          $ref: '#/components/schemas/PaletteSuggest'
         private:
           type: boolean
+        prompt:
+          type: string
+        source_style_weights:
+          type: array
+          items:
+            type: number
+        source_styles:
+          type: array
+          items:
+            type: string
+            format: uuid
+            x-go-type: uuid.UUID
+            x-go-type-import:
+              path: github.com/gofrs/uuid/v5
         style:
           $ref: '#/components/schemas/ImageStyle'
     CreateStyleResponse:
@@ -539,19 +641,6 @@ components:
         - 1280x1024
         - 1024x1707
         - 1707x1024
-        - 1216x896
-        - 896x1216
-        - 1280x832
-        - 832x1280
-        - 1152x896
-        - 896x1152
-        - 1280x896
-        - 896x1280
-        - 832x1344
-        - 768x1344
-        - 1344x768
-        - 768x1536
-        - 1536x768
         - 1024x1024
         - 1216x896
         - 896x1216
@@ -759,6 +848,14 @@ components:
           $ref: '#/components/schemas/ImageSubStyle'
         text_layout:
           $ref: '#/components/schemas/TextLayout'
+    LimitNumShapes:
+      enum:
+        - on
+        - off
+      type: string
+      x-enum-varnames:
+        - LimitNumShapesOn
+        - LimitNumShapesOff
     ListBasicStylesResponse:
       required:
         - styles
@@ -777,6 +874,46 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Style'
+    MixPolicy:
+      enum:
+        - PaletteMatch
+        - MaxWeight
+      type: string
+    OptimizeColorsRequest:
+      required:
+        - colors
+        - num_colors_limit
+      type: object
+      properties:
+        colors:
+          type: array
+          items:
+            $ref: '#/components/schemas/ColorHexAndWeight'
+        num_colors_limit:
+          type: integer
+    OptimizeColorsResponse:
+      required:
+        - mapping
+        - credits
+      type: object
+      properties:
+        credits:
+          type: integer
+        mapping:
+          type: array
+          items:
+            $ref: '#/components/schemas/ColorMapping'
+    PaletteSuggest:
+      required:
+        - colors
+      type: object
+      properties:
+        background_color:
+          $ref: '#/components/schemas/ImageColor'
+        colors:
+          type: array
+          items:
+            $ref: '#/components/schemas/ImageColor'
     ProcessImageRequest:
       required:
         - image
@@ -811,6 +948,19 @@ components:
         - url
         - b64_json
       type: string
+    ReturnGradients:
+      enum:
+        - on
+        - off
+      type: string
+      x-enum-varnames:
+        - ReturnGradientsOn
+        - ReturnGradientsOff
+    SmallShapeFilter:
+      enum:
+        - on
+        - off
+      type: string
     Style:
       required:
         - id
@@ -835,6 +985,14 @@ components:
           $ref: '#/components/schemas/ImageStyle'
         substyle:
           $ref: '#/components/schemas/ImageSubStyle'
+    SvgCompression:
+      enum:
+        - on
+        - off
+      type: string
+      x-enum-varnames:
+        - SvgCompressionOn
+        - SvgCompressionOff
     SystemStatus:
       required:
         - service
@@ -944,12 +1102,59 @@ components:
         - gpt_image_1_low
         - gpt_image_1_medium
         - gpt_image_1_high
+        - gpt_image_1p5_low
+        - gpt_image_1p5_medium
+        - gpt_image_1p5_high
         - ideogram_v3_turbo
         - ideogram_v3_default
         - ideogram_v3_quality
         - qwen_image
+        - qwen_image_2
         - gemini_25_flash_image
         - bytedance-seedreamv4
+        - bytedance_seedreamv4p5
+        - nano_banana_pro
+        - nano_banana_pro_4k
+        - nano_banana_2
+        - nano_banana_2_with_4k
+        - flux2_dev
+        - flux2_pro
+        - flux2_flex
+        - flux2_max
+        - z_image_turbo
+        - bytedance_seedreamv5_lite
+        - qwen_image_2_pro
+        - flux1_schnell
+        - grok_imagine_image
+        - veo3p1
+        - veo3p1_fast
+        - veo3
+        - veo3_fast
+        - veo2
+        - sora2_pro
+        - sora2
+        - ray2
+        - ray2_flash
+        - kling2p6_pro
+        - kling2p5_turbo
+        - kling2p1_master
+        - hailuo02_pro
+        - hailuo02_standard
+        - hailuo2p3_pro
+        - hailuo2p3_standard
+        - wan2p6
+        - wan2p5_preview
+        - wan2p2_a14b
+        - bytedance_seedance1p5
+        - pixverse_v5p5
+        - grok_imagine_video
+        - kling3_pro
+        - kling3_standard
+        - kling3_omni_pro
+        - kling3_omni_standard
+        - recraft_super_resolution
+        - recraft_generative_upscale
+        - topaz
       type: string
     UpscaleMode:
       enum:
@@ -1011,6 +1216,24 @@ components:
           $ref: '#/components/schemas/ResponseFormat'
         size:
           $ref: '#/components/schemas/ImageSize'
+    VectorizeImageRequest:
+      allOf:
+        - $ref: '#/components/schemas/ProcessImageRequest'
+        - type: object
+          properties:
+            color_reduction:
+              $ref: '#/components/schemas/ColorReduction'
+            limit_num_shapes:
+              $ref: '#/components/schemas/LimitNumShapes'
+            max_num_shapes:
+              type: integer
+              format: uint32
+            return_gradients:
+              $ref: '#/components/schemas/ReturnGradients'
+            small_shape_filter:
+              $ref: '#/components/schemas/SmallShapeFilter'
+            svg_compression:
+              $ref: '#/components/schemas/SvgCompression'
   securitySchemes:
     auth0:
       type: http

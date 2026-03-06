@@ -7,11 +7,11 @@ namespace Recraft
     {
         partial void PrepareVectorizeImageArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::Recraft.ProcessImageRequest request);
+            global::Recraft.VectorizeImageRequest request);
         partial void PrepareVectorizeImageRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::Recraft.ProcessImageRequest request);
+            global::Recraft.VectorizeImageRequest request);
         partial void ProcessVectorizeImageResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -28,11 +28,10 @@ namespace Recraft
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Recraft.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Recraft.ProcessImageResponse> VectorizeImageAsync(
-            global::Recraft.ProcessImageRequest request,
+
+            global::Recraft.VectorizeImageRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: HttpClient);
             PrepareVectorizeImageArguments(
@@ -67,34 +66,6 @@ namespace Recraft
                 }
             }
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-            if (request.Expire != default)
-            {
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.Expire}"),
-                    name: "expire");
-            } 
-            __httpRequestContent.Add(
-                content: new global::System.Net.Http.ByteArrayContent(request.Image ?? global::System.Array.Empty<byte>()),
-                name: "image",
-                fileName: request.Imagename ?? string.Empty);
-            if (request.ImageFormat != default)
-            {
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.ImageFormat?.ToValueString()}"),
-                    name: "image_format");
-            } 
-            if (request.ResponseFormat != default)
-            {
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.ResponseFormat?.ToValueString()}"),
-                    name: "response_format");
-            } 
-            if (request.Upscale != default)
-            {
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.Upscale?.ToValueString()}"),
-                    name: "upscale");
-            }
             __httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
@@ -192,31 +163,13 @@ namespace Recraft
         /// <summary>
         /// Vectorize image
         /// </summary>
-        /// <param name="expire"></param>
-        /// <param name="image"></param>
-        /// <param name="imagename"></param>
-        /// <param name="imageFormat"></param>
-        /// <param name="responseFormat"></param>
-        /// <param name="upscale"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Recraft.ProcessImageResponse> VectorizeImageAsync(
-            byte[] image,
-            string imagename,
-            bool? expire = default,
-            global::Recraft.ImageFormat? imageFormat = default,
-            global::Recraft.ResponseFormat? responseFormat = default,
-            global::Recraft.UpscaleMode? upscale = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::Recraft.ProcessImageRequest
+            var __request = new global::Recraft.VectorizeImageRequest
             {
-                Expire = expire,
-                Image = image,
-                Imagename = imagename,
-                ImageFormat = imageFormat,
-                ResponseFormat = responseFormat,
-                Upscale = upscale,
             };
 
             return await VectorizeImageAsync(

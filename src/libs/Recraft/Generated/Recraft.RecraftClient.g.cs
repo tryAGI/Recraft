@@ -39,6 +39,15 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        public ColorsClient Colors => new ColorsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ImageClient Image => new ImageClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,

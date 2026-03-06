@@ -11,6 +11,7 @@ namespace Recraft
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Recraft.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Recraft.ProcessImageResponse> EraseRegionAsync(
+
             global::Recraft.EraseRegionRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 

@@ -1,0 +1,60 @@
+#nullable enable
+
+namespace Recraft.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class LimitNumShapesNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Recraft.LimitNumShapes?>
+    {
+        /// <inheritdoc />
+        public override global::Recraft.LimitNumShapes? Read(
+            ref global::System.Text.Json.Utf8JsonReader reader,
+            global::System.Type typeToConvert,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            switch (reader.TokenType)
+            {
+                case global::System.Text.Json.JsonTokenType.String:
+                {
+                    var stringValue = reader.GetString();
+                    if (stringValue != null)
+                    {
+                        return global::Recraft.LimitNumShapesExtensions.ToEnum(stringValue);
+                    }
+                    
+                    break;
+                }
+                case global::System.Text.Json.JsonTokenType.Number:
+                {
+                    var numValue = reader.GetInt32();
+                    return (global::Recraft.LimitNumShapes)numValue;
+                }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::Recraft.LimitNumShapes?);
+                }
+                default:
+                    throw new global::System.ArgumentOutOfRangeException(nameof(reader));
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void Write(
+            global::System.Text.Json.Utf8JsonWriter writer,
+            global::Recraft.LimitNumShapes? value,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            if (value == null)
+            {
+                writer.WriteNullValue();
+            }
+            else
+            {
+                writer.WriteStringValue(global::Recraft.LimitNumShapesExtensions.ToValueString(value.Value));
+            }
+        }
+    }
+}

@@ -28,6 +28,7 @@ namespace Recraft
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Recraft.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> ImageToImageAsync(
+
             global::Recraft.ImageToImageRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -69,97 +70,116 @@ namespace Recraft
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
             if (request.BlockNsfw != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.BlockNsfw}"),
-                    name: "block_nsfw");
+                    name: "\"block_nsfw\"");
             } 
             if (request.CalculateFeatures != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.CalculateFeatures}"),
-                    name: "calculate_features");
+                    name: "\"calculate_features\"");
             } 
             if (request.Controls != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Controls}"),
-                    name: "controls");
+                    name: "\"controls\"");
             } 
             if (request.Expire != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Expire}"),
-                    name: "expire");
-            } 
+                    name: "\"expire\"");
+            }
+            var __contentImage = new global::System.Net.Http.ByteArrayContent(request.Image ?? global::System.Array.Empty<byte>());
             __httpRequestContent.Add(
-                content: new global::System.Net.Http.ByteArrayContent(request.Image ?? global::System.Array.Empty<byte>()),
-                name: "image",
-                fileName: request.Imagename ?? string.Empty);
+                content: __contentImage,
+                name: "\"image\"",
+                fileName: request.Imagename != null ? $"\"{request.Imagename}\"" : string.Empty);
+            if (__contentImage.Headers.ContentDisposition != null)
+            {
+                __contentImage.Headers.ContentDisposition.FileNameStar = null;
+            }
             if (request.ImageFormat != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.ImageFormat?.ToValueString()}"),
-                    name: "image_format");
+                    name: "\"image_format\"");
             } 
             if (request.Model != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Model?.ToValueString()}"),
-                    name: "model");
+                    name: "\"model\"");
             } 
             if (request.N != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.N}"),
-                    name: "n");
+                    name: "\"n\"");
             } 
             if (request.NegativePrompt != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.NegativePrompt}"),
-                    name: "negative_prompt");
-            } 
+                    name: "\"negative_prompt\"");
+            }
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{request.Prompt}"),
-                name: "prompt");
+                name: "\"prompt\"");
             if (request.RandomSeed != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.RandomSeed}"),
-                    name: "random_seed");
+                    name: "\"random_seed\"");
             } 
             if (request.ResponseFormat != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.ResponseFormat?.ToValueString()}"),
-                    name: "response_format");
-            } 
+                    name: "\"response_format\"");
+            }
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{request.Strength}"),
-                name: "strength");
+                name: "\"strength\"");
             if (request.Style != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Style}"),
-                    name: "style");
+                    name: "\"style\"");
             } 
             if (request.StyleId != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.StyleId}"),
-                    name: "style_id");
+                    name: "\"style_id\"");
             } 
             if (request.Substyle != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Substyle?.ToValueString()}"),
-                    name: "substyle");
+                    name: "\"substyle\"");
             } 
             if (request.TextLayout != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.TextLayout, x => x))}]"),
-                    name: "text_layout");
+                    name: "\"text_layout\"");
             }
             __httpRequest.Content = __httpRequestContent;
 

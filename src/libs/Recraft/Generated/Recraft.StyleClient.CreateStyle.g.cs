@@ -28,6 +28,7 @@ namespace Recraft
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Recraft.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Recraft.CreateStyleResponse> CreateStyleAsync(
+
             global::Recraft.CreateStyleRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -67,18 +68,68 @@ namespace Recraft
                 }
             }
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+            if (request.ImageWeights != default)
+            {
+
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.ImageWeights, x => x))}]"),
+                    name: "\"image_weights\"");
+            }
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Images, x => x))}]"),
-                name: "images");
+                name: "\"images\"");
+            if (request.MixPolicy != default)
+            {
+
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.MixPolicy?.ToValueString()}"),
+                    name: "\"mix_policy\"");
+            } 
+            if (request.Model != default)
+            {
+
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.Model?.ToValueString()}"),
+                    name: "\"model\"");
+            } 
+            if (request.Palette != default)
+            {
+
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.Palette}"),
+                    name: "\"palette\"");
+            } 
             if (request.Private != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Private}"),
-                    name: "private");
+                    name: "\"private\"");
             } 
+            if (request.Prompt != default)
+            {
+
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.Prompt}"),
+                    name: "\"prompt\"");
+            } 
+            if (request.SourceStyleWeights != default)
+            {
+
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.SourceStyleWeights, x => x))}]"),
+                    name: "\"source_style_weights\"");
+            } 
+            if (request.SourceStyles != default)
+            {
+
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.SourceStyles, x => x))}]"),
+                    name: "\"source_styles\"");
+            }
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{request.Style.ToValueString()}"),
-                name: "style");
+                name: "\"style\"");
             __httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
@@ -176,21 +227,42 @@ namespace Recraft
         /// <summary>
         /// Create Style
         /// </summary>
+        /// <param name="imageWeights"></param>
         /// <param name="images"></param>
+        /// <param name="mixPolicy"></param>
+        /// <param name="model"></param>
+        /// <param name="palette"></param>
         /// <param name="private"></param>
+        /// <param name="prompt"></param>
+        /// <param name="sourceStyleWeights"></param>
+        /// <param name="sourceStyles"></param>
         /// <param name="style"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Recraft.CreateStyleResponse> CreateStyleAsync(
             global::System.Collections.Generic.IList<byte[]> images,
             global::Recraft.ImageStyle style,
+            global::System.Collections.Generic.IList<double>? imageWeights = default,
+            global::Recraft.MixPolicy? mixPolicy = default,
+            global::Recraft.TransformModel? model = default,
+            global::Recraft.PaletteSuggest? palette = default,
             bool? @private = default,
+            string? prompt = default,
+            global::System.Collections.Generic.IList<double>? sourceStyleWeights = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? sourceStyles = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::Recraft.CreateStyleRequest
             {
+                ImageWeights = imageWeights,
                 Images = images,
+                MixPolicy = mixPolicy,
+                Model = model,
+                Palette = palette,
                 Private = @private,
+                Prompt = prompt,
+                SourceStyleWeights = sourceStyleWeights,
+                SourceStyles = sourceStyles,
                 Style = style,
             };
 

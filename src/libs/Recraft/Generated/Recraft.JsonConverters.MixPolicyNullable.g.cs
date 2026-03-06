@@ -1,0 +1,60 @@
+#nullable enable
+
+namespace Recraft.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class MixPolicyNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Recraft.MixPolicy?>
+    {
+        /// <inheritdoc />
+        public override global::Recraft.MixPolicy? Read(
+            ref global::System.Text.Json.Utf8JsonReader reader,
+            global::System.Type typeToConvert,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            switch (reader.TokenType)
+            {
+                case global::System.Text.Json.JsonTokenType.String:
+                {
+                    var stringValue = reader.GetString();
+                    if (stringValue != null)
+                    {
+                        return global::Recraft.MixPolicyExtensions.ToEnum(stringValue);
+                    }
+                    
+                    break;
+                }
+                case global::System.Text.Json.JsonTokenType.Number:
+                {
+                    var numValue = reader.GetInt32();
+                    return (global::Recraft.MixPolicy)numValue;
+                }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::Recraft.MixPolicy?);
+                }
+                default:
+                    throw new global::System.ArgumentOutOfRangeException(nameof(reader));
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void Write(
+            global::System.Text.Json.Utf8JsonWriter writer,
+            global::Recraft.MixPolicy? value,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            if (value == null)
+            {
+                writer.WriteNullValue();
+            }
+            else
+            {
+                writer.WriteStringValue(global::Recraft.MixPolicyExtensions.ToValueString(value.Value));
+            }
+        }
+    }
+}

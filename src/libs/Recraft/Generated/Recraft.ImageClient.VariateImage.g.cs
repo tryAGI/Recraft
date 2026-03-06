@@ -28,6 +28,7 @@ namespace Recraft
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Recraft.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> VariateImageAsync(
+
             global::Recraft.VariateImageRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -69,41 +70,51 @@ namespace Recraft
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
             if (request.Expire != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Expire}"),
-                    name: "expire");
-            } 
+                    name: "\"expire\"");
+            }
+            var __contentImage = new global::System.Net.Http.ByteArrayContent(request.Image ?? global::System.Array.Empty<byte>());
             __httpRequestContent.Add(
-                content: new global::System.Net.Http.ByteArrayContent(request.Image ?? global::System.Array.Empty<byte>()),
-                name: "image",
-                fileName: request.Imagename ?? string.Empty);
+                content: __contentImage,
+                name: "\"image\"",
+                fileName: request.Imagename != null ? $"\"{request.Imagename}\"" : string.Empty);
+            if (__contentImage.Headers.ContentDisposition != null)
+            {
+                __contentImage.Headers.ContentDisposition.FileNameStar = null;
+            }
             if (request.ImageFormat != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.ImageFormat?.ToValueString()}"),
-                    name: "image_format");
+                    name: "\"image_format\"");
             } 
             if (request.N != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.N}"),
-                    name: "n");
+                    name: "\"n\"");
             } 
             if (request.RandomSeed != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.RandomSeed}"),
-                    name: "random_seed");
+                    name: "\"random_seed\"");
             } 
             if (request.ResponseFormat != default)
             {
+
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.ResponseFormat?.ToValueString()}"),
-                    name: "response_format");
-            } 
+                    name: "\"response_format\"");
+            }
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{request.Size.ToValueString()}"),
-                name: "size");
+                name: "\"size\"");
             __httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(

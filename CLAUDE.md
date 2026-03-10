@@ -10,10 +10,10 @@ C# SDK for the [Recraft](https://recraft.ai/) AI image generation platform, auto
 
 ```bash
 # Build the solution
-dotnet build Recraft.sln
+dotnet build Recraft.slnx
 
 # Build for release (also produces NuGet package)
-dotnet build Recraft.sln -c Release
+dotnet build Recraft.slnx -c Release
 
 # Run integration tests (requires RECRAFT_API_KEY env var)
 dotnet test src/tests/IntegrationTests/Recraft.IntegrationTests.csproj

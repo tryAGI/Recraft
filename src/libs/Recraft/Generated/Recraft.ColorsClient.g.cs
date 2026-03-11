@@ -10,7 +10,7 @@ namespace Recraft
     public sealed partial class ColorsClient : global::Recraft.IColorsClient, global::System.IDisposable
     {
         /// <summary>
-        /// Production
+        /// 
         /// </summary>
         public const string DefaultBaseUrl = "https://external.api.recraft.ai";
 

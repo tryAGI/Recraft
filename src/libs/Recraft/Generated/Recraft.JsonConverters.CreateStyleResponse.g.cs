@@ -40,8 +40,9 @@ namespace Recraft.JsonConverters
             {
             }
 
-            var result = new global::Recraft.CreateStyleResponse(
+            var __value = new global::Recraft.CreateStyleResponse(
                 value1,
+
                 value2
                 );
 
@@ -58,7 +59,7 @@ namespace Recraft.JsonConverters
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
-            return result;
+            return __value;
         }
 
         /// <inheritdoc />

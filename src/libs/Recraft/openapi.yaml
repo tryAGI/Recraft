@@ -1,11 +1,10 @@
-openapi: 3.0.4
+openapi: '3.2.0'
 info:
   title: recraft.ai external api
   version: 0.0.1
 servers:
   - url: https://external.api.recraft.ai
     description: Production
-  - url: https://external.api.recraft.ai/
 paths:
   /ping:
     get:
@@ -1289,5 +1288,4 @@ components:
       type: http
       scheme: bearer
 security:
-  - auth0: [ ]
   - auth0: [ ]

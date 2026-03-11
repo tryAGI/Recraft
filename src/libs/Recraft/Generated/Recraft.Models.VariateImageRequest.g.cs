@@ -19,14 +19,14 @@ namespace Recraft
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public byte[] Image { get; set; } = default!;
+        public required byte[] Image { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("imagename")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Imagename { get; set; } = default!;
+        public required string Imagename { get; set; }
 
         /// <summary>
         /// 
@@ -60,7 +60,7 @@ namespace Recraft
         [global::System.Text.Json.Serialization.JsonPropertyName("size")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.ImageSizeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::Recraft.ImageSize Size { get; set; } = default!;
+        public required global::Recraft.ImageSize Size { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

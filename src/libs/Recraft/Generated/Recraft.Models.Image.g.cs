@@ -25,7 +25,7 @@ namespace Recraft
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public global::System.Guid ImageId { get; set; } = default!;
+        public required global::System.Guid ImageId { get; set; }
 
         /// <summary>
         /// 

@@ -13,7 +13,7 @@ namespace Recraft
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("credits")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public int Credits { get; set; } = default!;
+        public required int Credits { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -19,14 +19,14 @@ namespace Recraft
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public byte[] Image { get; set; } = default!;
+        public required byte[] Image { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("imagename")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Imagename { get; set; } = default!;
+        public required string Imagename { get; set; }
 
         /// <summary>
         /// 
@@ -40,14 +40,14 @@ namespace Recraft
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mask")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public byte[] Mask { get; set; } = default!;
+        public required byte[] Mask { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("maskname")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Maskname { get; set; } = default!;
+        public required string Maskname { get; set; }
 
         /// <summary>
         /// 

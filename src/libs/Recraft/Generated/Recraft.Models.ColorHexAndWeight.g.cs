@@ -13,7 +13,7 @@ namespace Recraft
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hex")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public string Hex { get; set; } = default!;
+        public required string Hex { get; set; }
 
         /// <summary>
         /// 

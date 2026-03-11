@@ -13,14 +13,14 @@ namespace Recraft
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bbox")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>> Bbox { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>> Bbox { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Text { get; set; }
+        public string Text { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

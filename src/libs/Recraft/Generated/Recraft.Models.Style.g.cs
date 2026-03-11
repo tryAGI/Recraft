@@ -13,21 +13,21 @@ namespace Recraft
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("creation_time")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime CreationTime { get; set; }
+        public global::System.DateTime CreationTime { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid Id { get; set; }
+        public global::System.Guid Id { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_private")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool IsPrivate { get; set; }
+        public bool IsPrivate { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -35,7 +35,7 @@ namespace Recraft
         [global::System.Text.Json.Serialization.JsonPropertyName("style")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.ImageStyleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Recraft.ImageStyle Style1 { get; set; }
+        public global::Recraft.ImageStyle Style1 { get; set; } = default!;
 
         /// <summary>
         /// 

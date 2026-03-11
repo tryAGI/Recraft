@@ -13,21 +13,21 @@ namespace Recraft
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Created { get; set; }
+        public int Created { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("credits")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Credits { get; set; }
+        public int Credits { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::Recraft.Image> Data { get; set; }
+        public global::System.Collections.Generic.IList<global::Recraft.Image> Data { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

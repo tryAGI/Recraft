@@ -13,14 +13,14 @@ namespace Recraft
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("from")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string From { get; set; }
+        public string From { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("to")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string To { get; set; }
+        public string To { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

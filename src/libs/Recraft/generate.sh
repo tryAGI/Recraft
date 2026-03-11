@@ -9,7 +9,7 @@ fi
 autosdk generate openapi.yaml \
   --namespace Recraft \
   --clientClassName RecraftClient \
-  --targetFramework net8.0 \
+  --targetFramework net10.0 \
   --output Generated \
   --exclude-deprecated-operations \
   --base-url https://external.api.recraft.ai \

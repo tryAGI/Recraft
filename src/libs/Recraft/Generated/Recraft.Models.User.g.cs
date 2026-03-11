@@ -13,7 +13,7 @@ namespace Recraft
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("credits")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Credits { get; set; }
+        public int Credits { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -26,7 +26,7 @@ namespace Recraft
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid Id { get; set; }
+        public global::System.Guid Id { get; set; } = default!;
 
         /// <summary>
         /// 

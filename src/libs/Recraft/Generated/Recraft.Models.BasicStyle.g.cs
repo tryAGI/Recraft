@@ -14,7 +14,7 @@ namespace Recraft
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.TransformModelJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Recraft.TransformModel Model { get; set; }
+        public global::Recraft.TransformModel Model { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -22,7 +22,7 @@ namespace Recraft
         [global::System.Text.Json.Serialization.JsonPropertyName("style")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.ImageStyleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Recraft.ImageStyle Style { get; set; }
+        public global::Recraft.ImageStyle Style { get; set; } = default!;
 
         /// <summary>
         /// 

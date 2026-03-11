@@ -13,14 +13,14 @@ namespace Recraft
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("generation")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool Generation { get; set; }
+        public bool Generation { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("service")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool Service { get; set; }
+        public bool Service { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

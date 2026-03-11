@@ -19,7 +19,7 @@ namespace Recraft
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("images")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<byte[]> Images { get; set; }
+        public global::System.Collections.Generic.IList<byte[]> Images { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -71,7 +71,7 @@ namespace Recraft
         [global::System.Text.Json.Serialization.JsonPropertyName("style")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.ImageStyleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Recraft.ImageStyle Style { get; set; }
+        public global::Recraft.ImageStyle Style { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

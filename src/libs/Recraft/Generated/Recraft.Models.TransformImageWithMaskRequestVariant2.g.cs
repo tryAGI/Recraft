@@ -13,14 +13,14 @@ namespace Recraft
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mask")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required byte[] Mask { get; set; }
+        public byte[] Mask { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("maskname")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Maskname { get; set; }
+        public string Maskname { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -13,14 +13,14 @@ namespace Recraft
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("colors")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::Recraft.ColorHexAndWeight> Colors { get; set; }
+        public global::System.Collections.Generic.IList<global::Recraft.ColorHexAndWeight> Colors { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_colors_limit")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int NumColorsLimit { get; set; }
+        public int NumColorsLimit { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

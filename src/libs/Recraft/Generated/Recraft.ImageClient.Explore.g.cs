@@ -5,34 +5,34 @@ namespace Recraft
 {
     public partial class ImageClient
     {
-        partial void PrepareImageToImageArguments(
+        partial void PrepareExploreArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::Recraft.BillingType? billing,
-            global::Recraft.ImageToImageRequest request);
-        partial void PrepareImageToImageRequest(
+            global::Recraft.ExploreRequest request);
+        partial void PrepareExploreRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::Recraft.BillingType? billing,
-            global::Recraft.ImageToImageRequest request);
-        partial void ProcessImageToImageResponse(
+            global::Recraft.ExploreRequest request);
+        partial void ProcessExploreResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessImageToImageResponseContent(
+        partial void ProcessExploreResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Generate image from image and prompt
+        /// Exploration
         /// </summary>
         /// <param name="billing"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Recraft.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> ImageToImageAsync(
+        public async global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> ExploreAsync(
 
-            global::Recraft.ImageToImageRequest request,
+            global::Recraft.ExploreRequest request,
             global::Recraft.BillingType? billing = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -40,13 +40,13 @@ namespace Recraft
 
             PrepareArguments(
                 client: HttpClient);
-            PrepareImageToImageArguments(
+            PrepareExploreArguments(
                 httpClient: HttpClient,
                 billing: ref billing,
                 request: request);
 
             var __pathBuilder = new global::Recraft.PathBuilder(
-                path: "/v1/images/imageToImage",
+                path: "/v1/images/explore",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("billing", billing?.ToValueString()) 
@@ -75,137 +75,17 @@ namespace Recraft
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
-            using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-            if (billing != default)
-            {
-
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{billing?.ToValueString()}"),
-                    name: "\"billing\"");
-            } 
-            if (request.BlockNsfw != default)
-            {
-
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.BlockNsfw}"),
-                    name: "\"block_nsfw\"");
-            } 
-            if (request.CalculateFeatures != default)
-            {
-
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.CalculateFeatures}"),
-                    name: "\"calculate_features\"");
-            } 
-            if (request.Controls != default)
-            {
-
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.Controls}"),
-                    name: "\"controls\"");
-            } 
-            if (request.Expire != default)
-            {
-
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.Expire}"),
-                    name: "\"expire\"");
-            }
-            var __contentImage = new global::System.Net.Http.ByteArrayContent(request.Image ?? global::System.Array.Empty<byte>());
-            __httpRequestContent.Add(
-                content: __contentImage,
-                name: "\"image\"",
-                fileName: request.Imagename != null ? $"\"{request.Imagename}\"" : string.Empty);
-            if (__contentImage.Headers.ContentDisposition != null)
-            {
-                __contentImage.Headers.ContentDisposition.FileNameStar = null;
-            }
-            if (request.ImageFormat != default)
-            {
-
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.ImageFormat?.ToValueString()}"),
-                    name: "\"image_format\"");
-            } 
-            if (request.Model != default)
-            {
-
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.Model?.ToValueString()}"),
-                    name: "\"model\"");
-            } 
-            if (request.N != default)
-            {
-
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.N}"),
-                    name: "\"n\"");
-            } 
-            if (request.NegativePrompt != default)
-            {
-
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.NegativePrompt}"),
-                    name: "\"negative_prompt\"");
-            } 
-            if (request.Prompt != default)
-            {
-
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.Prompt}"),
-                    name: "\"prompt\"");
-            } 
-            if (request.RandomSeed != default)
-            {
-
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.RandomSeed}"),
-                    name: "\"random_seed\"");
-            } 
-            if (request.ResponseFormat != default)
-            {
-
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.ResponseFormat?.ToValueString()}"),
-                    name: "\"response_format\"");
-            }
-            __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent($"{request.Strength}"),
-                name: "\"strength\"");
-            if (request.Style != default)
-            {
-
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.Style}"),
-                    name: "\"style\"");
-            } 
-            if (request.StyleId != default)
-            {
-
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.StyleId}"),
-                    name: "\"style_id\"");
-            } 
-            if (request.Substyle != default)
-            {
-
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.Substyle?.ToValueString()}"),
-                    name: "\"substyle\"");
-            } 
-            if (request.TextLayout != default)
-            {
-
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.TextLayout, x => x))}]"),
-                    name: "\"text_layout\"");
-            }
+            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
+            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                content: __httpRequestContentBody,
+                encoding: global::System.Text.Encoding.UTF8,
+                mediaType: "application/json");
             __httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareImageToImageRequest(
+            PrepareExploreRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 billing: billing,
@@ -219,7 +99,7 @@ namespace Recraft
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessImageToImageResponse(
+            ProcessExploreResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
 
@@ -235,7 +115,7 @@ namespace Recraft
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessImageToImageResponseContent(
+                ProcessExploreResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -296,74 +176,53 @@ namespace Recraft
         }
 
         /// <summary>
-        /// Generate image from image and prompt
+        /// Exploration
         /// </summary>
         /// <param name="billing"></param>
         /// <param name="blockNsfw"></param>
-        /// <param name="calculateFeatures"></param>
         /// <param name="controls"></param>
         /// <param name="expire"></param>
-        /// <param name="image"></param>
-        /// <param name="imagename"></param>
         /// <param name="imageFormat"></param>
         /// <param name="model"></param>
-        /// <param name="n"></param>
-        /// <param name="negativePrompt"></param>
         /// <param name="prompt"></param>
-        /// <param name="randomSeed"></param>
         /// <param name="responseFormat"></param>
-        /// <param name="strength"></param>
+        /// <param name="size"></param>
         /// <param name="style"></param>
         /// <param name="styleId"></param>
         /// <param name="substyle"></param>
-        /// <param name="textLayout"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> ImageToImageAsync(
-            byte[] image,
-            string imagename,
-            double strength,
+        public async global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> ExploreAsync(
+            string prompt,
             global::Recraft.BillingType? billing = default,
             bool? blockNsfw = default,
-            bool? calculateFeatures = default,
             global::Recraft.UserControls? controls = default,
             bool? expire = default,
             global::Recraft.ImageFormat? imageFormat = default,
             global::Recraft.TransformModel? model = default,
-            int? n = default,
-            string? negativePrompt = default,
-            string? prompt = default,
-            int? randomSeed = default,
             global::Recraft.ResponseFormat? responseFormat = default,
+            global::Recraft.ImageSize? size = default,
             string? style = default,
             global::System.Guid? styleId = default,
             global::Recraft.ImageSubStyle? substyle = default,
-            global::System.Collections.Generic.IList<global::Recraft.TextLayoutItem>? textLayout = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::Recraft.ImageToImageRequest
+            var __request = new global::Recraft.ExploreRequest
             {
                 BlockNsfw = blockNsfw,
-                CalculateFeatures = calculateFeatures,
                 Controls = controls,
                 Expire = expire,
-                Image = image,
-                Imagename = imagename,
                 ImageFormat = imageFormat,
                 Model = model,
-                N = n,
-                NegativePrompt = negativePrompt,
                 Prompt = prompt,
-                RandomSeed = randomSeed,
                 ResponseFormat = responseFormat,
-                Strength = strength,
+                Size = size,
                 Style = style,
                 StyleId = styleId,
                 Substyle = substyle,
-                TextLayout = textLayout,
             };
 
-            return await ImageToImageAsync(
+            return await ExploreAsync(
                 billing: billing,
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

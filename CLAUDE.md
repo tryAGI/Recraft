@@ -29,7 +29,6 @@ cd src/libs/Recraft && ./generate.sh
 The SDK code is **entirely auto-generated** -- do not manually edit files in `src/libs/Recraft/Generated/`.
 
 1. `src/libs/Recraft/openapi.yaml` -- the Recraft OpenAPI spec (fetched from `https://external.api.recraft.ai/doc/spec/api.yaml`)
-2. `src/helpers/FixOpenApiSpec/` -- converts OpenAPI 3.1 to 3.0 format for compatibility
 3. `src/libs/Recraft/generate.sh` -- orchestrates: download spec, fix spec, run AutoSDK CLI, output to `Generated/`
 4. CI auto-updates the spec and creates PRs if changes are detected
 
@@ -39,8 +38,6 @@ The SDK code is **entirely auto-generated** -- do not manually edit files in `sr
 |---------|---------|
 | `src/libs/Recraft/` | Main SDK library (`RecraftClient`) |
 | `src/tests/IntegrationTests/` | Integration tests against real Recraft API |
-| `src/helpers/FixOpenApiSpec/` | OpenAPI spec fixer tool |
-| `src/helpers/GenerateDocs/` | Documentation generator from integration tests |
 
 ### Build Configuration
 

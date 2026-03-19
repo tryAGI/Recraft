@@ -44,6 +44,7 @@ namespace Recraft
         global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> ImageToImageAsync(
             byte[] image,
             string imagename,
+            string prompt,
             double strength,
             global::Recraft.BillingType? billing = default,
             bool? blockNsfw = default,
@@ -54,7 +55,6 @@ namespace Recraft
             global::Recraft.TransformModel? model = default,
             int? n = default,
             string? negativePrompt = default,
-            string? prompt = default,
             int? randomSeed = default,
             global::Recraft.ResponseFormat? responseFormat = default,
             string? style = default,

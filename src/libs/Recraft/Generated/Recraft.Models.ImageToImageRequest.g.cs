@@ -76,7 +76,8 @@ namespace Recraft
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
-        public string? Prompt { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Prompt { get; set; }
 
         /// <summary>
         /// 
@@ -156,6 +157,7 @@ namespace Recraft
         public ImageToImageRequest(
             byte[] image,
             string imagename,
+            string prompt,
             double strength,
             bool? blockNsfw,
             bool? calculateFeatures,
@@ -165,7 +167,6 @@ namespace Recraft
             global::Recraft.TransformModel? model,
             int? n,
             string? negativePrompt,
-            string? prompt,
             int? randomSeed,
             global::Recraft.ResponseFormat? responseFormat,
             string? style,
@@ -175,6 +176,7 @@ namespace Recraft
         {
             this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
             this.Imagename = imagename ?? throw new global::System.ArgumentNullException(nameof(imagename));
+            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.Strength = strength;
             this.BlockNsfw = blockNsfw;
             this.CalculateFeatures = calculateFeatures;
@@ -184,7 +186,6 @@ namespace Recraft
             this.Model = model;
             this.N = n;
             this.NegativePrompt = negativePrompt;
-            this.Prompt = prompt;
             this.RandomSeed = randomSeed;
             this.ResponseFormat = responseFormat;
             this.Style = style;

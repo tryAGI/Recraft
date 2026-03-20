@@ -4,7 +4,6 @@ namespace Recraft
 {
     public partial interface IRecraftClient
     {
-
         /// <summary>
         /// 
         /// </summary>

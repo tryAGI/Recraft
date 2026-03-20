@@ -4,10 +4,12 @@ namespace Recraft
 {
     public partial interface IImageClient
     {
+
         /// <summary>
         /// Replace Background
         /// </summary>
         /// <param name="billing"></param>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Recraft.ApiException"></exception>

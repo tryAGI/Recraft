@@ -11,11 +11,11 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
-        On,
+        ReturnGradientsOn,
         /// <summary>
         /// 
         /// </summary>
-        Off,
+        ReturnGradientsOff,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Recraft
         {
             return value switch
             {
-                ReturnGradients.On => "on",
-                ReturnGradients.Off => "off",
+                ReturnGradients.ReturnGradientsOn => "on",
+                ReturnGradients.ReturnGradientsOff => "off",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Recraft
         {
             return value switch
             {
-                "on" => ReturnGradients.On,
-                "off" => ReturnGradients.Off,
+                "on" => ReturnGradients.ReturnGradientsOn,
+                "off" => ReturnGradients.ReturnGradientsOff,
                 _ => null,
             };
         }

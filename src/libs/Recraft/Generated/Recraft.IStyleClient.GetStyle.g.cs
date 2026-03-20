@@ -4,6 +4,7 @@ namespace Recraft
 {
     public partial interface IStyleClient
     {
+
         /// <summary>
         /// Get Style
         /// </summary>

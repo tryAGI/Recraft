@@ -11,11 +11,11 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
-        On,
+        LimitNumShapesOn,
         /// <summary>
         /// 
         /// </summary>
-        Off,
+        LimitNumShapesOff,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Recraft
         {
             return value switch
             {
-                LimitNumShapes.On => "on",
-                LimitNumShapes.Off => "off",
+                LimitNumShapes.LimitNumShapesOn => "on",
+                LimitNumShapes.LimitNumShapesOff => "off",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Recraft
         {
             return value switch
             {
-                "on" => LimitNumShapes.On,
-                "off" => LimitNumShapes.Off,
+                "on" => LimitNumShapes.LimitNumShapesOn,
+                "off" => LimitNumShapes.LimitNumShapesOff,
                 _ => null,
             };
         }

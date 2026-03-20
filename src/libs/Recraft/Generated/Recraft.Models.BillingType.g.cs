@@ -11,11 +11,11 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
-        Api,
+        BillingTypeAPI,
         /// <summary>
         /// 
         /// </summary>
-        Subscription,
+        BillingTypeSubscription,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Recraft
         {
             return value switch
             {
-                BillingType.Api => "api",
-                BillingType.Subscription => "subscription",
+                BillingType.BillingTypeAPI => "api",
+                BillingType.BillingTypeSubscription => "subscription",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Recraft
         {
             return value switch
             {
-                "api" => BillingType.Api,
-                "subscription" => BillingType.Subscription,
+                "api" => BillingType.BillingTypeAPI,
+                "subscription" => BillingType.BillingTypeSubscription,
                 _ => null,
             };
         }

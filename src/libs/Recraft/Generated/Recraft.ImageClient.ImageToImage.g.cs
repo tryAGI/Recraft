@@ -23,12 +23,10 @@ namespace Recraft
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Generate image from image and prompt
         /// </summary>
         /// <param name="billing"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Recraft.ApiException"></exception>
@@ -306,7 +304,6 @@ namespace Recraft
                 }
             }
         }
-
         /// <summary>
         /// Generate image from image and prompt
         /// </summary>

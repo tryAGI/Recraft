@@ -4,12 +4,10 @@ namespace Recraft
 {
     public partial interface IImageClient
     {
-
         /// <summary>
         /// Remove background
         /// </summary>
         /// <param name="billing"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Recraft.ApiException"></exception>
@@ -18,7 +16,6 @@ namespace Recraft
             global::Recraft.ProcessImageRequest request,
             global::Recraft.BillingType? billing = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Remove background
         /// </summary>

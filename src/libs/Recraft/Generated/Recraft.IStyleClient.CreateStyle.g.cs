@@ -4,12 +4,10 @@ namespace Recraft
 {
     public partial interface IStyleClient
     {
-
         /// <summary>
         /// Create Style
         /// </summary>
         /// <param name="billing"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Recraft.ApiException"></exception>
@@ -18,7 +16,6 @@ namespace Recraft
             global::Recraft.CreateStyleRequest request,
             global::Recraft.BillingType? billing = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Create Style
         /// </summary>

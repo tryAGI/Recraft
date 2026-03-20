@@ -3,7 +3,10 @@ nav:
 - Overview: index.md
 # EXAMPLES:START
 - Examples:
-  - Test: samples/Test.md
+  - Test: examples/test.md
+  - Generate Image: examples/generate-image.md
+  - List Basic Styles: examples/list-basic-styles.md
+  - Get Current User: examples/get-current-user.md
 # EXAMPLES:END
         
 theme:

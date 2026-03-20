@@ -7,6 +7,9 @@ nav:
   - Generate Image: examples/generate-image.md
   - List Basic Styles: examples/list-basic-styles.md
   - Get Current User: examples/get-current-user.md
+  - Vectorize Image: examples/vectorize-image.md
+  - Remove Background: examples/remove-background.md
+  - Crisp Upscale: examples/crisp-upscale.md
 # EXAMPLES:END
         
 theme:

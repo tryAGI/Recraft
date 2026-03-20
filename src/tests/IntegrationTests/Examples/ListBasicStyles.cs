@@ -22,7 +22,7 @@ public partial class Tests
 
         foreach (var style in response.Styles)
         {
-            Console.WriteLine($"Style: {style.Name} (ID: {style.Id})");
+            Console.WriteLine($"Style: {style.Style} (Model: {style.Model})");
         }
     }
 }

@@ -20,16 +20,15 @@ namespace Recraft
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("style")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.ImageStyleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Recraft.ImageStyle Style { get; set; }
+        public required string Style { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("substyle")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.ImageSubStyleJsonConverter))]
-        public global::Recraft.ImageSubStyle? Substyle { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("style_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Guid StyleId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,18 +41,18 @@ namespace Recraft
         /// </summary>
         /// <param name="model"></param>
         /// <param name="style"></param>
-        /// <param name="substyle"></param>
+        /// <param name="styleId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BasicStyle(
             global::Recraft.TransformModel model,
-            global::Recraft.ImageStyle style,
-            global::Recraft.ImageSubStyle? substyle)
+            string style,
+            global::System.Guid styleId)
         {
             this.Model = model;
-            this.Style = style;
-            this.Substyle = substyle;
+            this.Style = style ?? throw new global::System.ArgumentNullException(nameof(style));
+            this.StyleId = styleId;
         }
 
         /// <summary>

@@ -11,11 +11,11 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
-        Url,
+        B64Json,
         /// <summary>
         /// 
         /// </summary>
-        B64Json,
+        Url,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Recraft
         {
             return value switch
             {
-                ResponseFormat.Url => "url",
                 ResponseFormat.B64Json => "b64_json",
+                ResponseFormat.Url => "url",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Recraft
         {
             return value switch
             {
-                "url" => ResponseFormat.Url,
                 "b64_json" => ResponseFormat.B64Json,
+                "url" => ResponseFormat.Url,
                 _ => null,
             };
         }

@@ -23,15 +23,15 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        LogoRaster,
+        /// <summary>
+        /// 
+        /// </summary>
         RealisticImage,
         /// <summary>
         /// 
         /// </summary>
         VectorIllustration,
-        /// <summary>
-        /// 
-        /// </summary>
-        LogoRaster,
     }
 
     /// <summary>
@@ -49,9 +49,9 @@ namespace Recraft
                 ImageStyle.Any => "any",
                 ImageStyle.DigitalIllustration => "digital_illustration",
                 ImageStyle.Icon => "icon",
+                ImageStyle.LogoRaster => "logo_raster",
                 ImageStyle.RealisticImage => "realistic_image",
                 ImageStyle.VectorIllustration => "vector_illustration",
-                ImageStyle.LogoRaster => "logo_raster",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -65,9 +65,9 @@ namespace Recraft
                 "any" => ImageStyle.Any,
                 "digital_illustration" => ImageStyle.DigitalIllustration,
                 "icon" => ImageStyle.Icon,
+                "logo_raster" => ImageStyle.LogoRaster,
                 "realistic_image" => ImageStyle.RealisticImage,
                 "vector_illustration" => ImageStyle.VectorIllustration,
-                "logo_raster" => ImageStyle.LogoRaster,
                 _ => null,
             };
         }

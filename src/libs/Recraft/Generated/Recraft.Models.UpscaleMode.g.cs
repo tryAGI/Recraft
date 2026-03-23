@@ -11,11 +11,11 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
-        Upscale4mp,
+        Upscale16mp,
         /// <summary>
         /// 
         /// </summary>
-        Upscale16mp,
+        Upscale4mp,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Recraft
         {
             return value switch
             {
-                UpscaleMode.Upscale4mp => "upscale4mp",
                 UpscaleMode.Upscale16mp => "upscale16mp",
+                UpscaleMode.Upscale4mp => "upscale4mp",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Recraft
         {
             return value switch
             {
-                "upscale4mp" => UpscaleMode.Upscale4mp,
                 "upscale16mp" => UpscaleMode.Upscale16mp,
+                "upscale4mp" => UpscaleMode.Upscale4mp,
                 _ => null,
             };
         }

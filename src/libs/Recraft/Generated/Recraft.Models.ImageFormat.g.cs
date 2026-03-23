@@ -11,11 +11,11 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
-        Webp,
+        Png,
         /// <summary>
         /// 
         /// </summary>
-        Png,
+        Webp,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Recraft
         {
             return value switch
             {
-                ImageFormat.Webp => "webp",
                 ImageFormat.Png => "png",
+                ImageFormat.Webp => "webp",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Recraft
         {
             return value switch
             {
-                "webp" => ImageFormat.Webp,
                 "png" => ImageFormat.Png,
+                "webp" => ImageFormat.Webp,
                 _ => null,
             };
         }

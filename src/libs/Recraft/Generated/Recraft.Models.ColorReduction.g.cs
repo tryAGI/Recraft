@@ -11,11 +11,11 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
-        On,
+        Off,
         /// <summary>
         /// 
         /// </summary>
-        Off,
+        On,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Recraft
         {
             return value switch
             {
-                ColorReduction.On => "on",
                 ColorReduction.Off => "off",
+                ColorReduction.On => "on",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Recraft
         {
             return value switch
             {
-                "on" => ColorReduction.On,
                 "off" => ColorReduction.Off,
+                "on" => ColorReduction.On,
                 _ => null,
             };
         }

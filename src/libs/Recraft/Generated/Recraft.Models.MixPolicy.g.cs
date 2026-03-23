@@ -11,11 +11,11 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
-        PaletteMatch,
+        MaxWeight,
         /// <summary>
         /// 
         /// </summary>
-        MaxWeight,
+        PaletteMatch,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Recraft
         {
             return value switch
             {
-                MixPolicy.PaletteMatch => "PaletteMatch",
                 MixPolicy.MaxWeight => "MaxWeight",
+                MixPolicy.PaletteMatch => "PaletteMatch",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Recraft
         {
             return value switch
             {
-                "PaletteMatch" => MixPolicy.PaletteMatch,
                 "MaxWeight" => MixPolicy.MaxWeight,
+                "PaletteMatch" => MixPolicy.PaletteMatch,
                 _ => null,
             };
         }

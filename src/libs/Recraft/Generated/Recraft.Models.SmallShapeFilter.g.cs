@@ -11,11 +11,11 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
-        On,
+        Off,
         /// <summary>
         /// 
         /// </summary>
-        Off,
+        On,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Recraft
         {
             return value switch
             {
-                SmallShapeFilter.On => "on",
                 SmallShapeFilter.Off => "off",
+                SmallShapeFilter.On => "on",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Recraft
         {
             return value switch
             {
-                "on" => SmallShapeFilter.On,
                 "off" => SmallShapeFilter.Off,
+                "on" => SmallShapeFilter.On,
                 _ => null,
             };
         }

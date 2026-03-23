@@ -11,11 +11,11 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
-        SvgCompressionOn,
+        SvgCompressionOff,
         /// <summary>
         /// 
         /// </summary>
-        SvgCompressionOff,
+        SvgCompressionOn,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Recraft
         {
             return value switch
             {
-                SvgCompression.SvgCompressionOn => "on",
                 SvgCompression.SvgCompressionOff => "off",
+                SvgCompression.SvgCompressionOn => "on",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Recraft
         {
             return value switch
             {
-                "on" => SvgCompression.SvgCompressionOn,
                 "off" => SvgCompression.SvgCompressionOff,
+                "on" => SvgCompression.SvgCompressionOn,
                 _ => null,
             };
         }

@@ -240,59 +240,63 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.SmallShapeFilter? Type53 { get; set; }
+        public global::Recraft.ShapeStacking? Type53 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.DateTime? Type54 { get; set; }
+        public global::Recraft.SmallShapeFilter? Type54 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.SvgCompression? Type55 { get; set; }
+        public global::System.DateTime? Type55 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.SystemStatus? Type56 { get; set; }
+        public global::Recraft.SvgCompression? Type56 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.TextLayoutItem? Type57 { get; set; }
+        public global::Recraft.SystemStatus? Type57 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>? Type58 { get; set; }
+        public global::Recraft.TextLayoutItem? Type58 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.TransformImageRequest? Type59 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>? Type59 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.TransformImageWithMaskRequest? Type60 { get; set; }
+        public global::Recraft.TransformImageRequest? Type60 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.TransformImageWithMaskRequestVariant2? Type61 { get; set; }
+        public global::Recraft.TransformImageWithMaskRequest? Type61 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.User? Type62 { get; set; }
+        public global::Recraft.TransformImageWithMaskRequestVariant2? Type62 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.VariateImageRequest? Type63 { get; set; }
+        public global::Recraft.User? Type63 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.VectorizeImageRequest? Type64 { get; set; }
+        public global::Recraft.VariateImageRequest? Type64 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.VectorizeImageRequestVariant2? Type65 { get; set; }
+        public global::Recraft.VectorizeImageRequest? Type65 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public object? Type66 { get; set; }
+        public global::Recraft.VectorizeImageRequestVariant2? Type66 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public object? Type67 { get; set; }
 
         /// <summary>
         /// 

@@ -38,6 +38,13 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("shape_stacking")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.ShapeStackingJsonConverter))]
+        public global::Recraft.ShapeStacking? ShapeStacking { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("small_shape_filter")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.SmallShapeFilterJsonConverter))]
         public global::Recraft.SmallShapeFilter? SmallShapeFilter { get; set; }
@@ -62,6 +69,7 @@ namespace Recraft
         /// <param name="limitNumShapes"></param>
         /// <param name="maxNumShapes"></param>
         /// <param name="returnGradients"></param>
+        /// <param name="shapeStacking"></param>
         /// <param name="smallShapeFilter"></param>
         /// <param name="svgCompression"></param>
 #if NET7_0_OR_GREATER
@@ -72,6 +80,7 @@ namespace Recraft
             global::Recraft.LimitNumShapes? limitNumShapes,
             int? maxNumShapes,
             global::Recraft.ReturnGradients? returnGradients,
+            global::Recraft.ShapeStacking? shapeStacking,
             global::Recraft.SmallShapeFilter? smallShapeFilter,
             global::Recraft.SvgCompression? svgCompression)
         {
@@ -79,6 +88,7 @@ namespace Recraft
             this.LimitNumShapes = limitNumShapes;
             this.MaxNumShapes = maxNumShapes;
             this.ReturnGradients = returnGradients;
+            this.ShapeStacking = shapeStacking;
             this.SmallShapeFilter = smallShapeFilter;
             this.SvgCompression = svgCompression;
         }

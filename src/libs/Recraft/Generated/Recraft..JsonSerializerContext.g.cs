@@ -53,6 +53,10 @@ namespace Recraft
 
             typeof(global::Recraft.JsonConverters.ReturnGradientsNullableJsonConverter),
 
+            typeof(global::Recraft.JsonConverters.ShapeStackingJsonConverter),
+
+            typeof(global::Recraft.JsonConverters.ShapeStackingNullableJsonConverter),
+
             typeof(global::Recraft.JsonConverters.SmallShapeFilterJsonConverter),
 
             typeof(global::Recraft.JsonConverters.SmallShapeFilterNullableJsonConverter),
@@ -131,6 +135,7 @@ namespace Recraft
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.ProcessImageRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.ProcessImageResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.ReturnGradients))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.ShapeStacking))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.SmallShapeFilter))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.DateTime))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.SvgCompression))]

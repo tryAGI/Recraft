@@ -2,7 +2,7 @@
 set -euo pipefail
 dotnet tool install --global autosdk.cli --prerelease
 rm -rf Generated
-curl --fail --silent --show-error -o openapi.yaml https://external.api.recraft.ai/doc/spec/api.yaml
+curl --fail --silent --show-error -L -o openapi.yaml https://external.api.recraft.ai/doc/spec/api.yaml
 autosdk generate openapi.yaml \
   --namespace Recraft \
   --clientClassName RecraftClient \

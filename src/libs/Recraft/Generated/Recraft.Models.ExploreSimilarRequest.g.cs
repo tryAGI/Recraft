@@ -57,12 +57,12 @@ namespace Recraft
         /// <summary>
         /// Initializes a new instance of the <see cref="ExploreSimilarRequest" /> class.
         /// </summary>
+        /// <param name="similarity"></param>
+        /// <param name="sourceImageId"></param>
         /// <param name="blockNsfw"></param>
         /// <param name="expire"></param>
         /// <param name="imageFormat"></param>
         /// <param name="responseFormat"></param>
-        /// <param name="similarity"></param>
-        /// <param name="sourceImageId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -74,12 +74,12 @@ namespace Recraft
             global::Recraft.ImageFormat? imageFormat,
             global::Recraft.ResponseFormat? responseFormat)
         {
-            this.Similarity = similarity;
-            this.SourceImageId = sourceImageId;
             this.BlockNsfw = blockNsfw;
             this.Expire = expire;
             this.ImageFormat = imageFormat;
             this.ResponseFormat = responseFormat;
+            this.Similarity = similarity;
+            this.SourceImageId = sourceImageId;
         }
 
         /// <summary>

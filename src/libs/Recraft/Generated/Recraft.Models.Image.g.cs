@@ -48,9 +48,9 @@ namespace Recraft
         /// <summary>
         /// Initializes a new instance of the <see cref="Image" /> class.
         /// </summary>
+        /// <param name="imageId"></param>
         /// <param name="b64Json"></param>
         /// <param name="features"></param>
-        /// <param name="imageId"></param>
         /// <param name="revisedPrompt"></param>
         /// <param name="url"></param>
 #if NET7_0_OR_GREATER
@@ -63,9 +63,9 @@ namespace Recraft
             string? revisedPrompt,
             string? url)
         {
-            this.ImageId = imageId;
             this.B64Json = b64Json;
             this.Features = features;
+            this.ImageId = imageId;
             this.RevisedPrompt = revisedPrompt;
             this.Url = url;
         }

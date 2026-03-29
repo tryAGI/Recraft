@@ -126,6 +126,7 @@ namespace Recraft
         /// <summary>
         /// Initializes a new instance of the <see cref="GenerateImageRequest" /> class.
         /// </summary>
+        /// <param name="prompt"></param>
         /// <param name="blockNsfw"></param>
         /// <param name="calculateFeatures"></param>
         /// <param name="controls"></param>
@@ -134,7 +135,6 @@ namespace Recraft
         /// <param name="model"></param>
         /// <param name="n"></param>
         /// <param name="negativePrompt"></param>
-        /// <param name="prompt"></param>
         /// <param name="randomSeed"></param>
         /// <param name="responseFormat"></param>
         /// <param name="size"></param>
@@ -165,7 +165,6 @@ namespace Recraft
             global::System.Collections.Generic.IList<global::Recraft.TextLayoutItem>? textLayout,
             global::Recraft.UpscaleMode? upscale)
         {
-            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.BlockNsfw = blockNsfw;
             this.CalculateFeatures = calculateFeatures;
             this.Controls = controls;
@@ -174,6 +173,7 @@ namespace Recraft
             this.Model = model;
             this.N = n;
             this.NegativePrompt = negativePrompt;
+            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.RandomSeed = randomSeed;
             this.ResponseFormat = responseFormat;
             this.Size = size;

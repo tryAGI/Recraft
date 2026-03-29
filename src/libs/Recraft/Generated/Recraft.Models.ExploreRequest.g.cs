@@ -89,12 +89,12 @@ namespace Recraft
         /// <summary>
         /// Initializes a new instance of the <see cref="ExploreRequest" /> class.
         /// </summary>
+        /// <param name="prompt"></param>
         /// <param name="blockNsfw"></param>
         /// <param name="controls"></param>
         /// <param name="expire"></param>
         /// <param name="imageFormat"></param>
         /// <param name="model"></param>
-        /// <param name="prompt"></param>
         /// <param name="responseFormat"></param>
         /// <param name="size"></param>
         /// <param name="style"></param>
@@ -116,12 +116,12 @@ namespace Recraft
             global::System.Guid? styleId,
             global::Recraft.ImageSubStyle? substyle)
         {
-            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.BlockNsfw = blockNsfw;
             this.Controls = controls;
             this.Expire = expire;
             this.ImageFormat = imageFormat;
             this.Model = model;
+            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.ResponseFormat = responseFormat;
             this.Size = size;
             this.Style = style;

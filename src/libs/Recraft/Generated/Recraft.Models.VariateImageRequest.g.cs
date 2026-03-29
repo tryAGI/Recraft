@@ -71,14 +71,14 @@ namespace Recraft
         /// <summary>
         /// Initializes a new instance of the <see cref="VariateImageRequest" /> class.
         /// </summary>
-        /// <param name="expire"></param>
         /// <param name="image"></param>
         /// <param name="imagename"></param>
+        /// <param name="size"></param>
+        /// <param name="expire"></param>
         /// <param name="imageFormat"></param>
         /// <param name="n"></param>
         /// <param name="randomSeed"></param>
         /// <param name="responseFormat"></param>
-        /// <param name="size"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -92,14 +92,14 @@ namespace Recraft
             int? randomSeed,
             global::Recraft.ResponseFormat? responseFormat)
         {
+            this.Expire = expire;
             this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
             this.Imagename = imagename ?? throw new global::System.ArgumentNullException(nameof(imagename));
-            this.Size = size;
-            this.Expire = expire;
             this.ImageFormat = imageFormat;
             this.N = n;
             this.RandomSeed = randomSeed;
             this.ResponseFormat = responseFormat;
+            this.Size = size;
         }
 
         /// <summary>

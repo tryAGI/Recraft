@@ -65,12 +65,12 @@ namespace Recraft
         /// <summary>
         /// Initializes a new instance of the <see cref="EraseRegionRequest" /> class.
         /// </summary>
-        /// <param name="expire"></param>
         /// <param name="image"></param>
         /// <param name="imagename"></param>
-        /// <param name="imageFormat"></param>
         /// <param name="mask"></param>
         /// <param name="maskname"></param>
+        /// <param name="expire"></param>
+        /// <param name="imageFormat"></param>
         /// <param name="responseFormat"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -84,12 +84,12 @@ namespace Recraft
             global::Recraft.ImageFormat? imageFormat,
             global::Recraft.ResponseFormat? responseFormat)
         {
+            this.Expire = expire;
             this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
             this.Imagename = imagename ?? throw new global::System.ArgumentNullException(nameof(imagename));
+            this.ImageFormat = imageFormat;
             this.Mask = mask ?? throw new global::System.ArgumentNullException(nameof(mask));
             this.Maskname = maskname ?? throw new global::System.ArgumentNullException(nameof(maskname));
-            this.Expire = expire;
-            this.ImageFormat = imageFormat;
             this.ResponseFormat = responseFormat;
         }
 

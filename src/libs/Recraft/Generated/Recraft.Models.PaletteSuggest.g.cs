@@ -30,8 +30,8 @@ namespace Recraft
         /// <summary>
         /// Initializes a new instance of the <see cref="PaletteSuggest" /> class.
         /// </summary>
-        /// <param name="backgroundColor"></param>
         /// <param name="colors"></param>
+        /// <param name="backgroundColor"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -39,8 +39,8 @@ namespace Recraft
             global::System.Collections.Generic.IList<global::Recraft.ImageColor> colors,
             global::Recraft.ImageColor? backgroundColor)
         {
-            this.Colors = colors ?? throw new global::System.ArgumentNullException(nameof(colors));
             this.BackgroundColor = backgroundColor;
+            this.Colors = colors ?? throw new global::System.ArgumentNullException(nameof(colors));
         }
 
         /// <summary>

@@ -133,20 +133,20 @@ namespace Recraft
         /// <summary>
         /// Initializes a new instance of the <see cref="ImageToImageRequest" /> class.
         /// </summary>
+        /// <param name="image"></param>
+        /// <param name="imagename"></param>
+        /// <param name="prompt"></param>
+        /// <param name="strength"></param>
         /// <param name="blockNsfw"></param>
         /// <param name="calculateFeatures"></param>
         /// <param name="controls"></param>
         /// <param name="expire"></param>
-        /// <param name="image"></param>
-        /// <param name="imagename"></param>
         /// <param name="imageFormat"></param>
         /// <param name="model"></param>
         /// <param name="n"></param>
         /// <param name="negativePrompt"></param>
-        /// <param name="prompt"></param>
         /// <param name="randomSeed"></param>
         /// <param name="responseFormat"></param>
-        /// <param name="strength"></param>
         /// <param name="style"></param>
         /// <param name="styleId"></param>
         /// <param name="substyle"></param>
@@ -174,20 +174,20 @@ namespace Recraft
             global::Recraft.ImageSubStyle? substyle,
             global::System.Collections.Generic.IList<global::Recraft.TextLayoutItem>? textLayout)
         {
-            this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
-            this.Imagename = imagename ?? throw new global::System.ArgumentNullException(nameof(imagename));
-            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
-            this.Strength = strength;
             this.BlockNsfw = blockNsfw;
             this.CalculateFeatures = calculateFeatures;
             this.Controls = controls;
             this.Expire = expire;
+            this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
+            this.Imagename = imagename ?? throw new global::System.ArgumentNullException(nameof(imagename));
             this.ImageFormat = imageFormat;
             this.Model = model;
             this.N = n;
             this.NegativePrompt = negativePrompt;
+            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.RandomSeed = randomSeed;
             this.ResponseFormat = responseFormat;
+            this.Strength = strength;
             this.Style = style;
             this.StyleId = styleId;
             this.Substyle = substyle;

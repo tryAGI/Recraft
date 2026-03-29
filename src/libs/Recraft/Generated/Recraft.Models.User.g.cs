@@ -44,8 +44,8 @@ namespace Recraft
         /// Initializes a new instance of the <see cref="User" /> class.
         /// </summary>
         /// <param name="credits"></param>
-        /// <param name="email"></param>
         /// <param name="id"></param>
+        /// <param name="email"></param>
         /// <param name="name"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -57,8 +57,8 @@ namespace Recraft
             string? name)
         {
             this.Credits = credits;
-            this.Id = id;
             this.Email = email;
+            this.Id = id;
             this.Name = name;
         }
 

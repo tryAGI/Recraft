@@ -58,9 +58,9 @@ namespace Recraft
         /// <summary>
         /// Initializes a new instance of the <see cref="ProcessImageRequest" /> class.
         /// </summary>
-        /// <param name="expire"></param>
         /// <param name="image"></param>
         /// <param name="imagename"></param>
+        /// <param name="expire"></param>
         /// <param name="imageFormat"></param>
         /// <param name="responseFormat"></param>
         /// <param name="upscale"></param>
@@ -75,9 +75,9 @@ namespace Recraft
             global::Recraft.ResponseFormat? responseFormat,
             global::Recraft.UpscaleMode? upscale)
         {
+            this.Expire = expire;
             this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
             this.Imagename = imagename ?? throw new global::System.ArgumentNullException(nameof(imagename));
-            this.Expire = expire;
             this.ImageFormat = imageFormat;
             this.ResponseFormat = responseFormat;
             this.Upscale = upscale;

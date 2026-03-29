@@ -82,8 +82,9 @@ namespace Recraft
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateStyleRequest" /> class.
         /// </summary>
-        /// <param name="imageWeights"></param>
         /// <param name="images"></param>
+        /// <param name="style"></param>
+        /// <param name="imageWeights"></param>
         /// <param name="mixPolicy"></param>
         /// <param name="model"></param>
         /// <param name="palette"></param>
@@ -91,7 +92,6 @@ namespace Recraft
         /// <param name="prompt"></param>
         /// <param name="sourceStyleWeights"></param>
         /// <param name="sourceStyles"></param>
-        /// <param name="style"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -107,9 +107,8 @@ namespace Recraft
             global::System.Collections.Generic.IList<double>? sourceStyleWeights,
             global::System.Collections.Generic.IList<global::System.Guid>? sourceStyles)
         {
-            this.Images = images ?? throw new global::System.ArgumentNullException(nameof(images));
-            this.Style = style;
             this.ImageWeights = imageWeights;
+            this.Images = images ?? throw new global::System.ArgumentNullException(nameof(images));
             this.MixPolicy = mixPolicy;
             this.Model = model;
             this.Palette = palette;
@@ -117,6 +116,7 @@ namespace Recraft
             this.Prompt = prompt;
             this.SourceStyleWeights = sourceStyleWeights;
             this.SourceStyles = sourceStyles;
+            this.Style = style;
         }
 
         /// <summary>

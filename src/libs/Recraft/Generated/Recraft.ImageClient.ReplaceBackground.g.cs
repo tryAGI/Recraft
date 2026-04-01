@@ -336,7 +336,6 @@ namespace Recraft
             global::System.Collections.Generic.IList<global::Recraft.TextLayoutItem>? textLayout = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Recraft.TransformImageRequest
             {
                 BlockNsfw = blockNsfw,

@@ -292,7 +292,6 @@ namespace Recraft
             global::System.Collections.Generic.IList<global::System.Guid>? sourceStyles = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Recraft.CreateStyleRequest
             {
                 ImageWeights = imageWeights,

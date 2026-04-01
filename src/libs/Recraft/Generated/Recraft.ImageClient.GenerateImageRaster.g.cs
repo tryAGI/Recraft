@@ -232,7 +232,6 @@ namespace Recraft
             global::Recraft.UpscaleMode? upscale = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Recraft.GenerateImageRequest
             {
                 BlockNsfw = blockNsfw,

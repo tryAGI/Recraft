@@ -220,7 +220,6 @@ namespace Recraft
             global::Recraft.ImageSubStyle? substyle = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Recraft.ExploreRequest
             {
                 BlockNsfw = blockNsfw,

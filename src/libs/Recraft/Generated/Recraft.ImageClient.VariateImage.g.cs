@@ -264,6 +264,7 @@ namespace Recraft
             global::Recraft.ResponseFormat? responseFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Recraft.VariateImageRequest
             {
                 Expire = expire,

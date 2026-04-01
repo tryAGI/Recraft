@@ -202,6 +202,7 @@ namespace Recraft
             global::Recraft.BillingType? billing = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Recraft.OptimizeColorsRequest
             {
                 Colors = colors,

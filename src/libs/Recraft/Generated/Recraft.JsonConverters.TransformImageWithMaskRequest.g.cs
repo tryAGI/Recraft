@@ -136,13 +136,13 @@ namespace Recraft.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Recraft.TransformImageRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Recraft.TransformImageRequest?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Recraft.TransformImageRequest).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!, typeInfo);
             }
             else if (value.IsValue2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Recraft.TransformImageWithMaskRequestVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Recraft.TransformImageWithMaskRequestVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Recraft.TransformImageWithMaskRequestVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
             }
         }
     }

@@ -13,35 +13,35 @@ namespace Recraft
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Recraft.TransformImageRequest? Value1 { get; init; }
+        public global::Recraft.TransformImageRequest? TransformImageRequest { get; init; }
 #else
-        public global::Recraft.TransformImageRequest? Value1 { get; }
+        public global::Recraft.TransformImageRequest? TransformImageRequest { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TransformImageRequest))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsTransformImageRequest => TransformImageRequest != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Recraft.TransformImageWithMaskRequestVariant2? Value2 { get; init; }
+        public global::Recraft.TransformImageWithMaskRequestVariant2? TransformImageWithMaskRequestVariant2 { get; init; }
 #else
-        public global::Recraft.TransformImageWithMaskRequestVariant2? Value2 { get; }
+        public global::Recraft.TransformImageWithMaskRequestVariant2? TransformImageWithMaskRequestVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TransformImageWithMaskRequestVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsTransformImageWithMaskRequestVariant2 => TransformImageWithMaskRequestVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -50,14 +50,14 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Recraft.TransformImageRequest?(TransformImageWithMaskRequest @this) => @this.Value1;
+        public static implicit operator global::Recraft.TransformImageRequest?(TransformImageWithMaskRequest @this) => @this.TransformImageRequest;
 
         /// <summary>
         /// 
         /// </summary>
         public TransformImageWithMaskRequest(global::Recraft.TransformImageRequest? value)
         {
-            Value1 = value;
+            TransformImageRequest = value;
         }
 
         /// <summary>
@@ -68,42 +68,42 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Recraft.TransformImageWithMaskRequestVariant2?(TransformImageWithMaskRequest @this) => @this.Value2;
+        public static implicit operator global::Recraft.TransformImageWithMaskRequestVariant2?(TransformImageWithMaskRequest @this) => @this.TransformImageWithMaskRequestVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public TransformImageWithMaskRequest(global::Recraft.TransformImageWithMaskRequestVariant2? value)
         {
-            Value2 = value;
+            TransformImageWithMaskRequestVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TransformImageWithMaskRequest(
-            global::Recraft.TransformImageRequest? value1,
-            global::Recraft.TransformImageWithMaskRequestVariant2? value2
+            global::Recraft.TransformImageRequest? transformImageRequest,
+            global::Recraft.TransformImageWithMaskRequestVariant2? transformImageWithMaskRequestVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            TransformImageRequest = transformImageRequest;
+            TransformImageWithMaskRequestVariant2 = transformImageWithMaskRequestVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            TransformImageWithMaskRequestVariant2 as object ??
+            TransformImageRequest as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            TransformImageRequest?.ToString() ??
+            TransformImageWithMaskRequestVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -111,15 +111,15 @@ namespace Recraft
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsTransformImageRequest && IsTransformImageWithMaskRequestVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Recraft.TransformImageRequest?, TResult>? value1 = null,
-            global::System.Func<global::Recraft.TransformImageWithMaskRequestVariant2?, TResult>? value2 = null,
+            global::System.Func<global::Recraft.TransformImageRequest?, TResult>? transformImageRequest = null,
+            global::System.Func<global::Recraft.TransformImageWithMaskRequestVariant2?, TResult>? transformImageWithMaskRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -127,13 +127,13 @@ namespace Recraft
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsTransformImageRequest && transformImageRequest != null)
             {
-                return value1(Value1!);
+                return transformImageRequest(TransformImageRequest!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsTransformImageWithMaskRequestVariant2 && transformImageWithMaskRequestVariant2 != null)
             {
-                return value2(Value2!);
+                return transformImageWithMaskRequestVariant2(TransformImageWithMaskRequestVariant2!);
             }
 
             return default(TResult);
@@ -143,8 +143,8 @@ namespace Recraft
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Recraft.TransformImageRequest?>? value1 = null,
-            global::System.Action<global::Recraft.TransformImageWithMaskRequestVariant2?>? value2 = null,
+            global::System.Action<global::Recraft.TransformImageRequest?>? transformImageRequest = null,
+            global::System.Action<global::Recraft.TransformImageWithMaskRequestVariant2?>? transformImageWithMaskRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -152,13 +152,13 @@ namespace Recraft
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsTransformImageRequest)
             {
-                value1?.Invoke(Value1!);
+                transformImageRequest?.Invoke(TransformImageRequest!);
             }
-            else if (IsValue2)
+            else if (IsTransformImageWithMaskRequestVariant2)
             {
-                value2?.Invoke(Value2!);
+                transformImageWithMaskRequestVariant2?.Invoke(TransformImageWithMaskRequestVariant2!);
             }
         }
 
@@ -169,9 +169,9 @@ namespace Recraft
         {
             var fields = new object?[]
             {
-                Value1,
+                TransformImageRequest,
                 typeof(global::Recraft.TransformImageRequest),
-                Value2,
+                TransformImageWithMaskRequestVariant2,
                 typeof(global::Recraft.TransformImageWithMaskRequestVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -189,8 +189,8 @@ namespace Recraft
         public bool Equals(TransformImageWithMaskRequest other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Recraft.TransformImageRequest?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::Recraft.TransformImageWithMaskRequestVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::Recraft.TransformImageRequest?>.Default.Equals(TransformImageRequest, other.TransformImageRequest) &&
+                global::System.Collections.Generic.EqualityComparer<global::Recraft.TransformImageWithMaskRequestVariant2?>.Default.Equals(TransformImageWithMaskRequestVariant2, other.TransformImageWithMaskRequestVariant2) 
                 ;
         }
 

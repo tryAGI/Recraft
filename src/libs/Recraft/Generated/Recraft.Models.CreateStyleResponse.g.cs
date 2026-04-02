@@ -13,35 +13,35 @@ namespace Recraft
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Recraft.Style? Value1 { get; init; }
+        public global::Recraft.Style? Style { get; init; }
 #else
-        public global::Recraft.Style? Value1 { get; }
+        public global::Recraft.Style? Style { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Style))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsStyle => Style != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Recraft.CreateStyleResponseVariant2? Value2 { get; init; }
+        public global::Recraft.CreateStyleResponseVariant2? CreateStyleResponseVariant2 { get; init; }
 #else
-        public global::Recraft.CreateStyleResponseVariant2? Value2 { get; }
+        public global::Recraft.CreateStyleResponseVariant2? CreateStyleResponseVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CreateStyleResponseVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsCreateStyleResponseVariant2 => CreateStyleResponseVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -50,14 +50,14 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Recraft.Style?(CreateStyleResponse @this) => @this.Value1;
+        public static implicit operator global::Recraft.Style?(CreateStyleResponse @this) => @this.Style;
 
         /// <summary>
         /// 
         /// </summary>
         public CreateStyleResponse(global::Recraft.Style? value)
         {
-            Value1 = value;
+            Style = value;
         }
 
         /// <summary>
@@ -68,42 +68,42 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Recraft.CreateStyleResponseVariant2?(CreateStyleResponse @this) => @this.Value2;
+        public static implicit operator global::Recraft.CreateStyleResponseVariant2?(CreateStyleResponse @this) => @this.CreateStyleResponseVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public CreateStyleResponse(global::Recraft.CreateStyleResponseVariant2? value)
         {
-            Value2 = value;
+            CreateStyleResponseVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public CreateStyleResponse(
-            global::Recraft.Style? value1,
-            global::Recraft.CreateStyleResponseVariant2? value2
+            global::Recraft.Style? style,
+            global::Recraft.CreateStyleResponseVariant2? createStyleResponseVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            Style = style;
+            CreateStyleResponseVariant2 = createStyleResponseVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            CreateStyleResponseVariant2 as object ??
+            Style as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            Style?.ToString() ??
+            CreateStyleResponseVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -111,15 +111,15 @@ namespace Recraft
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsStyle && IsCreateStyleResponseVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Recraft.Style?, TResult>? value1 = null,
-            global::System.Func<global::Recraft.CreateStyleResponseVariant2?, TResult>? value2 = null,
+            global::System.Func<global::Recraft.Style?, TResult>? style = null,
+            global::System.Func<global::Recraft.CreateStyleResponseVariant2?, TResult>? createStyleResponseVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -127,13 +127,13 @@ namespace Recraft
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsStyle && style != null)
             {
-                return value1(Value1!);
+                return style(Style!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsCreateStyleResponseVariant2 && createStyleResponseVariant2 != null)
             {
-                return value2(Value2!);
+                return createStyleResponseVariant2(CreateStyleResponseVariant2!);
             }
 
             return default(TResult);
@@ -143,8 +143,8 @@ namespace Recraft
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Recraft.Style?>? value1 = null,
-            global::System.Action<global::Recraft.CreateStyleResponseVariant2?>? value2 = null,
+            global::System.Action<global::Recraft.Style?>? style = null,
+            global::System.Action<global::Recraft.CreateStyleResponseVariant2?>? createStyleResponseVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -152,13 +152,13 @@ namespace Recraft
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsStyle)
             {
-                value1?.Invoke(Value1!);
+                style?.Invoke(Style!);
             }
-            else if (IsValue2)
+            else if (IsCreateStyleResponseVariant2)
             {
-                value2?.Invoke(Value2!);
+                createStyleResponseVariant2?.Invoke(CreateStyleResponseVariant2!);
             }
         }
 
@@ -169,9 +169,9 @@ namespace Recraft
         {
             var fields = new object?[]
             {
-                Value1,
+                Style,
                 typeof(global::Recraft.Style),
-                Value2,
+                CreateStyleResponseVariant2,
                 typeof(global::Recraft.CreateStyleResponseVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -189,8 +189,8 @@ namespace Recraft
         public bool Equals(CreateStyleResponse other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Recraft.Style?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::Recraft.CreateStyleResponseVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::Recraft.Style?>.Default.Equals(Style, other.Style) &&
+                global::System.Collections.Generic.EqualityComparer<global::Recraft.CreateStyleResponseVariant2?>.Default.Equals(CreateStyleResponseVariant2, other.CreateStyleResponseVariant2) 
                 ;
         }
 

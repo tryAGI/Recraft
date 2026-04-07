@@ -307,6 +307,10 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        Veo3p1Lite,
+        /// <summary>
+        /// 
+        /// </summary>
         Wan2p2A14b,
         /// <summary>
         /// 
@@ -408,6 +412,7 @@ namespace Recraft
                 TransformModel.Veo3Fast => "veo3_fast",
                 TransformModel.Veo3p1 => "veo3p1",
                 TransformModel.Veo3p1Fast => "veo3p1_fast",
+                TransformModel.Veo3p1Lite => "veo3p1_lite",
                 TransformModel.Wan2p2A14b => "wan2p2_a14b",
                 TransformModel.Wan2p5Preview => "wan2p5_preview",
                 TransformModel.Wan2p6 => "wan2p6",
@@ -496,6 +501,7 @@ namespace Recraft
                 "veo3_fast" => TransformModel.Veo3Fast,
                 "veo3p1" => TransformModel.Veo3p1,
                 "veo3p1_fast" => TransformModel.Veo3p1Fast,
+                "veo3p1_lite" => TransformModel.Veo3p1Lite,
                 "wan2p2_a14b" => TransformModel.Wan2p2A14b,
                 "wan2p5_preview" => TransformModel.Wan2p5Preview,
                 "wan2p6" => TransformModel.Wan2p6,

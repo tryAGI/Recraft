@@ -5,6 +5,25 @@ namespace Recraft
 {
     public partial class RecraftClient
     {
+
+
+        private static readonly global::Recraft.EndPointSecurityRequirement s_GetPingSecurityRequirement0 =
+            new global::Recraft.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Recraft.EndPointAuthorizationRequirement[]
+                {                    new global::Recraft.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Recraft.EndPointSecurityRequirement[] s_GetPingSecurityRequirements =
+            new global::Recraft.EndPointSecurityRequirement[]
+            {                s_GetPingSecurityRequirement0,
+            };
         partial void PrepareGetPingArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareGetPingRequest(
@@ -27,9 +46,15 @@ namespace Recraft
             PrepareGetPingArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::Recraft.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetPingSecurityRequirements,
+                operationName: "GetPingAsync");
+
             var __pathBuilder = new global::Recraft.PathBuilder(
                 path: "/ping",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -39,7 +64,7 @@ namespace Recraft
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

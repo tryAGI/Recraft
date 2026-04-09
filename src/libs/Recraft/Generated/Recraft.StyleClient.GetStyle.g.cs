@@ -5,6 +5,25 @@ namespace Recraft
 {
     public partial class StyleClient
     {
+
+
+        private static readonly global::Recraft.EndPointSecurityRequirement s_GetStyleSecurityRequirement0 =
+            new global::Recraft.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Recraft.EndPointAuthorizationRequirement[]
+                {                    new global::Recraft.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Recraft.EndPointSecurityRequirement[] s_GetStyleSecurityRequirements =
+            new global::Recraft.EndPointSecurityRequirement[]
+            {                s_GetStyleSecurityRequirement0,
+            };
         partial void PrepareGetStyleArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid styleId);
@@ -37,9 +56,15 @@ namespace Recraft
                 httpClient: HttpClient,
                 styleId: ref styleId);
 
+
+            var __authorizations = global::Recraft.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetStyleSecurityRequirements,
+                operationName: "GetStyleAsync");
+
             var __pathBuilder = new global::Recraft.PathBuilder(
                 path: $"/v1/styles/{styleId}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -49,7 +74,7 @@ namespace Recraft
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

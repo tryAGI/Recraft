@@ -5,6 +5,25 @@ namespace Recraft
 {
     public partial class RecraftClient
     {
+
+
+        private static readonly global::Recraft.EndPointSecurityRequirement s_GetSystemStatusSecurityRequirement0 =
+            new global::Recraft.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Recraft.EndPointAuthorizationRequirement[]
+                {                    new global::Recraft.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Recraft.EndPointSecurityRequirement[] s_GetSystemStatusSecurityRequirements =
+            new global::Recraft.EndPointSecurityRequirement[]
+            {                s_GetSystemStatusSecurityRequirement0,
+            };
         partial void PrepareGetSystemStatusArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareGetSystemStatusRequest(
@@ -32,9 +51,15 @@ namespace Recraft
             PrepareGetSystemStatusArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::Recraft.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetSystemStatusSecurityRequirements,
+                operationName: "GetSystemStatusAsync");
+
             var __pathBuilder = new global::Recraft.PathBuilder(
                 path: "/status",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -44,7 +69,7 @@ namespace Recraft
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

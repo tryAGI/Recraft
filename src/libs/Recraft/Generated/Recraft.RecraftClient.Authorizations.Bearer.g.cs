@@ -25,6 +25,7 @@ namespace Recraft
             Authorizations.Add(new global::Recraft.EndPointAuthorization
             {
                 Type = "Http",
+                SchemeId = "HttpBearer",
                 Location = "Header",
                 Name = "Bearer",
                 Value = apiKey,

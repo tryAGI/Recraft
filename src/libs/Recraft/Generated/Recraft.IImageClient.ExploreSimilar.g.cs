@@ -9,12 +9,14 @@ namespace Recraft
         /// </summary>
         /// <param name="billing"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Recraft.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> ExploreSimilarAsync(
 
             global::Recraft.ExploreSimilarRequest request,
             global::Recraft.BillingType? billing = default,
+            global::Recraft.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Continue exploration from a source image
@@ -26,6 +28,7 @@ namespace Recraft
         /// <param name="responseFormat"></param>
         /// <param name="similarity"></param>
         /// <param name="sourceImageId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> ExploreSimilarAsync(
@@ -36,6 +39,7 @@ namespace Recraft
             bool? expire = default,
             global::Recraft.ImageFormat? imageFormat = default,
             global::Recraft.ResponseFormat? responseFormat = default,
+            global::Recraft.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

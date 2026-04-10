@@ -30,6 +30,9 @@ namespace Recraft
 #if DEBUG
             = true;
 #endif
+
+        /// <inheritdoc/>
+        public global::Recraft.AutoSDKClientOptions Options { get; }
         /// <summary>
         /// 
         /// </summary>
@@ -39,7 +42,7 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
-        public ColorsClient Colors => new ColorsClient(HttpClient, authorizations: Authorizations)
+        public ColorsClient Colors => new ColorsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -48,7 +51,7 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
-        public ImageClient Image => new ImageClient(HttpClient, authorizations: Authorizations)
+        public ImageClient Image => new ImageClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -57,7 +60,7 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
-        public StyleClient Style => new StyleClient(HttpClient, authorizations: Authorizations)
+        public StyleClient Style => new StyleClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -66,7 +69,7 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
-        public UserClient User => new UserClient(HttpClient, authorizations: Authorizations)
+        public UserClient User => new UserClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -85,11 +88,37 @@ namespace Recraft
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
             global::System.Collections.Generic.List<global::Recraft.EndPointAuthorization>? authorizations = null,
+            bool disposeHttpClient = true) : this(
+                httpClient,
+                baseUri,
+                authorizations,
+                options: null,
+                disposeHttpClient: disposeHttpClient)
+        {
+        }
+
+        /// <summary>
+        /// Creates a new instance of the RecraftClient.
+        /// If no httpClient is provided, a new one will be created.
+        /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
+        /// </summary>
+        /// <param name="httpClient">The HttpClient instance. If not provided, a new one will be created.</param>
+        /// <param name="baseUri">The base URL for the API. If not provided, the default baseUri from OpenAPI spec will be used.</param>
+        /// <param name="authorizations">The authorizations to use for the requests.</param>
+        /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
+        /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
+        public RecraftClient(
+            global::System.Net.Http.HttpClient? httpClient = null,
+            global::System.Uri? baseUri = null,
+            global::System.Collections.Generic.List<global::Recraft.EndPointAuthorization>? authorizations = null,
+            global::Recraft.AutoSDKClientOptions? options = null,
             bool disposeHttpClient = true)
         {
+
             HttpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             HttpClient.BaseAddress ??= baseUri ?? new global::System.Uri(DefaultBaseUrl);
             Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::Recraft.EndPointAuthorization>();
+            Options = options ?? new global::Recraft.AutoSDKClientOptions();
             _disposeHttpClient = disposeHttpClient;
 
             Initialized(HttpClient);

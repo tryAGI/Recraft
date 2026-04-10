@@ -9,12 +9,14 @@ namespace Recraft
         /// </summary>
         /// <param name="billing"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Recraft.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> VariateImageAsync(
 
             global::Recraft.VariateImageRequest request,
             global::Recraft.BillingType? billing = default,
+            global::Recraft.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Variate Image
@@ -28,6 +30,7 @@ namespace Recraft
         /// <param name="randomSeed"></param>
         /// <param name="responseFormat"></param>
         /// <param name="size"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> VariateImageAsync(
@@ -40,6 +43,7 @@ namespace Recraft
             int? n = default,
             int? randomSeed = default,
             global::Recraft.ResponseFormat? responseFormat = default,
+            global::Recraft.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

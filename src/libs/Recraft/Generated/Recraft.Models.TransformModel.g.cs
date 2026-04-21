@@ -19,6 +19,14 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        BytedanceSeedance2,
+        /// <summary>
+        /// 
+        /// </summary>
+        BytedanceSeedance2Fast,
+        /// <summary>
+        /// 
+        /// </summary>
         BytedanceSeedreamv4p5,
         /// <summary>
         /// 
@@ -143,6 +151,10 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        Imagineart2,
+        /// <summary>
+        /// 
+        /// </summary>
         Kling2p1Master,
         /// <summary>
         /// 
@@ -188,6 +200,14 @@ namespace Recraft
         /// 
         /// </summary>
         PixverseV5p5,
+        /// <summary>
+        /// 
+        /// </summary>
+        PixverseV5p6,
+        /// <summary>
+        /// 
+        /// </summary>
+        PixverseV6,
         /// <summary>
         /// 
         /// </summary>
@@ -323,6 +343,10 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        Wan2p7,
+        /// <summary>
+        /// 
+        /// </summary>
         ZImageTurbo,
     }
 
@@ -340,6 +364,8 @@ namespace Recraft
             {
                 TransformModel.BytedanceSeedreamv4 => "bytedance-seedreamv4",
                 TransformModel.BytedanceSeedance1p5 => "bytedance_seedance1p5",
+                TransformModel.BytedanceSeedance2 => "bytedance_seedance2",
+                TransformModel.BytedanceSeedance2Fast => "bytedance_seedance2_fast",
                 TransformModel.BytedanceSeedreamv4p5 => "bytedance_seedreamv4p5",
                 TransformModel.BytedanceSeedreamv5Lite => "bytedance_seedreamv5_lite",
                 TransformModel.Flux11pro => "flux1_1pro",
@@ -371,6 +397,7 @@ namespace Recraft
                 TransformModel.Imagen3 => "imagen3",
                 TransformModel.Imagen4 => "imagen4",
                 TransformModel.Imagen4Ultra => "imagen4_ultra",
+                TransformModel.Imagineart2 => "imagineart_2",
                 TransformModel.Kling2p1Master => "kling2p1_master",
                 TransformModel.Kling2p5Turbo => "kling2p5_turbo",
                 TransformModel.Kling2p6Pro => "kling2p6_pro",
@@ -383,6 +410,8 @@ namespace Recraft
                 TransformModel.NanoBananaPro => "nano_banana_pro",
                 TransformModel.NanoBananaPro4k => "nano_banana_pro_4k",
                 TransformModel.PixverseV5p5 => "pixverse_v5p5",
+                TransformModel.PixverseV5p6 => "pixverse_v5p6",
+                TransformModel.PixverseV6 => "pixverse_v6",
                 TransformModel.QwenImage => "qwen_image",
                 TransformModel.QwenImage2 => "qwen_image_2",
                 TransformModel.QwenImage2Pro => "qwen_image_2_pro",
@@ -416,6 +445,7 @@ namespace Recraft
                 TransformModel.Wan2p2A14b => "wan2p2_a14b",
                 TransformModel.Wan2p5Preview => "wan2p5_preview",
                 TransformModel.Wan2p6 => "wan2p6",
+                TransformModel.Wan2p7 => "wan2p7",
                 TransformModel.ZImageTurbo => "z_image_turbo",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -429,6 +459,8 @@ namespace Recraft
             {
                 "bytedance-seedreamv4" => TransformModel.BytedanceSeedreamv4,
                 "bytedance_seedance1p5" => TransformModel.BytedanceSeedance1p5,
+                "bytedance_seedance2" => TransformModel.BytedanceSeedance2,
+                "bytedance_seedance2_fast" => TransformModel.BytedanceSeedance2Fast,
                 "bytedance_seedreamv4p5" => TransformModel.BytedanceSeedreamv4p5,
                 "bytedance_seedreamv5_lite" => TransformModel.BytedanceSeedreamv5Lite,
                 "flux1_1pro" => TransformModel.Flux11pro,
@@ -460,6 +492,7 @@ namespace Recraft
                 "imagen3" => TransformModel.Imagen3,
                 "imagen4" => TransformModel.Imagen4,
                 "imagen4_ultra" => TransformModel.Imagen4Ultra,
+                "imagineart_2" => TransformModel.Imagineart2,
                 "kling2p1_master" => TransformModel.Kling2p1Master,
                 "kling2p5_turbo" => TransformModel.Kling2p5Turbo,
                 "kling2p6_pro" => TransformModel.Kling2p6Pro,
@@ -472,6 +505,8 @@ namespace Recraft
                 "nano_banana_pro" => TransformModel.NanoBananaPro,
                 "nano_banana_pro_4k" => TransformModel.NanoBananaPro4k,
                 "pixverse_v5p5" => TransformModel.PixverseV5p5,
+                "pixverse_v5p6" => TransformModel.PixverseV5p6,
+                "pixverse_v6" => TransformModel.PixverseV6,
                 "qwen_image" => TransformModel.QwenImage,
                 "qwen_image_2" => TransformModel.QwenImage2,
                 "qwen_image_2_pro" => TransformModel.QwenImage2Pro,
@@ -505,6 +540,7 @@ namespace Recraft
                 "wan2p2_a14b" => TransformModel.Wan2p2A14b,
                 "wan2p5_preview" => TransformModel.Wan2p5Preview,
                 "wan2p6" => TransformModel.Wan2p6,
+                "wan2p7" => TransformModel.Wan2p7,
                 "z_image_turbo" => TransformModel.ZImageTurbo,
                 _ => null,
             };

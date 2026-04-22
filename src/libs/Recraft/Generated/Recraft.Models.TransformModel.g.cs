@@ -99,6 +99,18 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        GptImage2High,
+        /// <summary>
+        /// 
+        /// </summary>
+        GptImage2Low,
+        /// <summary>
+        /// 
+        /// </summary>
+        GptImage2Medium,
+        /// <summary>
+        /// 
+        /// </summary>
         GrokImagineImage,
         /// <summary>
         /// 
@@ -384,6 +396,9 @@ namespace Recraft
                 TransformModel.GptImage1p5High => "gpt_image_1p5_high",
                 TransformModel.GptImage1p5Low => "gpt_image_1p5_low",
                 TransformModel.GptImage1p5Medium => "gpt_image_1p5_medium",
+                TransformModel.GptImage2High => "gpt_image_2_high",
+                TransformModel.GptImage2Low => "gpt_image_2_low",
+                TransformModel.GptImage2Medium => "gpt_image_2_medium",
                 TransformModel.GrokImagineImage => "grok_imagine_image",
                 TransformModel.GrokImagineVideo => "grok_imagine_video",
                 TransformModel.Hailuo02Pro => "hailuo02_pro",
@@ -479,6 +494,9 @@ namespace Recraft
                 "gpt_image_1p5_high" => TransformModel.GptImage1p5High,
                 "gpt_image_1p5_low" => TransformModel.GptImage1p5Low,
                 "gpt_image_1p5_medium" => TransformModel.GptImage1p5Medium,
+                "gpt_image_2_high" => TransformModel.GptImage2High,
+                "gpt_image_2_low" => TransformModel.GptImage2Low,
+                "gpt_image_2_medium" => TransformModel.GptImage2Medium,
                 "grok_imagine_image" => TransformModel.GrokImagineImage,
                 "grok_imagine_video" => TransformModel.GrokImagineVideo,
                 "hailuo02_pro" => TransformModel.Hailuo02Pro,

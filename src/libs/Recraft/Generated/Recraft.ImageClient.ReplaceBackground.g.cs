@@ -129,31 +129,59 @@ namespace Recraft
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{billing?.ToValueString()}"),
+                                    content: new global::System.Net.Http.StringContent((billing).HasValue ? (billing).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"billing\"");
                             } 
                             if (request.BlockNsfw != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.BlockNsfw}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.BlockNsfw, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"block_nsfw\"");
                             } 
                             if (request.CalculateFeatures != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.CalculateFeatures}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.CalculateFeatures, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"calculate_features\"");
                             } 
                             if (request.Expire != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Expire}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.Expire, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"expire\"");
                             }
                             var __contentImage = new global::System.Net.Http.ByteArrayContent(request.Image ?? global::System.Array.Empty<byte>());
+                            __contentImage.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                request.Imagename is null
+                                    ? "application/octet-stream"
+                                    : (global::System.IO.Path.GetExtension(request.Imagename) ?? string.Empty).ToLowerInvariant() switch
+                                    {
+                                        ".aac" => "audio/aac",
+                                        ".flac" => "audio/flac",
+                                        ".gif" => "image/gif",
+                                        ".jpeg" => "image/jpeg",
+                                        ".jpg" => "image/jpeg",
+                                        ".json" => "application/json",
+                                        ".m4a" => "audio/mp4",
+                                        ".mp3" => "audio/mpeg",
+                                        ".mp4" => "video/mp4",
+                                        ".mpeg" => "audio/mpeg",
+                                        ".mpga" => "audio/mpeg",
+                                        ".oga" => "audio/ogg",
+                                        ".ogg" => "audio/ogg",
+                                        ".opus" => "audio/ogg",
+                                        ".pdf" => "application/pdf",
+                                        ".png" => "image/png",
+                                        ".txt" => "text/plain",
+                                        ".wav" => "audio/wav",
+                                        ".weba" => "audio/webm",
+                                        ".webm" => "video/webm",
+                                        ".webp" => "image/webp",
+                                        _ => "application/octet-stream",
+                                    });
                             __httpRequestContent.Add(
                                 content: __contentImage,
                                 name: "\"image\"",
@@ -166,73 +194,73 @@ namespace Recraft
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.ImageFormat?.ToValueString()}"),
+                                    content: new global::System.Net.Http.StringContent((request.ImageFormat).HasValue ? (request.ImageFormat).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"image_format\"");
                             } 
                             if (request.Model != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Model?.ToValueString()}"),
+                                    content: new global::System.Net.Http.StringContent((request.Model).HasValue ? (request.Model).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"model\"");
                             } 
                             if (request.N != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.N}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.N, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"n\"");
                             } 
                             if (request.NegativePrompt != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.NegativePrompt}"),
+                                    content: new global::System.Net.Http.StringContent(request.NegativePrompt ?? string.Empty),
                                     name: "\"negative_prompt\"");
                             }
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent($"{request.Prompt}"),
+                                content: new global::System.Net.Http.StringContent(request.Prompt ?? string.Empty),
                                 name: "\"prompt\"");
                             if (request.RandomSeed != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.RandomSeed}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.RandomSeed, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"random_seed\"");
                             } 
                             if (request.ResponseFormat != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.ResponseFormat?.ToValueString()}"),
+                                    content: new global::System.Net.Http.StringContent((request.ResponseFormat).HasValue ? (request.ResponseFormat).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"response_format\"");
                             } 
                             if (request.Style != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Style}"),
+                                    content: new global::System.Net.Http.StringContent(request.Style ?? string.Empty),
                                     name: "\"style\"");
                             } 
                             if (request.StyleId != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.StyleId}"),
+                                    content: new global::System.Net.Http.StringContent(request.StyleId.ToString() ?? string.Empty),
                                     name: "\"style_id\"");
                             } 
                             if (request.Substyle != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Substyle?.ToValueString()}"),
+                                    content: new global::System.Net.Http.StringContent((request.Substyle).HasValue ? (request.Substyle).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"substyle\"");
                             } 
                             if (request.TextLayout != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.TextLayout, x => x))}]"),
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.TextLayout, x => x.ToJson(JsonSerializerContext)))}]"),
                                     name: "\"text_layout\"");
                             }
                             __httpRequest.Content = __httpRequestContent;

@@ -129,17 +129,45 @@ namespace Recraft
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{billing?.ToValueString()}"),
+                                    content: new global::System.Net.Http.StringContent((billing).HasValue ? (billing).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"billing\"");
                             } 
                             if (request.Expire != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Expire}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.Expire, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"expire\"");
                             }
                             var __contentImage = new global::System.Net.Http.ByteArrayContent(request.Image ?? global::System.Array.Empty<byte>());
+                            __contentImage.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                request.Imagename is null
+                                    ? "application/octet-stream"
+                                    : (global::System.IO.Path.GetExtension(request.Imagename) ?? string.Empty).ToLowerInvariant() switch
+                                    {
+                                        ".aac" => "audio/aac",
+                                        ".flac" => "audio/flac",
+                                        ".gif" => "image/gif",
+                                        ".jpeg" => "image/jpeg",
+                                        ".jpg" => "image/jpeg",
+                                        ".json" => "application/json",
+                                        ".m4a" => "audio/mp4",
+                                        ".mp3" => "audio/mpeg",
+                                        ".mp4" => "video/mp4",
+                                        ".mpeg" => "audio/mpeg",
+                                        ".mpga" => "audio/mpeg",
+                                        ".oga" => "audio/ogg",
+                                        ".ogg" => "audio/ogg",
+                                        ".opus" => "audio/ogg",
+                                        ".pdf" => "application/pdf",
+                                        ".png" => "image/png",
+                                        ".txt" => "text/plain",
+                                        ".wav" => "audio/wav",
+                                        ".weba" => "audio/webm",
+                                        ".webm" => "video/webm",
+                                        ".webp" => "image/webp",
+                                        _ => "application/octet-stream",
+                                    });
                             __httpRequestContent.Add(
                                 content: __contentImage,
                                 name: "\"image\"",
@@ -152,10 +180,38 @@ namespace Recraft
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.ImageFormat?.ToValueString()}"),
+                                    content: new global::System.Net.Http.StringContent((request.ImageFormat).HasValue ? (request.ImageFormat).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"image_format\"");
                             }
                             var __contentMask = new global::System.Net.Http.ByteArrayContent(request.Mask ?? global::System.Array.Empty<byte>());
+                            __contentMask.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                request.Maskname is null
+                                    ? "application/octet-stream"
+                                    : (global::System.IO.Path.GetExtension(request.Maskname) ?? string.Empty).ToLowerInvariant() switch
+                                    {
+                                        ".aac" => "audio/aac",
+                                        ".flac" => "audio/flac",
+                                        ".gif" => "image/gif",
+                                        ".jpeg" => "image/jpeg",
+                                        ".jpg" => "image/jpeg",
+                                        ".json" => "application/json",
+                                        ".m4a" => "audio/mp4",
+                                        ".mp3" => "audio/mpeg",
+                                        ".mp4" => "video/mp4",
+                                        ".mpeg" => "audio/mpeg",
+                                        ".mpga" => "audio/mpeg",
+                                        ".oga" => "audio/ogg",
+                                        ".ogg" => "audio/ogg",
+                                        ".opus" => "audio/ogg",
+                                        ".pdf" => "application/pdf",
+                                        ".png" => "image/png",
+                                        ".txt" => "text/plain",
+                                        ".wav" => "audio/wav",
+                                        ".weba" => "audio/webm",
+                                        ".webm" => "video/webm",
+                                        ".webp" => "image/webp",
+                                        _ => "application/octet-stream",
+                                    });
                             __httpRequestContent.Add(
                                 content: __contentMask,
                                 name: "\"mask\"",
@@ -168,7 +224,7 @@ namespace Recraft
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.ResponseFormat?.ToValueString()}"),
+                                    content: new global::System.Net.Http.StringContent((request.ResponseFormat).HasValue ? (request.ResponseFormat).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"response_format\"");
                             }
                             __httpRequest.Content = __httpRequestContent;

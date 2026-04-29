@@ -127,7 +127,7 @@ namespace Recraft
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{billing?.ToValueString()}"),
+                                    content: new global::System.Net.Http.StringContent((billing).HasValue ? (billing).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"billing\"");
                             }
                             __httpRequest.Content = __httpRequestContent;

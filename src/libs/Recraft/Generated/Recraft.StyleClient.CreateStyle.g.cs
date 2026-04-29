@@ -129,19 +129,20 @@ namespace Recraft
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{billing?.ToValueString()}"),
+                                    content: new global::System.Net.Http.StringContent((billing).HasValue ? (billing).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"billing\"");
                             } 
                             if (request.ImageWeights != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.ImageWeights, x => x))}]"),
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.ImageWeights, x => global::System.Convert.ToString(x, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty))}]"),
                                     name: "\"image_weights\"");
                             }
                             for (var __iImages = 0; __iImages < request.Images.Count; __iImages++)
                             {
                                 var __contentImages = new global::System.Net.Http.ByteArrayContent(request.Images[__iImages]);
+                            __contentImages.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue("application/octet-stream");
                                 __httpRequestContent.Add(
                                     content: __contentImages,
                                     name: "\"images\"",
@@ -155,53 +156,53 @@ namespace Recraft
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.MixPolicy?.ToValueString()}"),
+                                    content: new global::System.Net.Http.StringContent((request.MixPolicy).HasValue ? (request.MixPolicy).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"mix_policy\"");
                             } 
                             if (request.Model != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Model?.ToValueString()}"),
+                                    content: new global::System.Net.Http.StringContent((request.Model).HasValue ? (request.Model).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"model\"");
                             } 
                             if (request.Palette != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Palette}"),
+                                    content: new global::System.Net.Http.StringContent(request.Palette.ToJson(JsonSerializerContext)),
                                     name: "\"palette\"");
                             } 
                             if (request.Private != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Private}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.Private, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"private\"");
                             } 
                             if (request.Prompt != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Prompt}"),
+                                    content: new global::System.Net.Http.StringContent(request.Prompt ?? string.Empty),
                                     name: "\"prompt\"");
                             } 
                             if (request.SourceStyleWeights != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.SourceStyleWeights, x => x))}]"),
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.SourceStyleWeights, x => global::System.Convert.ToString(x, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty))}]"),
                                     name: "\"source_style_weights\"");
                             } 
                             if (request.SourceStyles != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.SourceStyles, x => x))}]"),
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.SourceStyles, x => x.ToString() ?? string.Empty))}]"),
                                     name: "\"source_styles\"");
                             }
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent($"{request.Style.ToValueString()}"),
+                                content: new global::System.Net.Http.StringContent(request.Style.ToValueString()),
                                 name: "\"style\"");
                             __httpRequest.Content = __httpRequestContent;
                 global::Recraft.AutoSDKRequestOptionsSupport.ApplyHeaders(

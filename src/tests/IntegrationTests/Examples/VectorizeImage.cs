@@ -22,14 +22,12 @@ public partial class Tests
         var imageBytes = new byte[] { 0x89, 0x50, 0x4E, 0x47 };
 
         ProcessImageResponse response = await client.Image.VectorizeImageAsync(
-            request: new VectorizeImageRequest(
-                value1: new ProcessImageRequest
-                {
-                    Image = imageBytes,
-                    Imagename = "input.png",
-                    ResponseFormat = ResponseFormat.Url,
-                },
-                value2: null));
+            request: new ProcessImageRequest
+            {
+                Image = imageBytes,
+                Imagename = "input.png",
+                ResponseFormat = ResponseFormat.Url,
+            });
 
         response.Should().NotBeNull();
         response.Image.Should().NotBeNull();

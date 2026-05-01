@@ -283,6 +283,54 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        Recraftv41,
+        /// <summary>
+        /// 
+        /// </summary>
+        Recraftv41Pro,
+        /// <summary>
+        /// 
+        /// </summary>
+        Recraftv41ProRaster,
+        /// <summary>
+        /// 
+        /// </summary>
+        Recraftv41ProVector,
+        /// <summary>
+        /// 
+        /// </summary>
+        Recraftv41Raster,
+        /// <summary>
+        /// 
+        /// </summary>
+        Recraftv41Utility,
+        /// <summary>
+        /// 
+        /// </summary>
+        Recraftv41UtilityPro,
+        /// <summary>
+        /// 
+        /// </summary>
+        Recraftv41UtilityProRaster,
+        /// <summary>
+        /// 
+        /// </summary>
+        Recraftv41UtilityProVector,
+        /// <summary>
+        /// 
+        /// </summary>
+        Recraftv41UtilityRaster,
+        /// <summary>
+        /// 
+        /// </summary>
+        Recraftv41UtilityVector,
+        /// <summary>
+        /// 
+        /// </summary>
+        Recraftv41Vector,
+        /// <summary>
+        /// 
+        /// </summary>
         Recraftv4Pro,
         /// <summary>
         /// 
@@ -442,6 +490,18 @@ namespace Recraft
                 TransformModel.Recraftv3Raster => "recraftv3_raster",
                 TransformModel.Recraftv3Vector => "recraftv3_vector",
                 TransformModel.Recraftv4 => "recraftv4",
+                TransformModel.Recraftv41 => "recraftv4_1",
+                TransformModel.Recraftv41Pro => "recraftv4_1_pro",
+                TransformModel.Recraftv41ProRaster => "recraftv4_1_pro_raster",
+                TransformModel.Recraftv41ProVector => "recraftv4_1_pro_vector",
+                TransformModel.Recraftv41Raster => "recraftv4_1_raster",
+                TransformModel.Recraftv41Utility => "recraftv4_1_utility",
+                TransformModel.Recraftv41UtilityPro => "recraftv4_1_utility_pro",
+                TransformModel.Recraftv41UtilityProRaster => "recraftv4_1_utility_pro_raster",
+                TransformModel.Recraftv41UtilityProVector => "recraftv4_1_utility_pro_vector",
+                TransformModel.Recraftv41UtilityRaster => "recraftv4_1_utility_raster",
+                TransformModel.Recraftv41UtilityVector => "recraftv4_1_utility_vector",
+                TransformModel.Recraftv41Vector => "recraftv4_1_vector",
                 TransformModel.Recraftv4Pro => "recraftv4_pro",
                 TransformModel.Recraftv4ProRaster => "recraftv4_pro_raster",
                 TransformModel.Recraftv4ProVector => "recraftv4_pro_vector",
@@ -540,6 +600,18 @@ namespace Recraft
                 "recraftv3_raster" => TransformModel.Recraftv3Raster,
                 "recraftv3_vector" => TransformModel.Recraftv3Vector,
                 "recraftv4" => TransformModel.Recraftv4,
+                "recraftv4_1" => TransformModel.Recraftv41,
+                "recraftv4_1_pro" => TransformModel.Recraftv41Pro,
+                "recraftv4_1_pro_raster" => TransformModel.Recraftv41ProRaster,
+                "recraftv4_1_pro_vector" => TransformModel.Recraftv41ProVector,
+                "recraftv4_1_raster" => TransformModel.Recraftv41Raster,
+                "recraftv4_1_utility" => TransformModel.Recraftv41Utility,
+                "recraftv4_1_utility_pro" => TransformModel.Recraftv41UtilityPro,
+                "recraftv4_1_utility_pro_raster" => TransformModel.Recraftv41UtilityProRaster,
+                "recraftv4_1_utility_pro_vector" => TransformModel.Recraftv41UtilityProVector,
+                "recraftv4_1_utility_raster" => TransformModel.Recraftv41UtilityRaster,
+                "recraftv4_1_utility_vector" => TransformModel.Recraftv41UtilityVector,
+                "recraftv4_1_vector" => TransformModel.Recraftv41Vector,
                 "recraftv4_pro" => TransformModel.Recraftv4Pro,
                 "recraftv4_pro_raster" => TransformModel.Recraftv4ProRaster,
                 "recraftv4_pro_vector" => TransformModel.Recraftv4ProVector,

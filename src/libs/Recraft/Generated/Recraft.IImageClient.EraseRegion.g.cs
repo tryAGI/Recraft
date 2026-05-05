@@ -22,6 +22,20 @@ namespace Recraft
         /// Erase Region
         /// </summary>
         /// <param name="billing"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Recraft.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Recraft.AutoSDKHttpResponse<global::Recraft.ProcessImageResponse>> EraseRegionAsResponseAsync(
+
+            global::Recraft.EraseRegionRequest request,
+            global::Recraft.BillingType? billing = default,
+            global::Recraft.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Erase Region
+        /// </summary>
+        /// <param name="billing"></param>
         /// <param name="expire"></param>
         /// <param name="image"></param>
         /// <param name="imagename"></param>
@@ -36,6 +50,65 @@ namespace Recraft
             byte[] image,
             string imagename,
             byte[] mask,
+            string maskname,
+            global::Recraft.BillingType? billing = default,
+            bool? expire = default,
+            global::Recraft.ImageFormat? imageFormat = default,
+            global::Recraft.ResponseFormat? responseFormat = default,
+            global::Recraft.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Erase Region
+        /// </summary>
+        /// <param name="billing"></param>
+        /// <param name="expire"></param>
+        /// <param name="image">
+        /// The stream to send as the multipart 'image' file part.
+        /// </param>
+        /// <param name="imagename"></param>
+        /// <param name="imageFormat"></param>
+        /// <param name="mask">
+        /// The stream to send as the multipart 'mask' file part.
+        /// </param>
+        /// <param name="maskname"></param>
+        /// <param name="responseFormat"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Recraft.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Recraft.ProcessImageResponse> EraseRegionAsync(
+            global::System.IO.Stream image,
+            string imagename,
+            global::System.IO.Stream mask,
+            string maskname,
+            global::Recraft.BillingType? billing = default,
+            bool? expire = default,
+            global::Recraft.ImageFormat? imageFormat = default,
+            global::Recraft.ResponseFormat? responseFormat = default,
+            global::Recraft.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Erase Region
+        /// </summary>
+        /// <param name="billing"></param>
+        /// <param name="expire"></param>
+        /// <param name="image">
+        /// The stream to send as the multipart 'image' file part.
+        /// </param>
+        /// <param name="imagename"></param>
+        /// <param name="imageFormat"></param>
+        /// <param name="mask">
+        /// The stream to send as the multipart 'mask' file part.
+        /// </param>
+        /// <param name="maskname"></param>
+        /// <param name="responseFormat"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Recraft.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Recraft.AutoSDKHttpResponse<global::Recraft.ProcessImageResponse>> EraseRegionAsResponseAsync(
+            global::System.IO.Stream image,
+            string imagename,
+            global::System.IO.Stream mask,
             string maskname,
             global::Recraft.BillingType? billing = default,
             bool? expire = default,

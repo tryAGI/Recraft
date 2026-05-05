@@ -22,6 +22,20 @@ namespace Recraft
         /// Generate image from image and prompt
         /// </summary>
         /// <param name="billing"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Recraft.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Recraft.AutoSDKHttpResponse<global::Recraft.GenerateImageResponse>> ImageToImageAsResponseAsync(
+
+            global::Recraft.ImageToImageRequest request,
+            global::Recraft.BillingType? billing = default,
+            global::Recraft.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Generate image from image and prompt
+        /// </summary>
+        /// <param name="billing"></param>
         /// <param name="blockNsfw"></param>
         /// <param name="calculateFeatures"></param>
         /// <param name="controls"></param>
@@ -45,6 +59,105 @@ namespace Recraft
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> ImageToImageAsync(
             byte[] image,
+            string imagename,
+            string prompt,
+            double strength,
+            global::Recraft.BillingType? billing = default,
+            bool? blockNsfw = default,
+            bool? calculateFeatures = default,
+            global::Recraft.UserControls? controls = default,
+            bool? expire = default,
+            global::Recraft.ImageFormat? imageFormat = default,
+            global::Recraft.TransformModel? model = default,
+            int? n = default,
+            string? negativePrompt = default,
+            int? randomSeed = default,
+            global::Recraft.ResponseFormat? responseFormat = default,
+            string? style = default,
+            global::System.Guid? styleId = default,
+            global::Recraft.ImageSubStyle? substyle = default,
+            global::System.Collections.Generic.IList<global::Recraft.TextLayoutItem>? textLayout = default,
+            global::Recraft.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Generate image from image and prompt
+        /// </summary>
+        /// <param name="billing"></param>
+        /// <param name="blockNsfw"></param>
+        /// <param name="calculateFeatures"></param>
+        /// <param name="controls"></param>
+        /// <param name="expire"></param>
+        /// <param name="image">
+        /// The stream to send as the multipart 'image' file part.
+        /// </param>
+        /// <param name="imagename"></param>
+        /// <param name="imageFormat"></param>
+        /// <param name="model"></param>
+        /// <param name="n"></param>
+        /// <param name="negativePrompt"></param>
+        /// <param name="prompt"></param>
+        /// <param name="randomSeed"></param>
+        /// <param name="responseFormat"></param>
+        /// <param name="strength"></param>
+        /// <param name="style"></param>
+        /// <param name="styleId"></param>
+        /// <param name="substyle"></param>
+        /// <param name="textLayout"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Recraft.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> ImageToImageAsync(
+            global::System.IO.Stream image,
+            string imagename,
+            string prompt,
+            double strength,
+            global::Recraft.BillingType? billing = default,
+            bool? blockNsfw = default,
+            bool? calculateFeatures = default,
+            global::Recraft.UserControls? controls = default,
+            bool? expire = default,
+            global::Recraft.ImageFormat? imageFormat = default,
+            global::Recraft.TransformModel? model = default,
+            int? n = default,
+            string? negativePrompt = default,
+            int? randomSeed = default,
+            global::Recraft.ResponseFormat? responseFormat = default,
+            string? style = default,
+            global::System.Guid? styleId = default,
+            global::Recraft.ImageSubStyle? substyle = default,
+            global::System.Collections.Generic.IList<global::Recraft.TextLayoutItem>? textLayout = default,
+            global::Recraft.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Generate image from image and prompt
+        /// </summary>
+        /// <param name="billing"></param>
+        /// <param name="blockNsfw"></param>
+        /// <param name="calculateFeatures"></param>
+        /// <param name="controls"></param>
+        /// <param name="expire"></param>
+        /// <param name="image">
+        /// The stream to send as the multipart 'image' file part.
+        /// </param>
+        /// <param name="imagename"></param>
+        /// <param name="imageFormat"></param>
+        /// <param name="model"></param>
+        /// <param name="n"></param>
+        /// <param name="negativePrompt"></param>
+        /// <param name="prompt"></param>
+        /// <param name="randomSeed"></param>
+        /// <param name="responseFormat"></param>
+        /// <param name="strength"></param>
+        /// <param name="style"></param>
+        /// <param name="styleId"></param>
+        /// <param name="substyle"></param>
+        /// <param name="textLayout"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Recraft.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Recraft.AutoSDKHttpResponse<global::Recraft.GenerateImageResponse>> ImageToImageAsResponseAsync(
+            global::System.IO.Stream image,
             string imagename,
             string prompt,
             double strength,

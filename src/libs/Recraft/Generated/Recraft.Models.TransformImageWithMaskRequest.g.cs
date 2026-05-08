@@ -29,6 +29,19 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTransformImageRequest(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Recraft.TransformImageRequest? value)
+        {
+            value = TransformImageRequest;
+            return IsTransformImageRequest;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Recraft.TransformImageWithMaskRequestVariant2? TransformImageWithMaskRequestVariant2 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Recraft
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TransformImageWithMaskRequestVariant2))]
 #endif
         public bool IsTransformImageWithMaskRequestVariant2 => TransformImageWithMaskRequestVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTransformImageWithMaskRequestVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Recraft.TransformImageWithMaskRequestVariant2? value)
+        {
+            value = TransformImageWithMaskRequestVariant2;
+            return IsTransformImageWithMaskRequestVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace Recraft
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Recraft.TransformImageRequest?, TResult>? transformImageRequest = null,
-            global::System.Func<global::Recraft.TransformImageWithMaskRequestVariant2?, TResult>? transformImageWithMaskRequestVariant2 = null,
+            global::System.Func<global::Recraft.TransformImageRequest, TResult>? transformImageRequest = null,
+            global::System.Func<global::Recraft.TransformImageWithMaskRequestVariant2, TResult>? transformImageWithMaskRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace Recraft
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Recraft.TransformImageRequest?>? transformImageRequest = null,
-            global::System.Action<global::Recraft.TransformImageWithMaskRequestVariant2?>? transformImageWithMaskRequestVariant2 = null,
+            global::System.Action<global::Recraft.TransformImageRequest>? transformImageRequest = null,
+
+            global::System.Action<global::Recraft.TransformImageWithMaskRequestVariant2>? transformImageWithMaskRequestVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsTransformImageRequest)
+            {
+                transformImageRequest?.Invoke(TransformImageRequest!);
+            }
+            else if (IsTransformImageWithMaskRequestVariant2)
+            {
+                transformImageWithMaskRequestVariant2?.Invoke(TransformImageWithMaskRequestVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Recraft.TransformImageRequest>? transformImageRequest = null,
+            global::System.Action<global::Recraft.TransformImageWithMaskRequestVariant2>? transformImageWithMaskRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)

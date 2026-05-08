@@ -29,6 +29,19 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickStyle(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Recraft.Style? value)
+        {
+            value = Style;
+            return IsStyle;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Recraft.CreateStyleResponseVariant2? CreateStyleResponseVariant2 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Recraft
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CreateStyleResponseVariant2))]
 #endif
         public bool IsCreateStyleResponseVariant2 => CreateStyleResponseVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCreateStyleResponseVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Recraft.CreateStyleResponseVariant2? value)
+        {
+            value = CreateStyleResponseVariant2;
+            return IsCreateStyleResponseVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace Recraft
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Recraft.Style?, TResult>? style = null,
-            global::System.Func<global::Recraft.CreateStyleResponseVariant2?, TResult>? createStyleResponseVariant2 = null,
+            global::System.Func<global::Recraft.Style, TResult>? style = null,
+            global::System.Func<global::Recraft.CreateStyleResponseVariant2, TResult>? createStyleResponseVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace Recraft
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Recraft.Style?>? style = null,
-            global::System.Action<global::Recraft.CreateStyleResponseVariant2?>? createStyleResponseVariant2 = null,
+            global::System.Action<global::Recraft.Style>? style = null,
+
+            global::System.Action<global::Recraft.CreateStyleResponseVariant2>? createStyleResponseVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsStyle)
+            {
+                style?.Invoke(Style!);
+            }
+            else if (IsCreateStyleResponseVariant2)
+            {
+                createStyleResponseVariant2?.Invoke(CreateStyleResponseVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Recraft.Style>? style = null,
+            global::System.Action<global::Recraft.CreateStyleResponseVariant2>? createStyleResponseVariant2 = null,
             bool validate = true)
         {
             if (validate)

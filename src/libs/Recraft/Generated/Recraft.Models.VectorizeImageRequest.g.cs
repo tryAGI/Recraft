@@ -42,6 +42,13 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        public global::Recraft.ProcessImageRequest PickProcess() => IsProcess
+            ? Process!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Process' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Recraft.VectorizeImageRequestVariant2? VectorizeImageRequestVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Recraft
             value = VectorizeImageRequestVariant2;
             return IsVectorizeImageRequestVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Recraft.VectorizeImageRequestVariant2 PickVectorizeImageRequestVariant2() => IsVectorizeImageRequestVariant2
+            ? VectorizeImageRequestVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VectorizeImageRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +103,11 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        public static VectorizeImageRequest FromProcess(global::Recraft.ProcessImageRequest? value) => new VectorizeImageRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator VectorizeImageRequest(global::Recraft.VectorizeImageRequestVariant2 value) => new VectorizeImageRequest((global::Recraft.VectorizeImageRequestVariant2?)value);
 
         /// <summary>
@@ -103,6 +122,11 @@ namespace Recraft
         {
             VectorizeImageRequestVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static VectorizeImageRequest FromVectorizeImageRequestVariant2(global::Recraft.VectorizeImageRequestVariant2? value) => new VectorizeImageRequest(value);
 
         /// <summary>
         /// 

@@ -42,6 +42,13 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        public global::Recraft.Style PickStyle() => IsStyle
+            ? Style!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Style' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Recraft.CreateStyleResponseVariant2? CreateStyleResponseVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Recraft
             value = CreateStyleResponseVariant2;
             return IsCreateStyleResponseVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Recraft.CreateStyleResponseVariant2 PickCreateStyleResponseVariant2() => IsCreateStyleResponseVariant2
+            ? CreateStyleResponseVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CreateStyleResponseVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +103,11 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        public static CreateStyleResponse FromStyle(global::Recraft.Style? value) => new CreateStyleResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CreateStyleResponse(global::Recraft.CreateStyleResponseVariant2 value) => new CreateStyleResponse((global::Recraft.CreateStyleResponseVariant2?)value);
 
         /// <summary>
@@ -103,6 +122,11 @@ namespace Recraft
         {
             CreateStyleResponseVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CreateStyleResponse FromCreateStyleResponseVariant2(global::Recraft.CreateStyleResponseVariant2? value) => new CreateStyleResponse(value);
 
         /// <summary>
         /// 

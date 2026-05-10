@@ -42,6 +42,13 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        public global::Recraft.TransformImageRequest PickTransformImageRequest() => IsTransformImageRequest
+            ? TransformImageRequest!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TransformImageRequest' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Recraft.TransformImageWithMaskRequestVariant2? TransformImageWithMaskRequestVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Recraft
             value = TransformImageWithMaskRequestVariant2;
             return IsTransformImageWithMaskRequestVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Recraft.TransformImageWithMaskRequestVariant2 PickTransformImageWithMaskRequestVariant2() => IsTransformImageWithMaskRequestVariant2
+            ? TransformImageWithMaskRequestVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TransformImageWithMaskRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -89,6 +103,11 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        public static TransformImageWithMaskRequest FromTransformImageRequest(global::Recraft.TransformImageRequest? value) => new TransformImageWithMaskRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TransformImageWithMaskRequest(global::Recraft.TransformImageWithMaskRequestVariant2 value) => new TransformImageWithMaskRequest((global::Recraft.TransformImageWithMaskRequestVariant2?)value);
 
         /// <summary>
@@ -103,6 +122,11 @@ namespace Recraft
         {
             TransformImageWithMaskRequestVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TransformImageWithMaskRequest FromTransformImageWithMaskRequestVariant2(global::Recraft.TransformImageWithMaskRequestVariant2? value) => new TransformImageWithMaskRequest(value);
 
         /// <summary>
         /// 

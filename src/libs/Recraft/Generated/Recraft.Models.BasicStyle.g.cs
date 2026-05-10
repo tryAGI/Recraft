@@ -61,5 +61,6 @@ namespace Recraft
         public BasicStyle()
         {
         }
+
     }
 }

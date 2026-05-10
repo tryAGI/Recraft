@@ -40,5 +40,6 @@ namespace Recraft
         public CreateStyleResponseVariant2()
         {
         }
+
     }
 }

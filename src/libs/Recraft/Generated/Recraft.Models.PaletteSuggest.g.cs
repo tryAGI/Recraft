@@ -49,5 +49,6 @@ namespace Recraft
         public PaletteSuggest()
         {
         }
+
     }
 }

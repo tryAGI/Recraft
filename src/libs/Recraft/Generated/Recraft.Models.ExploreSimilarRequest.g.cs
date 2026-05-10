@@ -88,5 +88,6 @@ namespace Recraft
         public ExploreSimilarRequest()
         {
         }
+
     }
 }

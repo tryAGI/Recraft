@@ -50,5 +50,6 @@ namespace Recraft
         public OptimizeColorsResponse()
         {
         }
+
     }
 }

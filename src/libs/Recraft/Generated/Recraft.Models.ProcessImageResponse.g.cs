@@ -60,5 +60,6 @@ namespace Recraft
         public ProcessImageResponse()
         {
         }
+
     }
 }

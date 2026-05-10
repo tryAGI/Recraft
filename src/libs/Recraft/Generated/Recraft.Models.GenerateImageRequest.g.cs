@@ -190,5 +190,6 @@ namespace Recraft
         public GenerateImageRequest()
         {
         }
+
     }
 }

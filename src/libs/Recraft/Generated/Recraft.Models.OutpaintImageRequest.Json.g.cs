@@ -2,7 +2,7 @@
 
 namespace Recraft
 {
-    public readonly partial struct ImageToImageRequest
+    public readonly partial struct OutpaintImageRequest
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -34,14 +34,14 @@ namespace Recraft
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::Recraft.ImageToImageRequest? FromJson(
+        public static global::Recraft.OutpaintImageRequest? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::Recraft.ImageToImageRequest),
-                jsonSerializerContext) as global::Recraft.ImageToImageRequest?;
+                typeof(global::Recraft.OutpaintImageRequest),
+                jsonSerializerContext) as global::Recraft.OutpaintImageRequest?;
         }
 
         /// <summary>
@@ -51,11 +51,11 @@ namespace Recraft
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::Recraft.ImageToImageRequest? FromJson(
+        public static global::Recraft.OutpaintImageRequest? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Recraft.ImageToImageRequest>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::Recraft.OutpaintImageRequest>(
                 json,
                 jsonSerializerOptions);
         }
@@ -63,14 +63,14 @@ namespace Recraft
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::Recraft.ImageToImageRequest?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::Recraft.OutpaintImageRequest?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::Recraft.ImageToImageRequest),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Recraft.ImageToImageRequest?;
+                typeof(global::Recraft.OutpaintImageRequest),
+                jsonSerializerContext).ConfigureAwait(false)) as global::Recraft.OutpaintImageRequest?;
         }
 
         /// <summary>
@@ -80,11 +80,11 @@ namespace Recraft
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::Recraft.ImageToImageRequest?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::Recraft.OutpaintImageRequest?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Recraft.ImageToImageRequest?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Recraft.OutpaintImageRequest?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

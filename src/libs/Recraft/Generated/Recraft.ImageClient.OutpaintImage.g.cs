@@ -7,7 +7,7 @@ namespace Recraft
     {
 
 
-        private static readonly global::Recraft.EndPointSecurityRequirement s_ImageToImageSecurityRequirement0 =
+        private static readonly global::Recraft.EndPointSecurityRequirement s_OutpaintImageSecurityRequirement0 =
             new global::Recraft.EndPointSecurityRequirement
             {
                 Authorizations = new global::Recraft.EndPointAuthorizationRequirement[]
@@ -21,44 +21,44 @@ namespace Recraft
                     },
                 },
             };
-        private static readonly global::Recraft.EndPointSecurityRequirement[] s_ImageToImageSecurityRequirements =
+        private static readonly global::Recraft.EndPointSecurityRequirement[] s_OutpaintImageSecurityRequirements =
             new global::Recraft.EndPointSecurityRequirement[]
-            {                s_ImageToImageSecurityRequirement0,
+            {                s_OutpaintImageSecurityRequirement0,
             };
-        partial void PrepareImageToImageArguments(
+        partial void PrepareOutpaintImageArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::Recraft.BillingType? billing,
-            global::Recraft.ImageToImageRequest request);
-        partial void PrepareImageToImageRequest(
+            global::Recraft.OutpaintImageRequest request);
+        partial void PrepareOutpaintImageRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::Recraft.BillingType? billing,
-            global::Recraft.ImageToImageRequest request);
-        partial void ProcessImageToImageResponse(
+            global::Recraft.OutpaintImageRequest request);
+        partial void ProcessOutpaintImageResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessImageToImageResponseContent(
+        partial void ProcessOutpaintImageResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Generate image from image and prompt
+        /// Outpaint Image
         /// </summary>
         /// <param name="billing"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Recraft.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> ImageToImageAsync(
+        public async global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> OutpaintImageAsync(
 
-            global::Recraft.ImageToImageRequest request,
+            global::Recraft.OutpaintImageRequest request,
             global::Recraft.BillingType? billing = default,
             global::Recraft.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await ImageToImageAsResponseAsync(
+            var __response = await OutpaintImageAsResponseAsync(
 
                 request: request,
                 billing: billing,
@@ -69,23 +69,23 @@ namespace Recraft
             return __response.Body;
         }
         /// <summary>
-        /// Generate image from image and prompt
+        /// Outpaint Image
         /// </summary>
         /// <param name="billing"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Recraft.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Recraft.AutoSDKHttpResponse<global::Recraft.GenerateImageResponse>> ImageToImageAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::Recraft.AutoSDKHttpResponse<global::Recraft.GenerateImageResponse>> OutpaintImageAsResponseAsync(
 
-            global::Recraft.ImageToImageRequest request,
+            global::Recraft.OutpaintImageRequest request,
             global::Recraft.BillingType? billing = default,
             global::Recraft.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareImageToImageArguments(
+            PrepareOutpaintImageArguments(
                 httpClient: HttpClient,
                 billing: ref billing,
                 request: request);
@@ -93,8 +93,8 @@ namespace Recraft
 
             var __authorizations = global::Recraft.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_ImageToImageSecurityRequirements,
-                operationName: "ImageToImageAsync");
+                securityRequirements: s_OutpaintImageSecurityRequirements,
+                operationName: "OutpaintImageAsync");
 
             using var __timeoutCancellationTokenSource = global::Recraft.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -114,7 +114,7 @@ namespace Recraft
             {
 
                             var __pathBuilder = new global::Recraft.PathBuilder(
-                                path: "/v1/images/imageToImage",
+                                path: "/v1/images/outpaint",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("billing", billing?.ToValueString())
@@ -169,7 +169,7 @@ namespace Recraft
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareImageToImageRequest(
+                PrepareOutpaintImageRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     billing: billing,
@@ -190,9 +190,9 @@ namespace Recraft
                     await global::Recraft.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::Recraft.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ImageToImage",
-                                methodName: "ImageToImageAsync",
-                                pathTemplate: "\"/v1/images/imageToImage\"",
+                                operationId: "OutpaintImage",
+                                methodName: "OutpaintImageAsync",
+                                pathTemplate: "\"/v1/images/outpaint\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -224,9 +224,9 @@ namespace Recraft
                         await global::Recraft.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Recraft.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ImageToImage",
-                                methodName: "ImageToImageAsync",
-                                pathTemplate: "\"/v1/images/imageToImage\"",
+                                operationId: "OutpaintImage",
+                                methodName: "OutpaintImageAsync",
+                                pathTemplate: "\"/v1/images/outpaint\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -265,9 +265,9 @@ namespace Recraft
                         await global::Recraft.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Recraft.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ImageToImage",
-                                methodName: "ImageToImageAsync",
-                                pathTemplate: "\"/v1/images/imageToImage\"",
+                                operationId: "OutpaintImage",
+                                methodName: "OutpaintImageAsync",
+                                pathTemplate: "\"/v1/images/outpaint\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -305,7 +305,7 @@ namespace Recraft
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessImageToImageResponse(
+                ProcessOutpaintImageResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -313,9 +313,9 @@ namespace Recraft
                     await global::Recraft.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::Recraft.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ImageToImage",
-                                methodName: "ImageToImageAsync",
-                                pathTemplate: "\"/v1/images/imageToImage\"",
+                                operationId: "OutpaintImage",
+                                methodName: "OutpaintImageAsync",
+                                pathTemplate: "\"/v1/images/outpaint\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -335,9 +335,9 @@ namespace Recraft
                     await global::Recraft.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Recraft.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ImageToImage",
-                                methodName: "ImageToImageAsync",
-                                pathTemplate: "\"/v1/images/imageToImage\"",
+                                operationId: "OutpaintImage",
+                                methodName: "OutpaintImageAsync",
+                                pathTemplate: "\"/v1/images/outpaint\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -365,7 +365,7 @@ namespace Recraft
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessImageToImageResponseContent(
+                                ProcessOutpaintImageResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -453,22 +453,22 @@ namespace Recraft
             }
         }
         /// <summary>
-        /// Generate image from image and prompt
+        /// Outpaint Image
         /// </summary>
         /// <param name="billing"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> ImageToImageAsync(
+        public async global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> OutpaintImageAsync(
             global::Recraft.BillingType? billing = default,
             global::Recraft.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::Recraft.ImageToImageRequest
+            var __request = new global::Recraft.OutpaintImageRequest
             {
             };
 
-            return await ImageToImageAsync(
+            return await OutpaintImageAsync(
                 billing: billing,
                 request: __request,
                 requestOptions: requestOptions,

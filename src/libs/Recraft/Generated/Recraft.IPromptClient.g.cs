@@ -7,7 +7,7 @@ namespace Recraft
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
-    public partial interface IRecraftClient : global::System.IDisposable
+    public partial interface IPromptClient : global::System.IDisposable
     {
         /// <summary>
         /// The HttpClient instance.
@@ -43,31 +43,6 @@ namespace Recraft
         /// </summary>
         global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; }
 
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ColorsClient Colors { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ImageClient Image { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public PromptClient Prompt { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public StyleClient Style { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public UserClient User { get; }
 
     }
 }

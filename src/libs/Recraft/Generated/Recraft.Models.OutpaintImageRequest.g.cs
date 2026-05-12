@@ -7,7 +7,7 @@ namespace Recraft
     /// <summary>
     /// 
     /// </summary>
-    public readonly partial struct ImageToImageRequest : global::System.IEquatable<ImageToImageRequest>
+    public readonly partial struct OutpaintImageRequest : global::System.IEquatable<OutpaintImageRequest>
     {
         /// <summary>
         /// 
@@ -50,52 +50,52 @@ namespace Recraft
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Recraft.ImageToImageRequestVariant2? ImageToImageRequestVariant2 { get; init; }
+        public global::Recraft.OutpaintImageRequestVariant2? OutpaintImageRequestVariant2 { get; init; }
 #else
-        public global::Recraft.ImageToImageRequestVariant2? ImageToImageRequestVariant2 { get; }
+        public global::Recraft.OutpaintImageRequestVariant2? OutpaintImageRequestVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageToImageRequestVariant2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutpaintImageRequestVariant2))]
 #endif
-        public bool IsImageToImageRequestVariant2 => ImageToImageRequestVariant2 != null;
+        public bool IsOutpaintImageRequestVariant2 => OutpaintImageRequestVariant2 != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public bool TryPickImageToImageRequestVariant2(
+        public bool TryPickOutpaintImageRequestVariant2(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Recraft.ImageToImageRequestVariant2? value)
+            out global::Recraft.OutpaintImageRequestVariant2? value)
         {
-            value = ImageToImageRequestVariant2;
-            return IsImageToImageRequestVariant2;
+            value = OutpaintImageRequestVariant2;
+            return IsOutpaintImageRequestVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.ImageToImageRequestVariant2 PickImageToImageRequestVariant2() => IsImageToImageRequestVariant2
-            ? ImageToImageRequestVariant2!
-            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageToImageRequestVariant2' but the value was {ToString()}.");
+        public global::Recraft.OutpaintImageRequestVariant2 PickOutpaintImageRequestVariant2() => IsOutpaintImageRequestVariant2
+            ? OutpaintImageRequestVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutpaintImageRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ImageToImageRequest(global::Recraft.TransformImageRequest value) => new ImageToImageRequest((global::Recraft.TransformImageRequest?)value);
+        public static implicit operator OutpaintImageRequest(global::Recraft.TransformImageRequest value) => new OutpaintImageRequest((global::Recraft.TransformImageRequest?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Recraft.TransformImageRequest?(ImageToImageRequest @this) => @this.Transform;
+        public static implicit operator global::Recraft.TransformImageRequest?(OutpaintImageRequest @this) => @this.Transform;
 
         /// <summary>
         /// 
         /// </summary>
-        public ImageToImageRequest(global::Recraft.TransformImageRequest? value)
+        public OutpaintImageRequest(global::Recraft.TransformImageRequest? value)
         {
             Transform = value;
         }
@@ -103,48 +103,48 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
-        public static ImageToImageRequest FromTransform(global::Recraft.TransformImageRequest? value) => new ImageToImageRequest(value);
+        public static OutpaintImageRequest FromTransform(global::Recraft.TransformImageRequest? value) => new OutpaintImageRequest(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ImageToImageRequest(global::Recraft.ImageToImageRequestVariant2 value) => new ImageToImageRequest((global::Recraft.ImageToImageRequestVariant2?)value);
+        public static implicit operator OutpaintImageRequest(global::Recraft.OutpaintImageRequestVariant2 value) => new OutpaintImageRequest((global::Recraft.OutpaintImageRequestVariant2?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Recraft.ImageToImageRequestVariant2?(ImageToImageRequest @this) => @this.ImageToImageRequestVariant2;
+        public static implicit operator global::Recraft.OutpaintImageRequestVariant2?(OutpaintImageRequest @this) => @this.OutpaintImageRequestVariant2;
 
         /// <summary>
         /// 
         /// </summary>
-        public ImageToImageRequest(global::Recraft.ImageToImageRequestVariant2? value)
+        public OutpaintImageRequest(global::Recraft.OutpaintImageRequestVariant2? value)
         {
-            ImageToImageRequestVariant2 = value;
+            OutpaintImageRequestVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static ImageToImageRequest FromImageToImageRequestVariant2(global::Recraft.ImageToImageRequestVariant2? value) => new ImageToImageRequest(value);
+        public static OutpaintImageRequest FromOutpaintImageRequestVariant2(global::Recraft.OutpaintImageRequestVariant2? value) => new OutpaintImageRequest(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public ImageToImageRequest(
+        public OutpaintImageRequest(
             global::Recraft.TransformImageRequest? transform,
-            global::Recraft.ImageToImageRequestVariant2? imageToImageRequestVariant2
+            global::Recraft.OutpaintImageRequestVariant2? outpaintImageRequestVariant2
             )
         {
             Transform = transform;
-            ImageToImageRequestVariant2 = imageToImageRequestVariant2;
+            OutpaintImageRequestVariant2 = outpaintImageRequestVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            ImageToImageRequestVariant2 as object ??
+            OutpaintImageRequestVariant2 as object ??
             Transform as object 
             ;
 
@@ -153,7 +153,7 @@ namespace Recraft
         /// </summary>
         public override string? ToString() =>
             Transform?.ToString() ??
-            ImageToImageRequestVariant2?.ToString() 
+            OutpaintImageRequestVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -161,7 +161,7 @@ namespace Recraft
         /// </summary>
         public bool Validate()
         {
-            return IsTransform && IsImageToImageRequestVariant2;
+            return IsTransform && IsOutpaintImageRequestVariant2;
         }
 
         /// <summary>
@@ -169,7 +169,7 @@ namespace Recraft
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Recraft.TransformImageRequest, TResult>? transform = null,
-            global::System.Func<global::Recraft.ImageToImageRequestVariant2, TResult>? imageToImageRequestVariant2 = null,
+            global::System.Func<global::Recraft.OutpaintImageRequestVariant2, TResult>? outpaintImageRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -181,9 +181,9 @@ namespace Recraft
             {
                 return transform(Transform!);
             }
-            else if (IsImageToImageRequestVariant2 && imageToImageRequestVariant2 != null)
+            else if (IsOutpaintImageRequestVariant2 && outpaintImageRequestVariant2 != null)
             {
-                return imageToImageRequestVariant2(ImageToImageRequestVariant2!);
+                return outpaintImageRequestVariant2(OutpaintImageRequestVariant2!);
             }
 
             return default(TResult);
@@ -195,7 +195,7 @@ namespace Recraft
         public void Match(
             global::System.Action<global::Recraft.TransformImageRequest>? transform = null,
 
-            global::System.Action<global::Recraft.ImageToImageRequestVariant2>? imageToImageRequestVariant2 = null,
+            global::System.Action<global::Recraft.OutpaintImageRequestVariant2>? outpaintImageRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -207,9 +207,9 @@ namespace Recraft
             {
                 transform?.Invoke(Transform!);
             }
-            else if (IsImageToImageRequestVariant2)
+            else if (IsOutpaintImageRequestVariant2)
             {
-                imageToImageRequestVariant2?.Invoke(ImageToImageRequestVariant2!);
+                outpaintImageRequestVariant2?.Invoke(OutpaintImageRequestVariant2!);
             }
         }
 
@@ -218,7 +218,7 @@ namespace Recraft
         /// </summary>
         public void Switch(
             global::System.Action<global::Recraft.TransformImageRequest>? transform = null,
-            global::System.Action<global::Recraft.ImageToImageRequestVariant2>? imageToImageRequestVariant2 = null,
+            global::System.Action<global::Recraft.OutpaintImageRequestVariant2>? outpaintImageRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -230,9 +230,9 @@ namespace Recraft
             {
                 transform?.Invoke(Transform!);
             }
-            else if (IsImageToImageRequestVariant2)
+            else if (IsOutpaintImageRequestVariant2)
             {
-                imageToImageRequestVariant2?.Invoke(ImageToImageRequestVariant2!);
+                outpaintImageRequestVariant2?.Invoke(OutpaintImageRequestVariant2!);
             }
         }
 
@@ -245,8 +245,8 @@ namespace Recraft
             {
                 Transform,
                 typeof(global::Recraft.TransformImageRequest),
-                ImageToImageRequestVariant2,
-                typeof(global::Recraft.ImageToImageRequestVariant2),
+                OutpaintImageRequestVariant2,
+                typeof(global::Recraft.OutpaintImageRequestVariant2),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -260,26 +260,26 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
-        public bool Equals(ImageToImageRequest other)
+        public bool Equals(OutpaintImageRequest other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Recraft.TransformImageRequest?>.Default.Equals(Transform, other.Transform) &&
-                global::System.Collections.Generic.EqualityComparer<global::Recraft.ImageToImageRequestVariant2?>.Default.Equals(ImageToImageRequestVariant2, other.ImageToImageRequestVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::Recraft.OutpaintImageRequestVariant2?>.Default.Equals(OutpaintImageRequestVariant2, other.OutpaintImageRequestVariant2) 
                 ;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static bool operator ==(ImageToImageRequest obj1, ImageToImageRequest obj2)
+        public static bool operator ==(OutpaintImageRequest obj1, OutpaintImageRequest obj2)
         {
-            return global::System.Collections.Generic.EqualityComparer<ImageToImageRequest>.Default.Equals(obj1, obj2);
+            return global::System.Collections.Generic.EqualityComparer<OutpaintImageRequest>.Default.Equals(obj1, obj2);
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static bool operator !=(ImageToImageRequest obj1, ImageToImageRequest obj2)
+        public static bool operator !=(OutpaintImageRequest obj1, OutpaintImageRequest obj2)
         {
             return !(obj1 == obj2);
         }
@@ -289,7 +289,7 @@ namespace Recraft
         /// </summary>
         public override bool Equals(object? obj)
         {
-            return obj is ImageToImageRequest o && Equals(o);
+            return obj is OutpaintImageRequest o && Equals(o);
         }
     }
 }

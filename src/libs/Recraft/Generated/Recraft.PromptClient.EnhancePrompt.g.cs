@@ -3,11 +3,11 @@
 
 namespace Recraft
 {
-    public partial class ImageClient
+    public partial class PromptClient
     {
 
 
-        private static readonly global::Recraft.EndPointSecurityRequirement s_ImageToImageSecurityRequirement0 =
+        private static readonly global::Recraft.EndPointSecurityRequirement s_EnhancePromptSecurityRequirement0 =
             new global::Recraft.EndPointSecurityRequirement
             {
                 Authorizations = new global::Recraft.EndPointAuthorizationRequirement[]
@@ -21,44 +21,44 @@ namespace Recraft
                     },
                 },
             };
-        private static readonly global::Recraft.EndPointSecurityRequirement[] s_ImageToImageSecurityRequirements =
+        private static readonly global::Recraft.EndPointSecurityRequirement[] s_EnhancePromptSecurityRequirements =
             new global::Recraft.EndPointSecurityRequirement[]
-            {                s_ImageToImageSecurityRequirement0,
+            {                s_EnhancePromptSecurityRequirement0,
             };
-        partial void PrepareImageToImageArguments(
+        partial void PrepareEnhancePromptArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::Recraft.BillingType? billing,
-            global::Recraft.ImageToImageRequest request);
-        partial void PrepareImageToImageRequest(
+            global::Recraft.EnhancePromptRequest request);
+        partial void PrepareEnhancePromptRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::Recraft.BillingType? billing,
-            global::Recraft.ImageToImageRequest request);
-        partial void ProcessImageToImageResponse(
+            global::Recraft.EnhancePromptRequest request);
+        partial void ProcessEnhancePromptResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessImageToImageResponseContent(
+        partial void ProcessEnhancePromptResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Generate image from image and prompt
+        /// Enhance a prompt using an LLM
         /// </summary>
         /// <param name="billing"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Recraft.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> ImageToImageAsync(
+        public async global::System.Threading.Tasks.Task<global::Recraft.EnhancePromptResponse> EnhancePromptAsync(
 
-            global::Recraft.ImageToImageRequest request,
+            global::Recraft.EnhancePromptRequest request,
             global::Recraft.BillingType? billing = default,
             global::Recraft.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await ImageToImageAsResponseAsync(
+            var __response = await EnhancePromptAsResponseAsync(
 
                 request: request,
                 billing: billing,
@@ -69,23 +69,25 @@ namespace Recraft
             return __response.Body;
         }
         /// <summary>
-        /// Generate image from image and prompt
+        /// Enhance a prompt using an LLM
         /// </summary>
         /// <param name="billing"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Recraft.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Recraft.AutoSDKHttpResponse<global::Recraft.GenerateImageResponse>> ImageToImageAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::Recraft.AutoSDKHttpResponse<global::Recraft.EnhancePromptResponse>> EnhancePromptAsResponseAsync(
 
-            global::Recraft.ImageToImageRequest request,
+            global::Recraft.EnhancePromptRequest request,
             global::Recraft.BillingType? billing = default,
             global::Recraft.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
+
             PrepareArguments(
                 client: HttpClient);
-            PrepareImageToImageArguments(
+            PrepareEnhancePromptArguments(
                 httpClient: HttpClient,
                 billing: ref billing,
                 request: request);
@@ -93,8 +95,8 @@ namespace Recraft
 
             var __authorizations = global::Recraft.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_ImageToImageSecurityRequirements,
-                operationName: "ImageToImageAsync");
+                securityRequirements: s_EnhancePromptSecurityRequirements,
+                operationName: "EnhancePromptAsync");
 
             using var __timeoutCancellationTokenSource = global::Recraft.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -108,13 +110,13 @@ namespace Recraft
             var __maxAttempts = global::Recraft.AutoSDKRequestOptionsSupport.GetMaxAttempts(
                 clientOptions: Options,
                 requestOptions: requestOptions,
-                supportsRetry: false);
+                supportsRetry: true);
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
 
                             var __pathBuilder = new global::Recraft.PathBuilder(
-                                path: "/v1/images/imageToImage",
+                                path: "/v1/prompts/enhance",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("billing", billing?.ToValueString())
@@ -148,19 +150,12 @@ namespace Recraft
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 } 
             }
-
-                            var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            if (billing != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((billing).HasValue ? (billing).GetValueOrDefault().ToValueString() : string.Empty),
-                                    name: "\"billing\"");
-
-                            }
-
+                            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
+                            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                                content: __httpRequestContentBody,
+                                encoding: global::System.Text.Encoding.UTF8,
+                                mediaType: "application/json");
                             __httpRequest.Content = __httpRequestContent;
-
                 global::Recraft.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -169,7 +164,7 @@ namespace Recraft
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareImageToImageRequest(
+                PrepareEnhancePromptRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     billing: billing,
@@ -190,9 +185,9 @@ namespace Recraft
                     await global::Recraft.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::Recraft.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ImageToImage",
-                                methodName: "ImageToImageAsync",
-                                pathTemplate: "\"/v1/images/imageToImage\"",
+                                operationId: "EnhancePrompt",
+                                methodName: "EnhancePromptAsync",
+                                pathTemplate: "\"/v1/prompts/enhance\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -224,9 +219,9 @@ namespace Recraft
                         await global::Recraft.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Recraft.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ImageToImage",
-                                methodName: "ImageToImageAsync",
-                                pathTemplate: "\"/v1/images/imageToImage\"",
+                                operationId: "EnhancePrompt",
+                                methodName: "EnhancePromptAsync",
+                                pathTemplate: "\"/v1/prompts/enhance\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -265,9 +260,9 @@ namespace Recraft
                         await global::Recraft.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Recraft.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ImageToImage",
-                                methodName: "ImageToImageAsync",
-                                pathTemplate: "\"/v1/images/imageToImage\"",
+                                operationId: "EnhancePrompt",
+                                methodName: "EnhancePromptAsync",
+                                pathTemplate: "\"/v1/prompts/enhance\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -305,7 +300,7 @@ namespace Recraft
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessImageToImageResponse(
+                ProcessEnhancePromptResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -313,9 +308,9 @@ namespace Recraft
                     await global::Recraft.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::Recraft.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ImageToImage",
-                                methodName: "ImageToImageAsync",
-                                pathTemplate: "\"/v1/images/imageToImage\"",
+                                operationId: "EnhancePrompt",
+                                methodName: "EnhancePromptAsync",
+                                pathTemplate: "\"/v1/prompts/enhance\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -335,9 +330,9 @@ namespace Recraft
                     await global::Recraft.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Recraft.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "ImageToImage",
-                                methodName: "ImageToImageAsync",
-                                pathTemplate: "\"/v1/images/imageToImage\"",
+                                operationId: "EnhancePrompt",
+                                methodName: "EnhancePromptAsync",
+                                pathTemplate: "\"/v1/prompts/enhance\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -365,7 +360,7 @@ namespace Recraft
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessImageToImageResponseContent(
+                                ProcessEnhancePromptResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -374,9 +369,9 @@ namespace Recraft
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::Recraft.GenerateImageResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::Recraft.EnhancePromptResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::Recraft.AutoSDKHttpResponse<global::Recraft.GenerateImageResponse>(
+                                    return new global::Recraft.AutoSDKHttpResponse<global::Recraft.EnhancePromptResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::Recraft.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -408,9 +403,9 @@ namespace Recraft
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::Recraft.GenerateImageResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::Recraft.EnhancePromptResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::Recraft.AutoSDKHttpResponse<global::Recraft.GenerateImageResponse>(
+                                    return new global::Recraft.AutoSDKHttpResponse<global::Recraft.EnhancePromptResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::Recraft.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -453,22 +448,25 @@ namespace Recraft
             }
         }
         /// <summary>
-        /// Generate image from image and prompt
+        /// Enhance a prompt using an LLM
         /// </summary>
         /// <param name="billing"></param>
+        /// <param name="prompt"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> ImageToImageAsync(
+        public async global::System.Threading.Tasks.Task<global::Recraft.EnhancePromptResponse> EnhancePromptAsync(
+            string prompt,
             global::Recraft.BillingType? billing = default,
             global::Recraft.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::Recraft.ImageToImageRequest
+            var __request = new global::Recraft.EnhancePromptRequest
             {
+                Prompt = prompt,
             };
 
-            return await ImageToImageAsync(
+            return await EnhancePromptAsync(
                 billing: billing,
                 request: __request,
                 requestOptions: requestOptions,

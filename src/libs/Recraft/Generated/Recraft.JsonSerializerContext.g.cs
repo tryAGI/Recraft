@@ -21,6 +21,10 @@ namespace Recraft
 
             typeof(global::Recraft.JsonConverters.ColorReductionNullableJsonConverter),
 
+            typeof(global::Recraft.JsonConverters.CreativityJsonConverter),
+
+            typeof(global::Recraft.JsonConverters.CreativityNullableJsonConverter),
+
             typeof(global::Recraft.JsonConverters.ImageFormatJsonConverter),
 
             typeof(global::Recraft.JsonConverters.ImageFormatNullableJsonConverter),
@@ -108,6 +112,7 @@ namespace Recraft
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.Style))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.CreateStyleResponseVariant2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.Creativity), TypeInfoPropertyName = "Creativity2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.EnhancePromptRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.EnhancePromptResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.EraseRegionRequest))]

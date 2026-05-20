@@ -38,6 +38,13 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.TransformModelJsonConverter))]
+        public global::Recraft.TransformModel? Model { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("n")]
         public int? N { get; set; }
 
@@ -76,6 +83,7 @@ namespace Recraft
         /// <param name="size"></param>
         /// <param name="expire"></param>
         /// <param name="imageFormat"></param>
+        /// <param name="model"></param>
         /// <param name="n"></param>
         /// <param name="randomSeed"></param>
         /// <param name="responseFormat"></param>
@@ -88,6 +96,7 @@ namespace Recraft
             global::Recraft.ImageSize size,
             bool? expire,
             global::Recraft.ImageFormat? imageFormat,
+            global::Recraft.TransformModel? model,
             int? n,
             int? randomSeed,
             global::Recraft.ResponseFormat? responseFormat)
@@ -96,6 +105,7 @@ namespace Recraft
             this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
             this.Imagename = imagename ?? throw new global::System.ArgumentNullException(nameof(imagename));
             this.ImageFormat = imageFormat;
+            this.Model = model;
             this.N = n;
             this.RandomSeed = randomSeed;
             this.ResponseFormat = responseFormat;

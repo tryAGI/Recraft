@@ -184,6 +184,14 @@ namespace Recraft
                                     name: "\"controls\"");
 
                             }
+                            if (request.Creativity != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent((request.Creativity).HasValue ? (request.Creativity).GetValueOrDefault().ToValueString() : string.Empty),
+                                    name: "\"creativity\"");
+
+                            }
                             if (request.Expire != default)
                             {
 
@@ -615,6 +623,7 @@ namespace Recraft
         /// <param name="blockNsfw"></param>
         /// <param name="calculateFeatures"></param>
         /// <param name="controls"></param>
+        /// <param name="creativity"></param>
         /// <param name="expire"></param>
         /// <param name="image"></param>
         /// <param name="imagename"></param>
@@ -640,6 +649,7 @@ namespace Recraft
             bool? blockNsfw = default,
             bool? calculateFeatures = default,
             global::Recraft.UserControls? controls = default,
+            global::Recraft.Creativity? creativity = default,
             bool? expire = default,
             global::Recraft.ImageFormat? imageFormat = default,
             global::Recraft.TransformModel? model = default,
@@ -659,6 +669,7 @@ namespace Recraft
                 BlockNsfw = blockNsfw,
                 CalculateFeatures = calculateFeatures,
                 Controls = controls,
+                Creativity = creativity,
                 Expire = expire,
                 Image = image,
                 Imagename = imagename,
@@ -689,6 +700,7 @@ namespace Recraft
         /// <param name="blockNsfw"></param>
         /// <param name="calculateFeatures"></param>
         /// <param name="controls"></param>
+        /// <param name="creativity"></param>
         /// <param name="expire"></param>
         /// <param name="image">
         /// The stream to send as the multipart 'image' file part.
@@ -716,6 +728,7 @@ namespace Recraft
             bool? blockNsfw = default,
             bool? calculateFeatures = default,
             global::Recraft.UserControls? controls = default,
+            global::Recraft.Creativity? creativity = default,
             bool? expire = default,
             global::Recraft.ImageFormat? imageFormat = default,
             global::Recraft.TransformModel? model = default,
@@ -737,6 +750,7 @@ namespace Recraft
                 BlockNsfw = blockNsfw,
                 CalculateFeatures = calculateFeatures,
                 Controls = controls,
+                Creativity = creativity,
                 Expire = expire,
                 Image = global::System.Array.Empty<byte>(),
                 Imagename = imagename,
@@ -849,6 +863,14 @@ namespace Recraft
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(request.Controls.ToJson(JsonSerializerContext)),
                                     name: "\"controls\"");
+
+                            }
+                            if (request.Creativity != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent((request.Creativity).HasValue ? (request.Creativity).GetValueOrDefault().ToValueString() : string.Empty),
+                                    name: "\"creativity\"");
 
                             }
                             if (request.Expire != default)
@@ -1274,6 +1296,7 @@ namespace Recraft
         /// <param name="blockNsfw"></param>
         /// <param name="calculateFeatures"></param>
         /// <param name="controls"></param>
+        /// <param name="creativity"></param>
         /// <param name="expire"></param>
         /// <param name="image">
         /// The stream to send as the multipart 'image' file part.
@@ -1301,6 +1324,7 @@ namespace Recraft
             bool? blockNsfw = default,
             bool? calculateFeatures = default,
             global::Recraft.UserControls? controls = default,
+            global::Recraft.Creativity? creativity = default,
             bool? expire = default,
             global::Recraft.ImageFormat? imageFormat = default,
             global::Recraft.TransformModel? model = default,
@@ -1322,6 +1346,7 @@ namespace Recraft
                 BlockNsfw = blockNsfw,
                 CalculateFeatures = calculateFeatures,
                 Controls = controls,
+                Creativity = creativity,
                 Expire = expire,
                 Image = global::System.Array.Empty<byte>(),
                 Imagename = imagename,
@@ -1434,6 +1459,14 @@ namespace Recraft
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(request.Controls.ToJson(JsonSerializerContext)),
                                     name: "\"controls\"");
+
+                            }
+                            if (request.Creativity != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent((request.Creativity).HasValue ? (request.Creativity).GetValueOrDefault().ToValueString() : string.Empty),
+                                    name: "\"creativity\"");
 
                             }
                             if (request.Expire != default)

@@ -39,6 +39,7 @@ namespace Recraft
         /// <param name="blockNsfw"></param>
         /// <param name="calculateFeatures"></param>
         /// <param name="controls"></param>
+        /// <param name="creativity"></param>
         /// <param name="expire"></param>
         /// <param name="image"></param>
         /// <param name="imagename"></param>
@@ -64,6 +65,7 @@ namespace Recraft
             bool? blockNsfw = default,
             bool? calculateFeatures = default,
             global::Recraft.UserControls? controls = default,
+            global::Recraft.Creativity? creativity = default,
             bool? expire = default,
             global::Recraft.ImageFormat? imageFormat = default,
             global::Recraft.TransformModel? model = default,
@@ -85,6 +87,7 @@ namespace Recraft
         /// <param name="blockNsfw"></param>
         /// <param name="calculateFeatures"></param>
         /// <param name="controls"></param>
+        /// <param name="creativity"></param>
         /// <param name="expire"></param>
         /// <param name="image">
         /// The stream to send as the multipart 'image' file part.
@@ -112,6 +115,7 @@ namespace Recraft
             bool? blockNsfw = default,
             bool? calculateFeatures = default,
             global::Recraft.UserControls? controls = default,
+            global::Recraft.Creativity? creativity = default,
             bool? expire = default,
             global::Recraft.ImageFormat? imageFormat = default,
             global::Recraft.TransformModel? model = default,
@@ -132,6 +136,7 @@ namespace Recraft
         /// <param name="blockNsfw"></param>
         /// <param name="calculateFeatures"></param>
         /// <param name="controls"></param>
+        /// <param name="creativity"></param>
         /// <param name="expire"></param>
         /// <param name="image">
         /// The stream to send as the multipart 'image' file part.
@@ -159,6 +164,7 @@ namespace Recraft
             bool? blockNsfw = default,
             bool? calculateFeatures = default,
             global::Recraft.UserControls? controls = default,
+            global::Recraft.Creativity? creativity = default,
             bool? expire = default,
             global::Recraft.ImageFormat? imageFormat = default,
             global::Recraft.TransformModel? model = default,

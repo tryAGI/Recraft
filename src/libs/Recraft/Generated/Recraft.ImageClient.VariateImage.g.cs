@@ -214,6 +214,14 @@ namespace Recraft
                                     name: "\"image_format\"");
 
                             }
+                            if (request.Model != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent((request.Model).HasValue ? (request.Model).GetValueOrDefault().ToValueString() : string.Empty),
+                                    name: "\"model\"");
+
+                            }
                             if (request.N != default)
                             {
 
@@ -543,6 +551,7 @@ namespace Recraft
         /// <param name="image"></param>
         /// <param name="imagename"></param>
         /// <param name="imageFormat"></param>
+        /// <param name="model"></param>
         /// <param name="n"></param>
         /// <param name="randomSeed"></param>
         /// <param name="responseFormat"></param>
@@ -557,6 +566,7 @@ namespace Recraft
             global::Recraft.BillingType? billing = default,
             bool? expire = default,
             global::Recraft.ImageFormat? imageFormat = default,
+            global::Recraft.TransformModel? model = default,
             int? n = default,
             int? randomSeed = default,
             global::Recraft.ResponseFormat? responseFormat = default,
@@ -569,6 +579,7 @@ namespace Recraft
                 Image = image,
                 Imagename = imagename,
                 ImageFormat = imageFormat,
+                Model = model,
                 N = n,
                 RandomSeed = randomSeed,
                 ResponseFormat = responseFormat,
@@ -592,6 +603,7 @@ namespace Recraft
         /// </param>
         /// <param name="imagename"></param>
         /// <param name="imageFormat"></param>
+        /// <param name="model"></param>
         /// <param name="n"></param>
         /// <param name="randomSeed"></param>
         /// <param name="responseFormat"></param>
@@ -606,6 +618,7 @@ namespace Recraft
             global::Recraft.BillingType? billing = default,
             bool? expire = default,
             global::Recraft.ImageFormat? imageFormat = default,
+            global::Recraft.TransformModel? model = default,
             int? n = default,
             int? randomSeed = default,
             global::Recraft.ResponseFormat? responseFormat = default,
@@ -620,6 +633,7 @@ namespace Recraft
                 Image = global::System.Array.Empty<byte>(),
                 Imagename = imagename,
                 ImageFormat = imageFormat,
+                Model = model,
                 N = n,
                 RandomSeed = randomSeed,
                 ResponseFormat = responseFormat,
@@ -752,6 +766,14 @@ namespace Recraft
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent((request.ImageFormat).HasValue ? (request.ImageFormat).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"image_format\"");
+
+                            }
+                            if (request.Model != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent((request.Model).HasValue ? (request.Model).GetValueOrDefault().ToValueString() : string.Empty),
+                                    name: "\"model\"");
 
                             }
                             if (request.N != default)
@@ -1077,6 +1099,7 @@ namespace Recraft
         /// </param>
         /// <param name="imagename"></param>
         /// <param name="imageFormat"></param>
+        /// <param name="model"></param>
         /// <param name="n"></param>
         /// <param name="randomSeed"></param>
         /// <param name="responseFormat"></param>
@@ -1091,6 +1114,7 @@ namespace Recraft
             global::Recraft.BillingType? billing = default,
             bool? expire = default,
             global::Recraft.ImageFormat? imageFormat = default,
+            global::Recraft.TransformModel? model = default,
             int? n = default,
             int? randomSeed = default,
             global::Recraft.ResponseFormat? responseFormat = default,
@@ -1105,6 +1129,7 @@ namespace Recraft
                 Image = global::System.Array.Empty<byte>(),
                 Imagename = imagename,
                 ImageFormat = imageFormat,
+                Model = model,
                 N = n,
                 RandomSeed = randomSeed,
                 ResponseFormat = responseFormat,
@@ -1237,6 +1262,14 @@ namespace Recraft
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent((request.ImageFormat).HasValue ? (request.ImageFormat).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"image_format\"");
+
+                            }
+                            if (request.Model != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent((request.Model).HasValue ? (request.Model).GetValueOrDefault().ToValueString() : string.Empty),
+                                    name: "\"model\"");
 
                             }
                             if (request.N != default)

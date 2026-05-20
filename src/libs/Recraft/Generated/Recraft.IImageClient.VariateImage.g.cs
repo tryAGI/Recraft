@@ -40,6 +40,7 @@ namespace Recraft
         /// <param name="image"></param>
         /// <param name="imagename"></param>
         /// <param name="imageFormat"></param>
+        /// <param name="model"></param>
         /// <param name="n"></param>
         /// <param name="randomSeed"></param>
         /// <param name="responseFormat"></param>
@@ -54,6 +55,7 @@ namespace Recraft
             global::Recraft.BillingType? billing = default,
             bool? expire = default,
             global::Recraft.ImageFormat? imageFormat = default,
+            global::Recraft.TransformModel? model = default,
             int? n = default,
             int? randomSeed = default,
             global::Recraft.ResponseFormat? responseFormat = default,
@@ -70,6 +72,7 @@ namespace Recraft
         /// </param>
         /// <param name="imagename"></param>
         /// <param name="imageFormat"></param>
+        /// <param name="model"></param>
         /// <param name="n"></param>
         /// <param name="randomSeed"></param>
         /// <param name="responseFormat"></param>
@@ -84,6 +87,7 @@ namespace Recraft
             global::Recraft.BillingType? billing = default,
             bool? expire = default,
             global::Recraft.ImageFormat? imageFormat = default,
+            global::Recraft.TransformModel? model = default,
             int? n = default,
             int? randomSeed = default,
             global::Recraft.ResponseFormat? responseFormat = default,
@@ -99,6 +103,7 @@ namespace Recraft
         /// </param>
         /// <param name="imagename"></param>
         /// <param name="imageFormat"></param>
+        /// <param name="model"></param>
         /// <param name="n"></param>
         /// <param name="randomSeed"></param>
         /// <param name="responseFormat"></param>
@@ -113,6 +118,7 @@ namespace Recraft
             global::Recraft.BillingType? billing = default,
             bool? expire = default,
             global::Recraft.ImageFormat? imageFormat = default,
+            global::Recraft.TransformModel? model = default,
             int? n = default,
             int? randomSeed = default,
             global::Recraft.ResponseFormat? responseFormat = default,

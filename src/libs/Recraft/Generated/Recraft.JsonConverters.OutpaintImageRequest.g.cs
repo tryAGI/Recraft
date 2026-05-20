@@ -42,6 +42,7 @@ namespace Recraft.JsonConverters
             if (__jsonProps.Contains("controls.background_color")) __score0++;
             if (__jsonProps.Contains("controls.colors")) __score0++;
             if (__jsonProps.Contains("controls.no_text")) __score0++;
+            if (__jsonProps.Contains("creativity")) __score0++;
             if (__jsonProps.Contains("expire")) __score0++;
             if (__jsonProps.Contains("image")) __score0++;
             if (__jsonProps.Contains("image_format")) __score0++;

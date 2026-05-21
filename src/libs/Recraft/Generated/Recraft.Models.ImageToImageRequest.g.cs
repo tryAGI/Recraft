@@ -1,3 +1,4 @@
+#pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
 
@@ -6,199 +7,289 @@ namespace Recraft
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class ImageToImageRequest
+    public readonly partial struct ImageToImageRequest : global::System.IEquatable<ImageToImageRequest>
     {
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("block_nsfw")]
-        public bool? BlockNsfw { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("calculate_features")]
-        public bool? CalculateFeatures { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("controls")]
-        public global::Recraft.UserControls? Controls { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("expire")]
-        public bool? Expire { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("image")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required byte[] Image { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("imagename")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Imagename { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("image_format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.ImageFormatJsonConverter))]
-        public global::Recraft.ImageFormat? ImageFormat { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.TransformModelJsonConverter))]
-        public global::Recraft.TransformModel? Model { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("n")]
-        public int? N { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("negative_prompt")]
-        public string? NegativePrompt { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Prompt { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("random_seed")]
-        public int? RandomSeed { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.ResponseFormatJsonConverter))]
-        public global::Recraft.ResponseFormat? ResponseFormat { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("strength")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required double Strength { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("style")]
-        public string? Style { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("style_id")]
-        public global::System.Guid? StyleId { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("substyle")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.ImageSubStyleJsonConverter))]
-        public global::Recraft.ImageSubStyle? Substyle { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("text_layout")]
-        public global::System.Collections.Generic.IList<global::Recraft.TextLayoutItem>? TextLayout { get; set; }
-
-        /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ImageToImageRequest" /> class.
-        /// </summary>
-        /// <param name="image"></param>
-        /// <param name="imagename"></param>
-        /// <param name="prompt"></param>
-        /// <param name="strength"></param>
-        /// <param name="blockNsfw"></param>
-        /// <param name="calculateFeatures"></param>
-        /// <param name="controls"></param>
-        /// <param name="expire"></param>
-        /// <param name="imageFormat"></param>
-        /// <param name="model"></param>
-        /// <param name="n"></param>
-        /// <param name="negativePrompt"></param>
-        /// <param name="randomSeed"></param>
-        /// <param name="responseFormat"></param>
-        /// <param name="style"></param>
-        /// <param name="styleId"></param>
-        /// <param name="substyle"></param>
-        /// <param name="textLayout"></param>
-#if NET7_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#if NET6_0_OR_GREATER
+        public global::Recraft.TransformImageRequest? Transform { get; init; }
+#else
+        public global::Recraft.TransformImageRequest? Transform { get; }
 #endif
-        public ImageToImageRequest(
-            byte[] image,
-            string imagename,
-            string prompt,
-            double strength,
-            bool? blockNsfw,
-            bool? calculateFeatures,
-            global::Recraft.UserControls? controls,
-            bool? expire,
-            global::Recraft.ImageFormat? imageFormat,
-            global::Recraft.TransformModel? model,
-            int? n,
-            string? negativePrompt,
-            int? randomSeed,
-            global::Recraft.ResponseFormat? responseFormat,
-            string? style,
-            global::System.Guid? styleId,
-            global::Recraft.ImageSubStyle? substyle,
-            global::System.Collections.Generic.IList<global::Recraft.TextLayoutItem>? textLayout)
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Transform))]
+#endif
+        public bool IsTransform => Transform != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTransform(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Recraft.TransformImageRequest? value)
         {
-            this.BlockNsfw = blockNsfw;
-            this.CalculateFeatures = calculateFeatures;
-            this.Controls = controls;
-            this.Expire = expire;
-            this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
-            this.Imagename = imagename ?? throw new global::System.ArgumentNullException(nameof(imagename));
-            this.ImageFormat = imageFormat;
-            this.Model = model;
-            this.N = n;
-            this.NegativePrompt = negativePrompt;
-            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
-            this.RandomSeed = randomSeed;
-            this.ResponseFormat = responseFormat;
-            this.Strength = strength;
-            this.Style = style;
-            this.StyleId = styleId;
-            this.Substyle = substyle;
-            this.TextLayout = textLayout;
+            value = Transform;
+            return IsTransform;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ImageToImageRequest" /> class.
+        /// 
         /// </summary>
-        public ImageToImageRequest()
+        public global::Recraft.TransformImageRequest PickTransform() => IsTransform
+            ? Transform!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Transform' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Recraft.ImageToImageRequestVariant2? ImageToImageRequestVariant2 { get; init; }
+#else
+        public global::Recraft.ImageToImageRequestVariant2? ImageToImageRequestVariant2 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageToImageRequestVariant2))]
+#endif
+        public bool IsImageToImageRequestVariant2 => ImageToImageRequestVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImageToImageRequestVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Recraft.ImageToImageRequestVariant2? value)
         {
+            value = ImageToImageRequestVariant2;
+            return IsImageToImageRequestVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Recraft.ImageToImageRequestVariant2 PickImageToImageRequestVariant2() => IsImageToImageRequestVariant2
+            ? ImageToImageRequestVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageToImageRequestVariant2' but the value was {ToString()}.");
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ImageToImageRequest(global::Recraft.TransformImageRequest value) => new ImageToImageRequest((global::Recraft.TransformImageRequest?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Recraft.TransformImageRequest?(ImageToImageRequest @this) => @this.Transform;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ImageToImageRequest(global::Recraft.TransformImageRequest? value)
+        {
+            Transform = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ImageToImageRequest FromTransform(global::Recraft.TransformImageRequest? value) => new ImageToImageRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ImageToImageRequest(global::Recraft.ImageToImageRequestVariant2 value) => new ImageToImageRequest((global::Recraft.ImageToImageRequestVariant2?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Recraft.ImageToImageRequestVariant2?(ImageToImageRequest @this) => @this.ImageToImageRequestVariant2;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ImageToImageRequest(global::Recraft.ImageToImageRequestVariant2? value)
+        {
+            ImageToImageRequestVariant2 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ImageToImageRequest FromImageToImageRequestVariant2(global::Recraft.ImageToImageRequestVariant2? value) => new ImageToImageRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ImageToImageRequest(
+            global::Recraft.TransformImageRequest? transform,
+            global::Recraft.ImageToImageRequestVariant2? imageToImageRequestVariant2
+            )
+        {
+            Transform = transform;
+            ImageToImageRequestVariant2 = imageToImageRequestVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object? Object =>
+            ImageToImageRequestVariant2 as object ??
+            Transform as object 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override string? ToString() =>
+            Transform?.ToString() ??
+            ImageToImageRequestVariant2?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool Validate()
+        {
+            return IsTransform && IsImageToImageRequestVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TResult? Match<TResult>(
+            global::System.Func<global::Recraft.TransformImageRequest, TResult>? transform = null,
+            global::System.Func<global::Recraft.ImageToImageRequestVariant2, TResult>? imageToImageRequestVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsTransform && transform != null)
+            {
+                return transform(Transform!);
+            }
+            else if (IsImageToImageRequestVariant2 && imageToImageRequestVariant2 != null)
+            {
+                return imageToImageRequestVariant2(ImageToImageRequestVariant2!);
+            }
+
+            return default(TResult);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Match(
+            global::System.Action<global::Recraft.TransformImageRequest>? transform = null,
+
+            global::System.Action<global::Recraft.ImageToImageRequestVariant2>? imageToImageRequestVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsTransform)
+            {
+                transform?.Invoke(Transform!);
+            }
+            else if (IsImageToImageRequestVariant2)
+            {
+                imageToImageRequestVariant2?.Invoke(ImageToImageRequestVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Recraft.TransformImageRequest>? transform = null,
+            global::System.Action<global::Recraft.ImageToImageRequestVariant2>? imageToImageRequestVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsTransform)
+            {
+                transform?.Invoke(Transform!);
+            }
+            else if (IsImageToImageRequestVariant2)
+            {
+                imageToImageRequestVariant2?.Invoke(ImageToImageRequestVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override int GetHashCode()
+        {
+            var fields = new object?[]
+            {
+                Transform,
+                typeof(global::Recraft.TransformImageRequest),
+                ImageToImageRequestVariant2,
+                typeof(global::Recraft.ImageToImageRequestVariant2),
+            };
+            const int offset = unchecked((int)2166136261);
+            const int prime = 16777619;
+            static int HashCodeAggregator(int hashCode, object? value) => value == null
+                ? (hashCode ^ 0) * prime
+                : (hashCode ^ value.GetHashCode()) * prime;
+
+            return global::System.Linq.Enumerable.Aggregate(fields, offset, HashCodeAggregator);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool Equals(ImageToImageRequest other)
+        {
+            return
+                global::System.Collections.Generic.EqualityComparer<global::Recraft.TransformImageRequest?>.Default.Equals(Transform, other.Transform) &&
+                global::System.Collections.Generic.EqualityComparer<global::Recraft.ImageToImageRequestVariant2?>.Default.Equals(ImageToImageRequestVariant2, other.ImageToImageRequestVariant2) 
+                ;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static bool operator ==(ImageToImageRequest obj1, ImageToImageRequest obj2)
+        {
+            return global::System.Collections.Generic.EqualityComparer<ImageToImageRequest>.Default.Equals(obj1, obj2);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static bool operator !=(ImageToImageRequest obj1, ImageToImageRequest obj2)
+        {
+            return !(obj1 == obj2);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override bool Equals(object? obj)
+        {
+            return obj is ImageToImageRequest o && Equals(o);
         }
     }
 }

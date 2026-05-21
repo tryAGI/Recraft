@@ -23,6 +23,19 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("controls")]
+        public global::Recraft.UserControls? Controls { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("creativity")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.CreativityJsonConverter))]
+        public global::Recraft.Creativity? Creativity { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expire")]
         public bool? Expire { get; set; }
 
@@ -125,6 +138,8 @@ namespace Recraft
         /// <param name="prompt"></param>
         /// <param name="blockNsfw"></param>
         /// <param name="calculateFeatures"></param>
+        /// <param name="controls"></param>
+        /// <param name="creativity"></param>
         /// <param name="expire"></param>
         /// <param name="imageFormat"></param>
         /// <param name="model"></param>
@@ -145,6 +160,8 @@ namespace Recraft
             string prompt,
             bool? blockNsfw,
             bool? calculateFeatures,
+            global::Recraft.UserControls? controls,
+            global::Recraft.Creativity? creativity,
             bool? expire,
             global::Recraft.ImageFormat? imageFormat,
             global::Recraft.TransformModel? model,
@@ -159,6 +176,8 @@ namespace Recraft
         {
             this.BlockNsfw = blockNsfw;
             this.CalculateFeatures = calculateFeatures;
+            this.Controls = controls;
+            this.Creativity = creativity;
             this.Expire = expire;
             this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
             this.Imagename = imagename ?? throw new global::System.ArgumentNullException(nameof(imagename));
@@ -181,5 +200,6 @@ namespace Recraft
         public TransformImageRequest()
         {
         }
+
     }
 }

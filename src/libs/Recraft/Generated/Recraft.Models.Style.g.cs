@@ -81,5 +81,6 @@ namespace Recraft
         public Style()
         {
         }
+
     }
 }

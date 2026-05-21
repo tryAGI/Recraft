@@ -57,6 +57,11 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        public PromptClient Prompt { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public StyleClient Style { get; }
 
         /// <summary>

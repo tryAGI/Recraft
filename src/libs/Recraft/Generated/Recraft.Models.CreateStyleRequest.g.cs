@@ -125,5 +125,6 @@ namespace Recraft
         public CreateStyleRequest()
         {
         }
+
     }
 }

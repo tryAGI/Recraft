@@ -58,8 +58,31 @@ namespace Recraft
             global::Recraft.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
+            var __response = await ImageToImageAsResponseAsync(
 
+                request: request,
+                billing: billing,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Generate image from image and prompt
+        /// </summary>
+        /// <param name="billing"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Recraft.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Recraft.AutoSDKHttpResponse<global::Recraft.GenerateImageResponse>> ImageToImageAsResponseAsync(
+
+            global::Recraft.ImageToImageRequest request,
+            global::Recraft.BillingType? billing = default,
+            global::Recraft.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareImageToImageArguments(
@@ -85,15 +108,16 @@ namespace Recraft
             var __maxAttempts = global::Recraft.AutoSDKRequestOptionsSupport.GetMaxAttempts(
                 clientOptions: Options,
                 requestOptions: requestOptions,
-                supportsRetry: true);
+                supportsRetry: false);
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::Recraft.PathBuilder(
                                 path: "/v1/images/imageToImage",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddOptionalParameter("billing", billing?.ToValueString()) 
+                                .AddOptionalParameter("billing", billing?.ToValueString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Recraft.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -124,6 +148,7 @@ namespace Recraft
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 } 
             }
+
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
                             if (billing != default)
                             {
@@ -131,149 +156,11 @@ namespace Recraft
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent((billing).HasValue ? (billing).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"billing\"");
-                            } 
-                            if (request.BlockNsfw != default)
-                            {
 
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.BlockNsfw, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
-                                    name: "\"block_nsfw\"");
-                            } 
-                            if (request.CalculateFeatures != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.CalculateFeatures, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
-                                    name: "\"calculate_features\"");
-                            } 
-                            if (request.Controls != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(request.Controls.ToJson(JsonSerializerContext)),
-                                    name: "\"controls\"");
-                            } 
-                            if (request.Expire != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.Expire, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
-                                    name: "\"expire\"");
                             }
-                            var __contentImage = new global::System.Net.Http.ByteArrayContent(request.Image ?? global::System.Array.Empty<byte>());
-                            __contentImage.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
-                                request.Imagename is null
-                                    ? "application/octet-stream"
-                                    : (global::System.IO.Path.GetExtension(request.Imagename) ?? string.Empty).ToLowerInvariant() switch
-                                    {
-                                        ".aac" => "audio/aac",
-                                        ".flac" => "audio/flac",
-                                        ".gif" => "image/gif",
-                                        ".jpeg" => "image/jpeg",
-                                        ".jpg" => "image/jpeg",
-                                        ".json" => "application/json",
-                                        ".m4a" => "audio/mp4",
-                                        ".mp3" => "audio/mpeg",
-                                        ".mp4" => "video/mp4",
-                                        ".mpeg" => "audio/mpeg",
-                                        ".mpga" => "audio/mpeg",
-                                        ".oga" => "audio/ogg",
-                                        ".ogg" => "audio/ogg",
-                                        ".opus" => "audio/ogg",
-                                        ".pdf" => "application/pdf",
-                                        ".png" => "image/png",
-                                        ".txt" => "text/plain",
-                                        ".wav" => "audio/wav",
-                                        ".weba" => "audio/webm",
-                                        ".webm" => "video/webm",
-                                        ".webp" => "image/webp",
-                                        _ => "application/octet-stream",
-                                    });
-                            __httpRequestContent.Add(
-                                content: __contentImage,
-                                name: "\"image\"",
-                                fileName: request.Imagename != null ? $"\"{request.Imagename}\"" : string.Empty);
-                            if (__contentImage.Headers.ContentDisposition != null)
-                            {
-                                __contentImage.Headers.ContentDisposition.FileNameStar = null;
-                            }
-                            if (request.ImageFormat != default)
-                            {
 
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((request.ImageFormat).HasValue ? (request.ImageFormat).GetValueOrDefault().ToValueString() : string.Empty),
-                                    name: "\"image_format\"");
-                            } 
-                            if (request.Model != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((request.Model).HasValue ? (request.Model).GetValueOrDefault().ToValueString() : string.Empty),
-                                    name: "\"model\"");
-                            } 
-                            if (request.N != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.N, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
-                                    name: "\"n\"");
-                            } 
-                            if (request.NegativePrompt != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(request.NegativePrompt ?? string.Empty),
-                                    name: "\"negative_prompt\"");
-                            }
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(request.Prompt ?? string.Empty),
-                                name: "\"prompt\"");
-                            if (request.RandomSeed != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.RandomSeed, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
-                                    name: "\"random_seed\"");
-                            } 
-                            if (request.ResponseFormat != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((request.ResponseFormat).HasValue ? (request.ResponseFormat).GetValueOrDefault().ToValueString() : string.Empty),
-                                    name: "\"response_format\"");
-                            }
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.Strength, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
-                                name: "\"strength\"");
-                            if (request.Style != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(request.Style ?? string.Empty),
-                                    name: "\"style\"");
-                            } 
-                            if (request.StyleId != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(request.StyleId.ToString() ?? string.Empty),
-                                    name: "\"style_id\"");
-                            } 
-                            if (request.Substyle != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((request.Substyle).HasValue ? (request.Substyle).GetValueOrDefault().ToValueString() : string.Empty),
-                                    name: "\"substyle\"");
-                            } 
-                            if (request.TextLayout != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.TextLayout, x => x.ToJson(JsonSerializerContext)))}]"),
-                                    name: "\"text_layout\"");
-                            }
                             __httpRequest.Content = __httpRequestContent;
+
                 global::Recraft.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -316,6 +203,8 @@ namespace Recraft
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -326,6 +215,11 @@ namespace Recraft
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::Recraft.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::Recraft.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -343,6 +237,8 @@ namespace Recraft
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -352,8 +248,7 @@ namespace Recraft
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Recraft.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -362,6 +257,11 @@ namespace Recraft
                         __attempt < __maxAttempts &&
                         global::Recraft.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::Recraft.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::Recraft.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Recraft.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -378,14 +278,15 @@ namespace Recraft
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Recraft.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -425,6 +326,8 @@ namespace Recraft
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -445,6 +348,8 @@ namespace Recraft
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
 
@@ -469,9 +374,13 @@ namespace Recraft
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::Recraft.GenerateImageResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::Recraft.GenerateImageResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::Recraft.AutoSDKHttpResponse<global::Recraft.GenerateImageResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Recraft.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -499,9 +408,13 @@ namespace Recraft
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::Recraft.GenerateImageResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::Recraft.GenerateImageResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::Recraft.AutoSDKHttpResponse<global::Recraft.GenerateImageResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Recraft.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -543,70 +456,16 @@ namespace Recraft
         /// Generate image from image and prompt
         /// </summary>
         /// <param name="billing"></param>
-        /// <param name="blockNsfw"></param>
-        /// <param name="calculateFeatures"></param>
-        /// <param name="controls"></param>
-        /// <param name="expire"></param>
-        /// <param name="image"></param>
-        /// <param name="imagename"></param>
-        /// <param name="imageFormat"></param>
-        /// <param name="model"></param>
-        /// <param name="n"></param>
-        /// <param name="negativePrompt"></param>
-        /// <param name="prompt"></param>
-        /// <param name="randomSeed"></param>
-        /// <param name="responseFormat"></param>
-        /// <param name="strength"></param>
-        /// <param name="style"></param>
-        /// <param name="styleId"></param>
-        /// <param name="substyle"></param>
-        /// <param name="textLayout"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> ImageToImageAsync(
-            byte[] image,
-            string imagename,
-            string prompt,
-            double strength,
             global::Recraft.BillingType? billing = default,
-            bool? blockNsfw = default,
-            bool? calculateFeatures = default,
-            global::Recraft.UserControls? controls = default,
-            bool? expire = default,
-            global::Recraft.ImageFormat? imageFormat = default,
-            global::Recraft.TransformModel? model = default,
-            int? n = default,
-            string? negativePrompt = default,
-            int? randomSeed = default,
-            global::Recraft.ResponseFormat? responseFormat = default,
-            string? style = default,
-            global::System.Guid? styleId = default,
-            global::Recraft.ImageSubStyle? substyle = default,
-            global::System.Collections.Generic.IList<global::Recraft.TextLayoutItem>? textLayout = default,
             global::Recraft.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::Recraft.ImageToImageRequest
             {
-                BlockNsfw = blockNsfw,
-                CalculateFeatures = calculateFeatures,
-                Controls = controls,
-                Expire = expire,
-                Image = image,
-                Imagename = imagename,
-                ImageFormat = imageFormat,
-                Model = model,
-                N = n,
-                NegativePrompt = negativePrompt,
-                Prompt = prompt,
-                RandomSeed = randomSeed,
-                ResponseFormat = responseFormat,
-                Strength = strength,
-                Style = style,
-                StyleId = styleId,
-                Substyle = substyle,
-                TextLayout = textLayout,
             };
 
             return await ImageToImageAsync(

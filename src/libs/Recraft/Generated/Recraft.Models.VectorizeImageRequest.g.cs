@@ -29,6 +29,26 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickProcess(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Recraft.ProcessImageRequest? value)
+        {
+            value = Process;
+            return IsProcess;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Recraft.ProcessImageRequest PickProcess() => IsProcess
+            ? Process!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Process' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Recraft.VectorizeImageRequestVariant2? VectorizeImageRequestVariant2 { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace Recraft
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorizeImageRequestVariant2))]
 #endif
         public bool IsVectorizeImageRequestVariant2 => VectorizeImageRequestVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVectorizeImageRequestVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Recraft.VectorizeImageRequestVariant2? value)
+        {
+            value = VectorizeImageRequestVariant2;
+            return IsVectorizeImageRequestVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Recraft.VectorizeImageRequestVariant2 PickVectorizeImageRequestVariant2() => IsVectorizeImageRequestVariant2
+            ? VectorizeImageRequestVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VectorizeImageRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +103,11 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        public static VectorizeImageRequest FromProcess(global::Recraft.ProcessImageRequest? value) => new VectorizeImageRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator VectorizeImageRequest(global::Recraft.VectorizeImageRequestVariant2 value) => new VectorizeImageRequest((global::Recraft.VectorizeImageRequestVariant2?)value);
 
         /// <summary>
@@ -77,6 +122,11 @@ namespace Recraft
         {
             VectorizeImageRequestVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static VectorizeImageRequest FromVectorizeImageRequestVariant2(global::Recraft.VectorizeImageRequestVariant2? value) => new VectorizeImageRequest(value);
 
         /// <summary>
         /// 
@@ -118,8 +168,8 @@ namespace Recraft
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Recraft.ProcessImageRequest?, TResult>? process = null,
-            global::System.Func<global::Recraft.VectorizeImageRequestVariant2?, TResult>? vectorizeImageRequestVariant2 = null,
+            global::System.Func<global::Recraft.ProcessImageRequest, TResult>? process = null,
+            global::System.Func<global::Recraft.VectorizeImageRequestVariant2, TResult>? vectorizeImageRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +193,32 @@ namespace Recraft
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Recraft.ProcessImageRequest?>? process = null,
-            global::System.Action<global::Recraft.VectorizeImageRequestVariant2?>? vectorizeImageRequestVariant2 = null,
+            global::System.Action<global::Recraft.ProcessImageRequest>? process = null,
+
+            global::System.Action<global::Recraft.VectorizeImageRequestVariant2>? vectorizeImageRequestVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsProcess)
+            {
+                process?.Invoke(Process!);
+            }
+            else if (IsVectorizeImageRequestVariant2)
+            {
+                vectorizeImageRequestVariant2?.Invoke(VectorizeImageRequestVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Recraft.ProcessImageRequest>? process = null,
+            global::System.Action<global::Recraft.VectorizeImageRequestVariant2>? vectorizeImageRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)

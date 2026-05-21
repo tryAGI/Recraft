@@ -22,9 +22,24 @@ namespace Recraft
         /// Generate image from prompt
         /// </summary>
         /// <param name="billing"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Recraft.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Recraft.AutoSDKHttpResponse<global::Recraft.GenerateImageResponse>> GenerateImageAsResponseAsync(
+
+            global::Recraft.GenerateImageRequest request,
+            global::Recraft.BillingType? billing = default,
+            global::Recraft.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Generate image from prompt
+        /// </summary>
+        /// <param name="billing"></param>
         /// <param name="blockNsfw"></param>
         /// <param name="calculateFeatures"></param>
         /// <param name="controls"></param>
+        /// <param name="creativity"></param>
         /// <param name="expire"></param>
         /// <param name="imageFormat"></param>
         /// <param name="model"></param>
@@ -48,6 +63,7 @@ namespace Recraft
             bool? blockNsfw = default,
             bool? calculateFeatures = default,
             global::Recraft.UserControls? controls = default,
+            global::Recraft.Creativity? creativity = default,
             bool? expire = default,
             global::Recraft.ImageFormat? imageFormat = default,
             global::Recraft.TransformModel? model = default,

@@ -21,6 +21,10 @@ namespace Recraft
 
             typeof(global::Recraft.JsonConverters.ColorReductionNullableJsonConverter),
 
+            typeof(global::Recraft.JsonConverters.CreativityJsonConverter),
+
+            typeof(global::Recraft.JsonConverters.CreativityNullableJsonConverter),
+
             typeof(global::Recraft.JsonConverters.ImageFormatJsonConverter),
 
             typeof(global::Recraft.JsonConverters.ImageFormatNullableJsonConverter),
@@ -75,6 +79,10 @@ namespace Recraft
 
             typeof(global::Recraft.JsonConverters.CreateStyleResponseJsonConverter),
 
+            typeof(global::Recraft.JsonConverters.ImageToImageRequestJsonConverter),
+
+            typeof(global::Recraft.JsonConverters.OutpaintImageRequestJsonConverter),
+
             typeof(global::Recraft.JsonConverters.TransformImageWithMaskRequestJsonConverter),
 
             typeof(global::Recraft.JsonConverters.VectorizeImageRequestJsonConverter),
@@ -104,6 +112,9 @@ namespace Recraft
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.Style))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.CreateStyleResponseVariant2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.Creativity), TypeInfoPropertyName = "Creativity2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.EnhancePromptRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.EnhancePromptResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.EraseRegionRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.ImageFormat), TypeInfoPropertyName = "ImageFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.ResponseFormat), TypeInfoPropertyName = "ResponseFormat2")]
@@ -121,7 +132,9 @@ namespace Recraft
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.ImageFeatures))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.ImageColor))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<int>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.ImageToImageRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.ImageToImageRequest), TypeInfoPropertyName = "ImageToImageRequest2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.TransformImageRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.ImageToImageRequestVariant2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.LimitNumShapes), TypeInfoPropertyName = "LimitNumShapes2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.ListBasicStylesResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Recraft.BasicStyle>))]
@@ -131,6 +144,8 @@ namespace Recraft
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Recraft.ColorHexAndWeight>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.OptimizeColorsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Recraft.ColorMapping>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.OutpaintImageRequest), TypeInfoPropertyName = "OutpaintImageRequest2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.OutpaintImageRequestVariant2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Recraft.ImageColor>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.ProcessImageRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.ProcessImageResponse))]
@@ -142,7 +157,6 @@ namespace Recraft
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.SystemStatus))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.TextLayoutItem))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.TransformImageRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.TransformImageWithMaskRequest), TypeInfoPropertyName = "TransformImageWithMaskRequest2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.TransformImageWithMaskRequestVariant2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.User))]

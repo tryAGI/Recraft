@@ -39,5 +39,6 @@ namespace Recraft
         public ImageFeatures()
         {
         }
+
     }
 }

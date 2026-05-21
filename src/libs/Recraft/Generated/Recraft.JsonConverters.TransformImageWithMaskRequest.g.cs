@@ -23,6 +23,13 @@ namespace Recraft.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
 
                 }
             }
@@ -30,6 +37,12 @@ namespace Recraft.JsonConverters
             var __score0 = 0;
             if (__jsonProps.Contains("block_nsfw")) __score0++;
             if (__jsonProps.Contains("calculate_features")) __score0++;
+            if (__jsonProps.Contains("controls")) __score0++;
+            if (__jsonProps.Contains("controls.artistic_level")) __score0++;
+            if (__jsonProps.Contains("controls.background_color")) __score0++;
+            if (__jsonProps.Contains("controls.colors")) __score0++;
+            if (__jsonProps.Contains("controls.no_text")) __score0++;
+            if (__jsonProps.Contains("creativity")) __score0++;
             if (__jsonProps.Contains("expire")) __score0++;
             if (__jsonProps.Contains("image")) __score0++;
             if (__jsonProps.Contains("image_format")) __score0++;
@@ -90,6 +103,7 @@ namespace Recraft.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Recraft.TransformImageRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Recraft.TransformImageRequest> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Recraft.TransformImageRequest).Name}");
                     transformImageRequest = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -100,9 +114,13 @@ namespace Recraft.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (transformImageRequest == null && transformImageWithMaskRequestVariant2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Recraft.TransformImageWithMaskRequestVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Recraft.TransformImageWithMaskRequestVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Recraft.TransformImageWithMaskRequestVariant2).Name}");
                     transformImageWithMaskRequestVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

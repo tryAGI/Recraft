@@ -135,6 +135,10 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        HappyHorse1,
+        /// <summary>
+        /// 
+        /// </summary>
         HidreamI1Dev,
         /// <summary>
         /// 
@@ -453,6 +457,7 @@ namespace Recraft
                 TransformModel.Hailuo02Standard => "hailuo02_standard",
                 TransformModel.Hailuo2p3Pro => "hailuo2p3_pro",
                 TransformModel.Hailuo2p3Standard => "hailuo2p3_standard",
+                TransformModel.HappyHorse1 => "happy_horse_1",
                 TransformModel.HidreamI1Dev => "hidream_i1_dev",
                 TransformModel.IdeogramV3Default => "ideogram_v3_default",
                 TransformModel.IdeogramV3Quality => "ideogram_v3_quality",
@@ -563,6 +568,7 @@ namespace Recraft
                 "hailuo02_standard" => TransformModel.Hailuo02Standard,
                 "hailuo2p3_pro" => TransformModel.Hailuo2p3Pro,
                 "hailuo2p3_standard" => TransformModel.Hailuo2p3Standard,
+                "happy_horse_1" => TransformModel.HappyHorse1,
                 "hidream_i1_dev" => TransformModel.HidreamI1Dev,
                 "ideogram_v3_default" => TransformModel.IdeogramV3Default,
                 "ideogram_v3_quality" => TransformModel.IdeogramV3Quality,

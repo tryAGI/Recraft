@@ -52,6 +52,12 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("strict_color_palette")]
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>? StrictColorPalette { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("svg_compression")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.SvgCompressionJsonConverter))]
         public global::Recraft.SvgCompression? SvgCompression { get; set; }
@@ -71,6 +77,7 @@ namespace Recraft
         /// <param name="returnGradients"></param>
         /// <param name="shapeStacking"></param>
         /// <param name="smallShapeFilter"></param>
+        /// <param name="strictColorPalette"></param>
         /// <param name="svgCompression"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -82,6 +89,7 @@ namespace Recraft
             global::Recraft.ReturnGradients? returnGradients,
             global::Recraft.ShapeStacking? shapeStacking,
             global::Recraft.SmallShapeFilter? smallShapeFilter,
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>? strictColorPalette,
             global::Recraft.SvgCompression? svgCompression)
         {
             this.ColorReduction = colorReduction;
@@ -90,6 +98,7 @@ namespace Recraft
             this.ReturnGradients = returnGradients;
             this.ShapeStacking = shapeStacking;
             this.SmallShapeFilter = smallShapeFilter;
+            this.StrictColorPalette = strictColorPalette;
             this.SvgCompression = svgCompression;
         }
 

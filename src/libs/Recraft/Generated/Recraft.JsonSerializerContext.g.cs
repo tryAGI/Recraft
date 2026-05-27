@@ -163,6 +163,7 @@ namespace Recraft
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.VariateImageRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.VectorizeImageRequest), TypeInfoPropertyName = "VectorizeImageRequest2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.VectorizeImageRequestVariant2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(object))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<double>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<byte[]>))]
@@ -176,6 +177,7 @@ namespace Recraft
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Recraft.ColorMapping>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Recraft.ImageColor>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Collections.Generic.List<double>>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Collections.Generic.List<int>>))]
     public sealed partial class SourceGenerationContext : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }

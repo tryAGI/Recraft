@@ -320,7 +320,11 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
-        public object? Type73 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>? Type73 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public object? Type74 { get; set; }
 
         /// <summary>
         /// 
@@ -370,5 +374,9 @@ namespace Recraft
         /// 
         /// </summary>
         public global::System.Collections.Generic.List<global::System.Collections.Generic.List<double>>? ListType11 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::System.Collections.Generic.List<int>>? ListType12 { get; set; }
     }
 }

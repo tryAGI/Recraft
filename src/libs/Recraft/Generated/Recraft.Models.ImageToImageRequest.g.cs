@@ -43,7 +43,7 @@ namespace Recraft
         /// 
         /// </summary>
         public global::Recraft.TransformImageRequest PickTransform() => IsTransform
-            ? Transform!
+            ? Transform!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Transform' but the value was {ToString()}.");
 
         /// <summary>
@@ -168,7 +168,7 @@ namespace Recraft
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Recraft.TransformImageRequest, TResult>? transform = null,
+            global::System.Func<global::Recraft.TransformImageRequest?, TResult>? transform = null,
             global::System.Func<global::Recraft.ImageToImageRequestVariant2, TResult>? imageToImageRequestVariant2 = null,
             bool validate = true)
         {
@@ -193,7 +193,7 @@ namespace Recraft
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Recraft.TransformImageRequest>? transform = null,
+            global::System.Action<global::Recraft.TransformImageRequest?>? transform = null,
 
             global::System.Action<global::Recraft.ImageToImageRequestVariant2>? imageToImageRequestVariant2 = null,
             bool validate = true)
@@ -217,7 +217,7 @@ namespace Recraft
         /// 
         /// </summary>
         public void Switch(
-            global::System.Action<global::Recraft.TransformImageRequest>? transform = null,
+            global::System.Action<global::Recraft.TransformImageRequest?>? transform = null,
             global::System.Action<global::Recraft.ImageToImageRequestVariant2>? imageToImageRequestVariant2 = null,
             bool validate = true)
         {

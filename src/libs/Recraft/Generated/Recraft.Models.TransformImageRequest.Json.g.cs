@@ -2,7 +2,7 @@
 
 namespace Recraft
 {
-    public sealed partial class TransformImageRequest
+    public readonly partial struct TransformImageRequest
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -54,7 +54,7 @@ namespace Recraft
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
                 typeof(global::Recraft.TransformImageRequest),
-                jsonSerializerContext) as global::Recraft.TransformImageRequest;
+                jsonSerializerContext) as global::Recraft.TransformImageRequest?;
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace Recraft
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
                 typeof(global::Recraft.TransformImageRequest),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Recraft.TransformImageRequest;
+                jsonSerializerContext).ConfigureAwait(false)) as global::Recraft.TransformImageRequest?;
         }
 
         /// <summary>

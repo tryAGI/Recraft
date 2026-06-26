@@ -23,39 +23,11 @@ namespace Recraft.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
-                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
-                    {
-                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
-                        {
-                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
-                        }
-                    }
 
                 }
             }
 
             var __score0 = 0;
-            if (__jsonProps.Contains("block_nsfw")) __score0++;
-            if (__jsonProps.Contains("calculate_features")) __score0++;
-            if (__jsonProps.Contains("controls")) __score0++;
-            if (__jsonProps.Contains("controls.artistic_level")) __score0++;
-            if (__jsonProps.Contains("controls.background_color")) __score0++;
-            if (__jsonProps.Contains("controls.colors")) __score0++;
-            if (__jsonProps.Contains("controls.no_text")) __score0++;
-            if (__jsonProps.Contains("creativity")) __score0++;
-            if (__jsonProps.Contains("expire")) __score0++;
-            if (__jsonProps.Contains("image")) __score0++;
-            if (__jsonProps.Contains("image_format")) __score0++;
-            if (__jsonProps.Contains("model")) __score0++;
-            if (__jsonProps.Contains("n")) __score0++;
-            if (__jsonProps.Contains("negative_prompt")) __score0++;
-            if (__jsonProps.Contains("prompt")) __score0++;
-            if (__jsonProps.Contains("random_seed")) __score0++;
-            if (__jsonProps.Contains("response_format")) __score0++;
-            if (__jsonProps.Contains("style")) __score0++;
-            if (__jsonProps.Contains("style_id")) __score0++;
-            if (__jsonProps.Contains("substyle")) __score0++;
-            if (__jsonProps.Contains("text_layout")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("strength")) __score1++;
             var __bestScore = 0;
@@ -153,9 +125,9 @@ namespace Recraft.JsonConverters
 
             if (value.IsTransform)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Recraft.TransformImageRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Recraft.TransformImageRequest?> ??
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Recraft.TransformImageRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Recraft.TransformImageRequest> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Recraft.TransformImageRequest).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Transform!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Transform!.Value, typeInfo);
             }
             else if (value.IsImageToImageRequestVariant2)
             {

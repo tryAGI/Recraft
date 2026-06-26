@@ -14,7 +14,7 @@ namespace Recraft
         /// <exception cref="global::Recraft.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> InpaintImageAsync(
 
-            global::Recraft.TransformImageWithMaskRequest request,
+            global::Recraft.TransformImageWithMaskJSONRequest request,
             global::Recraft.BillingType? billing = default,
             global::Recraft.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -28,7 +28,7 @@ namespace Recraft
         /// <exception cref="global::Recraft.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Recraft.AutoSDKHttpResponse<global::Recraft.GenerateImageResponse>> InpaintImageAsResponseAsync(
 
-            global::Recraft.TransformImageWithMaskRequest request,
+            global::Recraft.TransformImageWithMaskJSONRequest request,
             global::Recraft.BillingType? billing = default,
             global::Recraft.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

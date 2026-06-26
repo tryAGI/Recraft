@@ -35,6 +35,10 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        Cosmos3Super,
+        /// <summary>
+        /// 
+        /// </summary>
         Flux11pro,
         /// <summary>
         /// 
@@ -119,6 +123,10 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        GrokImagineVideo1p5,
+        /// <summary>
+        /// 
+        /// </summary>
         Hailuo02Pro,
         /// <summary>
         /// 
@@ -139,6 +147,10 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        HappyHorse1p1,
+        /// <summary>
+        /// 
+        /// </summary>
         HidreamI1Dev,
         /// <summary>
         /// 
@@ -152,6 +164,18 @@ namespace Recraft
         /// 
         /// </summary>
         IdeogramV3Turbo,
+        /// <summary>
+        /// 
+        /// </summary>
+        IdeogramV4Balanced,
+        /// <summary>
+        /// 
+        /// </summary>
+        IdeogramV4Quality,
+        /// <summary>
+        /// 
+        /// </summary>
+        IdeogramV4Turbo,
         /// <summary>
         /// 
         /// </summary>
@@ -196,6 +220,22 @@ namespace Recraft
         /// 
         /// </summary>
         Kling3Standard,
+        /// <summary>
+        /// 
+        /// </summary>
+        Kling3Turbo,
+        /// <summary>
+        /// 
+        /// </summary>
+        Krea2Large,
+        /// <summary>
+        /// 
+        /// </summary>
+        Krea2Medium,
+        /// <summary>
+        /// 
+        /// </summary>
+        Krea2Turbo,
         /// <summary>
         /// 
         /// </summary>
@@ -432,6 +472,7 @@ namespace Recraft
                 TransformModel.BytedanceSeedance2Fast => "bytedance_seedance2_fast",
                 TransformModel.BytedanceSeedreamv4p5 => "bytedance_seedreamv4p5",
                 TransformModel.BytedanceSeedreamv5Lite => "bytedance_seedreamv5_lite",
+                TransformModel.Cosmos3Super => "cosmos_3_super",
                 TransformModel.Flux11pro => "flux1_1pro",
                 TransformModel.Flux1KontextMax => "flux1_kontext_max",
                 TransformModel.Flux1KontextPro => "flux1_kontext_pro",
@@ -453,15 +494,20 @@ namespace Recraft
                 TransformModel.GptImage2Medium => "gpt_image_2_medium",
                 TransformModel.GrokImagineImage => "grok_imagine_image",
                 TransformModel.GrokImagineVideo => "grok_imagine_video",
+                TransformModel.GrokImagineVideo1p5 => "grok_imagine_video_1p5",
                 TransformModel.Hailuo02Pro => "hailuo02_pro",
                 TransformModel.Hailuo02Standard => "hailuo02_standard",
                 TransformModel.Hailuo2p3Pro => "hailuo2p3_pro",
                 TransformModel.Hailuo2p3Standard => "hailuo2p3_standard",
                 TransformModel.HappyHorse1 => "happy_horse_1",
+                TransformModel.HappyHorse1p1 => "happy_horse_1p1",
                 TransformModel.HidreamI1Dev => "hidream_i1_dev",
                 TransformModel.IdeogramV3Default => "ideogram_v3_default",
                 TransformModel.IdeogramV3Quality => "ideogram_v3_quality",
                 TransformModel.IdeogramV3Turbo => "ideogram_v3_turbo",
+                TransformModel.IdeogramV4Balanced => "ideogram_v4_balanced",
+                TransformModel.IdeogramV4Quality => "ideogram_v4_quality",
+                TransformModel.IdeogramV4Turbo => "ideogram_v4_turbo",
                 TransformModel.Imagen3 => "imagen3",
                 TransformModel.Imagen4 => "imagen4",
                 TransformModel.Imagen4Ultra => "imagen4_ultra",
@@ -473,6 +519,10 @@ namespace Recraft
                 TransformModel.Kling3OmniStandard => "kling3_omni_standard",
                 TransformModel.Kling3Pro => "kling3_pro",
                 TransformModel.Kling3Standard => "kling3_standard",
+                TransformModel.Kling3Turbo => "kling3_turbo",
+                TransformModel.Krea2Large => "krea_2_large",
+                TransformModel.Krea2Medium => "krea_2_medium",
+                TransformModel.Krea2Turbo => "krea_2_turbo",
                 TransformModel.NanoBanana2 => "nano_banana_2",
                 TransformModel.NanoBanana2With4k => "nano_banana_2_with_4k",
                 TransformModel.NanoBananaPro => "nano_banana_pro",
@@ -543,6 +593,7 @@ namespace Recraft
                 "bytedance_seedance2_fast" => TransformModel.BytedanceSeedance2Fast,
                 "bytedance_seedreamv4p5" => TransformModel.BytedanceSeedreamv4p5,
                 "bytedance_seedreamv5_lite" => TransformModel.BytedanceSeedreamv5Lite,
+                "cosmos_3_super" => TransformModel.Cosmos3Super,
                 "flux1_1pro" => TransformModel.Flux11pro,
                 "flux1_kontext_max" => TransformModel.Flux1KontextMax,
                 "flux1_kontext_pro" => TransformModel.Flux1KontextPro,
@@ -564,15 +615,20 @@ namespace Recraft
                 "gpt_image_2_medium" => TransformModel.GptImage2Medium,
                 "grok_imagine_image" => TransformModel.GrokImagineImage,
                 "grok_imagine_video" => TransformModel.GrokImagineVideo,
+                "grok_imagine_video_1p5" => TransformModel.GrokImagineVideo1p5,
                 "hailuo02_pro" => TransformModel.Hailuo02Pro,
                 "hailuo02_standard" => TransformModel.Hailuo02Standard,
                 "hailuo2p3_pro" => TransformModel.Hailuo2p3Pro,
                 "hailuo2p3_standard" => TransformModel.Hailuo2p3Standard,
                 "happy_horse_1" => TransformModel.HappyHorse1,
+                "happy_horse_1p1" => TransformModel.HappyHorse1p1,
                 "hidream_i1_dev" => TransformModel.HidreamI1Dev,
                 "ideogram_v3_default" => TransformModel.IdeogramV3Default,
                 "ideogram_v3_quality" => TransformModel.IdeogramV3Quality,
                 "ideogram_v3_turbo" => TransformModel.IdeogramV3Turbo,
+                "ideogram_v4_balanced" => TransformModel.IdeogramV4Balanced,
+                "ideogram_v4_quality" => TransformModel.IdeogramV4Quality,
+                "ideogram_v4_turbo" => TransformModel.IdeogramV4Turbo,
                 "imagen3" => TransformModel.Imagen3,
                 "imagen4" => TransformModel.Imagen4,
                 "imagen4_ultra" => TransformModel.Imagen4Ultra,
@@ -584,6 +640,10 @@ namespace Recraft
                 "kling3_omni_standard" => TransformModel.Kling3OmniStandard,
                 "kling3_pro" => TransformModel.Kling3Pro,
                 "kling3_standard" => TransformModel.Kling3Standard,
+                "kling3_turbo" => TransformModel.Kling3Turbo,
+                "krea_2_large" => TransformModel.Krea2Large,
+                "krea_2_medium" => TransformModel.Krea2Medium,
+                "krea_2_turbo" => TransformModel.Krea2Turbo,
                 "nano_banana_2" => TransformModel.NanoBanana2,
                 "nano_banana_2_with_4k" => TransformModel.NanoBanana2With4k,
                 "nano_banana_pro" => TransformModel.NanoBananaPro,

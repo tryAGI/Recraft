@@ -13,38 +13,38 @@ namespace Recraft
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Recraft.TransformImageRequest? Transform { get; init; }
+        public global::Recraft.OutpaintImageRequestBase? Base { get; init; }
 #else
-        public global::Recraft.TransformImageRequest? Transform { get; }
+        public global::Recraft.OutpaintImageRequestBase? Base { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Transform))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Base))]
 #endif
-        public bool IsTransform => Transform != null;
+        public bool IsBase => Base != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public bool TryPickTransform(
+        public bool TryPickBase(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Recraft.TransformImageRequest? value)
+            out global::Recraft.OutpaintImageRequestBase? value)
         {
-            value = Transform;
-            return IsTransform;
+            value = Base;
+            return IsBase;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.TransformImageRequest PickTransform() => IsTransform
-            ? Transform!
-            : throw new global::System.InvalidOperationException($"Expected union variant 'Transform' but the value was {ToString()}.");
+        public global::Recraft.OutpaintImageRequestBase PickBase() => IsBase
+            ? Base!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -85,25 +85,25 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator OutpaintImageRequest(global::Recraft.TransformImageRequest value) => new OutpaintImageRequest((global::Recraft.TransformImageRequest?)value);
+        public static implicit operator OutpaintImageRequest(global::Recraft.OutpaintImageRequestBase value) => new OutpaintImageRequest((global::Recraft.OutpaintImageRequestBase?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Recraft.TransformImageRequest?(OutpaintImageRequest @this) => @this.Transform;
+        public static implicit operator global::Recraft.OutpaintImageRequestBase?(OutpaintImageRequest @this) => @this.Base;
 
         /// <summary>
         /// 
         /// </summary>
-        public OutpaintImageRequest(global::Recraft.TransformImageRequest? value)
+        public OutpaintImageRequest(global::Recraft.OutpaintImageRequestBase? value)
         {
-            Transform = value;
+            Base = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static OutpaintImageRequest FromTransform(global::Recraft.TransformImageRequest? value) => new OutpaintImageRequest(value);
+        public static OutpaintImageRequest FromBase(global::Recraft.OutpaintImageRequestBase? value) => new OutpaintImageRequest(value);
 
         /// <summary>
         /// 
@@ -132,11 +132,11 @@ namespace Recraft
         /// 
         /// </summary>
         public OutpaintImageRequest(
-            global::Recraft.TransformImageRequest? transform,
+            global::Recraft.OutpaintImageRequestBase? @base,
             global::Recraft.OutpaintImageRequestVariant2? outpaintImageRequestVariant2
             )
         {
-            Transform = transform;
+            Base = @base;
             OutpaintImageRequestVariant2 = outpaintImageRequestVariant2;
         }
 
@@ -145,14 +145,14 @@ namespace Recraft
         /// </summary>
         public object? Object =>
             OutpaintImageRequestVariant2 as object ??
-            Transform as object 
+            Base as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Transform?.ToString() ??
+            Base?.ToString() ??
             OutpaintImageRequestVariant2?.ToString() 
             ;
 
@@ -161,14 +161,14 @@ namespace Recraft
         /// </summary>
         public bool Validate()
         {
-            return IsTransform && IsOutpaintImageRequestVariant2;
+            return IsBase && IsOutpaintImageRequestVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Recraft.TransformImageRequest, TResult>? transform = null,
+            global::System.Func<global::Recraft.OutpaintImageRequestBase?, TResult>? @base = null,
             global::System.Func<global::Recraft.OutpaintImageRequestVariant2, TResult>? outpaintImageRequestVariant2 = null,
             bool validate = true)
         {
@@ -177,9 +177,9 @@ namespace Recraft
                 Validate();
             }
 
-            if (IsTransform && transform != null)
+            if (IsBase && @base != null)
             {
-                return transform(Transform!);
+                return @base(Base!);
             }
             else if (IsOutpaintImageRequestVariant2 && outpaintImageRequestVariant2 != null)
             {
@@ -193,7 +193,7 @@ namespace Recraft
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Recraft.TransformImageRequest>? transform = null,
+            global::System.Action<global::Recraft.OutpaintImageRequestBase?>? @base = null,
 
             global::System.Action<global::Recraft.OutpaintImageRequestVariant2>? outpaintImageRequestVariant2 = null,
             bool validate = true)
@@ -203,9 +203,9 @@ namespace Recraft
                 Validate();
             }
 
-            if (IsTransform)
+            if (IsBase)
             {
-                transform?.Invoke(Transform!);
+                @base?.Invoke(Base!);
             }
             else if (IsOutpaintImageRequestVariant2)
             {
@@ -217,7 +217,7 @@ namespace Recraft
         /// 
         /// </summary>
         public void Switch(
-            global::System.Action<global::Recraft.TransformImageRequest>? transform = null,
+            global::System.Action<global::Recraft.OutpaintImageRequestBase?>? @base = null,
             global::System.Action<global::Recraft.OutpaintImageRequestVariant2>? outpaintImageRequestVariant2 = null,
             bool validate = true)
         {
@@ -226,9 +226,9 @@ namespace Recraft
                 Validate();
             }
 
-            if (IsTransform)
+            if (IsBase)
             {
-                transform?.Invoke(Transform!);
+                @base?.Invoke(Base!);
             }
             else if (IsOutpaintImageRequestVariant2)
             {
@@ -243,8 +243,8 @@ namespace Recraft
         {
             var fields = new object?[]
             {
-                Transform,
-                typeof(global::Recraft.TransformImageRequest),
+                Base,
+                typeof(global::Recraft.OutpaintImageRequestBase),
                 OutpaintImageRequestVariant2,
                 typeof(global::Recraft.OutpaintImageRequestVariant2),
             };
@@ -263,7 +263,7 @@ namespace Recraft
         public bool Equals(OutpaintImageRequest other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Recraft.TransformImageRequest?>.Default.Equals(Transform, other.Transform) &&
+                global::System.Collections.Generic.EqualityComparer<global::Recraft.OutpaintImageRequestBase?>.Default.Equals(Base, other.Base) &&
                 global::System.Collections.Generic.EqualityComparer<global::Recraft.OutpaintImageRequestVariant2?>.Default.Equals(OutpaintImageRequestVariant2, other.OutpaintImageRequestVariant2) 
                 ;
         }

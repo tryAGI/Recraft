@@ -14,7 +14,7 @@ namespace Recraft
         /// <exception cref="global::Recraft.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> ImageToImageAsync(
 
-            global::Recraft.ImageToImageRequest request,
+            global::Recraft.ImageToImageJSONRequest request,
             global::Recraft.BillingType? billing = default,
             global::Recraft.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -28,7 +28,7 @@ namespace Recraft
         /// <exception cref="global::Recraft.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Recraft.AutoSDKHttpResponse<global::Recraft.GenerateImageResponse>> ImageToImageAsResponseAsync(
 
-            global::Recraft.ImageToImageRequest request,
+            global::Recraft.ImageToImageJSONRequest request,
             global::Recraft.BillingType? billing = default,
             global::Recraft.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

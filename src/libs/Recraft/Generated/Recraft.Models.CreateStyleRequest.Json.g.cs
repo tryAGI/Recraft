@@ -2,7 +2,7 @@
 
 namespace Recraft
 {
-    public sealed partial class CreateStyleRequest
+    public readonly partial struct CreateStyleRequest
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -54,7 +54,7 @@ namespace Recraft
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
                 typeof(global::Recraft.CreateStyleRequest),
-                jsonSerializerContext) as global::Recraft.CreateStyleRequest;
+                jsonSerializerContext) as global::Recraft.CreateStyleRequest?;
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace Recraft
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
                 typeof(global::Recraft.CreateStyleRequest),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Recraft.CreateStyleRequest;
+                jsonSerializerContext).ConfigureAwait(false)) as global::Recraft.CreateStyleRequest?;
         }
 
         /// <summary>

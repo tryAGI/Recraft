@@ -44,7 +44,6 @@ namespace Recraft.JsonConverters
             if (__jsonProps.Contains("controls.no_text")) __score0++;
             if (__jsonProps.Contains("creativity")) __score0++;
             if (__jsonProps.Contains("expire")) __score0++;
-            if (__jsonProps.Contains("image")) __score0++;
             if (__jsonProps.Contains("image_format")) __score0++;
             if (__jsonProps.Contains("model")) __score0++;
             if (__jsonProps.Contains("n")) __score0++;
@@ -57,13 +56,14 @@ namespace Recraft.JsonConverters
             if (__jsonProps.Contains("substyle")) __score0++;
             if (__jsonProps.Contains("text_layout")) __score0++;
             var __score1 = 0;
+            if (__jsonProps.Contains("image")) __score1++;
             if (__jsonProps.Contains("mask")) __score1++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
-            global::Recraft.TransformImageRequest? transformImageRequest = default;
+            global::Recraft.TransformImageRequestBase? @base = default;
             global::Recraft.TransformImageWithMaskRequestVariant2? transformImageWithMaskRequestVariant2 = default;
             if (__bestIndex >= 0)
             {
@@ -71,9 +71,9 @@ namespace Recraft.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Recraft.TransformImageRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Recraft.TransformImageRequest> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Recraft.TransformImageRequest).Name}");
-                        transformImageRequest = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Recraft.TransformImageRequestBase), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Recraft.TransformImageRequestBase> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Recraft.TransformImageRequestBase).Name}");
+                        @base = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -99,14 +99,14 @@ namespace Recraft.JsonConverters
                 }
             }
 
-            if (transformImageRequest == null && transformImageWithMaskRequestVariant2 == null)
+            if (@base == null && transformImageWithMaskRequestVariant2 == null)
             {
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Recraft.TransformImageRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Recraft.TransformImageRequest> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Recraft.TransformImageRequest).Name}");
-                    transformImageRequest = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Recraft.TransformImageRequestBase), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Recraft.TransformImageRequestBase> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Recraft.TransformImageRequestBase).Name}");
+                    @base = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -116,7 +116,7 @@ namespace Recraft.JsonConverters
                 }
             }
 
-            if (transformImageRequest == null && transformImageWithMaskRequestVariant2 == null)
+            if (@base == null && transformImageWithMaskRequestVariant2 == null)
             {
                 try
                 {
@@ -134,7 +134,7 @@ namespace Recraft.JsonConverters
             }
 
             var __value = new global::Recraft.TransformImageWithMaskRequest(
-                transformImageRequest,
+                @base,
 
                 transformImageWithMaskRequestVariant2
                 );
@@ -151,11 +151,11 @@ namespace Recraft.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsTransformImageRequest)
+            if (value.IsBase)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Recraft.TransformImageRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Recraft.TransformImageRequest?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Recraft.TransformImageRequest).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TransformImageRequest!, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Recraft.TransformImageRequestBase), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Recraft.TransformImageRequestBase?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Recraft.TransformImageRequestBase).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Base!, typeInfo);
             }
             else if (value.IsTransformImageWithMaskRequestVariant2)
             {

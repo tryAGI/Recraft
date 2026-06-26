@@ -11,39 +11,14 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("expand_bottom")]
-        public int? ExpandBottom { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("image")]
+        public byte[]? Image { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("expand_left")]
-        public int? ExpandLeft { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("expand_right")]
-        public int? ExpandRight { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("expand_top")]
-        public int? ExpandTop { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("size")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.ImageSizeJsonConverter))]
-        public global::Recraft.ImageSize? Size { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("zoom_out_percentage")]
-        public double? ZoomOutPercentage { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("imagename")]
+        public string? Imagename { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -54,29 +29,17 @@ namespace Recraft
         /// <summary>
         /// Initializes a new instance of the <see cref="OutpaintImageRequestVariant2" /> class.
         /// </summary>
-        /// <param name="expandBottom"></param>
-        /// <param name="expandLeft"></param>
-        /// <param name="expandRight"></param>
-        /// <param name="expandTop"></param>
-        /// <param name="size"></param>
-        /// <param name="zoomOutPercentage"></param>
+        /// <param name="image"></param>
+        /// <param name="imagename"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutpaintImageRequestVariant2(
-            int? expandBottom,
-            int? expandLeft,
-            int? expandRight,
-            int? expandTop,
-            global::Recraft.ImageSize? size,
-            double? zoomOutPercentage)
+            byte[]? image,
+            string? imagename)
         {
-            this.ExpandBottom = expandBottom;
-            this.ExpandLeft = expandLeft;
-            this.ExpandRight = expandRight;
-            this.ExpandTop = expandTop;
-            this.Size = size;
-            this.ZoomOutPercentage = zoomOutPercentage;
+            this.Image = image;
+            this.Imagename = imagename;
         }
 
         /// <summary>

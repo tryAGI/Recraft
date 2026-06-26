@@ -2,7 +2,7 @@
 
 namespace Recraft
 {
-    public sealed partial class EraseRegionRequest
+    public readonly partial struct EraseRegionRequest
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -54,7 +54,7 @@ namespace Recraft
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
                 typeof(global::Recraft.EraseRegionRequest),
-                jsonSerializerContext) as global::Recraft.EraseRegionRequest;
+                jsonSerializerContext) as global::Recraft.EraseRegionRequest?;
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace Recraft
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
                 typeof(global::Recraft.EraseRegionRequest),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Recraft.EraseRegionRequest;
+                jsonSerializerContext).ConfigureAwait(false)) as global::Recraft.EraseRegionRequest?;
         }
 
         /// <summary>

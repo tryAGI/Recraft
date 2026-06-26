@@ -28,26 +28,14 @@ namespace Recraft.JsonConverters
             }
 
             var __score0 = 0;
-            if (__jsonProps.Contains("expire")) __score0++;
-            if (__jsonProps.Contains("image")) __score0++;
-            if (__jsonProps.Contains("image_format")) __score0++;
-            if (__jsonProps.Contains("response_format")) __score0++;
-            if (__jsonProps.Contains("upscale")) __score0++;
             var __score1 = 0;
-            if (__jsonProps.Contains("color_reduction")) __score1++;
-            if (__jsonProps.Contains("limit_num_shapes")) __score1++;
-            if (__jsonProps.Contains("max_num_shapes")) __score1++;
-            if (__jsonProps.Contains("return_gradients")) __score1++;
-            if (__jsonProps.Contains("shape_stacking")) __score1++;
-            if (__jsonProps.Contains("small_shape_filter")) __score1++;
-            if (__jsonProps.Contains("strict_color_palette")) __score1++;
-            if (__jsonProps.Contains("svg_compression")) __score1++;
+            if (__jsonProps.Contains("image")) __score1++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
-            global::Recraft.ProcessImageRequest? process = default;
+            global::Recraft.VectorizeImageRequestBase? @base = default;
             global::Recraft.VectorizeImageRequestVariant2? vectorizeImageRequestVariant2 = default;
             if (__bestIndex >= 0)
             {
@@ -55,9 +43,9 @@ namespace Recraft.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Recraft.ProcessImageRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Recraft.ProcessImageRequest> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Recraft.ProcessImageRequest).Name}");
-                        process = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Recraft.VectorizeImageRequestBase), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Recraft.VectorizeImageRequestBase> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Recraft.VectorizeImageRequestBase).Name}");
+                        @base = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -83,14 +71,14 @@ namespace Recraft.JsonConverters
                 }
             }
 
-            if (process == null && vectorizeImageRequestVariant2 == null)
+            if (@base == null && vectorizeImageRequestVariant2 == null)
             {
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Recraft.ProcessImageRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Recraft.ProcessImageRequest> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Recraft.ProcessImageRequest).Name}");
-                    process = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Recraft.VectorizeImageRequestBase), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Recraft.VectorizeImageRequestBase> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Recraft.VectorizeImageRequestBase).Name}");
+                    @base = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -100,7 +88,7 @@ namespace Recraft.JsonConverters
                 }
             }
 
-            if (process == null && vectorizeImageRequestVariant2 == null)
+            if (@base == null && vectorizeImageRequestVariant2 == null)
             {
                 try
                 {
@@ -118,7 +106,7 @@ namespace Recraft.JsonConverters
             }
 
             var __value = new global::Recraft.VectorizeImageRequest(
-                process,
+                @base,
 
                 vectorizeImageRequestVariant2
                 );
@@ -135,11 +123,11 @@ namespace Recraft.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsProcess)
+            if (value.IsBase)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Recraft.ProcessImageRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Recraft.ProcessImageRequest?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Recraft.ProcessImageRequest).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Process!, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Recraft.VectorizeImageRequestBase), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Recraft.VectorizeImageRequestBase> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Recraft.VectorizeImageRequestBase).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Base!.Value, typeInfo);
             }
             else if (value.IsVectorizeImageRequestVariant2)
             {

@@ -79,6 +79,10 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        GeminiOmniFlash,
+        /// <summary>
+        /// 
+        /// </summary>
         GptImage1High,
         /// <summary>
         /// 
@@ -240,6 +244,10 @@ namespace Recraft
         /// 
         /// </summary>
         NanoBanana2,
+        /// <summary>
+        /// 
+        /// </summary>
+        NanoBanana2Lite,
         /// <summary>
         /// 
         /// </summary>
@@ -483,6 +491,7 @@ namespace Recraft
                 TransformModel.Flux2Max => "flux2_max",
                 TransformModel.Flux2Pro => "flux2_pro",
                 TransformModel.Gemini25FlashImage => "gemini_25_flash_image",
+                TransformModel.GeminiOmniFlash => "gemini_omni_flash",
                 TransformModel.GptImage1High => "gpt_image_1_high",
                 TransformModel.GptImage1Low => "gpt_image_1_low",
                 TransformModel.GptImage1Medium => "gpt_image_1_medium",
@@ -524,6 +533,7 @@ namespace Recraft
                 TransformModel.Krea2Medium => "krea_2_medium",
                 TransformModel.Krea2Turbo => "krea_2_turbo",
                 TransformModel.NanoBanana2 => "nano_banana_2",
+                TransformModel.NanoBanana2Lite => "nano_banana_2_lite",
                 TransformModel.NanoBanana2With4k => "nano_banana_2_with_4k",
                 TransformModel.NanoBananaPro => "nano_banana_pro",
                 TransformModel.NanoBananaPro4k => "nano_banana_pro_4k",
@@ -604,6 +614,7 @@ namespace Recraft
                 "flux2_max" => TransformModel.Flux2Max,
                 "flux2_pro" => TransformModel.Flux2Pro,
                 "gemini_25_flash_image" => TransformModel.Gemini25FlashImage,
+                "gemini_omni_flash" => TransformModel.GeminiOmniFlash,
                 "gpt_image_1_high" => TransformModel.GptImage1High,
                 "gpt_image_1_low" => TransformModel.GptImage1Low,
                 "gpt_image_1_medium" => TransformModel.GptImage1Medium,
@@ -645,6 +656,7 @@ namespace Recraft
                 "krea_2_medium" => TransformModel.Krea2Medium,
                 "krea_2_turbo" => TransformModel.Krea2Turbo,
                 "nano_banana_2" => TransformModel.NanoBanana2,
+                "nano_banana_2_lite" => TransformModel.NanoBanana2Lite,
                 "nano_banana_2_with_4k" => TransformModel.NanoBanana2With4k,
                 "nano_banana_pro" => TransformModel.NanoBananaPro,
                 "nano_banana_pro_4k" => TransformModel.NanoBananaPro4k,

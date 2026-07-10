@@ -35,6 +35,10 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        BytedanceSeedreamv5Pro,
+        /// <summary>
+        /// 
+        /// </summary>
         Cosmos3Super,
         /// <summary>
         /// 
@@ -480,6 +484,7 @@ namespace Recraft
                 TransformModel.BytedanceSeedance2Fast => "bytedance_seedance2_fast",
                 TransformModel.BytedanceSeedreamv4p5 => "bytedance_seedreamv4p5",
                 TransformModel.BytedanceSeedreamv5Lite => "bytedance_seedreamv5_lite",
+                TransformModel.BytedanceSeedreamv5Pro => "bytedance_seedreamv5_pro",
                 TransformModel.Cosmos3Super => "cosmos_3_super",
                 TransformModel.Flux11pro => "flux1_1pro",
                 TransformModel.Flux1KontextMax => "flux1_kontext_max",
@@ -603,6 +608,7 @@ namespace Recraft
                 "bytedance_seedance2_fast" => TransformModel.BytedanceSeedance2Fast,
                 "bytedance_seedreamv4p5" => TransformModel.BytedanceSeedreamv4p5,
                 "bytedance_seedreamv5_lite" => TransformModel.BytedanceSeedreamv5Lite,
+                "bytedance_seedreamv5_pro" => TransformModel.BytedanceSeedreamv5Pro,
                 "cosmos_3_super" => TransformModel.Cosmos3Super,
                 "flux1_1pro" => TransformModel.Flux11pro,
                 "flux1_kontext_max" => TransformModel.Flux1KontextMax,

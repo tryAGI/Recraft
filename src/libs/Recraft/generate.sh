@@ -13,10 +13,10 @@ fetch_spec() {
     --connect-timeout 30 --max-time 300
 }
 
-# OpenAPI spec: https://external.api.recraft.ai/doc/spec/api.yaml
+# OpenAPI spec: https://external.api.recraft.ai/doc/spec/internal/externalapi/api.yaml
 install_autosdk_cli
 rm -rf Generated
-fetch_spec --fail --silent --show-error -L -o openapi.yaml https://external.api.recraft.ai/doc/spec/api.yaml
+fetch_spec --fail --silent --show-error -L -o openapi.yaml https://external.api.recraft.ai/doc/spec/internal/externalapi/api.yaml
 autosdk generate openapi.yaml \
   --namespace Recraft \
   --clientClassName RecraftClient \

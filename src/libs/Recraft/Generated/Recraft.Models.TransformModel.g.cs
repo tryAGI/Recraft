@@ -27,6 +27,10 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        BytedanceSeedance2p5,
+        /// <summary>
+        /// 
+        /// </summary>
         BytedanceSeedreamv4p5,
         /// <summary>
         /// 
@@ -387,6 +391,18 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        Recraftv4Explore,
+        /// <summary>
+        /// 
+        /// </summary>
+        Recraftv4ExploreRaster,
+        /// <summary>
+        /// 
+        /// </summary>
+        Recraftv4ExploreVector,
+        /// <summary>
+        /// 
+        /// </summary>
         Recraftv4Pro,
         /// <summary>
         /// 
@@ -482,6 +498,7 @@ namespace Recraft
                 TransformModel.BytedanceSeedance1p5 => "bytedance_seedance1p5",
                 TransformModel.BytedanceSeedance2 => "bytedance_seedance2",
                 TransformModel.BytedanceSeedance2Fast => "bytedance_seedance2_fast",
+                TransformModel.BytedanceSeedance2p5 => "bytedance_seedance2p5",
                 TransformModel.BytedanceSeedreamv4p5 => "bytedance_seedreamv4p5",
                 TransformModel.BytedanceSeedreamv5Lite => "bytedance_seedreamv5_lite",
                 TransformModel.BytedanceSeedreamv5Pro => "bytedance_seedreamv5_pro",
@@ -572,6 +589,9 @@ namespace Recraft
                 TransformModel.Recraftv41UtilityRaster => "recraftv4_1_utility_raster",
                 TransformModel.Recraftv41UtilityVector => "recraftv4_1_utility_vector",
                 TransformModel.Recraftv41Vector => "recraftv4_1_vector",
+                TransformModel.Recraftv4Explore => "recraftv4_explore",
+                TransformModel.Recraftv4ExploreRaster => "recraftv4_explore_raster",
+                TransformModel.Recraftv4ExploreVector => "recraftv4_explore_vector",
                 TransformModel.Recraftv4Pro => "recraftv4_pro",
                 TransformModel.Recraftv4ProRaster => "recraftv4_pro_raster",
                 TransformModel.Recraftv4ProVector => "recraftv4_pro_vector",
@@ -606,6 +626,7 @@ namespace Recraft
                 "bytedance_seedance1p5" => TransformModel.BytedanceSeedance1p5,
                 "bytedance_seedance2" => TransformModel.BytedanceSeedance2,
                 "bytedance_seedance2_fast" => TransformModel.BytedanceSeedance2Fast,
+                "bytedance_seedance2p5" => TransformModel.BytedanceSeedance2p5,
                 "bytedance_seedreamv4p5" => TransformModel.BytedanceSeedreamv4p5,
                 "bytedance_seedreamv5_lite" => TransformModel.BytedanceSeedreamv5Lite,
                 "bytedance_seedreamv5_pro" => TransformModel.BytedanceSeedreamv5Pro,
@@ -696,6 +717,9 @@ namespace Recraft
                 "recraftv4_1_utility_raster" => TransformModel.Recraftv41UtilityRaster,
                 "recraftv4_1_utility_vector" => TransformModel.Recraftv41UtilityVector,
                 "recraftv4_1_vector" => TransformModel.Recraftv41Vector,
+                "recraftv4_explore" => TransformModel.Recraftv4Explore,
+                "recraftv4_explore_raster" => TransformModel.Recraftv4ExploreRaster,
+                "recraftv4_explore_vector" => TransformModel.Recraftv4ExploreVector,
                 "recraftv4_pro" => TransformModel.Recraftv4Pro,
                 "recraftv4_pro_raster" => TransformModel.Recraftv4ProRaster,
                 "recraftv4_pro_vector" => TransformModel.Recraftv4ProVector,

@@ -7,7 +7,7 @@ namespace Recraft
     /// <summary>
     /// 
     /// </summary>
-    public readonly partial struct GenerateImageRequest : global::System.IEquatable<GenerateImageRequest>
+    public readonly partial struct GenerateImageJSONRequest : global::System.IEquatable<GenerateImageJSONRequest>
     {
         /// <summary>
         /// 
@@ -50,52 +50,52 @@ namespace Recraft
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Recraft.GenerateImageRequestVariant2? GenerateImageRequestVariant2 { get; init; }
+        public global::Recraft.GenerateImageJSONRequestVariant2? GenerateImageJSONRequestVariant2 { get; init; }
 #else
-        public global::Recraft.GenerateImageRequestVariant2? GenerateImageRequestVariant2 { get; }
+        public global::Recraft.GenerateImageJSONRequestVariant2? GenerateImageJSONRequestVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GenerateImageRequestVariant2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GenerateImageJSONRequestVariant2))]
 #endif
-        public bool IsGenerateImageRequestVariant2 => GenerateImageRequestVariant2 != null;
+        public bool IsGenerateImageJSONRequestVariant2 => GenerateImageJSONRequestVariant2 != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public bool TryPickGenerateImageRequestVariant2(
+        public bool TryPickGenerateImageJSONRequestVariant2(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Recraft.GenerateImageRequestVariant2? value)
+            out global::Recraft.GenerateImageJSONRequestVariant2? value)
         {
-            value = GenerateImageRequestVariant2;
-            return IsGenerateImageRequestVariant2;
+            value = GenerateImageJSONRequestVariant2;
+            return IsGenerateImageJSONRequestVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.GenerateImageRequestVariant2 PickGenerateImageRequestVariant2() => IsGenerateImageRequestVariant2
-            ? GenerateImageRequestVariant2!
-            : throw new global::System.InvalidOperationException($"Expected union variant 'GenerateImageRequestVariant2' but the value was {ToString()}.");
+        public global::Recraft.GenerateImageJSONRequestVariant2 PickGenerateImageJSONRequestVariant2() => IsGenerateImageJSONRequestVariant2
+            ? GenerateImageJSONRequestVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GenerateImageJSONRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator GenerateImageRequest(global::Recraft.GenerateImageRequestBase value) => new GenerateImageRequest((global::Recraft.GenerateImageRequestBase?)value);
+        public static implicit operator GenerateImageJSONRequest(global::Recraft.GenerateImageRequestBase value) => new GenerateImageJSONRequest((global::Recraft.GenerateImageRequestBase?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Recraft.GenerateImageRequestBase?(GenerateImageRequest @this) => @this.Base;
+        public static implicit operator global::Recraft.GenerateImageRequestBase?(GenerateImageJSONRequest @this) => @this.Base;
 
         /// <summary>
         /// 
         /// </summary>
-        public GenerateImageRequest(global::Recraft.GenerateImageRequestBase? value)
+        public GenerateImageJSONRequest(global::Recraft.GenerateImageRequestBase? value)
         {
             Base = value;
         }
@@ -103,48 +103,48 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
-        public static GenerateImageRequest FromBase(global::Recraft.GenerateImageRequestBase? value) => new GenerateImageRequest(value);
+        public static GenerateImageJSONRequest FromBase(global::Recraft.GenerateImageRequestBase? value) => new GenerateImageJSONRequest(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator GenerateImageRequest(global::Recraft.GenerateImageRequestVariant2 value) => new GenerateImageRequest((global::Recraft.GenerateImageRequestVariant2?)value);
+        public static implicit operator GenerateImageJSONRequest(global::Recraft.GenerateImageJSONRequestVariant2 value) => new GenerateImageJSONRequest((global::Recraft.GenerateImageJSONRequestVariant2?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Recraft.GenerateImageRequestVariant2?(GenerateImageRequest @this) => @this.GenerateImageRequestVariant2;
+        public static implicit operator global::Recraft.GenerateImageJSONRequestVariant2?(GenerateImageJSONRequest @this) => @this.GenerateImageJSONRequestVariant2;
 
         /// <summary>
         /// 
         /// </summary>
-        public GenerateImageRequest(global::Recraft.GenerateImageRequestVariant2? value)
+        public GenerateImageJSONRequest(global::Recraft.GenerateImageJSONRequestVariant2? value)
         {
-            GenerateImageRequestVariant2 = value;
+            GenerateImageJSONRequestVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static GenerateImageRequest FromGenerateImageRequestVariant2(global::Recraft.GenerateImageRequestVariant2? value) => new GenerateImageRequest(value);
+        public static GenerateImageJSONRequest FromGenerateImageJSONRequestVariant2(global::Recraft.GenerateImageJSONRequestVariant2? value) => new GenerateImageJSONRequest(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public GenerateImageRequest(
+        public GenerateImageJSONRequest(
             global::Recraft.GenerateImageRequestBase? @base,
-            global::Recraft.GenerateImageRequestVariant2? generateImageRequestVariant2
+            global::Recraft.GenerateImageJSONRequestVariant2? generateImageJSONRequestVariant2
             )
         {
             Base = @base;
-            GenerateImageRequestVariant2 = generateImageRequestVariant2;
+            GenerateImageJSONRequestVariant2 = generateImageJSONRequestVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            GenerateImageRequestVariant2 as object ??
+            GenerateImageJSONRequestVariant2 as object ??
             Base as object 
             ;
 
@@ -153,7 +153,7 @@ namespace Recraft
         /// </summary>
         public override string? ToString() =>
             Base?.ToString() ??
-            GenerateImageRequestVariant2?.ToString() 
+            GenerateImageJSONRequestVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -161,7 +161,7 @@ namespace Recraft
         /// </summary>
         public bool Validate()
         {
-            return IsBase && IsGenerateImageRequestVariant2;
+            return IsBase && IsGenerateImageJSONRequestVariant2;
         }
 
         /// <summary>
@@ -169,7 +169,7 @@ namespace Recraft
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Recraft.GenerateImageRequestBase, TResult>? @base = null,
-            global::System.Func<global::Recraft.GenerateImageRequestVariant2, TResult>? generateImageRequestVariant2 = null,
+            global::System.Func<global::Recraft.GenerateImageJSONRequestVariant2, TResult>? generateImageJSONRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -181,9 +181,9 @@ namespace Recraft
             {
                 return @base(Base!);
             }
-            else if (IsGenerateImageRequestVariant2 && generateImageRequestVariant2 != null)
+            else if (IsGenerateImageJSONRequestVariant2 && generateImageJSONRequestVariant2 != null)
             {
-                return generateImageRequestVariant2(GenerateImageRequestVariant2!);
+                return generateImageJSONRequestVariant2(GenerateImageJSONRequestVariant2!);
             }
 
             return default(TResult);
@@ -195,7 +195,7 @@ namespace Recraft
         public void Match(
             global::System.Action<global::Recraft.GenerateImageRequestBase>? @base = null,
 
-            global::System.Action<global::Recraft.GenerateImageRequestVariant2>? generateImageRequestVariant2 = null,
+            global::System.Action<global::Recraft.GenerateImageJSONRequestVariant2>? generateImageJSONRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -207,9 +207,9 @@ namespace Recraft
             {
                 @base?.Invoke(Base!);
             }
-            else if (IsGenerateImageRequestVariant2)
+            else if (IsGenerateImageJSONRequestVariant2)
             {
-                generateImageRequestVariant2?.Invoke(GenerateImageRequestVariant2!);
+                generateImageJSONRequestVariant2?.Invoke(GenerateImageJSONRequestVariant2!);
             }
         }
 
@@ -218,7 +218,7 @@ namespace Recraft
         /// </summary>
         public void Switch(
             global::System.Action<global::Recraft.GenerateImageRequestBase>? @base = null,
-            global::System.Action<global::Recraft.GenerateImageRequestVariant2>? generateImageRequestVariant2 = null,
+            global::System.Action<global::Recraft.GenerateImageJSONRequestVariant2>? generateImageJSONRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -230,9 +230,9 @@ namespace Recraft
             {
                 @base?.Invoke(Base!);
             }
-            else if (IsGenerateImageRequestVariant2)
+            else if (IsGenerateImageJSONRequestVariant2)
             {
-                generateImageRequestVariant2?.Invoke(GenerateImageRequestVariant2!);
+                generateImageJSONRequestVariant2?.Invoke(GenerateImageJSONRequestVariant2!);
             }
         }
 
@@ -245,8 +245,8 @@ namespace Recraft
             {
                 Base,
                 typeof(global::Recraft.GenerateImageRequestBase),
-                GenerateImageRequestVariant2,
-                typeof(global::Recraft.GenerateImageRequestVariant2),
+                GenerateImageJSONRequestVariant2,
+                typeof(global::Recraft.GenerateImageJSONRequestVariant2),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -260,26 +260,26 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
-        public bool Equals(GenerateImageRequest other)
+        public bool Equals(GenerateImageJSONRequest other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Recraft.GenerateImageRequestBase?>.Default.Equals(Base, other.Base) &&
-                global::System.Collections.Generic.EqualityComparer<global::Recraft.GenerateImageRequestVariant2?>.Default.Equals(GenerateImageRequestVariant2, other.GenerateImageRequestVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::Recraft.GenerateImageJSONRequestVariant2?>.Default.Equals(GenerateImageJSONRequestVariant2, other.GenerateImageJSONRequestVariant2) 
                 ;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static bool operator ==(GenerateImageRequest obj1, GenerateImageRequest obj2)
+        public static bool operator ==(GenerateImageJSONRequest obj1, GenerateImageJSONRequest obj2)
         {
-            return global::System.Collections.Generic.EqualityComparer<GenerateImageRequest>.Default.Equals(obj1, obj2);
+            return global::System.Collections.Generic.EqualityComparer<GenerateImageJSONRequest>.Default.Equals(obj1, obj2);
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static bool operator !=(GenerateImageRequest obj1, GenerateImageRequest obj2)
+        public static bool operator !=(GenerateImageJSONRequest obj1, GenerateImageJSONRequest obj2)
         {
             return !(obj1 == obj2);
         }
@@ -289,7 +289,7 @@ namespace Recraft
         /// </summary>
         public override bool Equals(object? obj)
         {
-            return obj is GenerateImageRequest o && Equals(o);
+            return obj is GenerateImageJSONRequest o && Equals(o);
         }
     }
 }

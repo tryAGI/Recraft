@@ -87,6 +87,10 @@ namespace Recraft
 
             typeof(global::Recraft.JsonConverters.EraseRegionRequestJsonConverter),
 
+            typeof(global::Recraft.JsonConverters.GenerateImageJSONRequestJsonConverter),
+
+            typeof(global::Recraft.JsonConverters.GenerateImageRequestJsonConverter),
+
             typeof(global::Recraft.JsonConverters.ImageToImageJSONRequestJsonConverter),
 
             typeof(global::Recraft.JsonConverters.ImageToImageRequestJsonConverter),
@@ -164,7 +168,11 @@ namespace Recraft
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.ImageSize), TypeInfoPropertyName = "ImageSize2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.ImageSubStyle), TypeInfoPropertyName = "ImageSubStyle2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.ExploreSimilarRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.GenerateImageRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.GenerateImageJSONRequest), TypeInfoPropertyName = "GenerateImageJSONRequest2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.GenerateImageRequestBase))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.GenerateImageJSONRequestVariant2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.GenerateImageRequest), TypeInfoPropertyName = "GenerateImageRequest2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.GenerateImageRequestVariant2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Recraft.TextLayoutItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.UpscaleMode), TypeInfoPropertyName = "UpscaleMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.GenerateImageResponse))]

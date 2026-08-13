@@ -30,6 +30,12 @@ namespace Recraft
         public required global::System.Collections.Generic.IList<global::Recraft.Image> Data { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("style_id")]
+        public global::System.Guid? StyleId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -41,17 +47,20 @@ namespace Recraft
         /// <param name="created"></param>
         /// <param name="credits"></param>
         /// <param name="data"></param>
+        /// <param name="styleId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GenerateImageResponse(
             int created,
             int credits,
-            global::System.Collections.Generic.IList<global::Recraft.Image> data)
+            global::System.Collections.Generic.IList<global::Recraft.Image> data,
+            global::System.Guid? styleId)
         {
             this.Created = created;
             this.Credits = credits;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+            this.StyleId = styleId;
         }
 
         /// <summary>

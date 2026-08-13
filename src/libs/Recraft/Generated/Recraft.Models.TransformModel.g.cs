@@ -419,6 +419,30 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        Recraftv4Styles,
+        /// <summary>
+        /// 
+        /// </summary>
+        Recraftv4StylesPro,
+        /// <summary>
+        /// 
+        /// </summary>
+        Recraftv4StylesProRaster,
+        /// <summary>
+        /// 
+        /// </summary>
+        Recraftv4StylesProVector,
+        /// <summary>
+        /// 
+        /// </summary>
+        Recraftv4StylesRaster,
+        /// <summary>
+        /// 
+        /// </summary>
+        Recraftv4StylesVector,
+        /// <summary>
+        /// 
+        /// </summary>
         Recraftv4Vector,
         /// <summary>
         /// 
@@ -596,6 +620,12 @@ namespace Recraft
                 TransformModel.Recraftv4ProRaster => "recraftv4_pro_raster",
                 TransformModel.Recraftv4ProVector => "recraftv4_pro_vector",
                 TransformModel.Recraftv4Raster => "recraftv4_raster",
+                TransformModel.Recraftv4Styles => "recraftv4_styles",
+                TransformModel.Recraftv4StylesPro => "recraftv4_styles_pro",
+                TransformModel.Recraftv4StylesProRaster => "recraftv4_styles_pro_raster",
+                TransformModel.Recraftv4StylesProVector => "recraftv4_styles_pro_vector",
+                TransformModel.Recraftv4StylesRaster => "recraftv4_styles_raster",
+                TransformModel.Recraftv4StylesVector => "recraftv4_styles_vector",
                 TransformModel.Recraftv4Vector => "recraftv4_vector",
                 TransformModel.Refm1 => "refm1",
                 TransformModel.Sora2 => "sora2",
@@ -724,6 +754,12 @@ namespace Recraft
                 "recraftv4_pro_raster" => TransformModel.Recraftv4ProRaster,
                 "recraftv4_pro_vector" => TransformModel.Recraftv4ProVector,
                 "recraftv4_raster" => TransformModel.Recraftv4Raster,
+                "recraftv4_styles" => TransformModel.Recraftv4Styles,
+                "recraftv4_styles_pro" => TransformModel.Recraftv4StylesPro,
+                "recraftv4_styles_pro_raster" => TransformModel.Recraftv4StylesProRaster,
+                "recraftv4_styles_pro_vector" => TransformModel.Recraftv4StylesProVector,
+                "recraftv4_styles_raster" => TransformModel.Recraftv4StylesRaster,
+                "recraftv4_styles_vector" => TransformModel.Recraftv4StylesVector,
                 "recraftv4_vector" => TransformModel.Recraftv4Vector,
                 "refm1" => TransformModel.Refm1,
                 "sora2" => TransformModel.Sora2,

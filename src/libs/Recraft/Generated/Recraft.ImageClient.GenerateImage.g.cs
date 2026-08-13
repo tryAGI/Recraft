@@ -28,12 +28,12 @@ namespace Recraft
         partial void PrepareGenerateImageArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::Recraft.BillingType? billing,
-            global::Recraft.GenerateImageRequest request);
+            global::Recraft.GenerateImageJSONRequest request);
         partial void PrepareGenerateImageRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::Recraft.BillingType? billing,
-            global::Recraft.GenerateImageRequest request);
+            global::Recraft.GenerateImageJSONRequest request);
         partial void ProcessGenerateImageResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -53,7 +53,7 @@ namespace Recraft
         /// <exception cref="global::Recraft.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> GenerateImageAsync(
 
-            global::Recraft.GenerateImageRequest request,
+            global::Recraft.GenerateImageJSONRequest request,
             global::Recraft.BillingType? billing = default,
             global::Recraft.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -78,13 +78,11 @@ namespace Recraft
         /// <exception cref="global::Recraft.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Recraft.AutoSDKHttpResponse<global::Recraft.GenerateImageResponse>> GenerateImageAsResponseAsync(
 
-            global::Recraft.GenerateImageRequest request,
+            global::Recraft.GenerateImageJSONRequest request,
             global::Recraft.BillingType? billing = default,
             global::Recraft.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: HttpClient);
             PrepareGenerateImageArguments(
@@ -447,70 +445,16 @@ namespace Recraft
         /// Generate image from prompt
         /// </summary>
         /// <param name="billing"></param>
-        /// <param name="blockNsfw"></param>
-        /// <param name="calculateFeatures"></param>
-        /// <param name="controls"></param>
-        /// <param name="creativity"></param>
-        /// <param name="expire"></param>
-        /// <param name="imageFormat"></param>
-        /// <param name="model"></param>
-        /// <param name="n"></param>
-        /// <param name="negativePrompt"></param>
-        /// <param name="prompt"></param>
-        /// <param name="randomSeed"></param>
-        /// <param name="responseFormat"></param>
-        /// <param name="size"></param>
-        /// <param name="style"></param>
-        /// <param name="styleId"></param>
-        /// <param name="substyle"></param>
-        /// <param name="textLayout"></param>
-        /// <param name="upscale"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> GenerateImageAsync(
-            string prompt,
             global::Recraft.BillingType? billing = default,
-            bool? blockNsfw = default,
-            bool? calculateFeatures = default,
-            global::Recraft.UserControls? controls = default,
-            global::Recraft.Creativity? creativity = default,
-            bool? expire = default,
-            global::Recraft.ImageFormat? imageFormat = default,
-            global::Recraft.TransformModel? model = default,
-            int? n = default,
-            string? negativePrompt = default,
-            int? randomSeed = default,
-            global::Recraft.ResponseFormat? responseFormat = default,
-            global::Recraft.ImageSize? size = default,
-            string? style = default,
-            global::System.Guid? styleId = default,
-            global::Recraft.ImageSubStyle? substyle = default,
-            global::System.Collections.Generic.IList<global::Recraft.TextLayoutItem>? textLayout = default,
-            global::Recraft.UpscaleMode? upscale = default,
             global::Recraft.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::Recraft.GenerateImageRequest
+            var __request = new global::Recraft.GenerateImageJSONRequest
             {
-                BlockNsfw = blockNsfw,
-                CalculateFeatures = calculateFeatures,
-                Controls = controls,
-                Creativity = creativity,
-                Expire = expire,
-                ImageFormat = imageFormat,
-                Model = model,
-                N = n,
-                NegativePrompt = negativePrompt,
-                Prompt = prompt,
-                RandomSeed = randomSeed,
-                ResponseFormat = responseFormat,
-                Size = size,
-                Style = style,
-                StyleId = styleId,
-                Substyle = substyle,
-                TextLayout = textLayout,
-                Upscale = upscale,
             };
 
             return await GenerateImageAsync(

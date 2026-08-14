@@ -83,6 +83,10 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        Flux3Video,
+        /// <summary>
+        /// 
+        /// </summary>
         Gemini25FlashImage,
         /// <summary>
         /// 
@@ -128,6 +132,10 @@ namespace Recraft
         /// 
         /// </summary>
         GrokImagineImage,
+        /// <summary>
+        /// 
+        /// </summary>
+        GrokImagineImage2,
         /// <summary>
         /// 
         /// </summary>
@@ -251,6 +259,10 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        Minimaxh3,
+        /// <summary>
+        /// 
+        /// </summary>
         NanoBanana2,
         /// <summary>
         /// 
@@ -292,6 +304,14 @@ namespace Recraft
         /// 
         /// </summary>
         QwenImage2Pro,
+        /// <summary>
+        /// 
+        /// </summary>
+        QwenImage3,
+        /// <summary>
+        /// 
+        /// </summary>
+        QwenImage32k,
         /// <summary>
         /// 
         /// </summary>
@@ -451,6 +471,10 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        Reve21,
+        /// <summary>
+        /// 
+        /// </summary>
         Sora2,
         /// <summary>
         /// 
@@ -536,6 +560,7 @@ namespace Recraft
                 TransformModel.Flux2Flex => "flux2_flex",
                 TransformModel.Flux2Max => "flux2_max",
                 TransformModel.Flux2Pro => "flux2_pro",
+                TransformModel.Flux3Video => "flux3_video",
                 TransformModel.Gemini25FlashImage => "gemini_25_flash_image",
                 TransformModel.GeminiOmniFlash => "gemini_omni_flash",
                 TransformModel.GptImage1High => "gpt_image_1_high",
@@ -548,6 +573,7 @@ namespace Recraft
                 TransformModel.GptImage2Low => "gpt_image_2_low",
                 TransformModel.GptImage2Medium => "gpt_image_2_medium",
                 TransformModel.GrokImagineImage => "grok_imagine_image",
+                TransformModel.GrokImagineImage2 => "grok_imagine_image_2",
                 TransformModel.GrokImagineVideo => "grok_imagine_video",
                 TransformModel.GrokImagineVideo1p5 => "grok_imagine_video_1p5",
                 TransformModel.Hailuo02Pro => "hailuo02_pro",
@@ -578,6 +604,7 @@ namespace Recraft
                 TransformModel.Krea2Large => "krea_2_large",
                 TransformModel.Krea2Medium => "krea_2_medium",
                 TransformModel.Krea2Turbo => "krea_2_turbo",
+                TransformModel.Minimaxh3 => "minimaxh3",
                 TransformModel.NanoBanana2 => "nano_banana_2",
                 TransformModel.NanoBanana2Lite => "nano_banana_2_lite",
                 TransformModel.NanoBanana2With4k => "nano_banana_2_with_4k",
@@ -589,6 +616,8 @@ namespace Recraft
                 TransformModel.QwenImage => "qwen_image",
                 TransformModel.QwenImage2 => "qwen_image_2",
                 TransformModel.QwenImage2Pro => "qwen_image_2_pro",
+                TransformModel.QwenImage3 => "qwen_image_3",
+                TransformModel.QwenImage32k => "qwen_image_3_2k",
                 TransformModel.Ray2 => "ray2",
                 TransformModel.Ray2Flash => "ray2_flash",
                 TransformModel.Recraft20b => "recraft20b",
@@ -628,6 +657,7 @@ namespace Recraft
                 TransformModel.Recraftv4StylesVector => "recraftv4_styles_vector",
                 TransformModel.Recraftv4Vector => "recraftv4_vector",
                 TransformModel.Refm1 => "refm1",
+                TransformModel.Reve21 => "reve_2_1",
                 TransformModel.Sora2 => "sora2",
                 TransformModel.Sora2Pro => "sora2_pro",
                 TransformModel.Topaz => "topaz",
@@ -670,6 +700,7 @@ namespace Recraft
                 "flux2_flex" => TransformModel.Flux2Flex,
                 "flux2_max" => TransformModel.Flux2Max,
                 "flux2_pro" => TransformModel.Flux2Pro,
+                "flux3_video" => TransformModel.Flux3Video,
                 "gemini_25_flash_image" => TransformModel.Gemini25FlashImage,
                 "gemini_omni_flash" => TransformModel.GeminiOmniFlash,
                 "gpt_image_1_high" => TransformModel.GptImage1High,
@@ -682,6 +713,7 @@ namespace Recraft
                 "gpt_image_2_low" => TransformModel.GptImage2Low,
                 "gpt_image_2_medium" => TransformModel.GptImage2Medium,
                 "grok_imagine_image" => TransformModel.GrokImagineImage,
+                "grok_imagine_image_2" => TransformModel.GrokImagineImage2,
                 "grok_imagine_video" => TransformModel.GrokImagineVideo,
                 "grok_imagine_video_1p5" => TransformModel.GrokImagineVideo1p5,
                 "hailuo02_pro" => TransformModel.Hailuo02Pro,
@@ -712,6 +744,7 @@ namespace Recraft
                 "krea_2_large" => TransformModel.Krea2Large,
                 "krea_2_medium" => TransformModel.Krea2Medium,
                 "krea_2_turbo" => TransformModel.Krea2Turbo,
+                "minimaxh3" => TransformModel.Minimaxh3,
                 "nano_banana_2" => TransformModel.NanoBanana2,
                 "nano_banana_2_lite" => TransformModel.NanoBanana2Lite,
                 "nano_banana_2_with_4k" => TransformModel.NanoBanana2With4k,
@@ -723,6 +756,8 @@ namespace Recraft
                 "qwen_image" => TransformModel.QwenImage,
                 "qwen_image_2" => TransformModel.QwenImage2,
                 "qwen_image_2_pro" => TransformModel.QwenImage2Pro,
+                "qwen_image_3" => TransformModel.QwenImage3,
+                "qwen_image_3_2k" => TransformModel.QwenImage32k,
                 "ray2" => TransformModel.Ray2,
                 "ray2_flash" => TransformModel.Ray2Flash,
                 "recraft20b" => TransformModel.Recraft20b,
@@ -762,6 +797,7 @@ namespace Recraft
                 "recraftv4_styles_vector" => TransformModel.Recraftv4StylesVector,
                 "recraftv4_vector" => TransformModel.Recraftv4Vector,
                 "refm1" => TransformModel.Refm1,
+                "reve_2_1" => TransformModel.Reve21,
                 "sora2" => TransformModel.Sora2,
                 "sora2_pro" => TransformModel.Sora2Pro,
                 "topaz" => TransformModel.Topaz,

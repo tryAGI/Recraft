@@ -65,6 +65,10 @@ namespace Recraft
 
             typeof(global::Recraft.JsonConverters.SmallShapeFilterNullableJsonConverter),
 
+            typeof(global::Recraft.JsonConverters.StyleModeJsonConverter),
+
+            typeof(global::Recraft.JsonConverters.StyleModeNullableJsonConverter),
+
             typeof(global::Recraft.JsonConverters.SvgCompressionJsonConverter),
 
             typeof(global::Recraft.JsonConverters.SvgCompressionNullableJsonConverter),
@@ -144,6 +148,7 @@ namespace Recraft
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<byte[]>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(byte[]))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<double>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.StyleMode), TypeInfoPropertyName = "StyleMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.MixPolicy), TypeInfoPropertyName = "MixPolicy2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.PaletteSuggest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]

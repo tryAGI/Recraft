@@ -17,6 +17,13 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("match")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.StyleModeJsonConverter))]
+        public global::Recraft.StyleMode? Match { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mix_policy")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.MixPolicyJsonConverter))]
         public global::Recraft.MixPolicy? MixPolicy { get; set; }
@@ -77,6 +84,7 @@ namespace Recraft
         /// </summary>
         /// <param name="style"></param>
         /// <param name="imageWeights"></param>
+        /// <param name="match"></param>
         /// <param name="mixPolicy"></param>
         /// <param name="model"></param>
         /// <param name="palette"></param>
@@ -90,6 +98,7 @@ namespace Recraft
         public CreateStyleRequestBase(
             global::Recraft.ImageStyle style,
             global::System.Collections.Generic.IList<double>? imageWeights,
+            global::Recraft.StyleMode? match,
             global::Recraft.MixPolicy? mixPolicy,
             global::Recraft.TransformModel? model,
             global::Recraft.PaletteSuggest? palette,
@@ -99,6 +108,7 @@ namespace Recraft
             global::System.Collections.Generic.IList<global::System.Guid>? sourceStyles)
         {
             this.ImageWeights = imageWeights;
+            this.Match = match;
             this.MixPolicy = mixPolicy;
             this.Model = model;
             this.Palette = palette;

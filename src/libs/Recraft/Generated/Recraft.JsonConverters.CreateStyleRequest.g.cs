@@ -36,6 +36,7 @@ namespace Recraft.JsonConverters
 
             var __score0 = 0;
             if (__jsonProps.Contains("image_weights")) __score0++;
+            if (__jsonProps.Contains("match")) __score0++;
             if (__jsonProps.Contains("mix_policy")) __score0++;
             if (__jsonProps.Contains("model")) __score0++;
             if (__jsonProps.Contains("palette")) __score0++;

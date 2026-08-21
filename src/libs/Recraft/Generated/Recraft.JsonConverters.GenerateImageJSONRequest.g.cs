@@ -54,6 +54,7 @@ namespace Recraft.JsonConverters
             if (__jsonProps.Contains("size")) __score0++;
             if (__jsonProps.Contains("style")) __score0++;
             if (__jsonProps.Contains("style_id")) __score0++;
+            if (__jsonProps.Contains("style_match")) __score0++;
             if (__jsonProps.Contains("substyle")) __score0++;
             if (__jsonProps.Contains("text_layout")) __score0++;
             if (__jsonProps.Contains("upscale")) __score0++;

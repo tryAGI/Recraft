@@ -3,10 +3,10 @@
 namespace Recraft.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class StyleModeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Recraft.StyleMode>
+    public sealed class StyleMatchNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Recraft.StyleMatch?>
     {
         /// <inheritdoc />
-        public override global::Recraft.StyleMode Read(
+        public override global::Recraft.StyleMatch? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace Recraft.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::Recraft.StyleModeExtensions.ToEnum(stringValue) ?? default;
+                        return global::Recraft.StyleMatchExtensions.ToEnum(stringValue);
                     }
                     
                     break;
@@ -26,11 +26,11 @@ namespace Recraft.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::Recraft.StyleMode)numValue;
+                    return (global::Recraft.StyleMatch)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::Recraft.StyleMode);
+                    return default(global::Recraft.StyleMatch?);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,12 +42,19 @@ namespace Recraft.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::Recraft.StyleMode value,
+            global::Recraft.StyleMatch? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::Recraft.StyleModeExtensions.ToValueString(value));
+            if (value == null)
+            {
+                writer.WriteNullValue();
+            }
+            else
+            {
+                writer.WriteStringValue(global::Recraft.StyleMatchExtensions.ToValueString(value.Value));
+            }
         }
     }
 }

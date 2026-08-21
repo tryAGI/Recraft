@@ -62,25 +62,6 @@ namespace Recraft
         public global::Recraft.ImageSize? Size { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("style")]
-        public string? Style { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("style_id")]
-        public global::System.Guid? StyleId { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("substyle")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.ImageSubStyleJsonConverter))]
-        public global::Recraft.ImageSubStyle? Substyle { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -97,9 +78,6 @@ namespace Recraft
         /// <param name="model"></param>
         /// <param name="responseFormat"></param>
         /// <param name="size"></param>
-        /// <param name="style"></param>
-        /// <param name="styleId"></param>
-        /// <param name="substyle"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -111,10 +89,7 @@ namespace Recraft
             global::Recraft.ImageFormat? imageFormat,
             global::Recraft.TransformModel? model,
             global::Recraft.ResponseFormat? responseFormat,
-            global::Recraft.ImageSize? size,
-            string? style,
-            global::System.Guid? styleId,
-            global::Recraft.ImageSubStyle? substyle)
+            global::Recraft.ImageSize? size)
         {
             this.BlockNsfw = blockNsfw;
             this.Controls = controls;
@@ -124,9 +99,6 @@ namespace Recraft
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.ResponseFormat = responseFormat;
             this.Size = size;
-            this.Style = style;
-            this.StyleId = styleId;
-            this.Substyle = substyle;
         }
 
         /// <summary>

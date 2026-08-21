@@ -100,6 +100,13 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("style_match")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.StyleMatchJsonConverter))]
+        public global::Recraft.StyleMatch? StyleMatch { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("substyle")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.ImageSubStyleJsonConverter))]
         public global::Recraft.ImageSubStyle? Substyle { get; set; }
@@ -133,6 +140,7 @@ namespace Recraft
         /// <param name="responseFormat"></param>
         /// <param name="style"></param>
         /// <param name="styleId"></param>
+        /// <param name="styleMatch"></param>
         /// <param name="substyle"></param>
         /// <param name="textLayout"></param>
 #if NET7_0_OR_GREATER
@@ -153,6 +161,7 @@ namespace Recraft
             global::Recraft.ResponseFormat? responseFormat,
             string? style,
             global::System.Guid? styleId,
+            global::Recraft.StyleMatch? styleMatch,
             global::Recraft.ImageSubStyle? substyle,
             global::System.Collections.Generic.IList<global::Recraft.TextLayoutItem>? textLayout)
         {
@@ -170,6 +179,7 @@ namespace Recraft
             this.ResponseFormat = responseFormat;
             this.Style = style;
             this.StyleId = styleId;
+            this.StyleMatch = styleMatch;
             this.Substyle = substyle;
             this.TextLayout = textLayout;
         }

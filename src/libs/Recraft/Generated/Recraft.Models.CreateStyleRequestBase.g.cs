@@ -18,8 +18,8 @@ namespace Recraft
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("match")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.StyleModeJsonConverter))]
-        public global::Recraft.StyleMode? Match { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.StyleMatchJsonConverter))]
+        public global::Recraft.StyleMatch? Match { get; set; }
 
         /// <summary>
         /// 
@@ -70,8 +70,7 @@ namespace Recraft
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("style")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.ImageStyleJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Recraft.ImageStyle Style { get; set; }
+        public global::Recraft.ImageStyle? Style { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -82,7 +81,6 @@ namespace Recraft
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateStyleRequestBase" /> class.
         /// </summary>
-        /// <param name="style"></param>
         /// <param name="imageWeights"></param>
         /// <param name="match"></param>
         /// <param name="mixPolicy"></param>
@@ -92,20 +90,21 @@ namespace Recraft
         /// <param name="prompt"></param>
         /// <param name="sourceStyleWeights"></param>
         /// <param name="sourceStyles"></param>
+        /// <param name="style"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateStyleRequestBase(
-            global::Recraft.ImageStyle style,
             global::System.Collections.Generic.IList<double>? imageWeights,
-            global::Recraft.StyleMode? match,
+            global::Recraft.StyleMatch? match,
             global::Recraft.MixPolicy? mixPolicy,
             global::Recraft.TransformModel? model,
             global::Recraft.PaletteSuggest? palette,
             bool? @private,
             string? prompt,
             global::System.Collections.Generic.IList<double>? sourceStyleWeights,
-            global::System.Collections.Generic.IList<global::System.Guid>? sourceStyles)
+            global::System.Collections.Generic.IList<global::System.Guid>? sourceStyles,
+            global::Recraft.ImageStyle? style)
         {
             this.ImageWeights = imageWeights;
             this.Match = match;

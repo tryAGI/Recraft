@@ -65,9 +65,9 @@ namespace Recraft
 
             typeof(global::Recraft.JsonConverters.SmallShapeFilterNullableJsonConverter),
 
-            typeof(global::Recraft.JsonConverters.StyleModeJsonConverter),
+            typeof(global::Recraft.JsonConverters.StyleMatchJsonConverter),
 
-            typeof(global::Recraft.JsonConverters.StyleModeNullableJsonConverter),
+            typeof(global::Recraft.JsonConverters.StyleMatchNullableJsonConverter),
 
             typeof(global::Recraft.JsonConverters.SvgCompressionJsonConverter),
 
@@ -148,7 +148,7 @@ namespace Recraft
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<byte[]>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(byte[]))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<double>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.StyleMode), TypeInfoPropertyName = "StyleMode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.StyleMatch), TypeInfoPropertyName = "StyleMatch2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.MixPolicy), TypeInfoPropertyName = "MixPolicy2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.PaletteSuggest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
@@ -171,13 +171,13 @@ namespace Recraft
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.ExploreRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.UserControls))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.ImageSize), TypeInfoPropertyName = "ImageSize2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.ImageSubStyle), TypeInfoPropertyName = "ImageSubStyle2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.ExploreSimilarRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.GenerateImageJSONRequest), TypeInfoPropertyName = "GenerateImageJSONRequest2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.GenerateImageRequestBase))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.GenerateImageJSONRequestVariant2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.GenerateImageRequest), TypeInfoPropertyName = "GenerateImageRequest2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.GenerateImageRequestVariant2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.ImageSubStyle), TypeInfoPropertyName = "ImageSubStyle2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Recraft.TextLayoutItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.UpscaleMode), TypeInfoPropertyName = "UpscaleMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.GenerateImageResponse))]

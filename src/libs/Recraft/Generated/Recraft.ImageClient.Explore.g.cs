@@ -455,9 +455,6 @@ namespace Recraft
         /// <param name="prompt"></param>
         /// <param name="responseFormat"></param>
         /// <param name="size"></param>
-        /// <param name="style"></param>
-        /// <param name="styleId"></param>
-        /// <param name="substyle"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -471,9 +468,6 @@ namespace Recraft
             global::Recraft.TransformModel? model = default,
             global::Recraft.ResponseFormat? responseFormat = default,
             global::Recraft.ImageSize? size = default,
-            string? style = default,
-            global::System.Guid? styleId = default,
-            global::Recraft.ImageSubStyle? substyle = default,
             global::Recraft.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -487,9 +481,6 @@ namespace Recraft
                 Prompt = prompt,
                 ResponseFormat = responseFormat,
                 Size = size,
-                Style = style,
-                StyleId = styleId,
-                Substyle = substyle,
             };
 
             return await ExploreAsync(

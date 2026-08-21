@@ -6,50 +6,50 @@ namespace Recraft
     /// <summary>
     /// 
     /// </summary>
-    public enum StyleMode
+    public enum StyleMatch
     {
         /// <summary>
         /// 
         /// </summary>
-        StyleModeFlexible,
+        StyleMatchFlexible,
         /// <summary>
         /// 
         /// </summary>
-        StyleModePrecise,
+        StyleMatchPrecise,
         /// <summary>
         /// 
         /// </summary>
-        StyleModeRegular,
+        StyleMatchRegular,
     }
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class StyleModeExtensions
+    public static class StyleMatchExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this StyleMode value)
+        public static string ToValueString(this StyleMatch value)
         {
             return value switch
             {
-                StyleMode.StyleModeFlexible => "flexible",
-                StyleMode.StyleModePrecise => "precise",
-                StyleMode.StyleModeRegular => "regular",
+                StyleMatch.StyleMatchFlexible => "flexible",
+                StyleMatch.StyleMatchPrecise => "precise",
+                StyleMatch.StyleMatchRegular => "regular",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static StyleMode? ToEnum(string value)
+        public static StyleMatch? ToEnum(string value)
         {
             return value switch
             {
-                "flexible" => StyleMode.StyleModeFlexible,
-                "precise" => StyleMode.StyleModePrecise,
-                "regular" => StyleMode.StyleModeRegular,
+                "flexible" => StyleMatch.StyleMatchFlexible,
+                "precise" => StyleMatch.StyleMatchPrecise,
+                "regular" => StyleMatch.StyleMatchRegular,
                 _ => null,
             };
         }

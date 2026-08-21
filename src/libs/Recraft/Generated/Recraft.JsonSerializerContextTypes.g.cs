@@ -100,7 +100,7 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.StyleMode? Type18 { get; set; }
+        public global::Recraft.StyleMatch? Type18 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -192,31 +192,31 @@ namespace Recraft
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.ImageSubStyle? Type41 { get; set; }
+        public global::Recraft.ExploreSimilarRequest? Type41 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.ExploreSimilarRequest? Type42 { get; set; }
+        public global::Recraft.GenerateImageJSONRequest? Type42 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.GenerateImageJSONRequest? Type43 { get; set; }
+        public global::Recraft.GenerateImageRequestBase? Type43 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.GenerateImageRequestBase? Type44 { get; set; }
+        public global::Recraft.GenerateImageJSONRequestVariant2? Type44 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.GenerateImageJSONRequestVariant2? Type45 { get; set; }
+        public global::Recraft.GenerateImageRequest? Type45 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.GenerateImageRequest? Type46 { get; set; }
+        public global::Recraft.GenerateImageRequestVariant2? Type46 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Recraft.GenerateImageRequestVariant2? Type47 { get; set; }
+        public global::Recraft.ImageSubStyle? Type47 { get; set; }
         /// <summary>
         /// 
         /// </summary>

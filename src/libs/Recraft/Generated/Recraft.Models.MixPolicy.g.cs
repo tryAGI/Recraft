@@ -4,16 +4,16 @@
 namespace Recraft
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum MixPolicy
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MaxWeight,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PaletteMatch,
     }

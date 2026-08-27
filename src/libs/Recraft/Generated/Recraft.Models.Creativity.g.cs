@@ -4,20 +4,20 @@
 namespace Recraft
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum Creativity
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Eccentric,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Simple,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Standard,
     }

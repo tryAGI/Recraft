@@ -4,16 +4,16 @@
 namespace Recraft
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum UpscaleMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Upscale16mp,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Upscale4mp,
     }

@@ -5,12 +5,12 @@
 namespace Recraft
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct CreateStyleResponse : global::System.IEquatable<CreateStyleResponse>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Recraft.Style? Style { get; init; }
@@ -19,7 +19,7 @@ namespace Recraft
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Style))]
@@ -27,7 +27,7 @@ namespace Recraft
         public bool IsStyle => Style != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickStyle(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Recraft.Style PickStyle() => IsStyle
             ? Style!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Style' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Recraft.CreateStyleResponseVariant2? CreateStyleResponseVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace Recraft
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CreateStyleResponseVariant2))]
@@ -64,7 +64,7 @@ namespace Recraft
         public bool IsCreateStyleResponseVariant2 => CreateStyleResponseVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCreateStyleResponseVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Recraft.CreateStyleResponseVariant2 PickCreateStyleResponseVariant2() => IsCreateStyleResponseVariant2
             ? CreateStyleResponseVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'CreateStyleResponseVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CreateStyleResponse(global::Recraft.Style value) => new CreateStyleResponse((global::Recraft.Style?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Recraft.Style?(CreateStyleResponse @this) => @this.Style;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CreateStyleResponse(global::Recraft.Style? value)
         {
@@ -101,22 +101,22 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CreateStyleResponse FromStyle(global::Recraft.Style? value) => new CreateStyleResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CreateStyleResponse(global::Recraft.CreateStyleResponseVariant2 value) => new CreateStyleResponse((global::Recraft.CreateStyleResponseVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Recraft.CreateStyleResponseVariant2?(CreateStyleResponse @this) => @this.CreateStyleResponseVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CreateStyleResponse(global::Recraft.CreateStyleResponseVariant2? value)
         {
@@ -124,12 +124,12 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CreateStyleResponse FromCreateStyleResponseVariant2(global::Recraft.CreateStyleResponseVariant2? value) => new CreateStyleResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CreateStyleResponse(
             global::Recraft.Style? style,
@@ -141,23 +141,23 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             CreateStyleResponseVariant2 as object ??
-            Style as object 
+            Style as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Style?.ToString() ??
-            CreateStyleResponseVariant2?.ToString() 
+            CreateStyleResponseVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Recraft.Style, TResult>? style = null,
@@ -190,7 +190,7 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Recraft.Style>? style = null,
@@ -214,7 +214,7 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Recraft.Style>? style = null,
@@ -237,7 +237,7 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(CreateStyleResponse other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Recraft.Style?>.Default.Equals(Style, other.Style) &&
-                global::System.Collections.Generic.EqualityComparer<global::Recraft.CreateStyleResponseVariant2?>.Default.Equals(CreateStyleResponseVariant2, other.CreateStyleResponseVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::Recraft.CreateStyleResponseVariant2?>.Default.Equals(CreateStyleResponseVariant2, other.CreateStyleResponseVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(CreateStyleResponse obj1, CreateStyleResponse obj2)
         {
@@ -277,7 +277,7 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(CreateStyleResponse obj1, CreateStyleResponse obj2)
         {
@@ -285,7 +285,7 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

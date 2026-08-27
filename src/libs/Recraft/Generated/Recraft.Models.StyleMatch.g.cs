@@ -4,20 +4,20 @@
 namespace Recraft
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum StyleMatch
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StyleMatchFlexible,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StyleMatchPrecise,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StyleMatchRegular,
     }

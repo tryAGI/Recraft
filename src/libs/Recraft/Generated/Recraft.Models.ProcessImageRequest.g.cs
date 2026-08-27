@@ -5,12 +5,12 @@
 namespace Recraft
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ProcessImageRequest : global::System.IEquatable<ProcessImageRequest>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Recraft.ProcessImageRequestBase? Base { get; init; }
@@ -19,7 +19,7 @@ namespace Recraft
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Base))]
@@ -27,7 +27,7 @@ namespace Recraft
         public bool IsBase => Base != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBase(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Recraft.ProcessImageRequestBase PickBase() => IsBase
             ? Base!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Recraft.ProcessImageRequestVariant2? ProcessImageRequestVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace Recraft
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ProcessImageRequestVariant2))]
@@ -64,7 +64,7 @@ namespace Recraft
         public bool IsProcessImageRequestVariant2 => ProcessImageRequestVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickProcessImageRequestVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Recraft.ProcessImageRequestVariant2 PickProcessImageRequestVariant2() => IsProcessImageRequestVariant2
             ? ProcessImageRequestVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ProcessImageRequestVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ProcessImageRequest(global::Recraft.ProcessImageRequestBase value) => new ProcessImageRequest((global::Recraft.ProcessImageRequestBase?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Recraft.ProcessImageRequestBase?(ProcessImageRequest @this) => @this.Base;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ProcessImageRequest(global::Recraft.ProcessImageRequestBase? value)
         {
@@ -101,22 +101,22 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ProcessImageRequest FromBase(global::Recraft.ProcessImageRequestBase? value) => new ProcessImageRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ProcessImageRequest(global::Recraft.ProcessImageRequestVariant2 value) => new ProcessImageRequest((global::Recraft.ProcessImageRequestVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Recraft.ProcessImageRequestVariant2?(ProcessImageRequest @this) => @this.ProcessImageRequestVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ProcessImageRequest(global::Recraft.ProcessImageRequestVariant2? value)
         {
@@ -124,12 +124,12 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ProcessImageRequest FromProcessImageRequestVariant2(global::Recraft.ProcessImageRequestVariant2? value) => new ProcessImageRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ProcessImageRequest(
             global::Recraft.ProcessImageRequestBase? @base,
@@ -141,23 +141,23 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ProcessImageRequestVariant2 as object ??
-            Base as object 
+            Base as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Base?.ToString() ??
-            ProcessImageRequestVariant2?.ToString() 
+            ProcessImageRequestVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Recraft.ProcessImageRequestBase, TResult>? @base = null,
@@ -190,7 +190,7 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Recraft.ProcessImageRequestBase>? @base = null,
@@ -214,7 +214,7 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Recraft.ProcessImageRequestBase>? @base = null,
@@ -237,7 +237,7 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ProcessImageRequest other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Recraft.ProcessImageRequestBase?>.Default.Equals(Base, other.Base) &&
-                global::System.Collections.Generic.EqualityComparer<global::Recraft.ProcessImageRequestVariant2?>.Default.Equals(ProcessImageRequestVariant2, other.ProcessImageRequestVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::Recraft.ProcessImageRequestVariant2?>.Default.Equals(ProcessImageRequestVariant2, other.ProcessImageRequestVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ProcessImageRequest obj1, ProcessImageRequest obj2)
         {
@@ -277,7 +277,7 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ProcessImageRequest obj1, ProcessImageRequest obj2)
         {
@@ -285,7 +285,7 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

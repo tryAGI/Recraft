@@ -4,424 +4,424 @@
 namespace Recraft
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ImageSubStyle
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x2dArtPoster,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x2dArtPoster2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x3d,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x80s,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Antiquarian,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BAndW,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BoldFantasy,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BoldStroke,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BrokenLine,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cartoon,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Chemistry,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ChildBook,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ColoredOutline,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ColoredShapes,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ColoredShapesGradient,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ColoredStencil,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cosmics,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cover,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Crosshatch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cutout,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Depressive,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DigitalEngraving,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoodleFill,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoodleLineArt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoodleOffsetFill,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Editorial,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EmblemGraffiti,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EmblemPopArt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EmblemPunk,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EmblemStamp,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EmblemVintage,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EmotionalFlat,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Engraving,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EngravingColor,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Enterprise,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EveningLight,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Expressionism,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FadedNostalgia,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Flat2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ForestLife,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FreehandDetails,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Glow,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Grain,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Grain20,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GraphicIntensity,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         HandDrawn,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         HandDrawnOutline,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Handmade3d,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         HardComics,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         HardFlash,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Hdr,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InfantileSketch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Kawaii,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LineArt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LineCircuit,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Linocut,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LongShadow,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MarkerOutline,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ModernFolk,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mosaic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MotionBlur,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Multicolor,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MysticNaturalism,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Naivector,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NaturalLight,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NaturalTones,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NeonCalm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Noir,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NostalgicPastel,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OffsetFill,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OrganicCalm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Outline,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OutlineDetails,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OutlineGradient,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PastelGradient,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PastelSketch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pictogram,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PixelArt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Plastic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PopArt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PopRenaissance,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Psychedelic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RealLifeGlow,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RetroRealism,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RetroSnapshot,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RoundishFlat,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Seamless,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SegmentedColors,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SharpContrast,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StreetArt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StudioPortrait,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TabletSketch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Thin,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UrbanDrama,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UrbanGlow,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UrbanSketching,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         VectorPhoto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         VillageRealism,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         VividShapes,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Voxel,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WarmFolk,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Watercolor,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         YoungAdultBook,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         YoungAdultBook2,
     }

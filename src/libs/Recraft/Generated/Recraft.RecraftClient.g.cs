@@ -10,7 +10,7 @@ namespace Recraft
     public sealed partial class RecraftClient : global::Recraft.IRecraftClient, global::System.IDisposable
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public const string DefaultBaseUrl = "https://external.api.recraft.ai/";
 
@@ -37,7 +37,7 @@ namespace Recraft
         internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::Recraft.SourceGenerationContext.Default);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
         {
@@ -47,7 +47,7 @@ namespace Recraft
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ColorsClient Colors => new ColorsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -56,7 +56,7 @@ namespace Recraft
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ImageClient Image => new ImageClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -65,7 +65,7 @@ namespace Recraft
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ModelClient Model => new ModelClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -74,7 +74,7 @@ namespace Recraft
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PromptClient Prompt => new PromptClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -83,7 +83,7 @@ namespace Recraft
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StyleClient Style => new StyleClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -92,7 +92,7 @@ namespace Recraft
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public UserClient User => new UserClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {

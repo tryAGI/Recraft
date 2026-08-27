@@ -5,12 +5,12 @@
 namespace Recraft
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct EraseRegionJSONRequest : global::System.IEquatable<EraseRegionJSONRequest>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Recraft.EraseRegionRequestBase? Base { get; init; }
@@ -19,7 +19,7 @@ namespace Recraft
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Base))]
@@ -27,7 +27,7 @@ namespace Recraft
         public bool IsBase => Base != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBase(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Recraft.EraseRegionRequestBase PickBase() => IsBase
             ? Base!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Recraft.EraseRegionJSONRequestVariant2? EraseRegionJSONRequestVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace Recraft
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EraseRegionJSONRequestVariant2))]
@@ -64,7 +64,7 @@ namespace Recraft
         public bool IsEraseRegionJSONRequestVariant2 => EraseRegionJSONRequestVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEraseRegionJSONRequestVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Recraft.EraseRegionJSONRequestVariant2 PickEraseRegionJSONRequestVariant2() => IsEraseRegionJSONRequestVariant2
             ? EraseRegionJSONRequestVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'EraseRegionJSONRequestVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EraseRegionJSONRequest(global::Recraft.EraseRegionRequestBase value) => new EraseRegionJSONRequest((global::Recraft.EraseRegionRequestBase?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Recraft.EraseRegionRequestBase?(EraseRegionJSONRequest @this) => @this.Base;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EraseRegionJSONRequest(global::Recraft.EraseRegionRequestBase? value)
         {
@@ -101,22 +101,22 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EraseRegionJSONRequest FromBase(global::Recraft.EraseRegionRequestBase? value) => new EraseRegionJSONRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EraseRegionJSONRequest(global::Recraft.EraseRegionJSONRequestVariant2 value) => new EraseRegionJSONRequest((global::Recraft.EraseRegionJSONRequestVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Recraft.EraseRegionJSONRequestVariant2?(EraseRegionJSONRequest @this) => @this.EraseRegionJSONRequestVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EraseRegionJSONRequest(global::Recraft.EraseRegionJSONRequestVariant2? value)
         {
@@ -124,12 +124,12 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EraseRegionJSONRequest FromEraseRegionJSONRequestVariant2(global::Recraft.EraseRegionJSONRequestVariant2? value) => new EraseRegionJSONRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EraseRegionJSONRequest(
             global::Recraft.EraseRegionRequestBase? @base,
@@ -141,23 +141,23 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             EraseRegionJSONRequestVariant2 as object ??
-            Base as object 
+            Base as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Base?.ToString() ??
-            EraseRegionJSONRequestVariant2?.ToString() 
+            EraseRegionJSONRequestVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Recraft.EraseRegionRequestBase, TResult>? @base = null,
@@ -190,7 +190,7 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Recraft.EraseRegionRequestBase>? @base = null,
@@ -214,7 +214,7 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Recraft.EraseRegionRequestBase>? @base = null,
@@ -237,7 +237,7 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(EraseRegionJSONRequest other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Recraft.EraseRegionRequestBase?>.Default.Equals(Base, other.Base) &&
-                global::System.Collections.Generic.EqualityComparer<global::Recraft.EraseRegionJSONRequestVariant2?>.Default.Equals(EraseRegionJSONRequestVariant2, other.EraseRegionJSONRequestVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::Recraft.EraseRegionJSONRequestVariant2?>.Default.Equals(EraseRegionJSONRequestVariant2, other.EraseRegionJSONRequestVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(EraseRegionJSONRequest obj1, EraseRegionJSONRequest obj2)
         {
@@ -277,7 +277,7 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(EraseRegionJSONRequest obj1, EraseRegionJSONRequest obj2)
         {
@@ -285,7 +285,7 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

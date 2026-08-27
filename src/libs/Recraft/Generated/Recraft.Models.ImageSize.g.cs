@@ -4,232 +4,232 @@
 namespace Recraft
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ImageSize
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1024x1024,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1024x1280,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1024x1365,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1024x1434,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1024x1536,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1024x1707,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1024x1820,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1024x2048,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x10_14,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1152x896,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1216x896,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1280x1024,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1280x832,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1280x896,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1344x768,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1365x1024,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1434x1024,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x14_10,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1536x1024,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1536x2688,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1536x3072,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1536x768,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1664x2560,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1664x2688,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x16_9,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1707x1024,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1792x2304,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1792x2432,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1792x2560,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1820x1024,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1_1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1_2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x2048x1024,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x2048x2048,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x2304x1792,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x2432x1792,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x2560x1664,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x2560x1792,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x2688x1536,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x2_1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x2_3,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x3072x1536,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x3_2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x3_4,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x4_3,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x4_5,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x5_4,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x6_10,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x768x1344,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x768x1536,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x832x1280,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x832x1344,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x896x1152,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x896x1216,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x896x1280,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x9_16,
     }

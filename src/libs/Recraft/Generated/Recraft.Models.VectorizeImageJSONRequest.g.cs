@@ -5,12 +5,12 @@
 namespace Recraft
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct VectorizeImageJSONRequest : global::System.IEquatable<VectorizeImageJSONRequest>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Recraft.VectorizeImageRequestBase? Base { get; init; }
@@ -19,7 +19,7 @@ namespace Recraft
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Base))]
@@ -27,7 +27,7 @@ namespace Recraft
         public bool IsBase => Base != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBase(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Recraft.VectorizeImageRequestBase PickBase() => IsBase
             ? Base!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Recraft.VectorizeImageJSONRequestVariant2? VectorizeImageJSONRequestVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace Recraft
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorizeImageJSONRequestVariant2))]
@@ -64,7 +64,7 @@ namespace Recraft
         public bool IsVectorizeImageJSONRequestVariant2 => VectorizeImageJSONRequestVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickVectorizeImageJSONRequestVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Recraft.VectorizeImageJSONRequestVariant2 PickVectorizeImageJSONRequestVariant2() => IsVectorizeImageJSONRequestVariant2
             ? VectorizeImageJSONRequestVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'VectorizeImageJSONRequestVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator VectorizeImageJSONRequest(global::Recraft.VectorizeImageRequestBase value) => new VectorizeImageJSONRequest((global::Recraft.VectorizeImageRequestBase?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Recraft.VectorizeImageRequestBase?(VectorizeImageJSONRequest @this) => @this.Base;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public VectorizeImageJSONRequest(global::Recraft.VectorizeImageRequestBase? value)
         {
@@ -101,22 +101,22 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static VectorizeImageJSONRequest FromBase(global::Recraft.VectorizeImageRequestBase? value) => new VectorizeImageJSONRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator VectorizeImageJSONRequest(global::Recraft.VectorizeImageJSONRequestVariant2 value) => new VectorizeImageJSONRequest((global::Recraft.VectorizeImageJSONRequestVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Recraft.VectorizeImageJSONRequestVariant2?(VectorizeImageJSONRequest @this) => @this.VectorizeImageJSONRequestVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public VectorizeImageJSONRequest(global::Recraft.VectorizeImageJSONRequestVariant2? value)
         {
@@ -124,12 +124,12 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static VectorizeImageJSONRequest FromVectorizeImageJSONRequestVariant2(global::Recraft.VectorizeImageJSONRequestVariant2? value) => new VectorizeImageJSONRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public VectorizeImageJSONRequest(
             global::Recraft.VectorizeImageRequestBase? @base,
@@ -141,23 +141,23 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             VectorizeImageJSONRequestVariant2 as object ??
-            Base as object 
+            Base as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Base?.ToString() ??
-            VectorizeImageJSONRequestVariant2?.ToString() 
+            VectorizeImageJSONRequestVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Recraft.VectorizeImageRequestBase?, TResult>? @base = null,
@@ -190,7 +190,7 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Recraft.VectorizeImageRequestBase?>? @base = null,
@@ -214,7 +214,7 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Recraft.VectorizeImageRequestBase?>? @base = null,
@@ -237,7 +237,7 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(VectorizeImageJSONRequest other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Recraft.VectorizeImageRequestBase?>.Default.Equals(Base, other.Base) &&
-                global::System.Collections.Generic.EqualityComparer<global::Recraft.VectorizeImageJSONRequestVariant2?>.Default.Equals(VectorizeImageJSONRequestVariant2, other.VectorizeImageJSONRequestVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::Recraft.VectorizeImageJSONRequestVariant2?>.Default.Equals(VectorizeImageJSONRequestVariant2, other.VectorizeImageJSONRequestVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(VectorizeImageJSONRequest obj1, VectorizeImageJSONRequest obj2)
         {
@@ -277,7 +277,7 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(VectorizeImageJSONRequest obj1, VectorizeImageJSONRequest obj2)
         {
@@ -285,7 +285,7 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -4,528 +4,528 @@
 namespace Recraft
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum TransformModel
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BytedanceSeedreamv4,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BytedanceSeedance1p5,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BytedanceSeedance2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BytedanceSeedance2Fast,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BytedanceSeedance2p5,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BytedanceSeedreamv4p5,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BytedanceSeedreamv5Lite,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BytedanceSeedreamv5Pro,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cosmos3Super,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Flux11pro,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Flux1KontextMax,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Flux1KontextPro,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Flux1Schnell,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Flux1dev,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Flux2Dev,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Flux2Flex,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Flux2Max,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Flux2Pro,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Flux3Video,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gemini25FlashImage,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GeminiOmniFlash,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GptImage1High,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GptImage1Low,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GptImage1Medium,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GptImage1p5High,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GptImage1p5Low,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GptImage1p5Medium,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GptImage2High,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GptImage2Low,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GptImage2Medium,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GrokImagineImage,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GrokImagineImage2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GrokImagineVideo,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GrokImagineVideo1p5,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Hailuo02Pro,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Hailuo02Standard,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Hailuo2p3Pro,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Hailuo2p3Standard,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         HappyHorse1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         HappyHorse1p1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         HidreamI1Dev,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IdeogramV3Default,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IdeogramV3Quality,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IdeogramV3Turbo,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IdeogramV4Balanced,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IdeogramV4Quality,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IdeogramV4Turbo,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Imagen3,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Imagen4,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Imagen4Ultra,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Imagineart2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Kling2p1Master,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Kling2p5Turbo,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Kling2p6Pro,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Kling3OmniPro,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Kling3OmniStandard,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Kling3Pro,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Kling3Standard,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Kling3Turbo,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Krea2Large,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Krea2Medium,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Krea2Turbo,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Minimaxh3,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NanoBanana2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NanoBanana2Lite,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NanoBanana2With4k,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NanoBananaPro,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NanoBananaPro4k,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PixverseV5p5,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PixverseV5p6,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PixverseV6,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         QwenImage,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         QwenImage2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         QwenImage2Pro,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         QwenImage3,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         QwenImage32k,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ray2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ray2Flash,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Recraft20b,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RecraftGenerativeUpscale,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RecraftSuperResolution,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Recraftv2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Recraftv2Raster,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Recraftv2Vector,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Recraftv3,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Recraftv3Raster,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Recraftv3Vector,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Recraftv4,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Recraftv41,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Recraftv41Pro,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Recraftv41ProRaster,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Recraftv41ProVector,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Recraftv41Raster,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Recraftv41Utility,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Recraftv41UtilityPro,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Recraftv41UtilityProRaster,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Recraftv41UtilityProVector,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Recraftv41UtilityRaster,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Recraftv41UtilityVector,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Recraftv41Vector,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Recraftv4Explore,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Recraftv4ExploreRaster,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Recraftv4ExploreVector,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Recraftv4Pro,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Recraftv4ProRaster,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Recraftv4ProVector,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Recraftv4Raster,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Recraftv4Styles,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Recraftv4StylesPro,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Recraftv4StylesProRaster,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Recraftv4StylesProVector,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Recraftv4StylesRaster,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Recraftv4StylesVector,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Recraftv4Vector,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Refm1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Reve21,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sora2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sora2Pro,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Topaz,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Veo2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Veo3,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Veo3Fast,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Veo3p1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Veo3p1Fast,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Veo3p1Lite,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Wan2p2A14b,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Wan2p5Preview,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Wan2p6,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Wan2p7,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ZImageTurbo,
     }

@@ -4,7 +4,7 @@
 namespace Recraft
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ProcessImageJSONRequestVariant2
     {

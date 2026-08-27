@@ -10,7 +10,7 @@ namespace Recraft
     public sealed partial class ImageClient : global::Recraft.IImageClient, global::System.IDisposable
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public const string DefaultBaseUrl = "https://external.api.recraft.ai/";
 
@@ -37,7 +37,7 @@ namespace Recraft
         internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::Recraft.SourceGenerationContext.Default);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
         {

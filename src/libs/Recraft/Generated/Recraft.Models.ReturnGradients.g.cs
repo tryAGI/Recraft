@@ -4,16 +4,16 @@
 namespace Recraft
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ReturnGradients
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReturnGradientsOff,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReturnGradientsOn,
     }

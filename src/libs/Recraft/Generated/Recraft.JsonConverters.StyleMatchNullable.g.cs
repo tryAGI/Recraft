@@ -20,7 +20,7 @@ namespace Recraft.JsonConverters
                     {
                         return global::Recraft.StyleMatchExtensions.ToEnum(stringValue);
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

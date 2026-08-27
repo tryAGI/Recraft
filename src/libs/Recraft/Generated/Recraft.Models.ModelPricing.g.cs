@@ -4,12 +4,12 @@
 namespace Recraft
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ModelPricing
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image")]
         [global::System.Text.Json.Serialization.JsonRequired]

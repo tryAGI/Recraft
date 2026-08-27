@@ -4,16 +4,16 @@
 namespace Recraft
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ColorReduction
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Off,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         On,
     }

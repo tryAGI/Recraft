@@ -4,12 +4,12 @@
 namespace Recraft
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CreateStyleResponseVariant2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("credits")]
         [global::System.Text.Json.Serialization.JsonRequired]

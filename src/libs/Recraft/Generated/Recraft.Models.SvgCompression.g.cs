@@ -4,16 +4,16 @@
 namespace Recraft
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum SvgCompression
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SvgCompressionOff,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SvgCompressionOn,
     }

@@ -4,12 +4,12 @@
 namespace Recraft
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ImageToImageRequestVariant2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("strength")]
         [global::System.Text.Json.Serialization.JsonRequired]

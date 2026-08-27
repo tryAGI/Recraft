@@ -4,18 +4,18 @@
 namespace Recraft
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class PaletteSuggest
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("background_color")]
         public global::Recraft.ImageColor? BackgroundColor { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("colors")]
         [global::System.Text.Json.Serialization.JsonRequired]

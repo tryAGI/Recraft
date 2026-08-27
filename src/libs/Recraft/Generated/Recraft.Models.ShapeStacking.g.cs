@@ -4,16 +4,16 @@
 namespace Recraft
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ShapeStacking
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShapeStackingCutOut,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShapeStackingHierarchical,
     }

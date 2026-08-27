@@ -20,7 +20,7 @@ namespace Recraft.JsonConverters
                     {
                         return global::Recraft.ImageStyleExtensions.ToEnum(stringValue) ?? default;
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

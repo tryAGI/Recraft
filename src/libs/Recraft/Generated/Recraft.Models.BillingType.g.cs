@@ -4,16 +4,16 @@
 namespace Recraft
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BillingType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BillingTypeAPI,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BillingTypeSubscription,
     }

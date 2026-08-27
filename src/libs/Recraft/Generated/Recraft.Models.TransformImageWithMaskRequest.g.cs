@@ -5,12 +5,12 @@
 namespace Recraft
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct TransformImageWithMaskRequest : global::System.IEquatable<TransformImageWithMaskRequest>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Recraft.TransformImageRequestBase? Base { get; init; }
@@ -19,7 +19,7 @@ namespace Recraft
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Base))]
@@ -27,7 +27,7 @@ namespace Recraft
         public bool IsBase => Base != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBase(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Recraft.TransformImageRequestBase PickBase() => IsBase
             ? Base!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Recraft.TransformImageWithMaskRequestVariant2? TransformImageWithMaskRequestVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace Recraft
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TransformImageWithMaskRequestVariant2))]
@@ -64,7 +64,7 @@ namespace Recraft
         public bool IsTransformImageWithMaskRequestVariant2 => TransformImageWithMaskRequestVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTransformImageWithMaskRequestVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Recraft.TransformImageWithMaskRequestVariant2 PickTransformImageWithMaskRequestVariant2() => IsTransformImageWithMaskRequestVariant2
             ? TransformImageWithMaskRequestVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'TransformImageWithMaskRequestVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator TransformImageWithMaskRequest(global::Recraft.TransformImageRequestBase value) => new TransformImageWithMaskRequest((global::Recraft.TransformImageRequestBase?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Recraft.TransformImageRequestBase?(TransformImageWithMaskRequest @this) => @this.Base;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TransformImageWithMaskRequest(global::Recraft.TransformImageRequestBase? value)
         {
@@ -101,22 +101,22 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static TransformImageWithMaskRequest FromBase(global::Recraft.TransformImageRequestBase? value) => new TransformImageWithMaskRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator TransformImageWithMaskRequest(global::Recraft.TransformImageWithMaskRequestVariant2 value) => new TransformImageWithMaskRequest((global::Recraft.TransformImageWithMaskRequestVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Recraft.TransformImageWithMaskRequestVariant2?(TransformImageWithMaskRequest @this) => @this.TransformImageWithMaskRequestVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TransformImageWithMaskRequest(global::Recraft.TransformImageWithMaskRequestVariant2? value)
         {
@@ -124,12 +124,12 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static TransformImageWithMaskRequest FromTransformImageWithMaskRequestVariant2(global::Recraft.TransformImageWithMaskRequestVariant2? value) => new TransformImageWithMaskRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TransformImageWithMaskRequest(
             global::Recraft.TransformImageRequestBase? @base,
@@ -141,23 +141,23 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             TransformImageWithMaskRequestVariant2 as object ??
-            Base as object 
+            Base as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Base?.ToString() ??
-            TransformImageWithMaskRequestVariant2?.ToString() 
+            TransformImageWithMaskRequestVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Recraft.TransformImageRequestBase, TResult>? @base = null,
@@ -190,7 +190,7 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Recraft.TransformImageRequestBase>? @base = null,
@@ -214,7 +214,7 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Recraft.TransformImageRequestBase>? @base = null,
@@ -237,7 +237,7 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(TransformImageWithMaskRequest other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Recraft.TransformImageRequestBase?>.Default.Equals(Base, other.Base) &&
-                global::System.Collections.Generic.EqualityComparer<global::Recraft.TransformImageWithMaskRequestVariant2?>.Default.Equals(TransformImageWithMaskRequestVariant2, other.TransformImageWithMaskRequestVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::Recraft.TransformImageWithMaskRequestVariant2?>.Default.Equals(TransformImageWithMaskRequestVariant2, other.TransformImageWithMaskRequestVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(TransformImageWithMaskRequest obj1, TransformImageWithMaskRequest obj2)
         {
@@ -277,7 +277,7 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(TransformImageWithMaskRequest obj1, TransformImageWithMaskRequest obj2)
         {
@@ -285,7 +285,7 @@ namespace Recraft
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

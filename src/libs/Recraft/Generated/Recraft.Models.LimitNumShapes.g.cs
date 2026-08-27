@@ -4,16 +4,16 @@
 namespace Recraft
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum LimitNumShapes
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LimitNumShapesOff,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LimitNumShapesOn,
     }

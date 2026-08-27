@@ -4,32 +4,32 @@
 namespace Recraft
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ImageStyle
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Any,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DigitalIllustration,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Icon,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LogoRaster,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RealisticImage,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         VectorIllustration,
     }

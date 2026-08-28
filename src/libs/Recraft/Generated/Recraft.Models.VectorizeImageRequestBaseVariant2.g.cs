@@ -25,6 +25,12 @@ namespace Recraft
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_num_colors")]
+        public int? MaxNumColors { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_num_shapes")]
         public int? MaxNumShapes { get; set; }
 
@@ -73,6 +79,7 @@ namespace Recraft
         /// </summary>
         /// <param name="colorReduction"></param>
         /// <param name="limitNumShapes"></param>
+        /// <param name="maxNumColors"></param>
         /// <param name="maxNumShapes"></param>
         /// <param name="returnGradients"></param>
         /// <param name="shapeStacking"></param>
@@ -85,6 +92,7 @@ namespace Recraft
         public VectorizeImageRequestBaseVariant2(
             global::Recraft.ColorReduction? colorReduction,
             global::Recraft.LimitNumShapes? limitNumShapes,
+            int? maxNumColors,
             int? maxNumShapes,
             global::Recraft.ReturnGradients? returnGradients,
             global::Recraft.ShapeStacking? shapeStacking,
@@ -94,6 +102,7 @@ namespace Recraft
         {
             this.ColorReduction = colorReduction;
             this.LimitNumShapes = limitNumShapes;
+            this.MaxNumColors = maxNumColors;
             this.MaxNumShapes = maxNumShapes;
             this.ReturnGradients = returnGradients;
             this.ShapeStacking = shapeStacking;

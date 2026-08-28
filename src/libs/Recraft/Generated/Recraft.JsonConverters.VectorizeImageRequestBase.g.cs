@@ -35,6 +35,7 @@ namespace Recraft.JsonConverters
             var __score1 = 0;
             if (__jsonProps.Contains("color_reduction")) __score1++;
             if (__jsonProps.Contains("limit_num_shapes")) __score1++;
+            if (__jsonProps.Contains("max_num_colors")) __score1++;
             if (__jsonProps.Contains("max_num_shapes")) __score1++;
             if (__jsonProps.Contains("return_gradients")) __score1++;
             if (__jsonProps.Contains("shape_stacking")) __score1++;

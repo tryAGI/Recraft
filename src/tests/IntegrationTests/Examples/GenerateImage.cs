@@ -16,7 +16,7 @@ public partial class Tests
         using var client = GetAuthenticatedClient();
 
         GenerateImageResponse response = await client.Image.GenerateImageAsync(
-            request: new GenerateImageRequest
+            request: new GenerateImageRequestBase
             {
                 Prompt = "A serene mountain landscape at sunset",
                 Size = ImageSize.x1024x1024,

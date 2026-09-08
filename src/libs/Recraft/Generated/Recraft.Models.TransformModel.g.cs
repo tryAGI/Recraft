@@ -95,6 +95,10 @@ namespace Recraft
         /// <summary>
         ///
         /// </summary>
+        GeminiOmniFlash1p1,
+        /// <summary>
+        ///
+        /// </summary>
         GptImage1High,
         /// <summary>
         ///
@@ -263,6 +267,14 @@ namespace Recraft
         /// <summary>
         ///
         /// </summary>
+        Minimaxh3Max,
+        /// <summary>
+        ///
+        /// </summary>
+        Minimaxh3MaxTurbo,
+        /// <summary>
+        ///
+        /// </summary>
         NanoBanana2,
         /// <summary>
         ///
@@ -411,6 +423,14 @@ namespace Recraft
         /// <summary>
         ///
         /// </summary>
+        Recraftv4Draft,
+        /// <summary>
+        ///
+        /// </summary>
+        Recraftv4DraftRaster,
+        /// <summary>
+        ///
+        /// </summary>
         Recraftv4Explore,
         /// <summary>
         ///
@@ -527,6 +547,10 @@ namespace Recraft
         /// <summary>
         ///
         /// </summary>
+        Wan3,
+        /// <summary>
+        ///
+        /// </summary>
         ZImageTurbo,
     }
 
@@ -563,6 +587,7 @@ namespace Recraft
                 TransformModel.Flux3Video => "flux3_video",
                 TransformModel.Gemini25FlashImage => "gemini_25_flash_image",
                 TransformModel.GeminiOmniFlash => "gemini_omni_flash",
+                TransformModel.GeminiOmniFlash1p1 => "gemini_omni_flash_1p1",
                 TransformModel.GptImage1High => "gpt_image_1_high",
                 TransformModel.GptImage1Low => "gpt_image_1_low",
                 TransformModel.GptImage1Medium => "gpt_image_1_medium",
@@ -605,6 +630,8 @@ namespace Recraft
                 TransformModel.Krea2Medium => "krea_2_medium",
                 TransformModel.Krea2Turbo => "krea_2_turbo",
                 TransformModel.Minimaxh3 => "minimaxh3",
+                TransformModel.Minimaxh3Max => "minimaxh3_max",
+                TransformModel.Minimaxh3MaxTurbo => "minimaxh3_max_turbo",
                 TransformModel.NanoBanana2 => "nano_banana_2",
                 TransformModel.NanoBanana2Lite => "nano_banana_2_lite",
                 TransformModel.NanoBanana2With4k => "nano_banana_2_with_4k",
@@ -642,6 +669,8 @@ namespace Recraft
                 TransformModel.Recraftv41UtilityRaster => "recraftv4_1_utility_raster",
                 TransformModel.Recraftv41UtilityVector => "recraftv4_1_utility_vector",
                 TransformModel.Recraftv41Vector => "recraftv4_1_vector",
+                TransformModel.Recraftv4Draft => "recraftv4_draft",
+                TransformModel.Recraftv4DraftRaster => "recraftv4_draft_raster",
                 TransformModel.Recraftv4Explore => "recraftv4_explore",
                 TransformModel.Recraftv4ExploreRaster => "recraftv4_explore_raster",
                 TransformModel.Recraftv4ExploreVector => "recraftv4_explore_vector",
@@ -671,6 +700,7 @@ namespace Recraft
                 TransformModel.Wan2p5Preview => "wan2p5_preview",
                 TransformModel.Wan2p6 => "wan2p6",
                 TransformModel.Wan2p7 => "wan2p7",
+                TransformModel.Wan3 => "wan3",
                 TransformModel.ZImageTurbo => "z_image_turbo",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -703,6 +733,7 @@ namespace Recraft
                 "flux3_video" => TransformModel.Flux3Video,
                 "gemini_25_flash_image" => TransformModel.Gemini25FlashImage,
                 "gemini_omni_flash" => TransformModel.GeminiOmniFlash,
+                "gemini_omni_flash_1p1" => TransformModel.GeminiOmniFlash1p1,
                 "gpt_image_1_high" => TransformModel.GptImage1High,
                 "gpt_image_1_low" => TransformModel.GptImage1Low,
                 "gpt_image_1_medium" => TransformModel.GptImage1Medium,
@@ -745,6 +776,8 @@ namespace Recraft
                 "krea_2_medium" => TransformModel.Krea2Medium,
                 "krea_2_turbo" => TransformModel.Krea2Turbo,
                 "minimaxh3" => TransformModel.Minimaxh3,
+                "minimaxh3_max" => TransformModel.Minimaxh3Max,
+                "minimaxh3_max_turbo" => TransformModel.Minimaxh3MaxTurbo,
                 "nano_banana_2" => TransformModel.NanoBanana2,
                 "nano_banana_2_lite" => TransformModel.NanoBanana2Lite,
                 "nano_banana_2_with_4k" => TransformModel.NanoBanana2With4k,
@@ -782,6 +815,8 @@ namespace Recraft
                 "recraftv4_1_utility_raster" => TransformModel.Recraftv41UtilityRaster,
                 "recraftv4_1_utility_vector" => TransformModel.Recraftv41UtilityVector,
                 "recraftv4_1_vector" => TransformModel.Recraftv41Vector,
+                "recraftv4_draft" => TransformModel.Recraftv4Draft,
+                "recraftv4_draft_raster" => TransformModel.Recraftv4DraftRaster,
                 "recraftv4_explore" => TransformModel.Recraftv4Explore,
                 "recraftv4_explore_raster" => TransformModel.Recraftv4ExploreRaster,
                 "recraftv4_explore_vector" => TransformModel.Recraftv4ExploreVector,
@@ -811,6 +846,7 @@ namespace Recraft
                 "wan2p5_preview" => TransformModel.Wan2p5Preview,
                 "wan2p6" => TransformModel.Wan2p6,
                 "wan2p7" => TransformModel.Wan2p7,
+                "wan3" => TransformModel.Wan3,
                 "z_image_turbo" => TransformModel.ZImageTurbo,
                 _ => null,
             };

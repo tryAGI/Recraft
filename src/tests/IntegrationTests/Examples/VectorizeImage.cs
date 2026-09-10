@@ -20,12 +20,11 @@ public partial class Tests
 
         // Create a placeholder 1x1 pixel PNG for demonstration
         var imageBytes = new byte[] { 0x89, 0x50, 0x4E, 0x47 };
-        var imageDataUrl = $"data:image/png;base64,{Convert.ToBase64String(imageBytes)}";
 
         ProcessImageResponse response = await client.Image.VectorizeImageAsync(
-            request: new VectorizeImageJSONRequestVariant2
+            request: new VectorizeImageRequestVariant2
             {
-                ImageUrl = imageDataUrl,
+                Image = imageBytes,
             });
 
         response.Should().NotBeNull();

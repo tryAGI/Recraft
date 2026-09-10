@@ -47,22 +47,7 @@ namespace Recraft
         /// <summary>
         ///
         /// </summary>
-        public ColorsClient Colors { get; }
-
-        /// <summary>
-        ///
-        /// </summary>
         public ImageClient Image { get; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public ModelClient Model { get; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public PromptClient Prompt { get; }
 
         /// <summary>
         ///

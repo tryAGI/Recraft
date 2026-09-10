@@ -27,13 +27,11 @@ namespace Recraft
             };
         partial void PrepareImageToImageArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::Recraft.BillingType? billing,
-            global::Recraft.ImageToImageJSONRequest request);
+            global::Recraft.ImageToImageRequest request);
         partial void PrepareImageToImageRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::Recraft.BillingType? billing,
-            global::Recraft.ImageToImageJSONRequest request);
+            global::Recraft.ImageToImageRequest request);
         partial void ProcessImageToImageResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -46,22 +44,19 @@ namespace Recraft
         /// <summary>
         /// Generate image from image and prompt
         /// </summary>
-        /// <param name="billing"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Recraft.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> ImageToImageAsync(
 
-            global::Recraft.ImageToImageJSONRequest request,
-            global::Recraft.BillingType? billing = default,
+            global::Recraft.ImageToImageRequest request,
             global::Recraft.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await ImageToImageAsResponseAsync(
 
                 request: request,
-                billing: billing,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -71,15 +66,13 @@ namespace Recraft
         /// <summary>
         /// Generate image from image and prompt
         /// </summary>
-        /// <param name="billing"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Recraft.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Recraft.AutoSDKHttpResponse<global::Recraft.GenerateImageResponse>> ImageToImageAsResponseAsync(
 
-            global::Recraft.ImageToImageJSONRequest request,
-            global::Recraft.BillingType? billing = default,
+            global::Recraft.ImageToImageRequest request,
             global::Recraft.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -87,7 +80,6 @@ namespace Recraft
                 client: HttpClient);
             PrepareImageToImageArguments(
                 httpClient: HttpClient,
-                billing: ref billing,
                 request: request);
 
 
@@ -108,7 +100,7 @@ namespace Recraft
             var __maxAttempts = global::Recraft.AutoSDKRequestOptionsSupport.GetMaxAttempts(
                 clientOptions: Options,
                 requestOptions: requestOptions,
-                supportsRetry: true);
+                supportsRetry: false);
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
@@ -116,9 +108,6 @@ namespace Recraft
                             var __pathBuilder = new global::Recraft.PathBuilder(
                                 path: "/v1/images/imageToImage",
                                 baseUri: HttpClient.BaseAddress);
-                            __pathBuilder
-                                .AddOptionalParameter("billing", billing?.ToValueString())
-                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Recraft.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -148,12 +137,11 @@ namespace Recraft
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
-                            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
-                            var __httpRequestContent = new global::System.Net.Http.StringContent(
-                                content: __httpRequestContentBody,
-                                encoding: global::System.Text.Encoding.UTF8,
-                                mediaType: "application/json");
+
+                            var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+
                             __httpRequest.Content = __httpRequestContent;
+
                 global::Recraft.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -165,7 +153,6 @@ namespace Recraft
                 PrepareImageToImageRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    billing: billing,
                     request: request);
 
                 return __httpRequest;
@@ -444,21 +431,18 @@ namespace Recraft
         /// <summary>
         /// Generate image from image and prompt
         /// </summary>
-        /// <param name="billing"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> ImageToImageAsync(
-            global::Recraft.BillingType? billing = default,
             global::Recraft.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::Recraft.ImageToImageJSONRequest
+            var __request = new global::Recraft.ImageToImageRequest
             {
             };
 
             return await ImageToImageAsync(
-                billing: billing,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

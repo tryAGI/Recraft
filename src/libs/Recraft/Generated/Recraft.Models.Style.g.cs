@@ -38,13 +38,6 @@ namespace Recraft
         public required global::Recraft.ImageStyle Style1 { get; set; }
 
         /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("substyle")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.ImageSubStyleJsonConverter))]
-        public global::Recraft.ImageSubStyle? Substyle { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -57,7 +50,6 @@ namespace Recraft
         /// <param name="id"></param>
         /// <param name="isPrivate"></param>
         /// <param name="style1"></param>
-        /// <param name="substyle"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -65,14 +57,12 @@ namespace Recraft
             global::System.DateTime creationTime,
             global::System.Guid id,
             bool isPrivate,
-            global::Recraft.ImageStyle style1,
-            global::Recraft.ImageSubStyle? substyle)
+            global::Recraft.ImageStyle style1)
         {
             this.CreationTime = creationTime;
             this.Id = id;
             this.IsPrivate = isPrivate;
             this.Style1 = style1;
-            this.Substyle = substyle;
         }
 
         /// <summary>

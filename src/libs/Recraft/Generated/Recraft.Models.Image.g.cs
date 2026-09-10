@@ -17,12 +17,6 @@ namespace Recraft
         /// <summary>
         ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("features")]
-        public global::Recraft.ImageFeatures? Features { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Guid ImageId { get; set; }
@@ -50,7 +44,6 @@ namespace Recraft
         /// </summary>
         /// <param name="imageId"></param>
         /// <param name="b64Json"></param>
-        /// <param name="features"></param>
         /// <param name="revisedPrompt"></param>
         /// <param name="url"></param>
 #if NET7_0_OR_GREATER
@@ -59,12 +52,10 @@ namespace Recraft
         public Image(
             global::System.Guid imageId,
             string? b64Json,
-            global::Recraft.ImageFeatures? features,
             string? revisedPrompt,
             string? url)
         {
             this.B64Json = b64Json;
-            this.Features = features;
             this.ImageId = imageId;
             this.RevisedPrompt = revisedPrompt;
             this.Url = url;

@@ -11,12 +11,6 @@ namespace Recraft
         /// <summary>
         ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("expire")]
-        public bool? Expire { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image_format")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.ImageFormatJsonConverter))]
         public global::Recraft.ImageFormat? ImageFormat { get; set; }
@@ -65,7 +59,6 @@ namespace Recraft
         /// Initializes a new instance of the <see cref="VariateImageRequestBase" /> class.
         /// </summary>
         /// <param name="size"></param>
-        /// <param name="expire"></param>
         /// <param name="imageFormat"></param>
         /// <param name="model"></param>
         /// <param name="n"></param>
@@ -76,14 +69,12 @@ namespace Recraft
 #endif
         public VariateImageRequestBase(
             global::Recraft.ImageSize size,
-            bool? expire,
             global::Recraft.ImageFormat? imageFormat,
             global::Recraft.TransformModel? model,
             int? n,
             int? randomSeed,
             global::Recraft.ResponseFormat? responseFormat)
         {
-            this.Expire = expire;
             this.ImageFormat = imageFormat;
             this.Model = model;
             this.N = n;

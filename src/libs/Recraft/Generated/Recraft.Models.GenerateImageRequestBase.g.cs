@@ -11,33 +11,8 @@ namespace Recraft
         /// <summary>
         ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("block_nsfw")]
-        public bool? BlockNsfw { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("calculate_features")]
-        public bool? CalculateFeatures { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("controls")]
         public global::Recraft.UserControls? Controls { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("creativity")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.CreativityJsonConverter))]
-        public global::Recraft.Creativity? Creativity { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("expire")]
-        public bool? Expire { get; set; }
 
         /// <summary>
         ///
@@ -114,13 +89,6 @@ namespace Recraft
         /// <summary>
         ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("substyle")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.ImageSubStyleJsonConverter))]
-        public global::Recraft.ImageSubStyle? Substyle { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text_layout")]
         public global::System.Collections.Generic.IList<global::Recraft.TextLayoutItem>? TextLayout { get; set; }
 
@@ -141,11 +109,7 @@ namespace Recraft
         /// Initializes a new instance of the <see cref="GenerateImageRequestBase" /> class.
         /// </summary>
         /// <param name="prompt"></param>
-        /// <param name="blockNsfw"></param>
-        /// <param name="calculateFeatures"></param>
         /// <param name="controls"></param>
-        /// <param name="creativity"></param>
-        /// <param name="expire"></param>
         /// <param name="imageFormat"></param>
         /// <param name="model"></param>
         /// <param name="n"></param>
@@ -156,7 +120,6 @@ namespace Recraft
         /// <param name="style"></param>
         /// <param name="styleId"></param>
         /// <param name="styleMatch"></param>
-        /// <param name="substyle"></param>
         /// <param name="textLayout"></param>
         /// <param name="upscale"></param>
 #if NET7_0_OR_GREATER
@@ -164,11 +127,7 @@ namespace Recraft
 #endif
         public GenerateImageRequestBase(
             string prompt,
-            bool? blockNsfw,
-            bool? calculateFeatures,
             global::Recraft.UserControls? controls,
-            global::Recraft.Creativity? creativity,
-            bool? expire,
             global::Recraft.ImageFormat? imageFormat,
             global::Recraft.TransformModel? model,
             int? n,
@@ -179,15 +138,10 @@ namespace Recraft
             string? style,
             global::System.Guid? styleId,
             global::Recraft.StyleMatch? styleMatch,
-            global::Recraft.ImageSubStyle? substyle,
             global::System.Collections.Generic.IList<global::Recraft.TextLayoutItem>? textLayout,
             global::Recraft.UpscaleMode? upscale)
         {
-            this.BlockNsfw = blockNsfw;
-            this.CalculateFeatures = calculateFeatures;
             this.Controls = controls;
-            this.Creativity = creativity;
-            this.Expire = expire;
             this.ImageFormat = imageFormat;
             this.Model = model;
             this.N = n;
@@ -199,7 +153,6 @@ namespace Recraft
             this.Style = style;
             this.StyleId = styleId;
             this.StyleMatch = styleMatch;
-            this.Substyle = substyle;
             this.TextLayout = textLayout;
             this.Upscale = upscale;
         }

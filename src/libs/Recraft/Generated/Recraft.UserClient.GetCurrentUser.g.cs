@@ -26,12 +26,10 @@ namespace Recraft
             {                s_GetCurrentUserSecurityRequirement0,
             };
         partial void PrepareGetCurrentUserArguments(
-            global::System.Net.Http.HttpClient httpClient,
-            ref global::Recraft.BillingType? billing);
+            global::System.Net.Http.HttpClient httpClient);
         partial void PrepareGetCurrentUserRequest(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::Recraft.BillingType? billing);
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
         partial void ProcessGetCurrentUserResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -44,17 +42,14 @@ namespace Recraft
         /// <summary>
         /// Get current user info
         /// </summary>
-        /// <param name="billing"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Recraft.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Recraft.User> GetCurrentUserAsync(
-            global::Recraft.BillingType? billing = default,
             global::Recraft.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await GetCurrentUserAsResponseAsync(
-                billing: billing,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -64,20 +59,17 @@ namespace Recraft
         /// <summary>
         /// Get current user info
         /// </summary>
-        /// <param name="billing"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Recraft.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Recraft.AutoSDKHttpResponse<global::Recraft.User>> GetCurrentUserAsResponseAsync(
-            global::Recraft.BillingType? billing = default,
             global::Recraft.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
             PrepareGetCurrentUserArguments(
-                httpClient: HttpClient,
-                billing: ref billing);
+                httpClient: HttpClient);
 
 
             var __authorizations = global::Recraft.EndPointSecurityResolver.ResolveAuthorizations(
@@ -105,9 +97,6 @@ namespace Recraft
                             var __pathBuilder = new global::Recraft.PathBuilder(
                                 path: "/v1/users/me",
                                 baseUri: HttpClient.BaseAddress);
-                            __pathBuilder
-                                .AddOptionalParameter("billing", billing?.ToValueString())
-                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Recraft.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -147,8 +136,7 @@ namespace Recraft
                     request: __httpRequest);
                 PrepareGetCurrentUserRequest(
                     httpClient: HttpClient,
-                    httpRequestMessage: __httpRequest,
-                    billing: billing);
+                    httpRequestMessage: __httpRequest);
 
                 return __httpRequest;
             }

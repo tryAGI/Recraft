@@ -11,11 +11,11 @@ namespace Recraft
         /// <summary>
         ///
         /// </summary>
-        ShapeStackingCutOut,
+        CutOut,
         /// <summary>
         ///
         /// </summary>
-        ShapeStackingHierarchical,
+        Hierarchical,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace Recraft
         {
             return value switch
             {
-                ShapeStacking.ShapeStackingCutOut => "cut_out",
-                ShapeStacking.ShapeStackingHierarchical => "hierarchical",
+                ShapeStacking.CutOut => "cut_out",
+                ShapeStacking.Hierarchical => "hierarchical",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace Recraft
         {
             return value switch
             {
-                "cut_out" => ShapeStacking.ShapeStackingCutOut,
-                "hierarchical" => ShapeStacking.ShapeStackingHierarchical,
+                "cut_out" => ShapeStacking.CutOut,
+                "hierarchical" => ShapeStacking.Hierarchical,
                 _ => null,
             };
         }

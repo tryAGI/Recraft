@@ -11,15 +11,15 @@ namespace Recraft
         /// <summary>
         ///
         /// </summary>
-        StyleMatchFlexible,
+        Flexible,
         /// <summary>
         ///
         /// </summary>
-        StyleMatchPrecise,
+        Precise,
         /// <summary>
         ///
         /// </summary>
-        StyleMatchRegular,
+        Regular,
     }
 
     /// <summary>
@@ -34,9 +34,9 @@ namespace Recraft
         {
             return value switch
             {
-                StyleMatch.StyleMatchFlexible => "flexible",
-                StyleMatch.StyleMatchPrecise => "precise",
-                StyleMatch.StyleMatchRegular => "regular",
+                StyleMatch.Flexible => "flexible",
+                StyleMatch.Precise => "precise",
+                StyleMatch.Regular => "regular",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,9 +47,9 @@ namespace Recraft
         {
             return value switch
             {
-                "flexible" => StyleMatch.StyleMatchFlexible,
-                "precise" => StyleMatch.StyleMatchPrecise,
-                "regular" => StyleMatch.StyleMatchRegular,
+                "flexible" => StyleMatch.Flexible,
+                "precise" => StyleMatch.Precise,
+                "regular" => StyleMatch.Regular,
                 _ => null,
             };
         }

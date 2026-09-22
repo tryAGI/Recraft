@@ -22,6 +22,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProcessImageResponse'
+            multipart/form-data:
+              schema:
+                $ref: '#/components/schemas/ProcessImageMultipartResponse'
           description: OK
       summary: Creative Upscale
       tags:
@@ -40,6 +43,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProcessImageResponse'
+            multipart/form-data:
+              schema:
+                $ref: '#/components/schemas/ProcessImageMultipartResponse'
           description: OK
       summary: Crisp Upscale
       tags:
@@ -58,6 +64,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProcessImageResponse'
+            multipart/form-data:
+              schema:
+                $ref: '#/components/schemas/ProcessImageMultipartResponse'
           description: OK
       summary: Erase Region
       tags:
@@ -76,6 +85,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/GenerateImageResponse'
+            multipart/form-data:
+              schema:
+                $ref: '#/components/schemas/GenerateImageMultipartResponse'
           description: OK
       summary: Generate Background
       tags:
@@ -94,6 +106,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/GenerateImageResponse'
+            multipart/form-data:
+              schema:
+                $ref: '#/components/schemas/GenerateImageMultipartResponse'
           description: OK
       summary: Generate image from prompt
       tags:
@@ -112,6 +127,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/GenerateImageResponse'
+            multipart/form-data:
+              schema:
+                $ref: '#/components/schemas/GenerateImageMultipartResponse'
           description: OK
       summary: Generate raster image from prompt
       tags:
@@ -130,6 +148,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/GenerateImageResponse'
+            multipart/form-data:
+              schema:
+                $ref: '#/components/schemas/GenerateImageMultipartResponse'
           description: OK
       summary: Generate vector image from prompt
       tags:
@@ -148,6 +169,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/GenerateImageResponse'
+            multipart/form-data:
+              schema:
+                $ref: '#/components/schemas/GenerateImageMultipartResponse'
           description: OK
       summary: Generate image from image and prompt
       tags:
@@ -166,6 +190,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/GenerateImageResponse'
+            multipart/form-data:
+              schema:
+                $ref: '#/components/schemas/GenerateImageMultipartResponse'
           description: OK
       summary: Inpaint Image
       tags:
@@ -184,8 +211,32 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/GenerateImageResponse'
+            multipart/form-data:
+              schema:
+                $ref: '#/components/schemas/GenerateImageMultipartResponse'
           description: OK
       summary: Outpaint Image
+      tags:
+        - image
+  /v1/images/refineDetails:
+    post:
+      operationId: RefineDetails
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/RefineDetailsRequest'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProcessImageResponse'
+            multipart/form-data:
+              schema:
+                $ref: '#/components/schemas/ProcessImageMultipartResponse'
+          description: OK
+      summary: Refine Details
       tags:
         - image
   /v1/images/removeBackground:
@@ -202,6 +253,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProcessImageResponse'
+            multipart/form-data:
+              schema:
+                $ref: '#/components/schemas/ProcessImageMultipartResponse'
           description: OK
       summary: Remove background
       tags:
@@ -220,6 +274,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/GenerateImageResponse'
+            multipart/form-data:
+              schema:
+                $ref: '#/components/schemas/GenerateImageMultipartResponse'
           description: OK
       summary: Replace Background
       tags:
@@ -238,6 +295,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/GenerateImageResponse'
+            multipart/form-data:
+              schema:
+                $ref: '#/components/schemas/GenerateImageMultipartResponse'
           description: OK
       summary: Variate Image
       tags:
@@ -256,6 +316,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProcessImageResponse'
+            multipart/form-data:
+              schema:
+                $ref: '#/components/schemas/ProcessImageMultipartResponse'
           description: OK
       summary: Vectorize image
       tags:
@@ -444,6 +507,16 @@ components:
           $ref: '#/components/schemas/ImageFormat'
         response_format:
           $ref: '#/components/schemas/ResponseFormat'
+      type: object
+    GenerateImageMultipartResponse:
+      additionalProperties:
+        format: binary
+        type: string
+      properties:
+        response:
+          $ref: '#/components/schemas/GenerateImageResponse'
+      required:
+        - response
       type: object
     GenerateImageRequest:
       allOf:
@@ -687,6 +760,16 @@ components:
       required:
         - colors
       type: object
+    ProcessImageMultipartResponse:
+      additionalProperties:
+        format: binary
+        type: string
+      properties:
+        response:
+          $ref: '#/components/schemas/ProcessImageResponse'
+      required:
+        - response
+      type: object
     ProcessImageRequest:
       allOf:
         - $ref: '#/components/schemas/ProcessImageRequestBase'
@@ -717,10 +800,33 @@ components:
         - image
         - credits
       type: object
+    RefineDetailsMode:
+      enum:
+        - subtle
+        - moderate
+      type: string
+    RefineDetailsRequest:
+      allOf:
+        - $ref: '#/components/schemas/RefineDetailsRequestBase'
+        - properties:
+            image:
+              format: binary
+              type: string
+          type: object
+    RefineDetailsRequestBase:
+      properties:
+        image_format:
+          $ref: '#/components/schemas/ImageFormat'
+        refinement:
+          $ref: '#/components/schemas/RefineDetailsMode'
+        response_format:
+          $ref: '#/components/schemas/ResponseFormat'
+      type: object
     ResponseFormat:
       enum:
         - url
         - b64_json
+        - multipart
       type: string
     ReturnGradients:
       enum:

@@ -6,50 +6,44 @@ namespace Recraft
     /// <summary>
     ///
     /// </summary>
-    public enum ResponseFormat
+    public enum RefineDetailsMode
     {
         /// <summary>
         ///
         /// </summary>
-        B64Json,
+        Moderate,
         /// <summary>
         ///
         /// </summary>
-        Multipart,
-        /// <summary>
-        ///
-        /// </summary>
-        Url,
+        Subtle,
     }
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class ResponseFormatExtensions
+    public static class RefineDetailsModeExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this ResponseFormat value)
+        public static string ToValueString(this RefineDetailsMode value)
         {
             return value switch
             {
-                ResponseFormat.B64Json => "b64_json",
-                ResponseFormat.Multipart => "multipart",
-                ResponseFormat.Url => "url",
+                RefineDetailsMode.Moderate => "moderate",
+                RefineDetailsMode.Subtle => "subtle",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ResponseFormat? ToEnum(string value)
+        public static RefineDetailsMode? ToEnum(string value)
         {
             return value switch
             {
-                "b64_json" => ResponseFormat.B64Json,
-                "multipart" => ResponseFormat.Multipart,
-                "url" => ResponseFormat.Url,
+                "moderate" => RefineDetailsMode.Moderate,
+                "subtle" => RefineDetailsMode.Subtle,
                 _ => null,
             };
         }

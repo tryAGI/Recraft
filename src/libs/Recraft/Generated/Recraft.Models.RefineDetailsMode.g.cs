@@ -4,7 +4,7 @@
 namespace Recraft
 {
     /// <summary>
-    ///
+    /// Default Value: moderate
     /// </summary>
     public enum RefineDetailsMode
     {

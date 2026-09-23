@@ -16,7 +16,7 @@ namespace Recraft
         public global::Recraft.ImageFormat? ImageFormat { get; set; }
 
         /// <summary>
-        ///
+        /// Default Value: moderate
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("refinement")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.RefineDetailsModeJsonConverter))]
@@ -39,7 +39,9 @@ namespace Recraft
         /// Initializes a new instance of the <see cref="RefineDetailsRequestBase" /> class.
         /// </summary>
         /// <param name="imageFormat"></param>
-        /// <param name="refinement"></param>
+        /// <param name="refinement">
+        /// Default Value: moderate
+        /// </param>
         /// <param name="responseFormat"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

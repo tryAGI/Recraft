@@ -801,6 +801,7 @@ components:
         - credits
       type: object
     RefineDetailsMode:
+      default: moderate
       enum:
         - subtle
         - moderate

@@ -42,8 +42,8 @@ namespace Recraft
         /// <summary>
         ///
         /// </summary>
-        public global::Recraft.TransformImageRequest PickTransform() => IsTransform
-            ? Transform!.Value
+        public global::Recraft.TransformImageRequest PickTransform() => Transform is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Transform' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Recraft
         /// <summary>
         ///
         /// </summary>
-        public global::Recraft.ImageToImageRequestVariant2 PickImageToImageRequestVariant2() => IsImageToImageRequestVariant2
-            ? ImageToImageRequestVariant2!
+        public global::Recraft.ImageToImageRequestVariant2 PickImageToImageRequestVariant2() => ImageToImageRequestVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageToImageRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Recraft
                 Validate();
             }
 
-            if (IsTransform && transform != null)
+            if (Transform is { } __value0 && transform != null)
             {
-                return transform(Transform!);
+                return transform(__value0);
             }
-            else if (IsImageToImageRequestVariant2 && imageToImageRequestVariant2 != null)
+            else if (ImageToImageRequestVariant2 is { } __value1 && imageToImageRequestVariant2 != null)
             {
-                return imageToImageRequestVariant2(ImageToImageRequestVariant2!);
+                return imageToImageRequestVariant2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Recraft
                 Validate();
             }
 
-            if (IsTransform)
+            if (Transform is { } __value0)
             {
-                transform?.Invoke(Transform!);
+                transform?.Invoke(__value0);
             }
-            else if (IsImageToImageRequestVariant2)
+            else if (ImageToImageRequestVariant2 is { } __value1)
             {
-                imageToImageRequestVariant2?.Invoke(ImageToImageRequestVariant2!);
+                imageToImageRequestVariant2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Recraft
                 Validate();
             }
 
-            if (IsTransform)
+            if (Transform is { } __value0)
             {
-                transform?.Invoke(Transform!);
+                transform?.Invoke(__value0);
             }
-            else if (IsImageToImageRequestVariant2)
+            else if (ImageToImageRequestVariant2 is { } __value1)
             {
-                imageToImageRequestVariant2?.Invoke(ImageToImageRequestVariant2!);
+                imageToImageRequestVariant2?.Invoke(__value1);
             }
         }
 

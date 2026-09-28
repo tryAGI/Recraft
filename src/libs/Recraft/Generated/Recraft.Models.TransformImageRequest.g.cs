@@ -42,8 +42,8 @@ namespace Recraft
         /// <summary>
         ///
         /// </summary>
-        public global::Recraft.TransformImageRequestBase PickBase() => IsBase
-            ? Base!
+        public global::Recraft.TransformImageRequestBase PickBase() => Base is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Recraft
         /// <summary>
         ///
         /// </summary>
-        public global::Recraft.TransformImageRequestVariant2 PickTransformImageRequestVariant2() => IsTransformImageRequestVariant2
-            ? TransformImageRequestVariant2!
+        public global::Recraft.TransformImageRequestVariant2 PickTransformImageRequestVariant2() => TransformImageRequestVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TransformImageRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Recraft
                 Validate();
             }
 
-            if (IsBase && @base != null)
+            if (Base is { } __value0 && @base != null)
             {
-                return @base(Base!);
+                return @base(__value0);
             }
-            else if (IsTransformImageRequestVariant2 && transformImageRequestVariant2 != null)
+            else if (TransformImageRequestVariant2 is { } __value1 && transformImageRequestVariant2 != null)
             {
-                return transformImageRequestVariant2(TransformImageRequestVariant2!);
+                return transformImageRequestVariant2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Recraft
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsTransformImageRequestVariant2)
+            else if (TransformImageRequestVariant2 is { } __value1)
             {
-                transformImageRequestVariant2?.Invoke(TransformImageRequestVariant2!);
+                transformImageRequestVariant2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Recraft
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsTransformImageRequestVariant2)
+            else if (TransformImageRequestVariant2 is { } __value1)
             {
-                transformImageRequestVariant2?.Invoke(TransformImageRequestVariant2!);
+                transformImageRequestVariant2?.Invoke(__value1);
             }
         }
 

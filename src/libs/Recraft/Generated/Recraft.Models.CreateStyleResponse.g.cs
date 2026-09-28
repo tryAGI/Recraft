@@ -42,8 +42,8 @@ namespace Recraft
         /// <summary>
         ///
         /// </summary>
-        public global::Recraft.Style PickStyle() => IsStyle
-            ? Style!
+        public global::Recraft.Style PickStyle() => Style is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Style' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Recraft
         /// <summary>
         ///
         /// </summary>
-        public global::Recraft.CreateStyleResponseVariant2 PickCreateStyleResponseVariant2() => IsCreateStyleResponseVariant2
-            ? CreateStyleResponseVariant2!
+        public global::Recraft.CreateStyleResponseVariant2 PickCreateStyleResponseVariant2() => CreateStyleResponseVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CreateStyleResponseVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Recraft
                 Validate();
             }
 
-            if (IsStyle && style != null)
+            if (Style is { } __value0 && style != null)
             {
-                return style(Style!);
+                return style(__value0);
             }
-            else if (IsCreateStyleResponseVariant2 && createStyleResponseVariant2 != null)
+            else if (CreateStyleResponseVariant2 is { } __value1 && createStyleResponseVariant2 != null)
             {
-                return createStyleResponseVariant2(CreateStyleResponseVariant2!);
+                return createStyleResponseVariant2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Recraft
                 Validate();
             }
 
-            if (IsStyle)
+            if (Style is { } __value0)
             {
-                style?.Invoke(Style!);
+                style?.Invoke(__value0);
             }
-            else if (IsCreateStyleResponseVariant2)
+            else if (CreateStyleResponseVariant2 is { } __value1)
             {
-                createStyleResponseVariant2?.Invoke(CreateStyleResponseVariant2!);
+                createStyleResponseVariant2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Recraft
                 Validate();
             }
 
-            if (IsStyle)
+            if (Style is { } __value0)
             {
-                style?.Invoke(Style!);
+                style?.Invoke(__value0);
             }
-            else if (IsCreateStyleResponseVariant2)
+            else if (CreateStyleResponseVariant2 is { } __value1)
             {
-                createStyleResponseVariant2?.Invoke(CreateStyleResponseVariant2!);
+                createStyleResponseVariant2?.Invoke(__value1);
             }
         }
 

@@ -42,8 +42,8 @@ namespace Recraft
         /// <summary>
         ///
         /// </summary>
-        public global::Recraft.EraseRegionRequestBase PickBase() => IsBase
-            ? Base!
+        public global::Recraft.EraseRegionRequestBase PickBase() => Base is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Recraft
         /// <summary>
         ///
         /// </summary>
-        public global::Recraft.EraseRegionRequestVariant2 PickEraseRegionRequestVariant2() => IsEraseRegionRequestVariant2
-            ? EraseRegionRequestVariant2!
+        public global::Recraft.EraseRegionRequestVariant2 PickEraseRegionRequestVariant2() => EraseRegionRequestVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EraseRegionRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Recraft
                 Validate();
             }
 
-            if (IsBase && @base != null)
+            if (Base is { } __value0 && @base != null)
             {
-                return @base(Base!);
+                return @base(__value0);
             }
-            else if (IsEraseRegionRequestVariant2 && eraseRegionRequestVariant2 != null)
+            else if (EraseRegionRequestVariant2 is { } __value1 && eraseRegionRequestVariant2 != null)
             {
-                return eraseRegionRequestVariant2(EraseRegionRequestVariant2!);
+                return eraseRegionRequestVariant2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Recraft
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsEraseRegionRequestVariant2)
+            else if (EraseRegionRequestVariant2 is { } __value1)
             {
-                eraseRegionRequestVariant2?.Invoke(EraseRegionRequestVariant2!);
+                eraseRegionRequestVariant2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Recraft
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsEraseRegionRequestVariant2)
+            else if (EraseRegionRequestVariant2 is { } __value1)
             {
-                eraseRegionRequestVariant2?.Invoke(EraseRegionRequestVariant2!);
+                eraseRegionRequestVariant2?.Invoke(__value1);
             }
         }
 

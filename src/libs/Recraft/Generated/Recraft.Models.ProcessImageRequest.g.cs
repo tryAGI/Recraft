@@ -42,8 +42,8 @@ namespace Recraft
         /// <summary>
         ///
         /// </summary>
-        public global::Recraft.ProcessImageRequestBase PickBase() => IsBase
-            ? Base!
+        public global::Recraft.ProcessImageRequestBase PickBase() => Base is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Recraft
         /// <summary>
         ///
         /// </summary>
-        public global::Recraft.ProcessImageRequestVariant2 PickProcessImageRequestVariant2() => IsProcessImageRequestVariant2
-            ? ProcessImageRequestVariant2!
+        public global::Recraft.ProcessImageRequestVariant2 PickProcessImageRequestVariant2() => ProcessImageRequestVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ProcessImageRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Recraft
                 Validate();
             }
 
-            if (IsBase && @base != null)
+            if (Base is { } __value0 && @base != null)
             {
-                return @base(Base!);
+                return @base(__value0);
             }
-            else if (IsProcessImageRequestVariant2 && processImageRequestVariant2 != null)
+            else if (ProcessImageRequestVariant2 is { } __value1 && processImageRequestVariant2 != null)
             {
-                return processImageRequestVariant2(ProcessImageRequestVariant2!);
+                return processImageRequestVariant2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Recraft
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsProcessImageRequestVariant2)
+            else if (ProcessImageRequestVariant2 is { } __value1)
             {
-                processImageRequestVariant2?.Invoke(ProcessImageRequestVariant2!);
+                processImageRequestVariant2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Recraft
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsProcessImageRequestVariant2)
+            else if (ProcessImageRequestVariant2 is { } __value1)
             {
-                processImageRequestVariant2?.Invoke(ProcessImageRequestVariant2!);
+                processImageRequestVariant2?.Invoke(__value1);
             }
         }
 

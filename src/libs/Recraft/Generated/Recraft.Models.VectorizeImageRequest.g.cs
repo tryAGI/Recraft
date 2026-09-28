@@ -42,8 +42,8 @@ namespace Recraft
         /// <summary>
         ///
         /// </summary>
-        public global::Recraft.VectorizeImageRequestBase PickBase() => IsBase
-            ? Base!.Value
+        public global::Recraft.VectorizeImageRequestBase PickBase() => Base is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Recraft
         /// <summary>
         ///
         /// </summary>
-        public global::Recraft.VectorizeImageRequestVariant2 PickVectorizeImageRequestVariant2() => IsVectorizeImageRequestVariant2
-            ? VectorizeImageRequestVariant2!
+        public global::Recraft.VectorizeImageRequestVariant2 PickVectorizeImageRequestVariant2() => VectorizeImageRequestVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VectorizeImageRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Recraft
                 Validate();
             }
 
-            if (IsBase && @base != null)
+            if (Base is { } __value0 && @base != null)
             {
-                return @base(Base!);
+                return @base(__value0);
             }
-            else if (IsVectorizeImageRequestVariant2 && vectorizeImageRequestVariant2 != null)
+            else if (VectorizeImageRequestVariant2 is { } __value1 && vectorizeImageRequestVariant2 != null)
             {
-                return vectorizeImageRequestVariant2(VectorizeImageRequestVariant2!);
+                return vectorizeImageRequestVariant2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Recraft
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsVectorizeImageRequestVariant2)
+            else if (VectorizeImageRequestVariant2 is { } __value1)
             {
-                vectorizeImageRequestVariant2?.Invoke(VectorizeImageRequestVariant2!);
+                vectorizeImageRequestVariant2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Recraft
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsVectorizeImageRequestVariant2)
+            else if (VectorizeImageRequestVariant2 is { } __value1)
             {
-                vectorizeImageRequestVariant2?.Invoke(VectorizeImageRequestVariant2!);
+                vectorizeImageRequestVariant2?.Invoke(__value1);
             }
         }
 

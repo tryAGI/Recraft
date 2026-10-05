@@ -30,6 +30,12 @@ namespace Recraft
         public global::Recraft.UpscaleMode? Upscale { get; set; }
 
         /// <summary>
+        /// Zero data retention: the prompt and the input and output image bytes are neither stored nor logged; only an output requested as a URL is uploaded so it can be served.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("zdr")]
+        public bool? Zdr { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -41,17 +47,22 @@ namespace Recraft
         /// <param name="imageFormat"></param>
         /// <param name="responseFormat"></param>
         /// <param name="upscale"></param>
+        /// <param name="zdr">
+        /// Zero data retention: the prompt and the input and output image bytes are neither stored nor logged; only an output requested as a URL is uploaded so it can be served.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ProcessImageRequestBase(
             global::Recraft.ImageFormat? imageFormat,
             global::Recraft.ResponseFormat? responseFormat,
-            global::Recraft.UpscaleMode? upscale)
+            global::Recraft.UpscaleMode? upscale,
+            bool? zdr)
         {
             this.ImageFormat = imageFormat;
             this.ResponseFormat = responseFormat;
             this.Upscale = upscale;
+            this.Zdr = zdr;
         }
 
         /// <summary>

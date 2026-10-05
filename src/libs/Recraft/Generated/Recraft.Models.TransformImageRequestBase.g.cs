@@ -86,6 +86,12 @@ namespace Recraft
         public global::System.Collections.Generic.IList<global::Recraft.TextLayoutItem>? TextLayout { get; set; }
 
         /// <summary>
+        /// Zero data retention: the prompt and the input and output image bytes are neither stored nor logged; only an output requested as a URL is uploaded so it can be served.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("zdr")]
+        public bool? Zdr { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -106,6 +112,9 @@ namespace Recraft
         /// <param name="styleId"></param>
         /// <param name="styleMatch"></param>
         /// <param name="textLayout"></param>
+        /// <param name="zdr">
+        /// Zero data retention: the prompt and the input and output image bytes are neither stored nor logged; only an output requested as a URL is uploaded so it can be served.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -121,7 +130,8 @@ namespace Recraft
             string? style,
             global::System.Guid? styleId,
             global::Recraft.StyleMatch? styleMatch,
-            global::System.Collections.Generic.IList<global::Recraft.TextLayoutItem>? textLayout)
+            global::System.Collections.Generic.IList<global::Recraft.TextLayoutItem>? textLayout,
+            bool? zdr)
         {
             this.Controls = controls;
             this.ImageFormat = imageFormat;
@@ -135,6 +145,7 @@ namespace Recraft
             this.StyleId = styleId;
             this.StyleMatch = styleMatch;
             this.TextLayout = textLayout;
+            this.Zdr = zdr;
         }
 
         /// <summary>

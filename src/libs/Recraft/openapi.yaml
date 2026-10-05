@@ -507,6 +507,9 @@ components:
           $ref: '#/components/schemas/ImageFormat'
         response_format:
           $ref: '#/components/schemas/ResponseFormat'
+        zdr:
+          description: 'Zero data retention: the prompt and the input and output image bytes are neither stored nor logged; only an output requested as a URL is uploaded so it can be served.'
+          type: boolean
       type: object
     GenerateImageMultipartResponse:
       additionalProperties:
@@ -561,6 +564,9 @@ components:
           $ref: '#/components/schemas/TextLayout'
         upscale:
           $ref: '#/components/schemas/UpscaleMode'
+        zdr:
+          description: 'Zero data retention: the prompt and the input and output image bytes are neither stored nor logged; only an output requested as a URL is uploaded so it can be served.'
+          type: boolean
       required:
         - prompt
       type: object
@@ -786,6 +792,9 @@ components:
           $ref: '#/components/schemas/ResponseFormat'
         upscale:
           $ref: '#/components/schemas/UpscaleMode'
+        zdr:
+          description: 'Zero data retention: the prompt and the input and output image bytes are neither stored nor logged; only an output requested as a URL is uploaded so it can be served.'
+          type: boolean
       type: object
     ProcessImageResponse:
       properties:
@@ -822,6 +831,9 @@ components:
           $ref: '#/components/schemas/RefineDetailsMode'
         response_format:
           $ref: '#/components/schemas/ResponseFormat'
+        zdr:
+          description: 'Zero data retention: the prompt and the input and output image bytes are neither stored nor logged; only an output requested as a URL is uploaded so it can be served.'
+          type: boolean
       type: object
     ResponseFormat:
       enum:
@@ -927,6 +939,9 @@ components:
           $ref: '#/components/schemas/StyleMatch'
         text_layout:
           $ref: '#/components/schemas/TextLayout'
+        zdr:
+          description: 'Zero data retention: the prompt and the input and output image bytes are neither stored nor logged; only an output requested as a URL is uploaded so it can be served.'
+          type: boolean
       required:
         - prompt
       type: object
@@ -1031,6 +1046,9 @@ components:
           $ref: '#/components/schemas/ResponseFormat'
         size:
           $ref: '#/components/schemas/ImageSize'
+        zdr:
+          description: 'Zero data retention: the prompt and the input and output image bytes are neither stored nor logged; only an output requested as a URL is uploaded so it can be served.'
+          type: boolean
       required:
         - size
       type: object

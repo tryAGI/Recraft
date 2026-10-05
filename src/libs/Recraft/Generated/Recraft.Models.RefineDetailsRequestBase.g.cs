@@ -30,6 +30,12 @@ namespace Recraft
         public global::Recraft.ResponseFormat? ResponseFormat { get; set; }
 
         /// <summary>
+        /// Zero data retention: the prompt and the input and output image bytes are neither stored nor logged; only an output requested as a URL is uploaded so it can be served.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("zdr")]
+        public bool? Zdr { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -43,17 +49,22 @@ namespace Recraft
         /// Default Value: moderate
         /// </param>
         /// <param name="responseFormat"></param>
+        /// <param name="zdr">
+        /// Zero data retention: the prompt and the input and output image bytes are neither stored nor logged; only an output requested as a URL is uploaded so it can be served.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RefineDetailsRequestBase(
             global::Recraft.ImageFormat? imageFormat,
             global::Recraft.RefineDetailsMode? refinement,
-            global::Recraft.ResponseFormat? responseFormat)
+            global::Recraft.ResponseFormat? responseFormat,
+            bool? zdr)
         {
             this.ImageFormat = imageFormat;
             this.Refinement = refinement;
             this.ResponseFormat = responseFormat;
+            this.Zdr = zdr;
         }
 
         /// <summary>

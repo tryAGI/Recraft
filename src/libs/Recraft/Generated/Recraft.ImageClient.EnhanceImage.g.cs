@@ -7,7 +7,7 @@ namespace Recraft
     {
 
 
-        private static readonly global::Recraft.EndPointSecurityRequirement s_RefineDetailsSecurityRequirement0 =
+        private static readonly global::Recraft.EndPointSecurityRequirement s_EnhanceImageSecurityRequirement0 =
             new global::Recraft.EndPointSecurityRequirement
             {
                 Authorizations = new global::Recraft.EndPointAuthorizationRequirement[]
@@ -21,40 +21,40 @@ namespace Recraft
                     },
                 },
             };
-        private static readonly global::Recraft.EndPointSecurityRequirement[] s_RefineDetailsSecurityRequirements =
+        private static readonly global::Recraft.EndPointSecurityRequirement[] s_EnhanceImageSecurityRequirements =
             new global::Recraft.EndPointSecurityRequirement[]
-            {                s_RefineDetailsSecurityRequirement0,
+            {                s_EnhanceImageSecurityRequirement0,
             };
-        partial void PrepareRefineDetailsArguments(
+        partial void PrepareEnhanceImageArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::Recraft.RefineDetailsRequest request);
-        partial void PrepareRefineDetailsRequest(
+            global::Recraft.EnhanceImageRequest request);
+        partial void PrepareEnhanceImageRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::Recraft.RefineDetailsRequest request);
-        partial void ProcessRefineDetailsResponse(
+            global::Recraft.EnhanceImageRequest request);
+        partial void ProcessEnhanceImageResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessRefineDetailsResponseContent(
+        partial void ProcessEnhanceImageResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Refine Details
+        /// Enhance Image
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Recraft.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Recraft.ProcessImageResponse> RefineDetailsAsync(
+        public async global::System.Threading.Tasks.Task<global::Recraft.ProcessImageResponse> EnhanceImageAsync(
 
-            global::Recraft.RefineDetailsRequest request,
+            global::Recraft.EnhanceImageRequest request,
             global::Recraft.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await RefineDetailsAsResponseAsync(
+            var __response = await EnhanceImageAsResponseAsync(
 
                 request: request,
                 requestOptions: requestOptions,
@@ -64,29 +64,29 @@ namespace Recraft
             return __response.Body;
         }
         /// <summary>
-        /// Refine Details
+        /// Enhance Image
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Recraft.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Recraft.AutoSDKHttpResponse<global::Recraft.ProcessImageResponse>> RefineDetailsAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::Recraft.AutoSDKHttpResponse<global::Recraft.ProcessImageResponse>> EnhanceImageAsResponseAsync(
 
-            global::Recraft.RefineDetailsRequest request,
+            global::Recraft.EnhanceImageRequest request,
             global::Recraft.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareRefineDetailsArguments(
+            PrepareEnhanceImageArguments(
                 httpClient: HttpClient,
                 request: request);
 
 
             var __authorizations = global::Recraft.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_RefineDetailsSecurityRequirements,
-                operationName: "RefineDetailsAsync");
+                securityRequirements: s_EnhanceImageSecurityRequirements,
+                operationName: "EnhanceImageAsync");
 
             using var __timeoutCancellationTokenSource = global::Recraft.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -106,7 +106,7 @@ namespace Recraft
             {
 
                             var __pathBuilder = new global::Recraft.PathBuilder(
-                                path: "/v1/images/refineDetails",
+                                path: "/v1/images/enhance",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::Recraft.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -150,7 +150,7 @@ namespace Recraft
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareRefineDetailsRequest(
+                PrepareEnhanceImageRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     request: request);
@@ -170,9 +170,9 @@ namespace Recraft
                     await global::Recraft.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::Recraft.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "RefineDetails",
-                                methodName: "RefineDetailsAsync",
-                                pathTemplate: "\"/v1/images/refineDetails\"",
+                                operationId: "EnhanceImage",
+                                methodName: "EnhanceImageAsync",
+                                pathTemplate: "\"/v1/images/enhance\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -204,9 +204,9 @@ namespace Recraft
                         await global::Recraft.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Recraft.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "RefineDetails",
-                                methodName: "RefineDetailsAsync",
-                                pathTemplate: "\"/v1/images/refineDetails\"",
+                                operationId: "EnhanceImage",
+                                methodName: "EnhanceImageAsync",
+                                pathTemplate: "\"/v1/images/enhance\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -245,9 +245,9 @@ namespace Recraft
                         await global::Recraft.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Recraft.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "RefineDetails",
-                                methodName: "RefineDetailsAsync",
-                                pathTemplate: "\"/v1/images/refineDetails\"",
+                                operationId: "EnhanceImage",
+                                methodName: "EnhanceImageAsync",
+                                pathTemplate: "\"/v1/images/enhance\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -285,7 +285,7 @@ namespace Recraft
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessRefineDetailsResponse(
+                ProcessEnhanceImageResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -293,9 +293,9 @@ namespace Recraft
                     await global::Recraft.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::Recraft.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "RefineDetails",
-                                methodName: "RefineDetailsAsync",
-                                pathTemplate: "\"/v1/images/refineDetails\"",
+                                operationId: "EnhanceImage",
+                                methodName: "EnhanceImageAsync",
+                                pathTemplate: "\"/v1/images/enhance\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -315,9 +315,9 @@ namespace Recraft
                     await global::Recraft.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Recraft.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "RefineDetails",
-                                methodName: "RefineDetailsAsync",
-                                pathTemplate: "\"/v1/images/refineDetails\"",
+                                operationId: "EnhanceImage",
+                                methodName: "EnhanceImageAsync",
+                                pathTemplate: "\"/v1/images/enhance\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -345,7 +345,7 @@ namespace Recraft
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessRefineDetailsResponseContent(
+                                ProcessEnhanceImageResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -429,20 +429,20 @@ namespace Recraft
             }
         }
         /// <summary>
-        /// Refine Details
+        /// Enhance Image
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Recraft.ProcessImageResponse> RefineDetailsAsync(
+        public async global::System.Threading.Tasks.Task<global::Recraft.ProcessImageResponse> EnhanceImageAsync(
             global::Recraft.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::Recraft.RefineDetailsRequest
+            var __request = new global::Recraft.EnhanceImageRequest
             {
             };
 
-            return await RefineDetailsAsync(
+            return await EnhanceImageAsync(
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

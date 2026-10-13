@@ -6,7 +6,7 @@ namespace Recraft
     /// <summary>
     ///
     /// </summary>
-    public sealed partial class RefineDetailsRequestVariant2
+    public sealed partial class EnhanceImageRequestVariant2
     {
         /// <summary>
         ///
@@ -27,14 +27,14 @@ namespace Recraft
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RefineDetailsRequestVariant2" /> class.
+        /// Initializes a new instance of the <see cref="EnhanceImageRequestVariant2" /> class.
         /// </summary>
         /// <param name="image"></param>
         /// <param name="imagename"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public RefineDetailsRequestVariant2(
+        public EnhanceImageRequestVariant2(
             byte[]? image,
             string? imagename)
         {
@@ -43,9 +43,9 @@ namespace Recraft
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RefineDetailsRequestVariant2" /> class.
+        /// Initializes a new instance of the <see cref="EnhanceImageRequestVariant2" /> class.
         /// </summary>
-        public RefineDetailsRequestVariant2()
+        public EnhanceImageRequestVariant2()
         {
         }
 

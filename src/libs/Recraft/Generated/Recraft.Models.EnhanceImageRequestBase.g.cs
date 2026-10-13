@@ -6,7 +6,7 @@ namespace Recraft
     /// <summary>
     ///
     /// </summary>
-    public sealed partial class RefineDetailsRequestBase
+    public sealed partial class EnhanceImageRequestBase
     {
         /// <summary>
         ///
@@ -19,8 +19,8 @@ namespace Recraft
         /// Default Value: moderate
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("refinement")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.RefineDetailsModeJsonConverter))]
-        public global::Recraft.RefineDetailsMode? Refinement { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.EnhanceModeJsonConverter))]
+        public global::Recraft.EnhanceMode? Refinement { get; set; }
 
         /// <summary>
         ///
@@ -42,7 +42,7 @@ namespace Recraft
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RefineDetailsRequestBase" /> class.
+        /// Initializes a new instance of the <see cref="EnhanceImageRequestBase" /> class.
         /// </summary>
         /// <param name="imageFormat"></param>
         /// <param name="refinement">
@@ -55,9 +55,9 @@ namespace Recraft
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public RefineDetailsRequestBase(
+        public EnhanceImageRequestBase(
             global::Recraft.ImageFormat? imageFormat,
-            global::Recraft.RefineDetailsMode? refinement,
+            global::Recraft.EnhanceMode? refinement,
             global::Recraft.ResponseFormat? responseFormat,
             bool? zdr)
         {
@@ -68,9 +68,9 @@ namespace Recraft
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RefineDetailsRequestBase" /> class.
+        /// Initializes a new instance of the <see cref="EnhanceImageRequestBase" /> class.
         /// </summary>
-        public RefineDetailsRequestBase()
+        public EnhanceImageRequestBase()
         {
         }
 

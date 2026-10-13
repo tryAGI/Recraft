@@ -6,7 +6,7 @@ namespace Recraft
     /// <summary>
     /// Default Value: moderate
     /// </summary>
-    public enum RefineDetailsMode
+    public enum EnhanceMode
     {
         /// <summary>
         ///
@@ -21,29 +21,29 @@ namespace Recraft
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class RefineDetailsModeExtensions
+    public static class EnhanceModeExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this RefineDetailsMode value)
+        public static string ToValueString(this EnhanceMode value)
         {
             return value switch
             {
-                RefineDetailsMode.Moderate => "moderate",
-                RefineDetailsMode.Subtle => "subtle",
+                EnhanceMode.Moderate => "moderate",
+                EnhanceMode.Subtle => "subtle",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static RefineDetailsMode? ToEnum(string value)
+        public static EnhanceMode? ToEnum(string value)
         {
             return value switch
             {
-                "moderate" => RefineDetailsMode.Moderate,
-                "subtle" => RefineDetailsMode.Subtle,
+                "moderate" => EnhanceMode.Moderate,
+                "subtle" => EnhanceMode.Subtle,
                 _ => null,
             };
         }

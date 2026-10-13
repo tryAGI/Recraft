@@ -3,10 +3,10 @@
 namespace Recraft.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class RefineDetailsModeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Recraft.RefineDetailsMode?>
+    public sealed class EnhanceModeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Recraft.EnhanceMode>
     {
         /// <inheritdoc />
-        public override global::Recraft.RefineDetailsMode? Read(
+        public override global::Recraft.EnhanceMode Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace Recraft.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::Recraft.RefineDetailsModeExtensions.ToEnum(stringValue);
+                        return global::Recraft.EnhanceModeExtensions.ToEnum(stringValue) ?? default;
                     }
 
                     break;
@@ -26,11 +26,11 @@ namespace Recraft.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::Recraft.RefineDetailsMode)numValue;
+                    return (global::Recraft.EnhanceMode)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::Recraft.RefineDetailsMode?);
+                    return default(global::Recraft.EnhanceMode);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,19 +42,12 @@ namespace Recraft.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::Recraft.RefineDetailsMode? value,
+            global::Recraft.EnhanceMode value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            if (value == null)
-            {
-                writer.WriteNullValue();
-            }
-            else
-            {
-                writer.WriteStringValue(global::Recraft.RefineDetailsModeExtensions.ToValueString(value.Value));
-            }
+            writer.WriteStringValue(global::Recraft.EnhanceModeExtensions.ToValueString(value));
         }
     }
 }

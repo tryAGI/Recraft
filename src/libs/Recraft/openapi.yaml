@@ -50,6 +50,27 @@ paths:
       summary: Crisp Upscale
       tags:
         - image
+  /v1/images/enhance:
+    post:
+      operationId: EnhanceImage
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/EnhanceImageRequest'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProcessImageResponse'
+            multipart/form-data:
+              schema:
+                $ref: '#/components/schemas/ProcessImageMultipartResponse'
+          description: OK
+      summary: Enhance Image
+      tags:
+        - image
   /v1/images/eraseRegion:
     post:
       operationId: EraseRegion
@@ -216,27 +237,6 @@ paths:
                 $ref: '#/components/schemas/GenerateImageMultipartResponse'
           description: OK
       summary: Outpaint Image
-      tags:
-        - image
-  /v1/images/refineDetails:
-    post:
-      operationId: RefineDetails
-      requestBody:
-        content:
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/RefineDetailsRequest'
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProcessImageResponse'
-            multipart/form-data:
-              schema:
-                $ref: '#/components/schemas/ProcessImageMultipartResponse'
-          description: OK
-      summary: Refine Details
       tags:
         - image
   /v1/images/removeBackground:
@@ -490,6 +490,32 @@ components:
           required:
             - credits
           type: object
+    EnhanceImageRequest:
+      allOf:
+        - $ref: '#/components/schemas/EnhanceImageRequestBase'
+        - properties:
+            image:
+              format: binary
+              type: string
+          type: object
+    EnhanceImageRequestBase:
+      properties:
+        image_format:
+          $ref: '#/components/schemas/ImageFormat'
+        refinement:
+          $ref: '#/components/schemas/EnhanceMode'
+        response_format:
+          $ref: '#/components/schemas/ResponseFormat'
+        zdr:
+          description: 'Zero data retention: the prompt and the input and output image bytes are neither stored nor logged; only an output requested as a URL is uploaded so it can be served.'
+          type: boolean
+      type: object
+    EnhanceMode:
+      default: moderate
+      enum:
+        - subtle
+        - moderate
+      type: string
     EraseRegionRequest:
       allOf:
         - $ref: '#/components/schemas/EraseRegionRequestBase'
@@ -808,32 +834,6 @@ components:
         - created
         - image
         - credits
-      type: object
-    RefineDetailsMode:
-      default: moderate
-      enum:
-        - subtle
-        - moderate
-      type: string
-    RefineDetailsRequest:
-      allOf:
-        - $ref: '#/components/schemas/RefineDetailsRequestBase'
-        - properties:
-            image:
-              format: binary
-              type: string
-          type: object
-    RefineDetailsRequestBase:
-      properties:
-        image_format:
-          $ref: '#/components/schemas/ImageFormat'
-        refinement:
-          $ref: '#/components/schemas/RefineDetailsMode'
-        response_format:
-          $ref: '#/components/schemas/ResponseFormat'
-        zdr:
-          description: 'Zero data retention: the prompt and the input and output image bytes are neither stored nor logged; only an output requested as a URL is uploaded so it can be served.'
-          type: boolean
       type: object
     ResponseFormat:
       enum:

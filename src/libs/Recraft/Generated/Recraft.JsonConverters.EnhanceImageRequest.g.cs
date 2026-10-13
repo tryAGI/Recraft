@@ -4,10 +4,10 @@
 namespace Recraft.JsonConverters
 {
     /// <inheritdoc />
-    public class RefineDetailsRequestJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Recraft.RefineDetailsRequest>
+    public class EnhanceImageRequestJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Recraft.EnhanceImageRequest>
     {
         /// <inheritdoc />
-        public override global::Recraft.RefineDetailsRequest Read(
+        public override global::Recraft.EnhanceImageRequest Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,11 +18,11 @@ namespace Recraft.JsonConverters
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
 
-            global::Recraft.RefineDetailsRequestBase? @base = default;
+            global::Recraft.EnhanceImageRequestBase? @base = default;
             try
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Recraft.RefineDetailsRequestBase), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Recraft.RefineDetailsRequestBase> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Recraft.RefineDetailsRequestBase).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Recraft.EnhanceImageRequestBase), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Recraft.EnhanceImageRequestBase> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Recraft.EnhanceImageRequestBase).Name}");
                 @base = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
@@ -32,12 +32,12 @@ namespace Recraft.JsonConverters
             {
             }
 
-            global::Recraft.RefineDetailsRequestVariant2? refineDetailsRequestVariant2 = default;
+            global::Recraft.EnhanceImageRequestVariant2? enhanceImageRequestVariant2 = default;
             try
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Recraft.RefineDetailsRequestVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Recraft.RefineDetailsRequestVariant2> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Recraft.RefineDetailsRequestVariant2).Name}");
-                refineDetailsRequestVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Recraft.EnhanceImageRequestVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Recraft.EnhanceImageRequestVariant2> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Recraft.EnhanceImageRequestVariant2).Name}");
+                enhanceImageRequestVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -45,10 +45,10 @@ namespace Recraft.JsonConverters
             catch (global::System.InvalidOperationException)
             {
             }
-            var __value = new global::Recraft.RefineDetailsRequest(
+            var __value = new global::Recraft.EnhanceImageRequest(
                 @base,
 
-                refineDetailsRequestVariant2
+                enhanceImageRequestVariant2
                 );
 
             return __value;
@@ -57,7 +57,7 @@ namespace Recraft.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::Recraft.RefineDetailsRequest value,
+            global::Recraft.EnhanceImageRequest value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
@@ -68,8 +68,8 @@ namespace Recraft.JsonConverters
             var __writtenPropertyNames = new global::System.Collections.Generic.HashSet<string>(global::System.StringComparer.Ordinal);
             if (value.IsBase)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Recraft.RefineDetailsRequestBase), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Recraft.RefineDetailsRequestBase?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Recraft.RefineDetailsRequestBase).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Recraft.EnhanceImageRequestBase), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Recraft.EnhanceImageRequestBase?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Recraft.EnhanceImageRequestBase).Name}");
                 var __element0 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.PickBase(), typeInfo);
                 if (__element0.ValueKind != global::System.Text.Json.JsonValueKind.Object)
                 {
@@ -84,11 +84,11 @@ namespace Recraft.JsonConverters
                     }
                 }
             }
-            if (value.IsRefineDetailsRequestVariant2)
+            if (value.IsEnhanceImageRequestVariant2)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Recraft.RefineDetailsRequestVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Recraft.RefineDetailsRequestVariant2?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Recraft.RefineDetailsRequestVariant2).Name}");
-                var __element1 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.PickRefineDetailsRequestVariant2(), typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Recraft.EnhanceImageRequestVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Recraft.EnhanceImageRequestVariant2?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Recraft.EnhanceImageRequestVariant2).Name}");
+                var __element1 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.PickEnhanceImageRequestVariant2(), typeInfo);
                 if (__element1.ValueKind != global::System.Text.Json.JsonValueKind.Object)
                 {
                     throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");

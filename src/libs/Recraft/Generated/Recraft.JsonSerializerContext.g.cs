@@ -104,6 +104,7 @@ namespace Recraft
     #pragma warning restore CS3016
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.JsonSerializerContextTypes))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>), TypeInfoPropertyName = "SystemCollectionsGeneric_ObjectList")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(string[]))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.BasicStyle))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Recraft.TransformModel), TypeInfoPropertyName = "TransformModel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(string))]

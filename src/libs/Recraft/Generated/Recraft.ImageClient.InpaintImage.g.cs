@@ -27,11 +27,11 @@ namespace Recraft
             };
         partial void PrepareInpaintImageArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::Recraft.TransformImageWithMaskRequest request);
+            global::Recraft.TransformImageWithMaskJSONRequest request);
         partial void PrepareInpaintImageRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::Recraft.TransformImageWithMaskRequest request);
+            global::Recraft.TransformImageWithMaskJSONRequest request);
         partial void ProcessInpaintImageResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -50,7 +50,7 @@ namespace Recraft
         /// <exception cref="global::Recraft.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> InpaintImageAsync(
 
-            global::Recraft.TransformImageWithMaskRequest request,
+            global::Recraft.TransformImageWithMaskJSONRequest request,
             global::Recraft.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -72,7 +72,7 @@ namespace Recraft
         /// <exception cref="global::Recraft.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Recraft.AutoSDKHttpResponse<global::Recraft.GenerateImageResponse>> InpaintImageAsResponseAsync(
 
-            global::Recraft.TransformImageWithMaskRequest request,
+            global::Recraft.TransformImageWithMaskJSONRequest request,
             global::Recraft.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -100,7 +100,7 @@ namespace Recraft
             var __maxAttempts = global::Recraft.AutoSDKRequestOptionsSupport.GetMaxAttempts(
                 clientOptions: Options,
                 requestOptions: requestOptions,
-                supportsRetry: false);
+                supportsRetry: true);
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
@@ -137,11 +137,12 @@ namespace Recraft
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
-
-                            var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-
+                            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
+                            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                                content: __httpRequestContentBody,
+                                encoding: global::System.Text.Encoding.UTF8,
+                                mediaType: "application/json");
                             __httpRequest.Content = __httpRequestContent;
-
                 global::Recraft.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -438,7 +439,7 @@ namespace Recraft
             global::Recraft.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::Recraft.TransformImageWithMaskRequest
+            var __request = new global::Recraft.TransformImageWithMaskJSONRequest
             {
             };
 

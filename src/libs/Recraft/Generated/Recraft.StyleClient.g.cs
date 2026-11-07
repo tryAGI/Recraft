@@ -41,7 +41,7 @@ namespace Recraft
         /// </summary>
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
         {
-            get => JsonSerializerContextProvider?.Value ?? global::Recraft.SourceGenerationContext.Default;
+            get => JsonSerializerContextProvider?.Value ?? global::Recraft.StyleSourceGenerationContext.Default;
             set => JsonSerializerContextProvider = new(() => value);
         }
 

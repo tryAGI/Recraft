@@ -73,7 +73,7 @@ namespace Recraft
         public global::System.Guid? StyleId { get; set; }
 
         /// <summary>
-        ///
+        /// Controls how closely generated images match the style.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("style_match")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.StyleMatchJsonConverter))]
@@ -110,7 +110,9 @@ namespace Recraft
         /// <param name="responseFormat"></param>
         /// <param name="style"></param>
         /// <param name="styleId"></param>
-        /// <param name="styleMatch"></param>
+        /// <param name="styleMatch">
+        /// Controls how closely generated images match the style.
+        /// </param>
         /// <param name="textLayout"></param>
         /// <param name="zdr">
         /// Zero data retention: the prompt and the input and output image bytes are neither stored nor logged; only an output requested as a URL is uploaded so it can be served.

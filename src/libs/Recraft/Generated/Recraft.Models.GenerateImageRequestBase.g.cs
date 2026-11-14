@@ -51,7 +51,7 @@ namespace Recraft
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("random_seed")]
-        public int? RandomSeed { get; set; }
+        public long? RandomSeed { get; set; }
 
         /// <summary>
         ///
@@ -80,7 +80,7 @@ namespace Recraft
         public global::System.Guid? StyleId { get; set; }
 
         /// <summary>
-        ///
+        /// Controls how closely generated images match the style.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("style_match")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.StyleMatchJsonConverter))]
@@ -125,7 +125,9 @@ namespace Recraft
         /// <param name="size"></param>
         /// <param name="style"></param>
         /// <param name="styleId"></param>
-        /// <param name="styleMatch"></param>
+        /// <param name="styleMatch">
+        /// Controls how closely generated images match the style.
+        /// </param>
         /// <param name="textLayout"></param>
         /// <param name="upscale"></param>
         /// <param name="zdr">
@@ -141,7 +143,7 @@ namespace Recraft
             global::Recraft.TransformModel? model,
             int? n,
             string? negativePrompt,
-            int? randomSeed,
+            long? randomSeed,
             global::Recraft.ResponseFormat? responseFormat,
             global::Recraft.ImageSize? size,
             string? style,

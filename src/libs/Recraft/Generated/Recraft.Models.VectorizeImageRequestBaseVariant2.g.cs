@@ -26,13 +26,13 @@ namespace Recraft
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_num_colors")]
-        public int? MaxNumColors { get; set; }
+        public long? MaxNumColors { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_num_shapes")]
-        public int? MaxNumShapes { get; set; }
+        public long? MaxNumShapes { get; set; }
 
         /// <summary>
         ///
@@ -69,6 +69,13 @@ namespace Recraft
         public global::Recraft.SvgCompression? SvgCompression { get; set; }
 
         /// <summary>
+        /// Vectorizer version. Defaults to v1.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("version")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.ExternalApiVectorizerVersionJsonConverter))]
+        public global::Recraft.ExternalApiVectorizerVersion? Version { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -86,19 +93,23 @@ namespace Recraft
         /// <param name="smallShapeFilter"></param>
         /// <param name="strictColorPalette"></param>
         /// <param name="svgCompression"></param>
+        /// <param name="version">
+        /// Vectorizer version. Defaults to v1.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public VectorizeImageRequestBaseVariant2(
             global::Recraft.ColorReduction? colorReduction,
             global::Recraft.LimitNumShapes? limitNumShapes,
-            int? maxNumColors,
-            int? maxNumShapes,
+            long? maxNumColors,
+            long? maxNumShapes,
             global::Recraft.ReturnGradients? returnGradients,
             global::Recraft.ShapeStacking? shapeStacking,
             global::Recraft.SmallShapeFilter? smallShapeFilter,
             global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>? strictColorPalette,
-            global::Recraft.SvgCompression? svgCompression)
+            global::Recraft.SvgCompression? svgCompression,
+            global::Recraft.ExternalApiVectorizerVersion? version)
         {
             this.ColorReduction = colorReduction;
             this.LimitNumShapes = limitNumShapes;
@@ -109,6 +120,7 @@ namespace Recraft
             this.SmallShapeFilter = smallShapeFilter;
             this.StrictColorPalette = strictColorPalette;
             this.SvgCompression = svgCompression;
+            this.Version = version;
         }
 
         /// <summary>

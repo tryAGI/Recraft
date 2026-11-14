@@ -13,7 +13,7 @@ namespace Recraft
         /// <exception cref="global::Recraft.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> GenerateImageRasterAsync(
 
-            global::Recraft.GenerateImageRequest request,
+            global::Recraft.GenerateImageJSONRequest request,
             global::Recraft.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -25,7 +25,7 @@ namespace Recraft
         /// <exception cref="global::Recraft.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Recraft.AutoSDKHttpResponse<global::Recraft.GenerateImageResponse>> GenerateImageRasterAsResponseAsync(
 
-            global::Recraft.GenerateImageRequest request,
+            global::Recraft.GenerateImageJSONRequest request,
             global::Recraft.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>

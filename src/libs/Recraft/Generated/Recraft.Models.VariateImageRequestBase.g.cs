@@ -32,7 +32,7 @@ namespace Recraft
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("random_seed")]
-        public int? RandomSeed { get; set; }
+        public long? RandomSeed { get; set; }
 
         /// <summary>
         ///
@@ -81,7 +81,7 @@ namespace Recraft
             global::Recraft.ImageFormat? imageFormat,
             global::Recraft.TransformModel? model,
             int? n,
-            int? randomSeed,
+            long? randomSeed,
             global::Recraft.ResponseFormat? responseFormat,
             bool? zdr)
         {

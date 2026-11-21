@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.1.0
 info:
   title: recraft.ai external api
   version: 0.0.1
@@ -13,9 +13,13 @@ paths:
       operationId: CreativeUpscale
       requestBody:
         content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProcessImageJSONRequest'
           multipart/form-data:
             schema:
               $ref: '#/components/schemas/ProcessImageRequest'
+        required: true
       responses:
         "200":
           content:
@@ -34,9 +38,13 @@ paths:
       operationId: CrispUpscale
       requestBody:
         content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProcessImageJSONRequest'
           multipart/form-data:
             schema:
               $ref: '#/components/schemas/ProcessImageRequest'
+        required: true
       responses:
         "200":
           content:
@@ -55,9 +63,13 @@ paths:
       operationId: EnhanceImage
       requestBody:
         content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EnhanceImageJSONRequest'
           multipart/form-data:
             schema:
               $ref: '#/components/schemas/EnhanceImageRequest'
+        required: true
       responses:
         "200":
           content:
@@ -76,9 +88,13 @@ paths:
       operationId: EraseRegion
       requestBody:
         content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EraseRegionJSONRequest'
           multipart/form-data:
             schema:
               $ref: '#/components/schemas/EraseRegionRequest'
+        required: true
       responses:
         "200":
           content:
@@ -97,9 +113,13 @@ paths:
       operationId: GenerateBackground
       requestBody:
         content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TransformImageWithMaskJSONRequest'
           multipart/form-data:
             schema:
               $ref: '#/components/schemas/TransformImageWithMaskRequest'
+        required: true
       responses:
         "200":
           content:
@@ -118,9 +138,13 @@ paths:
       operationId: GenerateImage
       requestBody:
         content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenerateImageJSONRequest'
           multipart/form-data:
             schema:
               $ref: '#/components/schemas/GenerateImageRequest'
+        required: true
       responses:
         "200":
           content:
@@ -139,9 +163,13 @@ paths:
       operationId: GenerateImageRaster
       requestBody:
         content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenerateImageJSONRequest'
           multipart/form-data:
             schema:
               $ref: '#/components/schemas/GenerateImageRequest'
+        required: true
       responses:
         "200":
           content:
@@ -160,9 +188,13 @@ paths:
       operationId: GenerateImageVector
       requestBody:
         content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenerateImageJSONRequest'
           multipart/form-data:
             schema:
               $ref: '#/components/schemas/GenerateImageRequest'
+        required: true
       responses:
         "200":
           content:
@@ -181,9 +213,13 @@ paths:
       operationId: ImageToImage
       requestBody:
         content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ImageToImageJSONRequest'
           multipart/form-data:
             schema:
               $ref: '#/components/schemas/ImageToImageRequest'
+        required: true
       responses:
         "200":
           content:
@@ -202,9 +238,13 @@ paths:
       operationId: InpaintImage
       requestBody:
         content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TransformImageWithMaskJSONRequest'
           multipart/form-data:
             schema:
               $ref: '#/components/schemas/TransformImageWithMaskRequest'
+        required: true
       responses:
         "200":
           content:
@@ -223,9 +263,13 @@ paths:
       operationId: OutpaintImage
       requestBody:
         content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OutpaintImageJSONRequest'
           multipart/form-data:
             schema:
               $ref: '#/components/schemas/OutpaintImageRequest'
+        required: true
       responses:
         "200":
           content:
@@ -244,9 +288,13 @@ paths:
       operationId: RemoveBackground
       requestBody:
         content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProcessImageJSONRequest'
           multipart/form-data:
             schema:
               $ref: '#/components/schemas/ProcessImageRequest'
+        required: true
       responses:
         "200":
           content:
@@ -265,9 +313,13 @@ paths:
       operationId: ReplaceBackground
       requestBody:
         content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TransformImageJSONRequest'
           multipart/form-data:
             schema:
               $ref: '#/components/schemas/TransformImageRequest'
+        required: true
       responses:
         "200":
           content:
@@ -286,9 +338,13 @@ paths:
       operationId: VariateImage
       requestBody:
         content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VariateImageJSONRequest'
           multipart/form-data:
             schema:
               $ref: '#/components/schemas/VariateImageRequest'
+        required: true
       responses:
         "200":
           content:
@@ -307,9 +363,13 @@ paths:
       operationId: VectorizeImage
       requestBody:
         content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VectorizeImageJSONRequest'
           multipart/form-data:
             schema:
               $ref: '#/components/schemas/VectorizeImageRequest'
+        required: true
       responses:
         "200":
           content:
@@ -340,9 +400,13 @@ paths:
       operationId: CreateStyle
       requestBody:
         content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateStyleJSONRequest'
           multipart/form-data:
             schema:
               $ref: '#/components/schemas/CreateStyleRequest'
+        required: true
       responses:
         "200":
           content:
@@ -439,6 +503,18 @@ components:
         - "on"
         - "off"
       type: string
+    CreateStyleJSONRequest:
+      allOf:
+        - $ref: '#/components/schemas/CreateStyleRequestBase'
+        - properties:
+            image_urls:
+              description: URLs or data URLs of the input images.
+              items:
+                type: string
+              type: array
+          required:
+            - image_urls
+          type: object
     CreateStyleRequest:
       allOf:
         - $ref: '#/components/schemas/CreateStyleRequestBase'
@@ -490,6 +566,16 @@ components:
           required:
             - credits
           type: object
+    EnhanceImageJSONRequest:
+      allOf:
+        - $ref: '#/components/schemas/EnhanceImageRequestBase'
+        - properties:
+            image_url:
+              description: URL or data URL of the input image.
+              type: string
+          required:
+            - image_url
+          type: object
     EnhanceImageRequest:
       allOf:
         - $ref: '#/components/schemas/EnhanceImageRequestBase'
@@ -516,6 +602,20 @@ components:
         - subtle
         - moderate
       type: string
+    EraseRegionJSONRequest:
+      allOf:
+        - $ref: '#/components/schemas/EraseRegionRequestBase'
+        - properties:
+            image_url:
+              description: URL or data URL of the input image.
+              type: string
+            mask_url:
+              description: URL or data URL of the mask image.
+              type: string
+          required:
+            - image_url
+            - mask_url
+          type: object
     EraseRegionRequest:
       allOf:
         - $ref: '#/components/schemas/EraseRegionRequestBase'
@@ -537,6 +637,22 @@ components:
           description: 'Zero data retention: the prompt and the input and output image bytes are neither stored nor logged; only an output requested as a URL is uploaded so it can be served.'
           type: boolean
       type: object
+    ExternalApiVectorizerVersion:
+      description: Vectorizer version. Defaults to v1.
+      enum:
+        - v1
+        - v1_pro
+      type: string
+    GenerateImageJSONRequest:
+      allOf:
+        - $ref: '#/components/schemas/GenerateImageRequestBase'
+        - properties:
+            style_reference_urls:
+              description: URLs or data URLs of style reference images. When provided, a style is created from these images and applied to the generation.
+              items:
+                type: string
+              type: array
+          type: object
     GenerateImageMultipartResponse:
       additionalProperties:
         format: binary
@@ -715,6 +831,15 @@ components:
         - vector_illustration
         - logo_raster
       type: string
+    ImageToImageJSONRequest:
+      allOf:
+        - $ref: '#/components/schemas/TransformImageJSONRequest'
+        - properties:
+            strength:
+              type: number
+          required:
+            - strength
+          type: object
     ImageToImageRequest:
       allOf:
         - $ref: '#/components/schemas/TransformImageRequest'
@@ -752,6 +877,10 @@ components:
         - PaletteMatch
         - MaxWeight
       type: string
+    OutpaintImageJSONRequest:
+      allOf:
+        - $ref: '#/components/schemas/OutpaintImageRequestBase'
+        - $ref: '#/components/schemas/TransformImageJSONRequest'
     OutpaintImageRequest:
       allOf:
         - $ref: '#/components/schemas/OutpaintImageRequestBase'
@@ -792,6 +921,16 @@ components:
       required:
         - colors
       type: object
+    ProcessImageJSONRequest:
+      allOf:
+        - $ref: '#/components/schemas/ProcessImageRequestBase'
+        - properties:
+            image_url:
+              description: URL or data URL of the input image.
+              type: string
+          required:
+            - image_url
+          type: object
     ProcessImageMultipartResponse:
       additionalProperties:
         format: binary
@@ -875,6 +1014,7 @@ components:
         - is_private
       type: object
     StyleMatch:
+      description: Controls how closely generated images match the style.
       enum:
         - regular
         - precise
@@ -903,6 +1043,16 @@ components:
         - text
         - bbox
       type: object
+    TransformImageJSONRequest:
+      allOf:
+        - $ref: '#/components/schemas/TransformImageRequestBase'
+        - properties:
+            image_url:
+              description: URL or data URL of the input image.
+              type: string
+          required:
+            - image_url
+          type: object
     TransformImageRequest:
       allOf:
         - $ref: '#/components/schemas/TransformImageRequestBase'
@@ -945,6 +1095,16 @@ components:
       required:
         - prompt
       type: object
+    TransformImageWithMaskJSONRequest:
+      allOf:
+        - $ref: '#/components/schemas/TransformImageJSONRequest'
+        - properties:
+            mask_url:
+              description: URL or data URL of the mask image.
+              type: string
+          required:
+            - mask_url
+          type: object
     TransformImageWithMaskRequest:
       allOf:
         - $ref: '#/components/schemas/TransformImageRequestBase'
@@ -1023,6 +1183,16 @@ components:
         no_text:
           type: boolean
       type: object
+    VariateImageJSONRequest:
+      allOf:
+        - $ref: '#/components/schemas/VariateImageRequestBase'
+        - properties:
+            image_url:
+              description: URL or data URL of the input image.
+              type: string
+          required:
+            - image_url
+          type: object
     VariateImageRequest:
       allOf:
         - $ref: '#/components/schemas/VariateImageRequestBase'
@@ -1052,6 +1222,16 @@ components:
       required:
         - size
       type: object
+    VectorizeImageJSONRequest:
+      allOf:
+        - $ref: '#/components/schemas/VectorizeImageRequestBase'
+        - properties:
+            image_url:
+              description: URL or data URL of the input image.
+              type: string
+          required:
+            - image_url
+          type: object
     VectorizeImageRequest:
       allOf:
         - $ref: '#/components/schemas/VectorizeImageRequestBase'
@@ -1088,6 +1268,8 @@ components:
               type: array
             svg_compression:
               $ref: '#/components/schemas/SvgCompression'
+            version:
+              $ref: '#/components/schemas/ExternalApiVectorizerVersion'
           type: object
   securitySchemes:
     auth0:

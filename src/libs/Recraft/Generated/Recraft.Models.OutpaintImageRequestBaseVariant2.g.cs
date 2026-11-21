@@ -12,25 +12,25 @@ namespace Recraft
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expand_bottom")]
-        public int? ExpandBottom { get; set; }
+        public long? ExpandBottom { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expand_left")]
-        public int? ExpandLeft { get; set; }
+        public long? ExpandLeft { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expand_right")]
-        public int? ExpandRight { get; set; }
+        public long? ExpandRight { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expand_top")]
-        public int? ExpandTop { get; set; }
+        public long? ExpandTop { get; set; }
 
         /// <summary>
         ///
@@ -64,10 +64,10 @@ namespace Recraft
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OutpaintImageRequestBaseVariant2(
-            int? expandBottom,
-            int? expandLeft,
-            int? expandRight,
-            int? expandTop,
+            long? expandBottom,
+            long? expandLeft,
+            long? expandRight,
+            long? expandTop,
             global::Recraft.ImageSize? size,
             double? zoomOutPercentage)
         {

@@ -13,7 +13,7 @@ namespace Recraft
         /// <exception cref="global::Recraft.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Recraft.ProcessImageResponse> CreativeUpscaleAsync(
 
-            global::Recraft.ProcessImageRequest request,
+            global::Recraft.ProcessImageJSONRequest request,
             global::Recraft.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -25,7 +25,7 @@ namespace Recraft
         /// <exception cref="global::Recraft.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Recraft.AutoSDKHttpResponse<global::Recraft.ProcessImageResponse>> CreativeUpscaleAsResponseAsync(
 
-            global::Recraft.ProcessImageRequest request,
+            global::Recraft.ProcessImageJSONRequest request,
             global::Recraft.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>

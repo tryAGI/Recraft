@@ -4,7 +4,7 @@
 namespace Recraft
 {
     /// <summary>
-    ///
+    /// Controls how closely generated images match the style.
     /// </summary>
     public enum StyleMatch
     {

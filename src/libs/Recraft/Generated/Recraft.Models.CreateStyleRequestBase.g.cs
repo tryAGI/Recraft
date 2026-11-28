@@ -15,7 +15,7 @@ namespace Recraft
         public global::System.Collections.Generic.IList<double>? ImageWeights { get; set; }
 
         /// <summary>
-        ///
+        /// Controls how closely generated images match the style.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("match")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Recraft.JsonConverters.StyleMatchJsonConverter))]
@@ -82,7 +82,9 @@ namespace Recraft
         /// Initializes a new instance of the <see cref="CreateStyleRequestBase" /> class.
         /// </summary>
         /// <param name="imageWeights"></param>
-        /// <param name="match"></param>
+        /// <param name="match">
+        /// Controls how closely generated images match the style.
+        /// </param>
         /// <param name="mixPolicy"></param>
         /// <param name="model"></param>
         /// <param name="palette"></param>

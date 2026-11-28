@@ -13,7 +13,7 @@ namespace Recraft
         /// <exception cref="global::Recraft.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Recraft.GenerateImageResponse> OutpaintImageAsync(
 
-            global::Recraft.OutpaintImageRequest request,
+            global::Recraft.OutpaintImageJSONRequest request,
             global::Recraft.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -25,7 +25,7 @@ namespace Recraft
         /// <exception cref="global::Recraft.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Recraft.AutoSDKHttpResponse<global::Recraft.GenerateImageResponse>> OutpaintImageAsResponseAsync(
 
-            global::Recraft.OutpaintImageRequest request,
+            global::Recraft.OutpaintImageJSONRequest request,
             global::Recraft.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>

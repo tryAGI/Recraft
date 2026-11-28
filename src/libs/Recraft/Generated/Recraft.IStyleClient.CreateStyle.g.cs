@@ -13,7 +13,7 @@ namespace Recraft
         /// <exception cref="global::Recraft.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Recraft.CreateStyleResponse> CreateStyleAsync(
 
-            global::Recraft.CreateStyleRequest request,
+            global::Recraft.CreateStyleJSONRequest request,
             global::Recraft.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -25,7 +25,7 @@ namespace Recraft
         /// <exception cref="global::Recraft.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Recraft.AutoSDKHttpResponse<global::Recraft.CreateStyleResponse>> CreateStyleAsResponseAsync(
 
-            global::Recraft.CreateStyleRequest request,
+            global::Recraft.CreateStyleJSONRequest request,
             global::Recraft.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
